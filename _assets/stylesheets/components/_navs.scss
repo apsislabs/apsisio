@@ -1,0 +1,16 @@
+nav.nav {
+    ul {
+        list-style: none;
+    }
+}
+
+.nav-inline {
+    @include clearfix;
+    @include margin(0);
+    @include padding(0);
+
+    li {
+        @include padding(null $base-padding);
+        float: left;
+    }
+}

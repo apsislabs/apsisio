@@ -1,0 +1,10 @@
+(function($) {
+    $(document).ready(function() {
+        $('.nav-toggle').on('click', function(event) {
+            event.preventDefault();
+
+            $(this).toggleClass('close');
+            $('body').toggleClass('nav-open');
+        });
+    });
+}(jQuery));

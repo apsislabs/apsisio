@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic|Lora:400,400italic,700,700italic);
+
+body {
+    @include font-feature-settings("liga");
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-family: $font-family-sans;
+
+    h5{ font-size: modular-scale(1); }
+    h4{ font-size: modular-scale(2); }
+    h3{ font-size: modular-scale(3); }
+    h2{ font-size: modular-scale(4); }
+    h1{ font-size: modular-scale(5); }
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $font-family-serif;
+
+    &.sans {
+        font-family: $font-family-sans;
+    }
+}
+
+ul, ol {
+    @include margin(0 null $base-padding);
+
+    ul, ol {
+        @include margin(0 null);
+    }
+}

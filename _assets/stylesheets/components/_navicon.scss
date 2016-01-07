@@ -1,0 +1,47 @@
+.menu-icon {
+    display: block;
+    position: relative;
+    width: $nav-icon-size;
+    height: $nav-icon-size;
+
+    &:before,
+    &:after,
+    .bar {
+        @include position(absolute, 0 0 null null);
+        @include transition(transform .15s 0s ease-in-out, top .15s .15s ease-in-out);
+        transform-origin: 50% 50%;
+        background: black;
+        display: block;
+        width: 100%;
+        content: '';
+        height: 2px;
+    }
+
+    .bar {
+        @include transition(opacity .15s .15s ease-in-out);
+        top: 7px;
+    }
+
+    &:after {
+        top: 14px;
+    }
+
+    &.close {
+        &:before,
+        &:after,
+        .bar {
+            top: 7px;
+            @include transition(transform .15s .15s ease-in-out, top .15s 0s ease-in-out);
+        }
+        &:before {
+            @include transform(rotate(45deg));
+        }
+        &:after {
+            @include transform(rotate(-45deg));
+        }
+        .bar {
+            @include transition(opacity 0s .15s ease-in-out);
+            opacity: 0;
+        }
+    }
+}

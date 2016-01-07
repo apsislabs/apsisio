@@ -1,0 +1,13 @@
+#drawer {
+    background: $apsis-blue;
+    @include size($sidebar-width 100%);
+    z-index: -1;
+
+    a {
+        color: white;
+    }
+}
+
+#nav-trigger {
+    display: none;
+}

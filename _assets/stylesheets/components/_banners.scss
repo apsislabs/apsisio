@@ -1,0 +1,11 @@
+.banner-row {
+    display: flex;
+    justify-content: center;
+    box-pack: center;
+    align-items: center;
+    box-align: center;
+
+    h1:first-of-type {
+        margin-top: 0;
+    }
+}

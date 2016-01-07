@@ -1,0 +1,55 @@
+* {
+    &,
+    &:after,
+    &:before {
+        box-sizing: border-box;
+    }
+}
+
+html, body {
+    @include size(100%);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    width: 1px;
+    min-width: 100%;
+    overflow-x: hidden;
+    border-top: 3px solid $apsis-blue;
+    background-color: white;
+}
+
+// Off Canvas Nav Styles
+#wrapper {
+    position: relative;
+    overflow: hidden;
+    @include size(100%);
+
+    #canvas {
+        @include transition(transform .25s $ease-in-out-cubic);
+        @include transform(translate3d(0,0,0));
+        @include size(100%);
+
+        backface-visibility: hidden;
+        position: relative;
+    }
+
+    #drawer {
+        @include position(absolute, 0 -1 * $sidebar-width 0 null);
+        width: $sidebar-width;
+    }
+
+    .nav-open & {
+        #canvas {
+            @include transform(translate3d(-1 * $sidebar-width,0,0));
+        }
+    }
+
+    @include media($desktop) {
+        .nav-open & {
+            #canvas {
+                @include transform(translate3d(0,0,0));
+            }
+        }
+    }
+}

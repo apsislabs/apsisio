@@ -12,7 +12,7 @@
     text-decoration: none;
     text-rendering: optimizeLegibility;
 
-    @include padding($padding-sm $base-padding);
+    @include padding($padding-sm $padding-base);
     @include transition(all .15s ease-in-out);
     @include user-select(none);
 

@@ -10,9 +10,9 @@
             @include clearfix;
             @include margin(0);
             @include padding(0);
-            
+
             li {
-                @include padding(null $base-padding);
+                @include padding(null $padding-base);
                 float: left;
             }
         }

@@ -7,6 +7,7 @@ let jQuery = jQuery || {};
 
             $(this).toggleClass('close');
             $('body').toggleClass('nav-open');
+            $('#drawer').toggleClass('drawer--open');
         });
     });
 }(jQuery));

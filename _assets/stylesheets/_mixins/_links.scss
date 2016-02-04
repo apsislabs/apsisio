@@ -7,7 +7,7 @@
 
     @include before {
         @include transition(all .2s);
-        @include position(absolute, auto null 1px);
+        @include position(absolute, auto 0 0);
         @include transform(scaleX(0));
         @include size(100% 1px);
 

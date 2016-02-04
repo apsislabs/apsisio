@@ -2,6 +2,7 @@
 //
 
 $apsis-blue: #2173aa;
+$apsis-dark: #2c3e50;
 $base-bg-color: #fff;
 $button-color: #ccc;
 
@@ -14,7 +15,7 @@ $link-active-color: darken($apsis-blue, 15%);
 
 // Typography
 
-$text-color: #2c3e50;
+$text-color: $apsis-dark;
 
 //== Sizes
 //
@@ -38,9 +39,9 @@ $grid-unit-base: floor(($font-size-base * $line-height-base));
 //== Units
 //
 
-$base-padding: $grid-unit-base;
-$padding-sm: $base-padding / 2;
-$padding-lg: $base-padding * 2;
+$padding-base: $grid-unit-base;
+$padding-sm: $padding-base / 2;
+$padding-lg: $padding-base * 2;
 
 //== Media Queries
 //

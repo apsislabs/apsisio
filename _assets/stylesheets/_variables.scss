@@ -1,34 +1,49 @@
-// Colors
+//== Colors
+//
 
 $apsis-blue: #2173aa;
 $base-bg-color: #fff;
 $button-color: #ccc;
-$link-color: $apsis-blue;
-$link-hover: darken($apsis-blue, 10%);
-$link-active: darken($apsis-blue, 15%);
 
-// Sizes
+// Links
+
+$link-color: $apsis-blue;
+$link-hover-color: darken($apsis-blue, 10%);
+$link-visited-color: darken($apsis-blue, 10%);
+$link-active-color: darken($apsis-blue, 15%);
+
+// Typography
+
+$text-color: #2c3e50;
+
+//== Sizes
+//
 
 $sidebar-width: 260px;
 $container-width: 800px;
 $header-height: 80px;
 $nav-icon-size: 16px;
 
-// Typography
+//== Typography
+//
+
 
 $font-size-base: 16px;
 $font-family-serif: 'Lora', serif;
 $font-family-sans: 'Open Sans', sans-serif;
-$line-height-base: 1.425;
+$font-family-fixed: 'Source Code Pro', monospace;
+$line-height-base: 1.615;
 $grid-unit-base: floor(($font-size-base * $line-height-base));
 
-// Units
+//== Units
+//
 
 $base-padding: $grid-unit-base;
 $padding-sm: $base-padding / 2;
 $padding-lg: $base-padding * 2;
 
-// Media Queries
+//== Media Queries
+//
 
 $mobile-size: em(320);
 $tablet-size: em(720);

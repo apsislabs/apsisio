@@ -1,0 +1,13 @@
+.animated {
+    &--bounce-in {
+        @include animation(bounce-in $ease-out-back 1s);
+    }
+
+    &--fade-in {
+        @include animation(fade-in ease 1s);
+    }
+
+    &--pulse {
+        @include animation(pulse ease 3s);
+    }
+}

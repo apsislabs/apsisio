@@ -11,12 +11,18 @@
 @import "_mixins/pseudo",
         "_mixins/links";
 
+//== Animations
+
+@import "_animations/bounce-in",
+        "_animations/fade-in",
+        "_animations/pulse";
+
 //== Base
 
 @import "_base/reset",
         "_base/layout",
         "_base/links",
-        "_base/animations",
+        "_base/animated",
         "_base/type";
 
 //== Layouts
@@ -31,4 +37,5 @@
         "_modules/drawer",
         "_modules/header",
         "_modules/navicon",
+        "_modules/next-section",
         "_modules/navs";

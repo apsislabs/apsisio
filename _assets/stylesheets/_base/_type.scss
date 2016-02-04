@@ -1,19 +1,48 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic|Lora:400,400italic,700,700italic);
+//== Base Styles
+//
 
 body {
     @include font-feature-settings("liga");
+    color: $text-color;
     font-size: $font-size-base;
-    line-height: $line-height-base;
     font-family: $font-family-sans;
-
-    h5{ font-size: modular-scale(1); }
-    h4{ font-size: modular-scale(2); }
-    h3{ font-size: modular-scale(3); }
-    h2{ font-size: modular-scale(4); }
-    h1{ font-size: modular-scale(5); }
+    line-height: $line-height-base;
 }
 
-h1, h2, h3, h4, h5 {
+.block-margins {
+    @include margin(1em 0);
+}
+
+//== Headings
+//
+
+.h1 {
+    font-size: modular-scale(5);
+    letter-spacing: -2px;
+}
+
+.h2 {
+    font-size: modular-scale(4);
+    letter-spacing: -1px;
+}
+
+.h3 {
+    font-size: modular-scale(3);
+}
+
+.h4 {
+    font-size: modular-scale(2);
+}
+
+.h5 {
+    font-size: modular-scale(1);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
     font-family: $font-family-serif;
 
     &.sans {
@@ -21,10 +50,48 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-ul, ol {
-    @include margin(0 null $base-padding);
+h1 {
+    @extend .h1;
+}
 
-    ul, ol {
+h2 {
+    @extend .h2;
+}
+
+h3 {
+    @extend .h3;
+}
+
+h4 {
+    @extend .h4;
+}
+
+h5 {
+    @extend .h5;
+}
+
+//== Block Elements
+//
+
+p,
+ul,
+ol,
+pre {
+    @extend .block-margins;
+}
+
+ul,
+ol {
+    ul,
+    ol {
         @include margin(0 null);
     }
+}
+
+//== Fixed Elements
+//
+
+pre,
+code {
+    font-family: $font-family-fixed;
 }

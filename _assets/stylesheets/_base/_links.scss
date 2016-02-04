@@ -1,12 +1,22 @@
-a {
+a,
+.link {
     color: $link-color;
+    text-decoration: none;
 
-    &:hover {
-        color: $link-hover;
+    &:visited {
+        color: $link-visited-color;
+    }
+
+    &:hover, &:visited:hover {
+        text-decoration: underline;
+        color: $link-hover-color;
+    }
+
+    &--underline {
+        @include underline-link($link-color, $link-hover-color, $link-active-color);
     }
 }
 
-#content a,
-a.underline {
-    @include underline-link($link-color, $link-hover, $link-active);
+#content a {
+    @extend .link--underline;
 }

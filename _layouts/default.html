@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Blog</title>
+    {% include head.html %}
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-
-        {% stylesheet app %}
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-    </head>
     <body>
         <div id="wrapper">
             <div id="canvas">
@@ -22,8 +14,7 @@
                 </div>
             </div>
         </div>
-
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
         {% javascript app %}
     </body>
 </html>

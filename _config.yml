@@ -6,11 +6,7 @@ email: contact@apsis.io
 description: >
   Tomato sauce is the lifeblood of the internet.
 
-baseurl: ""
 url: "http://apsis.io"
-
-# Build settings
-markdown: kramdown
 
 # Assets settings
 assets:

@@ -1,3 +1,5 @@
+let jQuery = jQuery || {};
+
 (function($) {
     $(document).ready(function() {
         $('.nav-toggle').on('click', function(event) {

@@ -1,23 +1,34 @@
+@charset "UTF-8";
+
 //== Libraries
 
-@import "bourbon";
-@import "neat";
-@import "reset";
-@import "variables";
+@import "bourbon",
+        "neat",
+        "variables";
 
-//== Components
+//== Mixins
 
-@import "components/animations";
-@import "components/grid";
-@import "components/type";
-@import "components/navs";
-@import "components/layout";
-@import "components/header";
-@import "components/drawer";
-@import "components/navicon";
-@import "components/buttons";
-@import "components/banners";
+@import "_mixins/pseudo",
+        "_mixins/links";
 
-//== Pages
+//== Base
 
-@import "pages/home";
+@import "_base/reset",
+        "_base/layout",
+        "_base/links",
+        "_base/animations",
+        "_base/type";
+
+//== Layouts
+
+@import "_layouts/grid",
+        "_layouts/home";
+
+//== Modules
+
+@import "_modules/banners",
+        "_modules/buttons",
+        "_modules/drawer",
+        "_modules/header",
+        "_modules/navicon",
+        "_modules/navs";

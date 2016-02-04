@@ -3,6 +3,9 @@
 $apsis-blue: #2173aa;
 $base-bg-color: #fff;
 $button-color: #ccc;
+$link-color: $apsis-blue;
+$link-hover: darken($apsis-blue, 10%);
+$link-active: darken($apsis-blue, 15%);
 
 // Sizes
 

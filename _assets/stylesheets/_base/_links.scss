@@ -1,0 +1,12 @@
+a {
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover;
+    }
+}
+
+#content a,
+a.underline {
+    @include underline-link($link-color, $link-hover, $link-active);
+}

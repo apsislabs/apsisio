@@ -1,33 +1,25 @@
-#header {
+.site-header {
     height: $header-height;
     line-height: $header-height;
-    background-color: white;
-
     @include padding(null $grid-unit-base);
 
     .logo {
         float: left;
-
-        h1 {
-            @include margin(0);
-            @include padding(0);
-            font-size: 28px;
-            text-transform: lowercase;
-            font-weight: 300;
-        }
     }
 
-    .nav {
+    &__nav {
         display: none;
+        float: right;
+        @extend .nav;
+        @extend .nav--inline;
 
-        ul {
-            float: right;
-            @extend .nav-inline;
+        a {
             text-transform: lowercase;
+            @extend .link--underline;
         }
     }
 
-    .menu-icon {
+    &__nav-toggle {
         height: $grid-unit-base;
         display: inline-block;
         float: right;
@@ -37,11 +29,11 @@
     //= Media Queries
 
     @include media($desktop) {
-        .nav {
+        &__nav {
             display: block;
         }
 
-        .menu-icon {
+        &__nav-toggle {
             display: none;
         }
     }

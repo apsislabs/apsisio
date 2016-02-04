@@ -1,0 +1,9 @@
+.logo {
+    h1 {
+        @include margin(0);
+        @include padding(0);
+        font-size: 28px;
+        text-transform: lowercase;
+        font-weight: 300;
+    }
+}

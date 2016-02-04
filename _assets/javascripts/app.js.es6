@@ -2,7 +2,7 @@ let jQuery = jQuery || {};
 
 (function($) {
     $(document).ready(function() {
-        $('.nav-toggle').on('click', function(event) {
+        $('#nav-toggle').on('click', function(event) {
             event.preventDefault();
 
             $(this).toggleClass('close');

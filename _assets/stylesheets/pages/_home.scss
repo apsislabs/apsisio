@@ -1,4 +1,20 @@
 #hero {
     height: 100vh;
     background: orange;
+
+    .copy-wrapper {
+        @include animation(bounceInUp $ease-out-back .75s);
+    }
+
+    .next-section {
+        opacity: 0;
+        @include animation(fadeIn ease 1s);
+        @include animation-delay(1.5s);
+        @include animation-fill-mode(forwards);
+
+        .next-link {
+            @include animation(pulse ease 3s);
+            @include animation-iteration-count(infinite);
+        }
+    }
 }

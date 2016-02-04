@@ -2,9 +2,15 @@
     height: $header-height;
     line-height: $header-height;
     @include padding(null $grid-unit-base);
+    @include position(absolute, 0 0 null);
 
     .logo {
         float: left;
+
+        h1 {
+            height: $header-height;
+            line-height: $header-height;
+        }
     }
 
     &__nav {

@@ -21,8 +21,8 @@ $text-color: $apsis-dark;
 //
 
 $sidebar-width: 260px;
-$container-width: 800px;
-$header-height: 80px;
+$container-width: em(740);
+$header-height: 60px;
 $nav-icon-size: 16px;
 
 //== Typography
@@ -47,7 +47,7 @@ $padding-lg: $padding-base * 2;
 //
 
 $mobile-size: em(320);
-$tablet-size: em(720);
+$tablet-size: em(740);
 $desktop-size: em(960);
 $largedesktop-size: em(1050);
 

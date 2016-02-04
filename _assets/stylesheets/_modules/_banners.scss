@@ -1,14 +1,17 @@
 .banner {
-    display: flex;
-    justify-content: center;
-    box-pack: center;
-    align-items: center;
-    box-align: center;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    @include box-pack(center);
+    @include box-align(center);
+
+    @include padding(null $padding-base);
 
     h1:first-of-type {
         margin-top: 0;
     }
 
     &__copy {
+
     }
 }

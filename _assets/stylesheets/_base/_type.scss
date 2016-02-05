@@ -13,9 +13,6 @@ body {
     @include margin(1em 0);
 }
 
-//== Headings
-//
-
 .h1 {
     font-size: modular-scale(5);
     letter-spacing: -2px;
@@ -51,48 +48,54 @@ body {
     }
 }
 
-h1 {
-    @extend .h1;
-}
+.typography {
+    h1 {
+        @extend .h1;
+    }
 
-h2 {
-    @extend .h2;
-}
+    h2 {
+        @extend .h2;
+    }
 
-h3 {
-    @extend .h3;
-}
+    h3 {
+        @extend .h3;
+    }
 
-h4 {
-    @extend .h4;
-}
+    h4 {
+        @extend .h4;
+    }
 
-h5 {
-    @extend .h5;
-}
+    h5 {
+        @extend .h5;
+    }
 
-//== Block Elements
-//
+    //== Block Elements
+    //
 
-p,
-ul,
-ol,
-pre {
-    @extend .block-margins;
-}
+    p,
+    ul,
+    ol,
+    pre {
+        @extend .block-margins;
+    }
 
-ul,
-ol {
     ul,
     ol {
-        @include margin(0 null);
+        ul,
+        ol {
+            @include margin(0 null);
+        }
     }
-}
 
-//== Fixed Elements
-//
+    //== Fixed Elements
+    //
 
-pre,
-code {
-    font-family: $font-family-fixed;
+    pre,
+    code {
+        font-family: $font-family-fixed;
+    }
+
+    a {
+        @extend .link--underline;
+    }
 }

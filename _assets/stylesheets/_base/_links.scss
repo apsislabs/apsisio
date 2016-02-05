@@ -1,4 +1,3 @@
-a,
 .link {
     color: $link-color;
     text-decoration: none;
@@ -15,8 +14,4 @@ a,
     &--underline {
         @include underline-link($link-color, $link-hover-color, $link-active-color);
     }
-}
-
-#content a {
-    @extend .link--underline;
 }

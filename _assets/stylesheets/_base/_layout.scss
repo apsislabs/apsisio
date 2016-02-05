@@ -23,7 +23,6 @@ body {
 
 #wrapper {
     position: relative;
-    overflow: hidden;
     @include size(100%);
 
     #canvas {

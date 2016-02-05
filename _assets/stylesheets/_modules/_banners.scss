@@ -5,13 +5,63 @@
     @include box-pack(center);
     @include box-align(center);
 
-    @include padding(null $padding-base);
+    @include padding(12em $padding-base);
 
-    h1:first-of-type {
+    &__header {
         margin-top: 0;
+
+        h1 {
+            @extend .h1;
+            font-size: modular-scale(3);
+            line-height: 1.15;
+            text-transform: lowercase;
+        }
     }
 
     &__copy {
+        @extend .typography;
+    }
 
+    &__next {
+        opacity: 0;
+        @extend .animated--fade-in;
+        @include animation-delay(1.5s);
+        @include animation-fill-mode(forwards);
+        @include position(absolute, null 0 $padding-base);
+        text-align: center;
+    }
+
+    &__next-link {
+        @extend .link--underline;
+        text-transform: lowercase;
+    }
+
+    // Hero Banner
+    //
+
+    &--hero {
+        @include padding(null $padding-base);
+
+        .banner__header {
+            margin-top: 0;
+
+            h1 {
+                @extend .h1;
+                font-size: modular-scale(3);
+                line-height: 1.15;
+            }
+
+            @include media($tablet) {
+                h1 {
+                    font-size: modular-scale(4);
+                }
+            }
+
+            @include media($desktop) {
+                h1 {
+                    font-size: modular-scale(5);
+                }
+            }
+        }
     }
 }

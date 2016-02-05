@@ -13,9 +13,13 @@ namespace :site do
     system "JEKYLL_ENV=production jekyll build"
   end
 
+  desc "Clean up generated files"
+  task :clean do
+    system "rm -rf _site"
+  end
 
   desc "Generate and publish blog to gh-pages"
-  task :publish => [:generate] do
+  task :publish => [:clean, :generate] do
     Dir.mktmpdir do |tmp|
       cp_r "_site/.", tmp
 

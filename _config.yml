@@ -13,3 +13,5 @@ assets:
   css_compressor: sass
   cachebust: soft
   prefix: assets
+  features:
+    automatic_img_size: false

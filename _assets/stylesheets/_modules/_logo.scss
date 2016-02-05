@@ -1,9 +1,17 @@
 .logo {
-    h1 {
-        @include margin(0);
-        @include padding(0);
-        font-size: 28px;
-        text-transform: lowercase;
-        font-weight: 300;
+    &__image {
+        height: $header-height;
+        width: auto;
+
+        &--site-header {
+            margin-top: $padding-sm;
+            height: $header-height - $padding-base;
+        }
+    }
+
+    &--site-header {
+        float: left;
+        height: $header-height;
+        display: block;
     }
 }

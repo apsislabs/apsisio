@@ -6,7 +6,7 @@
 
     &:before,
     &:after,
-    .bar {
+    &__bar {
         @include position(absolute, 0 0 null null);
         @include transition(transform .15s 0s ease-in-out, top .15s .15s ease-in-out);
 
@@ -18,7 +18,7 @@
         height: 2px;
     }
 
-    .bar {
+    &__bar {
         @include transition(opacity .15s .15s ease-in-out);
         top: 7px;
     }
@@ -27,20 +27,23 @@
         top: 14px;
     }
 
-    &.close {
+    &--close {
         &:before,
         &:after,
-        .bar {
+        .navicon__bar {
             top: 7px;
             @include transition(transform .15s .15s ease-in-out, top .15s 0s ease-in-out);
         }
+
         &:before {
             @include transform(rotate(45deg));
         }
+
         &:after {
             @include transform(rotate(-45deg));
         }
-        .bar {
+
+        .navicon__bar {
             @include transition(opacity 0s .15s ease-in-out);
             opacity: 0;
         }

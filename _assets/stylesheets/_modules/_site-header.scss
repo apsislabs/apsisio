@@ -4,24 +4,22 @@
     @include padding(null $grid-unit-base);
     @include position(absolute, 0 0 null);
 
-    .logo {
-        float: left;
-
-        h1 {
-            height: $header-height;
-            line-height: $header-height;
-        }
-    }
-
     &__nav {
         display: none;
         float: right;
         @extend .nav;
         @extend .nav--inline;
+    }
 
-        a {
-            text-transform: lowercase;
-            @extend .link--underline;
+    &__nav-link {
+        text-transform: lowercase;
+        @extend .link--underline;
+
+        &:hover {
+            // TODO: I hate importants, but BEM doesn't
+            // override the defaults set on element levels.
+            // Need to find a good resolution for this.
+            text-decoration: none !important;
         }
     }
 

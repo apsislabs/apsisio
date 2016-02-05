@@ -2,16 +2,16 @@
     &__image {
         height: $header-height;
         width: auto;
-
-        &--site-header {
-            margin-top: $padding-sm;
-            height: $header-height - $padding-base;
-        }
     }
 
     &--site-header {
         float: left;
         height: $header-height;
         display: block;
+
+        .logo__image {
+            margin-top: $padding-sm;
+            height: $header-height - $padding-base;
+        }
     }
 }

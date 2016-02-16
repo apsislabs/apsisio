@@ -1,4 +1,5 @@
 .container {
+    width: 100%;
     @include outer-container($container-width);
     @include clearfix;
 }

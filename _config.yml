@@ -8,10 +8,15 @@ description: >
 
 url: "http://apsis.io"
 
+permalink: /blog/:year/:month/:day/:title
+paginate_path: "/blog/:num/"
+paginate: 10
+gems: [jekyll-paginate]
+
 # Assets settings
 assets:
   css_compressor: sass
   cachebust: soft
-  prefix: assets
+  prefix: /assets
   features:
     automatic_img_size: false

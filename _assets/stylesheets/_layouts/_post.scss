@@ -1,0 +1,7 @@
+.post {
+    padding: $padding-base;
+
+    &__content {
+        @extend .typography;
+    }
+}

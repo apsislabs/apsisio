@@ -19,7 +19,12 @@ $operators : #859900;
     > pre {
         padding: $padding-base;
         border: 1px solid transparent;
+        background-color: $background;
         @include border-color(darken($background, 10%) null);
+
+        // Offset Strategy
+        @include margin(null -9999px);
+        @include padding(null 9999px);
     }
 
     pre, code, kbd, samp {

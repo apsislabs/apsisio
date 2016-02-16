@@ -6,12 +6,11 @@ require "jekyll"
 
 # Change your GitHub reponame
 GIT_REPO = "apsislabs/apsisio"
-GIT_BASEURL = "/apsisio"
 
 namespace :site do
   desc "Generate blog files"
   task :generate do
-    system "JEKYLL_ENV=production jekyll build --baseurl='#{GIT_BASEURL}'"
+    system "JEKYLL_ENV=production jekyll build --config _config.yml,_config-prod.yml"
   end
 
   desc "Clean up generated files"

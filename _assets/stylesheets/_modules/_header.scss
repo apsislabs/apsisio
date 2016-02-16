@@ -16,9 +16,6 @@
         @extend .link--underline;
 
         &:hover {
-            // TODO: I hate importants, but BEM doesn't
-            // override the defaults set on element levels.
-            // Need to find a good resolution for this.
             text-decoration: none !important;
         }
     }

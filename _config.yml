@@ -6,8 +6,6 @@ email: contact@apsis.io
 description: >
   Tomato sauce is the lifeblood of the internet.
 
-baseurl: '/apsisio'
-
 permalink: /blog/:year/:month/:day/:title
 paginate_path: "/blog/:num/"
 paginate: 10

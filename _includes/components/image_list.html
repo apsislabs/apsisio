@@ -1,0 +1,9 @@
+<ul class="inline-list {{include.classes}}">
+    {% for list_image in include.images %}
+        <li>
+            <a href="{{ list_image.link }}" title="{{ list_image.name }}">
+                {% img {{list_image.source}} alt:"{{ list_image.name }}" class:"inline-list__image" %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

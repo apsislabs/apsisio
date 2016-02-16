@@ -1,0 +1,21 @@
+{% assign banner = site.data.banners.services %}
+<section id="about" class="banner">
+    <div class="container">
+        <header class="banner__header">
+            <h2>{{ banner.headline }}</h2>
+        </header>
+
+        <div class="banner__copy">
+            {{ banner.copy | markdownify }}
+
+            <ul class="inline-list">
+                <li>
+                    <a class="link--underline" href="{% post_url 2015-04-23-work-sustainably %}">More about our philosophy</a>
+                </li>
+                <li>
+                    <a class="link--underline" href="mailto:jobs@apsis.io" target="_blank">Join our team</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

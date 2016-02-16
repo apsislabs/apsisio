@@ -1,0 +1,15 @@
+{% assign banner = site.data.banners.services %}
+<section id="services" class="banner">
+    <div class="container">
+        <header class="banner__header">
+            <h2>{{ banner.headline }}</h2>
+        </header>
+
+        <div class="banner__copy">
+            {{ banner.copy | markdownify }}
+            <h3>{{ banner.subheader }}</h3>
+
+            {% include components/image_list.html images=site.data.tools %}
+        </div>
+    </div>
+</section>

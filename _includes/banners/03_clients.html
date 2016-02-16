@@ -1,0 +1,14 @@
+{% assign banner = site.data.banners.clients %}
+<section id="clients" class="banner">
+    <div class="container">
+        <header class="banner__header">
+            <h2>{{ banner.headline }}</h2>
+        </header>
+
+        <div class="banner__copy">
+            {{ banner.copy | markdownify }}
+
+            {% include components/image_list.html images=site.data.clients %}
+        </div>
+    </div>
+</section>

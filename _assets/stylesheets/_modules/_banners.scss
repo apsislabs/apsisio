@@ -9,6 +9,7 @@
 
     &__header {
         margin-top: 0;
+        text-align: center;
 
         h1 {
             @extend .h1;
@@ -20,6 +21,7 @@
 
     &__copy {
         @extend .typography;
+        text-align: center;
     }
 
     &__next {
@@ -63,5 +65,12 @@
                 }
             }
         }
+    }
+
+    // Gray
+    //
+
+    &--gray {
+        background-color: #F0F0F0;
     }
 }

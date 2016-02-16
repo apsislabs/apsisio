@@ -1,5 +1,5 @@
 {% assign banner = site.data.banners.services %}
-<section id="about" class="banner">
+<section id="about" class="banner banner--gray">
     <div class="container">
         <header class="banner__header">
             <h2>{{ banner.headline }}</h2>
@@ -8,12 +8,16 @@
         <div class="banner__copy">
             {{ banner.copy | markdownify }}
 
-            <ul class="inline-list">
-                <li>
-                    <a class="link--underline" href="{% post_url 2015-04-23-work-sustainably %}">More about our philosophy</a>
+            <ul class="link-list">
+                <li class="link-list__item">
+                    <a class="link-list__link" href="{% post_url 2015-04-23-work-sustainably %}">
+                        More about our philosophy &raquo;
+                    </a>
                 </li>
-                <li>
-                    <a class="link--underline" href="mailto:jobs@apsis.io" target="_blank">Join our team</a>
+                <li class="link-list__item">
+                    <a class="link-list__link" href="mailto:jobs@apsis.io" target="_blank">
+                        Join our team &raquo;
+                    </a>
                 </li>
             </ul>
         </div>

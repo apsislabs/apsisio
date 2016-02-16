@@ -1,0 +1,7 @@
+.image-list {
+    @include inline-list($padding-base);
+
+    &__image {
+        max-height: 60px;
+    }
+}

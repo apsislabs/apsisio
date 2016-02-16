@@ -1,0 +1,18 @@
+.link-list {
+    @include inline-list();
+
+    &__link {
+        text-decoration: none;
+        @include underline-link($link-color, $link-hover-color, $link-active-color);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &--white {
+        .link-list__link {
+            @include underline-link(white, white, white);
+        }
+    }
+}

@@ -1,0 +1,101 @@
+/* Solarized Light
+http://ethanschoonover.com/solarized
+*/
+
+$background: #fefefe;
+$text      : #586e75;
+$comments  : #93a1a1;
+$constants : #cb4b16;
+$keywords  : #dc322f;
+$reserved  : #268bd2;
+$strings   : #2aa198;
+$operators : #859900;
+
+.highlight {
+    margin: 1em 0;
+}
+
+.highlight {
+    > pre {
+        padding: $padding-base;
+        border: 1px solid transparent;
+        @include border-color(darken($background, 10%) null);
+    }
+
+    pre, code, kbd, samp {
+        font-family: $font-family-fixed;
+    }
+}
+
+.highlight .gutter { padding-right: 1em; }
+
+.highlight { background-color: $background; color: $text }
+.highlight .lineno { color: $comments } /* Line Numbers */
+.highlight .c { color: $comments } /* Comment */
+.highlight .err { color: $text } /* Error */
+.highlight .g { color: $text } /* Generic */
+.highlight .k { color: $operators } /* Keyword */
+.highlight .l { color: $text } /* Literal */
+.highlight .n { color: $text } /* Name */
+.highlight .o { color: $operators } /* Operator */
+.highlight .x { color: $constants } /* Other */
+.highlight .p { color: $text } /* Punctuation */
+.highlight .cm { color: $comments } /* Comment.Multiline */
+.highlight .cp { color: $operators } /* Comment.Preproc */
+.highlight .c1 { color: $comments } /* Comment.Single */
+.highlight .cs { color: $operators } /* Comment.Special */
+.highlight .gd { color: $strings } /* Generic.Deleted */
+.highlight .ge { color: $text; font-style: italic } /* Generic.Emph */
+.highlight .gr { color: $keywords } /* Generic.Error */
+.highlight .gh { color: $constants } /* Generic.Heading */
+.highlight .gi { color: $operators } /* Generic.Inserted */
+.highlight .go { color: $text } /* Generic.Output */
+.highlight .gp { color: $text } /* Generic.Prompt */
+.highlight .gs { color: $text; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: $constants } /* Generic.Subheading */
+.highlight .gt { color: $text } /* Generic.Traceback */
+.highlight .kc { color: $constants } /* Keyword.Constant */
+.highlight .kd { color: $reserved } /* Keyword.Declaration */
+.highlight .kn { color: $operators } /* Keyword.Namespace */
+.highlight .kp { color: $operators } /* Keyword.Pseudo */
+.highlight .kr { color: $reserved } /* Keyword.Reserved */
+.highlight .kt { color: $keywords } /* Keyword.Type */
+.highlight .ld { color: $text } /* Literal.Date */
+.highlight .m { color: $strings } /* Literal.Number */
+.highlight .s { color: $strings } /* Literal.String */
+.highlight .na { color: $text } /* Name.Attribute */
+.highlight .nb { color: #B58900 } /* Name.Builtin */
+.highlight .nc { color: $reserved } /* Name.Class */
+.highlight .no { color: $constants } /* Name.Constant */
+.highlight .nd { color: $reserved } /* Name.Decorator */
+.highlight .ni { color: $constants } /* Name.Entity */
+.highlight .ne { color: $constants } /* Name.Exception */
+.highlight .nf { color: $reserved } /* Name.Function */
+.highlight .nl { color: $text } /* Name.Label */
+.highlight .nn { color: $text } /* Name.Namespace */
+.highlight .nx { color: $text } /* Name.Other */
+.highlight .py { color: $text } /* Name.Property */
+.highlight .nt { color: $reserved } /* Name.Tag */
+.highlight .nv { color: $reserved } /* Name.Variable */
+.highlight .ow { color: $operators } /* Operator.Word */
+.highlight .w { color: $text } /* Text.Whitespace */
+.highlight .mf { color: $strings } /* Literal.Number.Float */
+.highlight .mh { color: $strings } /* Literal.Number.Hex */
+.highlight .mi { color: $strings } /* Literal.Number.Integer */
+.highlight .mo { color: $strings } /* Literal.Number.Oct */
+.highlight .sb { color: $comments } /* Literal.String.Backtick */
+.highlight .sc { color: $strings } /* Literal.String.Char */
+.highlight .sd { color: $text } /* Literal.String.Doc */
+.highlight .s2 { color: $strings } /* Literal.String.Double */
+.highlight .se { color: $constants } /* Literal.String.Escape */
+.highlight .sh { color: $text } /* Literal.String.Heredoc */
+.highlight .si { color: $strings } /* Literal.String.Interpol */
+.highlight .sx { color: $strings } /* Literal.String.Other */
+.highlight .sr { color: $keywords } /* Literal.String.Regex */
+.highlight .s1 { color: $strings } /* Literal.String.Single */
+.highlight .ss { color: $strings } /* Literal.String.Symbol */
+.highlight .bp { color: $reserved } /* Name.Builtin.Pseudo */
+.highlight .vc { color: $reserved } /* Name.Variable.Class */
+.highlight .vg { color: $reserved } /* Name.Variable.Global */
+.highlight .vi { color: $reserved } /* Name.Variable.Instance */
+.highlight .il { color: $strings } /* Literal.Number.Integer.Long */

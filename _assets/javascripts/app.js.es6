@@ -5,7 +5,7 @@ let jQuery = jQuery || {};
         $('#nav-toggle').on('click', function(event) {
             event.preventDefault();
 
-            $(this).toggleClass('navicon--close');
+            $(this).toggleClass('navicon--close navicon--white');
             $('body').toggleClass('nav-open');
             $('#drawer').toggleClass('drawer--open');
         });

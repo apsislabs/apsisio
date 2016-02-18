@@ -21,7 +21,7 @@ $text-color: $apsis-dark;
 //
 
 $sidebar-width: 260px;
-$container-width: em(740);
+$container-width: 700px;
 $header-height: 60px;
 $nav-icon-size: 16px;
 
@@ -30,10 +30,15 @@ $nav-icon-size: 16px;
 
 $modular-scale-base: 1rem;
 $font-size-base: 16px;
+$font-size-tablet: 18px;
+$font-size-desktop: 20px;
+
 $font-family-serif: 'Lora', serif;
 $font-family-sans: 'Open Sans', sans-serif;
 $font-family-fixed: 'Source Code Pro', monospace;
-$line-height-base: 1.615;
+
+$line-height-base: 1.75;
+
 $grid-unit-base: floor(($font-size-base * $line-height-base));
 
 //== Units
@@ -47,7 +52,7 @@ $padding-lg: $padding-base * 2;
 //
 
 $mobile-size: em(320);
-$tablet-size: em(740);
+$tablet-size: em(760);
 $desktop-size: em(960);
 $largedesktop-size: em(1050);
 

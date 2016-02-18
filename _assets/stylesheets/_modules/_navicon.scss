@@ -27,6 +27,17 @@
         top: 14px;
     }
 
+    // Variants
+    // 
+
+    &--white {
+        &:before,
+        &:after,
+        .navicon__bar {
+            background: white;
+        }
+    }
+
     &--close {
         &:before,
         &:after,

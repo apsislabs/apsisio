@@ -1,13 +1,11 @@
 <header id="header" class="site-header">
-    <div class="container">
-        <a href="{{ site.baseurl }}/" class="logo logo--site-header">
-            {% img apsis.svg alt:{{site.name}} class:"logo__image" %}
-        </a>
+    <a href="{{ site.baseurl }}/" class="logo logo--site-header">
+        {% img apsis.svg alt:{{site.name}} class:"logo__image" %}
+    </a>
 
-        {% include nav_menu.html classes="site-header__nav" link_classes="site-header__nav-link" %}
+    {% include nav_menu.html classes="site-header__nav" link_classes="site-header__nav-link" %}
 
-        <a href="#" id="nav-toggle" class="site-header__nav-toggle navicon">
-            <span class="navicon__bar"></span>
-        </a>
-    </div>
+    <a href="#" id="nav-toggle" class="site-header__nav-toggle navicon">
+        <span class="navicon__bar"></span>
+    </a>
 </header>

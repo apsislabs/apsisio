@@ -1,11 +1,15 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 gem "jekyll", "~> 3.0"
 gem "jekyll-paginate"
 gem "jekyll-assets", "~> 2.0"
+gem "jekyll-compose"
 gem "rake"
 
 gem "sprockets-es6"
 gem "autoprefixer-rails"
+gem "therubyracer"
+gem "uglifier"
+
 gem "bourbon"
 gem "neat"

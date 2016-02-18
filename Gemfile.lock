@@ -33,6 +33,8 @@ GEM
       sprockets (~> 3.3)
       sprockets-helpers (~> 1.2)
       tilt (~> 2.0)
+    jekyll-compose (0.4.1)
+      jekyll (>= 2.5.0)
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.4.0)
       sass (~> 3.4)
@@ -40,6 +42,7 @@ GEM
       listen (~> 3.0)
     json (1.8.3)
     kramdown (1.9.0)
+    libv8 (3.16.14.13)
     liquid (3.0.6)
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
@@ -53,6 +56,7 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    ref (2.0.0)
     rouge (1.10.1)
     safe_yaml (1.0.4)
     sass (3.4.21)
@@ -65,8 +69,14 @@ GEM
       sprockets (>= 3.0.0)
     sprockets-helpers (1.2.1)
       sprockets (>= 2.2)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     tilt (2.0.2)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -76,7 +86,10 @@ DEPENDENCIES
   bourbon
   jekyll (~> 3.0)
   jekyll-assets (~> 2.0)
+  jekyll-compose
   jekyll-paginate
   neat
   rake
   sprockets-es6
+  therubyracer
+  uglifier

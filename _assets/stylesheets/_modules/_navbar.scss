@@ -1,36 +1,51 @@
 .navbar {
-    @include padding($padding-sm);
     @include position(absolute, 0 0 null);
-    @include transition(background-color .25s);
-    @include transition-delay(.75s);
+    background-color: transparentize(white, 0.9);
+    z-index: 9999;
+
+    min-width: $screen-min-width;
+    height: $header-height;
+    overflow: hidden;
+
+    @include transition(
+        background .35s ease-in,
+        height .35s ease-in
+    );
+
 
     &__header {
-        @include clearfix;
+        @include position(absolute, 0 0 null);
+        height: $header-height;
+        z-index: 3;
     }
 
     &__nav {
-        @include margin($padding-base null);
+        @include position(absolute, $header-height 0 0);
+        @include padding($padding-base);
+        overflow-y: auto;
+        overflow: hidden;
+        z-index: 2;
     }
 
-    &__collapse {
-        max-height: 0;
-        overflow: hidden;
-        @include transition(max-height .5s ease-in-out, margin-top .5s ease-in-out);
+    &__nav-toggle {
+        touch-action: manipulation;
     }
 
     &__nav-link {
+        pointer-events: auto;
         display: block;
         text-transform: lowercase;
         margin-bottom: $padding-sm;
         @extend .link--underline;
 
         // Intro Animation
-        @include transform(translateY(-50px));
+        @include transform(translateY(50px));
+        @include transform(scale(0.75));
         opacity: 0;
 
         @include transition(
-            opacity 200ms ease-out,
-            transform 200ms ease-out
+            opacity 350ms ease-out,
+            transform 350ms ease-out
         );
 
         @include delay-each(5, 150ms);
@@ -48,26 +63,12 @@
 
     @include media($desktop) {
         &__header {
-            @include after(none);
-        }
-
-        &__collapse {
-            max-height: initial;
         }
 
         &__nav {
-            float: right;
-            display: block;
-            margin-top: 0;
         }
 
         &__nav-link {
-            @include transform(translateY(0));
-            display: inline-block;
-            padding: 2px 0;
-            margin: 0;
-            margin-left: $padding-base;
-            opacity: 1;
         }
 
         &__nav-toggle {
@@ -79,16 +80,16 @@
     // Variants
 
     &--open {
-        border-bottom: 3px solid $apsis-blue;
+        @include transition(
+            background .35s ease-in,
+            height .35s ease-in 200ms
+        );
         background-color: white;
-        @include transition(background-color .25s);
-
-        .navbar__collapse {
-            max-height: 300px;
-        }
+        height: 100%;
 
         .navbar__nav-link {
             @include transform(translateY(0));
+            @include transform(scale(1));
             opacity: 1;
         }
     }

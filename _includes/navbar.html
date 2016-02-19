@@ -12,13 +12,11 @@
         </button>
     </div>
 
-    <div class="navbar__collapse">
-        <nav class="navbar__nav">
-            {% for link in site.data.nav %}
-                <a class="navbar__nav-link" href="{{ link.url }}">
-                    {{ link.label }}
-                </a>
-            {% endfor %}
-        </nav>
-    </div>
+    <nav class="navbar__nav">
+        {% for link in site.data.nav %}
+            <a class="navbar__nav-link" href="{{ link.url }}">
+                {{ link.label }}
+            </a>
+        {% endfor %}
+    </nav>
 </header>

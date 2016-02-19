@@ -5,8 +5,8 @@
         $navbar    = $('#navbar'),
         $body      = $('body');
 
-    const NAVBAR_OPEN_CLASS  = 'navbar--open';
     const NAVICON_OPEN_CLASS = 'navicon--close';
+    const NAVBAR_OPEN_CLASS  = 'navbar--open';
     const BODY_OPEN_CLASS    = 'nav-open';
 
     function closeNavbar() {
@@ -34,18 +34,19 @@
     $(document).ready(() => {
 
         // Toggle Navbar on Navicon Click
-
         $navToggle.click((e) => {
             e.preventDefault();
             toggleNavbar();
         });
 
+        // Close navbar when clicking on nav link
         $navlink.click((e) => {
             if ( isNavbarOpen() ) {
                 closeNavbar();
             }
         });
 
+        // Close navbar if transitioning from mobile to desktop
         $(window).resize((e) => {
             if ( isNavbarOpen() && $(window).width() > 960) {
                 closeNavbar();

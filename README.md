@@ -8,7 +8,7 @@ To run the development site, run `jekyll serve` and visit `http://localhost:4000
 
 New content belongs in `_drafts`. Once the draft has been reviewed, it can be moved to `_posts`. There are some simple to use commands that should help this workflow:
 
-```sh
+```
     draft      # Creates a new draft post with the given NAME
     post       # Creates a new post with the given NAME
     publish    # Moves a draft into the _posts directory and sets the date
@@ -18,15 +18,19 @@ New content belongs in `_drafts`. Once the draft has been reviewed, it can be mo
 
 Create your new post using:
 
-`$ bundle exec jekyll post "My New Post"`
+```
+    $ bundle exec jekyll post "My New Post"
+```
 
 Create your new draft using:
 
-`$ bundle exec jekyll draft "My new draft"`
+```
+    $ bundle exec jekyll draft "My new draft"
+```
 
 Publish your draft using:
 
-```sh
+```
     $ bundle exec jekyll publish _drafts/my-new-draft.md
     # or specify a specific date on which to publish it
     $ bundle exec jekyll publish _drafts/my-new-draft.md --date 2014-01-24
@@ -34,7 +38,9 @@ Publish your draft using:
 
 Unpublish your post using:
 
-`$ bundle exec jekyll unpublish _posts/2014-01-24-my-new-draft.md`
+```
+    $ bundle exec jekyll unpublish _posts/2014-01-24-my-new-draft.md
+```
 
 # Publication Workflow
 

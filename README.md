@@ -18,11 +18,11 @@ New content belongs in `_drafts`. Once the draft has been reviewed, it can be mo
 
 Create your new post using:
 
-    `$ bundle exec jekyll post "My New Post"`
+`$ bundle exec jekyll post "My New Post"`
 
 Create your new draft using:
 
-    `$ bundle exec jekyll draft "My new draft"`
+`$ bundle exec jekyll draft "My new draft"`
 
 Publish your draft using:
 
@@ -34,7 +34,7 @@ Publish your draft using:
 
 Unpublish your post using:
 
-    `$ bundle exec jekyll unpublish _posts/2014-01-24-my-new-draft.md`
+`$ bundle exec jekyll unpublish _posts/2014-01-24-my-new-draft.md`
 
 # Publication Workflow
 

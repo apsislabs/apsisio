@@ -4,17 +4,13 @@
 
     <body>
         <div id="wrapper">
-            <div id="canvas">
-                {% include drawer.html %}
+            {% include header.html %}
 
-                {% include header.html %}
-
-                <div id="content">
-                    {{ content }}
-                </div>
-
-                {% include footer.html %}
+            <div id="content">
+                {{ content }}
             </div>
+
+            {% include footer.html %}
         </div>
 
         <!-- !START javascript includes -->

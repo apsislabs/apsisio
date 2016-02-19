@@ -5,9 +5,10 @@ let jQuery = jQuery || {};
         $('#nav-toggle').on('click', function(event) {
             event.preventDefault();
 
-            $(this).toggleClass('navicon--close navicon--white');
+            $('.navicon').toggleClass('navicon--close');
+            $('#header').toggleClass('navbar--open');
+
             $('body').toggleClass('nav-open');
-            $('#drawer').toggleClass('drawer--open');
         });
     });
 }(jQuery));

@@ -10,4 +10,8 @@
     &--pulse {
         @include animation(pulse ease 3s);
     }
+
+    &--collapse {
+        @include animation(collapse ease 1s);
+    }
 }

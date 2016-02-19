@@ -1,17 +1,15 @@
 .logo {
     &__image {
-        height: $header-height;
-        width: auto;
+        vertical-align: middle;
     }
 
-    &--site-header {
+    &--navbar {
         float: left;
-        height: $header-height;
-        display: block;
+        @include padding(4px null);
+        margin-right: $padding-base;
 
         .logo__image {
-            margin-top: $padding-sm;
-            height: $header-height - $padding-base;
+            max-height: $header-height - $padding-base - 8px;
         }
     }
 }

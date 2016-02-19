@@ -1,0 +1,9 @@
+@keyframes collapse {
+    from {
+        max-height: 0;
+        overflow: hidden;
+    }
+    to {
+        max-height: 1000px;
+    }
+}

@@ -16,12 +16,14 @@
 //== Animations
 
 @import "_animations/bounce-in",
+        "_animations/collapse",
         "_animations/fade-in",
         "_animations/pulse";
 
 //== Base
 
 @import "_base/reset",
+        "_base/global",
         "_base/layout",
         "_base/links",
         "_base/animated",
@@ -38,10 +40,9 @@
 
 @import "_modules/banners",
         "_modules/buttons",
-        "_modules/drawer",
         "_modules/logo",
         "_modules/navicon",
         "_modules/link_list",
         "_modules/image_list",
         "_modules/navs",
-        "_modules/header";
+        "_modules/navbar";

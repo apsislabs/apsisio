@@ -1,11 +1,24 @@
-<header id="header" class="site-header">
-    <a href="{{ site.baseurl }}/" class="logo logo--site-header">
-        {% img apsis.svg alt:{{site.name}} class:"logo__image" %}
-    </a>
+<header id="header" class="navbar">
+    <div class="navbar__header">
+        <a href="{{ site.baseurl }}/" class="logo logo--navbar">
+            {% img apsis.svg alt:{{site.name}} class:"logo__image" %}
+        </a>
 
-    {% include nav_menu.html classes="site-header__nav" link_classes="site-header__nav-link" %}
+        <button id="nav-toggle" class="navbar__nav-toggle">
+            <span class="navicon">
+                <span class="navicon__bar"></span>
+            </span>
+            <span class="sr">Toggle Menu</span>
+        </button>
+    </div>
 
-    <a href="#" id="nav-toggle" class="site-header__nav-toggle navicon">
-        <span class="navicon__bar"></span>
-    </a>
+    <div class="navbar__collapse">
+        <nav class="navbar__nav">
+            {% for link in site.data.nav %}
+                <a class="navbar__nav-link" href="{{ link.url }}">
+                    {{ link.label }}
+                </a>
+            {% endfor %}
+        </nav>
+    </div>
 </header>

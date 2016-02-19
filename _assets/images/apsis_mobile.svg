@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>Apsis Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Color" sketch:type="MSArtboardGroup" transform="translate(0.000000, -10.000000)" fill="#2773A7">
+            <g id="Apsis-Logo-+-apsis-labs" sketch:type="MSLayerGroup" transform="translate(0.000000, 10.000000)">
+                <path d="M50,0 C77.6142247,0 100,22.3857538 100,50 C100,77.6142351 77.6142247,100 50,100 C22.3857615,100 0,77.6142351 0,50 C0,22.3857538 22.3857615,0 50,0 L50,0 Z M50,5 C25.1471997,5 5,25.1471845 5,50 C5,74.8528238 25.1471997,95 50,95 C74.8528142,95 95,74.8528238 95,50 C95,25.1471845 74.8528142,5 50,5 L50,5 Z M50,10 C72.0913721,10 90,27.9086033 90,50 C90,72.0914051 72.0913721,90 50,90 C27.9086057,90 10,72.0914051 10,50 C10,27.9086033 27.9086057,10 50,10 L50,10 Z M63,24 C59.0724985,27.4924611 59.0724985,33.5075389 63,37 C66.4924837,40.9274944 72.5075366,40.9274944 76,37 C79.9274948,33.5075389 79.9274948,27.4924611 76,24 C72.5075366,20.0725056 66.4924837,20.0725056 63,24 L63,24 Z" id="Apsis-Logo" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

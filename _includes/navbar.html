@@ -1,7 +1,11 @@
 <header id="header" class="navbar">
     <div class="navbar__header">
-        <a href="{{ site.baseurl }}/" class="logo logo--navbar">
+        <a href="{{ site.baseurl }}/" class="logo logo--navbar logo--desktop">
             {% img apsis.svg alt:{{site.name}} class:"logo__image" %}
+        </a>
+
+        <a href="{{ site.baseurl }}/" class="logo logo--navbar logo--mobile">
+            {% img apsis_mobile.svg alt:{{site.name}} class:"logo__image" %}
         </a>
 
         <button id="nav-toggle" class="navbar__nav-toggle">

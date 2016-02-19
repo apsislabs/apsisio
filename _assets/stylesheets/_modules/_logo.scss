@@ -5,11 +5,27 @@
 
     &--navbar {
         float: left;
-        @include padding(4px null);
         margin-right: $padding-base;
+        padding: $padding-base / 2;
 
         .logo__image {
-            max-height: $header-height - $padding-base - 8px;
+            max-height: $header-height - $padding-base;
+        }
+    }
+
+    &--desktop {
+        display: none;
+
+        @include media($desktop) {
+            display: block;
+        }
+    }
+
+    &--mobile {
+        display: block;
+
+        @include media($desktop) {
+            display: none;
         }
     }
 }

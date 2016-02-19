@@ -1,6 +1,6 @@
 .navbar {
     @include position(absolute, 0 0 null);
-    background-color: transparentize(white, 0.9);
+    background-color: transparentize(gray, 0.9);
     z-index: 9999;
 
     min-width: $screen-min-width;
@@ -29,6 +29,12 @@
 
     &__nav-toggle {
         touch-action: manipulation;
+        @include size($header-height);
+        @include padding(($header-height - $nav-icon-size) / 2);
+        border: 0;
+        background: transparent;
+        outline: 0;
+        float: right;
     }
 
     &__nav-link {
@@ -51,24 +57,27 @@
         @include delay-each(5, 150ms);
     }
 
-    &__nav-toggle {
-        float: right;
-        padding: 8px;
-        border: 0;
-        background: transparent;
-        outline: 0;
-    }
-
     //= Media Queries
 
     @include media($desktop) {
         &__header {
+            position: static;
+            float: left;
         }
 
         &__nav {
+            margin: ($header-height - $grid-unit-base) / 2;
+            height: $grid-unit-base;
+            position: static;
+            float: right;
+            padding: 0;
         }
 
         &__nav-link {
+            @include margin(0 0 0 $grid-unit-base);
+            @include transform(none);
+            display: inline-block;
+            opacity: 1;
         }
 
         &__nav-toggle {

@@ -57,7 +57,27 @@
         @include delay-each(5, 150ms);
     }
 
-    //= Media Queries
+    //== Variants
+    //
+
+    &--open {
+        @include transition(
+            background .35s ease-in,
+            height .35s ease-in 200ms
+        );
+
+        background-color: white;
+        height: 100%;
+
+        .navbar__nav-link {
+            @include transform(translateY(0));
+            @include transform(scale(1));
+            opacity: 1;
+        }
+    }
+
+    //== Media Queries
+    //
 
     @include media($desktop) {
         &__header {
@@ -82,24 +102,6 @@
 
         &__nav-toggle {
             display: none;
-        }
-    }
-
-
-    // Variants
-
-    &--open {
-        @include transition(
-            background .35s ease-in,
-            height .35s ease-in 200ms
-        );
-        background-color: white;
-        height: 100%;
-
-        .navbar__nav-link {
-            @include transform(translateY(0));
-            @include transform(scale(1));
-            opacity: 1;
         }
     }
 }

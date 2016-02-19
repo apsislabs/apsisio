@@ -1,16 +1,16 @@
 ---
 -
     label: Services
-    url: "/#services"
+    url: "#services"
 -
     label: About
-    url: "/#about"
+    url: "#about"
 -
     label: Clients
-    url: "/#clients"
+    url: "#clients"
 -
     label: Contact
-    url: "/#contact"
+    url: "#contact"
 -
     label: Blog
     url: /blog

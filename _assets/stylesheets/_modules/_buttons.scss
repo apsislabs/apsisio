@@ -1,38 +1,40 @@
-.button {
+.btn {
     display: inline-block;
     margin-bottom: 0;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
     background-image: none;
-    border: 1px solid $button-color;
     white-space: nowrap;
     border-radius: 999em;
-    color: $button-color;
     text-decoration: none;
+    text-transform: lowercase;
     text-rendering: optimizeLegibility;
 
-    @include padding($padding-sm $padding-base);
+    @include button-variant($button-color);
+    @include padding($padding-xs $padding-sm);
     @include transition(all .15s ease-in-out);
     @include user-select(none);
-
-    &:hover,
-    &:focus,
-    &.focus {
-        border-color: darken($button-color, 10%);
-        color: darken($button-color, 10%);
-    }
-
-    &:active,
-    &.active,
-    &:focus {
-        outline: 0;
-    }
 
     &.disabled,
     &[disabled],
     fieldset[disabled] & {
         pointer-events: none;
         opacity: .65;
+    }
+
+    //== Variants
+    //
+
+    &--large {
+        @include padding($padding-sm $padding-base);
+    }
+
+    &--white {
+        @include button-variant(white);
+    }
+
+    &--primary {
+        @include button-variant($apsis-blue);
     }
 }

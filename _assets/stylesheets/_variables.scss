@@ -50,6 +50,7 @@ $grid-unit-base: floor(($font-size-base * $line-height-base));
 $padding-base: $grid-unit-base;
 $padding-sm: $padding-base / 2;
 $padding-lg: $padding-base * 2;
+$padding-xs: $padding-sm / 2;
 
 //== Media Queries
 //

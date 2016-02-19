@@ -11,7 +11,7 @@
         @include transition(transform .15s 0s ease-in-out, top .15s .15s ease-in-out);
 
         transform-origin: 50% 50%;
-        background: black;
+        background: $apsis-dark;
         display: block;
         width: 100%;
         content: '';

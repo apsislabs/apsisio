@@ -1,6 +1,6 @@
 .navbar {
     @include position(absolute, 0 0 null);
-    background-color: transparentize(gray, 0.9);
+    background-color: transparentize(white, 0.9);
     z-index: 9999;
 
     min-width: $screen-min-width;

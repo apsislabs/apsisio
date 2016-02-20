@@ -7,7 +7,7 @@ title: Blog
     {% for post in paginator.posts %}
         <div class="post">
             {{ post.excerpt }}
-            <a href="{{ post.url }}">read more &raquo;</a>
+            <a href="{{ site.baseurl }}/{{ post.url }}">read more &raquo;</a>
         </div>
     {% endfor %}
 

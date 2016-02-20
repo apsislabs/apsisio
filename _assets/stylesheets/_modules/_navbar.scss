@@ -4,7 +4,7 @@
     z-index: 9999;
 
     min-width: $screen-min-width;
-    height: $header-height;
+    height: $navbar-height;
     overflow: hidden;
 
     @include transition(
@@ -15,12 +15,12 @@
 
     &__header {
         @include position(absolute, 0 0 null);
-        height: $header-height;
+        height: $navbar-height;
         z-index: 3;
     }
 
     &__nav {
-        @include position(absolute, $header-height 0 0);
+        @include position(absolute, $navbar-height 0 0);
         @include padding($padding-base);
         overflow-y: auto;
         overflow: hidden;
@@ -29,8 +29,8 @@
 
     &__nav-toggle {
         touch-action: manipulation;
-        @include size($header-height);
-        @include padding(($header-height - $nav-icon-size) / 2);
+        @include size($navbar-height);
+        @include padding(($navbar-height - $nav-icon-size) / 2);
         border: 0;
         background: transparent;
         outline: 0;
@@ -97,7 +97,7 @@
         }
 
         &__nav {
-            margin: ($header-height - $grid-unit-base) / 2;
+            margin: ($navbar-height - $grid-unit-base) / 2;
             height: $grid-unit-base;
             position: static;
             float: right;

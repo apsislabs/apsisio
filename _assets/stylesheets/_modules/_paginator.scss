@@ -1,0 +1,45 @@
+.paginator {
+    @include margin($grid-unit-base auto);
+    text-transform: lowercase;
+    text-align: center;
+    width: auto;
+    font-size: .85em;
+    @include user-select(none);
+
+    &__link {
+        display: inline-block;
+        padding: $padding-xs $padding-sm;
+        text-decoration: none;
+        color: $gray-lighter;
+        z-index: 1;
+
+        &:first-child {
+            border: 1px solid $gray-lighter;
+            @include border-left-radius(5px);
+        }
+
+        &:last-child {
+            border: 1px solid $gray-lighter;
+            @include border-right-radius(5px);
+        }
+
+        &:hover {
+            color: $apsis-blue;
+            border-color: $apsis-blue;
+        }
+
+        &--disabled {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+
+    &__count {
+        display: inline-block;
+        padding: $padding-xs $padding-sm;
+        border-top: 1px solid $gray-lighter;
+        border-bottom: 1px solid $gray-lighter;
+
+        @include margin(null -4px);
+    }
+}

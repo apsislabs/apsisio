@@ -20,8 +20,13 @@ body {
     overflow-x: hidden;
     border-top: 3px solid $apsis-blue;
     background-color: white;
+    padding-top: $navbar-height + $grid-unit-base;
 
     &.nav-open {
         overflow: hidden;
+    }
+
+    &.homepage {
+        padding-top: 0;
     }
 }

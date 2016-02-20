@@ -13,7 +13,13 @@
 
     @include button-variant($button-color);
     @include padding($padding-xs $padding-sm);
-    @include transition(all .15s ease-in-out);
+
+    @include transition(
+        background .15s,
+        box-shadow .01s,
+        color .15s
+    );
+
     @include user-select(none);
 
     &.disabled,
@@ -37,6 +43,10 @@
     &--hero {
         @include button-variant(white);
         background: transparentize(white, .75);
+
+        &:hover {
+            background: transparentize(white, .65);
+        }
     }
 
     &--primary {

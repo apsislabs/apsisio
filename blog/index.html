@@ -5,10 +5,21 @@ title: Blog
 
 <div class="container">
     {% for post in paginator.posts %}
-        <div class="post">
+        {% assign post_link = site.baseurl | append:post.url  %}
+
+        <article class="post">
+            <header>
+                <h2>
+                    <a href="{{ post_link }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+            </header>
+
             {{ post.excerpt }}
-            <a href="{{ site.baseurl }}{{ post.url }}">read more &raquo;</a>
-        </div>
+
+            <p><a href="{{ post_link }}">read more &raquo;</a></p>
+        </article>
     {% endfor %}
 
     {% include paginator.html %}

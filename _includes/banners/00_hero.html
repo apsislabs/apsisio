@@ -1,19 +1,25 @@
+{% assign banner = site.data.banners.hero %}
+
 <section id="hero" class="banner banner--hero">
     <div class="container animated--bounce-in">
         <header class="banner__header">
-            <h1>You're busy, we can help.</h1>
+            <h1>{{ banner.headline | smartify }}</h1>
         </header>
 
         <div class="banner__copy">
-            <p>We believe the right software isn't just innovative: it's inspiring. We craft simple solutions to help drive efficiency and save you time. Sound interesting?</p>
-            
-            <a href="#contact" class="btn btn-default">let's build something</a>
-        </div>
+            {{ banner.copy | markdownify }}
 
-        <div class="banner__next">
-            <a href="#services" class="banner__next-link">
-                About Us
+            <br>
+
+            <a href="#contact" class="btn btn--hero btn--large">
+                {{ banner.button_text }}
             </a>
         </div>
+    </div>
+
+    <div class="banner__next">
+        <a href="#services" class="banner__next-link">
+            {{ banner.next_link }}
+        </a>
     </div>
 </section>

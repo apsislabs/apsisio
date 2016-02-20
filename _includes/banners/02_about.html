@@ -1,8 +1,8 @@
-{% assign banner = site.data.banners.services %}
+{% assign banner = site.data.banners.about %}
 <section id="about" class="banner banner--gray">
     <div class="container">
         <header class="banner__header">
-            <h2>{{ banner.headline }}</h2>
+            <h2>{{ banner.headline | smartify }}</h2>
         </header>
 
         <div class="banner__copy">

@@ -1,10 +1,10 @@
-<header id="navbar" class="navbar">
+<header id="navbar" class="navbar {{ page.navbar_class }}">
     <div class="navbar__header">
-        <a href="{{ site.baseurl }}/" class="logo logo--navbar logo--desktop">
+        <a href="{{ site.baseurl }}/" class="logo logo--navbar logo--desktop navbar__logo">
             {% img apsis.svg alt:{{site.name}} class:"logo__image" %}
         </a>
 
-        <a href="{{ site.baseurl }}/" class="logo logo--navbar logo--mobile">
+        <a href="{{ site.baseurl }}/" class="logo logo--navbar logo--mobile navbar__logo">
             {% img apsis_mobile.svg alt:{{site.name}} class:"logo__image" %}
         </a>
 

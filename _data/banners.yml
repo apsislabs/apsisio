@@ -1,3 +1,12 @@
+hero:
+    headline: You're busy; we can help.
+    copy: >
+        We believe the right software isn't just innovative: it's
+        inspiring. We craft simple solutions to help drive efficiency
+        and save you time. Sound interesting?
+    button_text: Let's build something
+    next_link: About Us
+
 services:
     headline: What we do
     copy: >

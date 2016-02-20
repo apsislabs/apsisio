@@ -11,6 +11,16 @@ A few years out of undergrad, I was finally getting comfortable with life in the
 
 I've exaggerated the spontaneity of the thing in pursuit of comedy, of course. At that point, I'd already made up my mind to accept the position. I'd plateaued at my current job, without much hope of meaningful advancement despite a great boss and supportive team. My girlfriend was nearing the end of her graduate program, so a potential long-distance move was in our future. I was tired of driving a hundred miles a day to work fifty hours a week, and I agreed philosophically with what these guys were trying to do. So, I gave my notice, bought a nice big desk for my home office, and started work at Apsis Labs.
 
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
+
 ### Onboarding
 
 Being the first employee at a startup is a funny experience. I flew out to Seattle for about a week in early February of 2015, to get a feel for the day-to-day business of the company, get a development machine set up in person, and work through some small tasks to get acquainted with the code bases and tech stacks. But before we could do any of that, we had to run out and buy an office chair so I'd have someplace to sit. The next day, we mounted a nice, big whiteboard. It was actually a great experience that gave me a lot of confidence in the sort of transparency and efficacy I could expect from Wyatt and Noah as founders.

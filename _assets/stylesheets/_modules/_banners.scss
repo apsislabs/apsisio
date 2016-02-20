@@ -11,17 +11,28 @@
         margin-top: 0;
         text-align: center;
 
-        h1 {
-            @extend .h1;
-            font-size: modular-scale(3);
-            line-height: 1.15;
+        h1, h2, h3 {
+            font-family: $font-family-serif;
             text-transform: lowercase;
+            letter-spacing: 0;
+            font-size: modular-scale(3);
+            font-weight: 300;
+            line-height: 1.15;
         }
     }
 
     &__copy {
-        @extend .typography;
         text-align: center;
+
+        h1, h2, h3 {
+            font-family: $font-family-serif;
+            text-transform: lowercase;
+            font-weight: 400;
+        }
+
+        hr {
+            @extend .hr;
+        }
     }
 
     &__next {
@@ -34,7 +45,7 @@
     }
 
     &__next-link {
-        @extend .link--underline;
+        @include underline-link($link-color, $link-hover-color, $link-active-color);
         text-transform: lowercase;
     }
 
@@ -42,28 +53,25 @@
     //
 
     &--hero {
+        height: 100vh;
+        color: white;
+
         @include padding(null $padding-base);
+        @include cover(asset_path("homepage/banners/shuttle.jpg"));
+        @include overlay($apsis-gray, .5, 0);
 
-        .banner__header {
-            margin-top: 0;
+        .container {
+            position: relative;
+            z-index: 1;
+        }
 
-            h1 {
-                @extend .h1;
-                font-size: modular-scale(3);
-                line-height: 1.15;
-            }
+        .banner__copy {
+            font-size: 1.15em;
+            font-weight: 300;
+        }
 
-            @include media($tablet) {
-                h1 {
-                    font-size: modular-scale(4);
-                }
-            }
-
-            @include media($desktop) {
-                h1 {
-                    font-size: modular-scale(5);
-                }
-            }
+        .banner__next-link {
+            @include underline-link(white, white, white);
         }
     }
 

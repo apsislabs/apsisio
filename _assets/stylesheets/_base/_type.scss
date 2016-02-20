@@ -2,7 +2,7 @@
 //
 
 body {
-    @include font-feature-settings("liga");
+    @include font-feature-settings("liga", "pnum");
     color: $text-color;
     font-size: $font-size-base;
     font-family: $font-family-sans;
@@ -46,6 +46,13 @@ body {
     &.sans {
         font-family: $font-family-sans;
     }
+}
+
+.hr {
+    width: 20%;
+    margin: 2em auto;
+    border: 0;
+    border-top: 1px solid $gray-lighter;
 }
 
 .typography {

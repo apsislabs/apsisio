@@ -42,7 +42,7 @@
         display: block;
         text-transform: lowercase;
         margin-bottom: $padding-sm;
-        @extend .link--underline;
+        @include underline-link($link-color, $link-hover-color, $link-active-color);
 
         // Intro Animation
         @include transform(translateY(50px));
@@ -73,6 +73,18 @@
             @include transform(translateY(0));
             @include transform(scale(1));
             opacity: 1;
+        }
+    }
+
+    &--white {
+        .navbar__logo {
+            .logo__image {
+                filter: grayscale(1) brightness(100);    
+            }
+        }
+
+        .navbar__nav-link {
+            @include underline-link(white, white, white);
         }
     }
 

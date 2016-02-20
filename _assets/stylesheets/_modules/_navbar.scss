@@ -1,6 +1,6 @@
 .navbar {
     @include position(absolute, 0 0 null);
-    background-color: transparentize(white, 0.9);
+    background-color: transparent;
     z-index: 9999;
 
     min-width: $screen-min-width;
@@ -42,23 +42,34 @@
         display: block;
         text-transform: lowercase;
         margin-bottom: $padding-sm;
-        @include underline-link($link-color, $link-hover-color, $link-active-color);
-
-        // Intro Animation
-        @include transform(translateY(50px));
-        @include transform(scale(0.75));
         opacity: 0;
 
-        @include transition(
-            opacity 350ms ease-out,
-            transform 350ms ease-out
-        );
+        @include underline-link($link-color, $link-hover-color, $link-active-color);
+        @include transform(translateY(50px));
+        @include transform(scale(0.75));
 
-        @include delay-each(5, 150ms);
+        @extend .navlink-intro;
     }
 
     //== Variants
     //
+
+    &--white {
+        .navbar__logo {
+            .logo__image {
+                filter: grayscale(1) brightness(100);
+            }
+        }
+
+        .navbar__nav-link {
+            @include underline-link(white, white, white);
+            @extend .navlink-intro;
+        }
+
+        &.navbar--open {
+            background-color: $apsis-dark;
+        }
+    }
 
     &--open {
         @include transition(
@@ -73,18 +84,6 @@
             @include transform(translateY(0));
             @include transform(scale(1));
             opacity: 1;
-        }
-    }
-
-    &--white {
-        .navbar__logo {
-            .logo__image {
-                filter: grayscale(1) brightness(100);    
-            }
-        }
-
-        .navbar__nav-link {
-            @include underline-link(white, white, white);
         }
     }
 
@@ -116,4 +115,16 @@
             display: none;
         }
     }
+}
+
+// Intro Animation
+//
+
+.navlink-intro {
+    @include transition(
+        opacity 350ms ease-out,
+        transform 350ms ease-out
+    );
+
+    @include delay-each(5, 150ms);
 }

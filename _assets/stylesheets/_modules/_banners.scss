@@ -4,8 +4,14 @@
     @include justify-content(center);
     @include box-pack(center);
     @include box-align(center);
-
     @include padding(12em $padding-base);
+
+    position: relative;
+
+    > .container {
+        position: relative;
+        z-index: 1;
+    }
 
     &__header {
         margin-top: 0;
@@ -33,6 +39,10 @@
         hr {
             @extend .hr;
         }
+
+        p > a:not(.btn) {
+            @include underline-link($link-color, $link-hover-color, $link-active-color);
+        }
     }
 
     &__next {
@@ -47,38 +57,5 @@
     &__next-link {
         @include underline-link($link-color, $link-hover-color, $link-active-color);
         text-transform: lowercase;
-    }
-
-    // Hero Banner
-    //
-
-    &--hero {
-        height: 100vh;
-        color: white;
-
-        @include padding(null $padding-base);
-        @include cover(asset_path("homepage/banners/shuttle.jpg"));
-        @include overlay($apsis-gray, .5, 0);
-
-        .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .banner__copy {
-            font-size: 1.15em;
-            font-weight: 300;
-        }
-
-        .banner__next-link {
-            @include underline-link(white, white, white);
-        }
-    }
-
-    // Gray
-    //
-
-    &--gray {
-        background-color: #F0F0F0;
     }
 }

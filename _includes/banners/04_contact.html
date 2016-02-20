@@ -1,16 +1,16 @@
 {% assign banner = site.data.banners.contact %}
-<section id="contact" class="banner">
+<section id="contact" class="banner banner--contact">
     <div class="container">
         <header class="banner__header">
             <h2>{{ banner.headline | smartify }}</h2>
         </header>
 
         <div class="banner__copy">
-            <a href="mailto:contact@apsis.io" class="btn btn--primary">
-                Contact Us
+            <a href="mailto:contact@apsis.io" class="btn btn--hero btn--large">
+                {{ banner.button_text }}
             </a>
 
-            <small>{{ banner.copy | markdownify }}</small>
+            <p>{{ banner.copy | markdownify }}</p>
         </div>
     </div>
 </section>

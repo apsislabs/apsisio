@@ -1,0 +1,17 @@
+.banner--hero {
+    height: 100vh;
+    color: white;
+
+    @include padding(null $padding-base);
+    @include cover(asset_path("homepage/banners/shuttle.jpg"));
+    @include overlay($apsis-gray, .5, 0);
+
+    .banner__copy {
+        font-size: 1.15em;
+        font-weight: 300;
+    }
+
+    .banner__next-link {
+        @include underline-link(white, white, white);
+    }
+}

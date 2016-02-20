@@ -36,12 +36,13 @@
 //== Layouts
 
 @import "_layouts/grid",
-        "_layouts/home",
         "_layouts/post";
 
 //== Modules
 
 @import "_modules/banners",
+        "_modules/banners/hero",
+        "_modules/banners/contact",
         "_modules/buttons",
         "_modules/logo",
         "_modules/navicon",

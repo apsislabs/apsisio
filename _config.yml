@@ -8,7 +8,7 @@ description: >
 
 permalink: /blog/:year/:month/:day/:title
 paginate_path: "/blog/:num/"
-paginate: 10
+paginate: 5
 gems: [jekyll-paginate]
 
 # Assets settings

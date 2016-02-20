@@ -2,6 +2,7 @@
     @include inline-list();
 
     &__link {
+        text-transform: lowercase;
         text-decoration: none;
         @include underline-link($link-color, $link-hover-color, $link-active-color);
 

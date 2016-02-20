@@ -3,7 +3,7 @@
     color: white;
 
     @include cover(asset_path("homepage/banners/seattle.png"));
-    @include overlay($apsis-gray, .5, 0);
+    @include overlay($apsis-dark, .8, 0);
 
     .banner__copy {
         p > a:not(.btn) {

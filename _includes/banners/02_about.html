@@ -1,5 +1,5 @@
 {% assign banner = site.data.banners.about %}
-<section id="about" class="banner banner--gray">
+<section id="about" class="banner banner--about">
     <div class="container">
         <header class="banner__header">
             <h2>{{ banner.headline | smartify }}</h2>
@@ -7,7 +7,7 @@
 
         <div class="banner__copy">
             {{ banner.copy | markdownify }}
-
+            <br>
             <ul class="link-list">
                 <li class="link-list__item">
                     <a class="link-list__link" href="{% post_url 2015-04-23-work-sustainably %}">

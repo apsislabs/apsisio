@@ -59,4 +59,16 @@
         @include underline-link($link-color, $link-hover-color, $link-active-color);
         text-transform: lowercase;
     }
+
+    @include media($mobile) {
+        background-attachment: scroll;
+    }
+
+    @include media($tablet) {
+        background-attachment: scroll;
+    }
+
+    @include media($desktop) {
+        background-attachment: fixed !important;
+    }
 }

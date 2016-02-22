@@ -1,4 +1,4 @@
-@mixin cover($url, $horizontal: center, $vertical: center, $repeat: no-repeat, $attachment: fixed) {
-    background: url($url) $repeat $horizontal $vertical $attachment;
+@mixin cover($url, $horizontal: center, $vertical: center, $repeat: no-repeat) {
+    background: url($url) $repeat $horizontal $vertical;
     background-size: cover;
 }

@@ -2,7 +2,7 @@
     background-color: $apsis-blue;
     color: white;
 
-    @include cover(asset_path("homepage/banners/seattle.png"));
+    @include cover(asset_path("homepage/banners/seattle.jpg"));
     @include overlay($apsis-dark, .8, 0);
 
     .banner__copy {

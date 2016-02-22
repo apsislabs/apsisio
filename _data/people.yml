@@ -1,6 +1,6 @@
 wyatt:
     name: "Wyatt Kirby"
-    image: "/assets/img/authors/wyatt.jpg"
+    image: "people/wyatt.jpg"
     bio: >
         Co-founder and Creative Director at Apsis Labs,
         Wyatt is your typical English-major turned front-end
@@ -9,7 +9,7 @@ wyatt:
 
 noah:
     name: "Noah Callaway"
-    image: "/assets/img/authors/noah.jpg"
+    image: "people/noah.jpg"
     bio: >
         Noah is a founding partner of Apsis Labs and the kind
         of crazy person who likes digging through a brand new
@@ -20,7 +20,7 @@ noah:
 
 henry:
     name: "Henry Keiter"
-    image: "/assets/img/authors/henry.jpg"
+    image: "people/henry.jpg"
     bio: >
         Henry is an eldritch horror, bound to an interdimensional
         coding machine until his blood debt is repaid in full.
@@ -29,7 +29,7 @@ henry:
 
 eric:
     name: "Eric Greer"
-    image: "/assets/img/authors/eric.jpg"
+    image: "people/eric.jpg"
     bio: >
         Eric is generalist software developer who can crawl through
         SQL optimizations, or match a front-end to a design document.

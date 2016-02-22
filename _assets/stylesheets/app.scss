@@ -29,6 +29,7 @@
         "_base/global",
         "_base/layout",
         "_base/links",
+        "_base/images",
         "_base/animated",
         "_base/type",
         "_base/syntax";
@@ -40,7 +41,8 @@
 
 //== Modules
 
-@import "_modules/banners",
+@import "_modules/author_block",
+        "_modules/banners",
         "_modules/banners/hero",
         "_modules/banners/about",
         "_modules/banners/contact",

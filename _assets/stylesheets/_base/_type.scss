@@ -6,8 +6,11 @@ body {
     color: $text-color;
     font-size: $font-size-base;
     font-family: $font-family-sans;
-    font-weight: 300;
     line-height: $line-height-base;
+
+    @include hidpi(1.5) {
+        font-weight: 300;
+    }
 }
 
 .block-margins {

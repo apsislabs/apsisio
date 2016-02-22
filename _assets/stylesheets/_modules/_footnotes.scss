@@ -1,8 +1,15 @@
 .footnotes {
-    font-size: .9em;
+    font-size: .75em;
 
     ol {
         padding: 0;
+        li {
+            color: $gray-lighter;
+
+            p {
+                color: $text-color;
+            }
+        }
     }
 
     .reversefootnote {

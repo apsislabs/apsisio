@@ -2,7 +2,7 @@
 http://ethanschoonover.com/solarized
 */
 
-$background: #fefefe;
+$background: lighten(#FDF7E7, 3%);
 $text      : #586e75;
 $comments  : #93a1a1;
 $constants : #cb4b16;
@@ -10,21 +10,35 @@ $keywords  : #dc322f;
 $reserved  : #268bd2;
 $strings   : #2aa198;
 $operators : #859900;
+$scrollbar : #F0EBDA;
 
 .highlight {
     margin: 1em 0;
 }
 
 .highlight {
-    > pre {
-        padding: $padding-base;
-        border: 1px solid transparent;
-        background-color: $background;
-        @include border-color(darken($background, 10%) null);
+    // Offset Strategy
+    @include margin($padding-base -9999px);
+    @include padding(null 9999px);
+    border: 1px solid transparent;
+    background-color: $background;
+    @include border-color($scrollbar null);
 
-        // Offset Strategy
-        @include margin(null -9999px);
-        @include padding(null 9999px);
+    > pre {
+        margin:0;
+        padding: $padding-base;
+        margin: 0 -1 * $padding-base;
+
+        &::-webkit-scrollbar {
+            @include size(7px);
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $scrollbar;
+            border-radius: 4px;
+            box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+        }
     }
 
     pre, code, kbd, samp {

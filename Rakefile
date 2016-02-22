@@ -15,7 +15,7 @@ namespace :site do
 
   desc "Clean up generated files"
   task :clean do
-    system "rm -rf _site"
+    system "jekyll clean"
   end
 
   desc "Generate and publish blog to gh-pages"

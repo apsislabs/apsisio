@@ -1,7 +1,7 @@
 ---
 layout: post
 author: noah
-image: '/assets/img/posts/jack-straw-office.jpg'
+image: 'posts/jack-straw-office.jpg'
 ---
 
 When we started Apsis Labs we never found it necessary to separate our values as founders from the values of the company. We did what felt right, and the company was an extension of ourselves. Its values were our values, and that worked for us. In our first year we tackled the usual early-stage problems: find clients, make them happy, get repeat customers, and build a reputation.

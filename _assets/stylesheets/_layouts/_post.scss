@@ -1,12 +1,33 @@
-.post {
+.post-wrapper {
     @include padding(null $padding-base);
+}
+
+.post {
+    margin-bottom: $padding-lg;
+
+    &__title {
+        > a {
+            @include underline-link($apsis-dark, $link-hover-color, $link-active-color);
+        }
+    }
 
     &__header,
     &__content {
         @extend .typography;
     }
 
-    @include media($mobile) {
-        @include padding(null $padding-sm);
+    &__image-wrapper {
+        @include margin(null -1 * $padding-base);
+        max-height: 320px;
+        overflow: hidden;
+    }
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
     }
 }

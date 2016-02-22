@@ -21,7 +21,7 @@
 
     &__nav {
         @include position(absolute, $navbar-height 0 0);
-        @include padding($padding-base);
+        @include padding($padding-sm);
         overflow-y: auto;
         overflow: hidden;
         z-index: 2;

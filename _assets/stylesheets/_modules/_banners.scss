@@ -38,6 +38,7 @@
 
         hr {
             @extend .hr;
+            @include margin(null auto);
         }
 
         p > a:not(.btn) {

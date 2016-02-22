@@ -3,25 +3,27 @@ layout: default
 title: Blog
 ---
 
-<div class="container">
-    {% for post in paginator.posts %}
-        {% assign post_link = site.baseurl | append:post.url  %}
+<section class="post-wrapper post-wrapper--list">
+    <div class="container">
+        {% for post in paginator.posts %}
+            {% assign post_link = site.baseurl | append:post.url  %}
 
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-            {% include posts/post_header.html %}
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                {% include posts/post_header.html %}
 
-            <div class="post__content" itemprop="articleBody">
-                {{ post.excerpt }}
+                <div class="post__content" itemprop="articleBody">
+                    {{ post.excerpt }}
 
-                <p>
-                    <a href="{{ post_link }}">Read More &raquo;</a>
-                </p>
-            </div>
+                    <p>
+                        <a href="{{ post_link }}">Read More &raquo;</a>
+                    </p>
+                </div>
 
 
-            {% include posts/post_footer.html %}
-        </article>
-    {% endfor %}
+                {% include posts/post_footer.html %}
+            </article>
+        {% endfor %}
 
-    {% include paginator.html %}
-</div>
+        {% include paginator.html %}
+    </div>
+</section>

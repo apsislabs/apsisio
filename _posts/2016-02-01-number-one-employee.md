@@ -2,7 +2,7 @@
 layout: post
 author: henry
 title: Number One Employee
-image: '/assets/img/posts/pikes-peak.jpg'
+image: 'posts/pikes-peak.jpg'
 ---
 
 A few years out of undergrad, I was finally getting comfortable with life in the Real World. I had a decent apartment, a good job, and a long commute. I had a budget spreadsheet with lots of black numbers, business cards with my name on them, and student loan payments above the minimum. Every so often, chatting about jobs, life, or esports, someone would joke about taking me away from all that.

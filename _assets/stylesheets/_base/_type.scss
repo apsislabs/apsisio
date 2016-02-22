@@ -51,7 +51,7 @@ body {
 
 .hr {
     width: 20%;
-    margin: 2em auto;
+    margin: 2em 0;
     border: 0;
     border-top: 1px solid $gray-lighter;
 }
@@ -93,6 +93,10 @@ body {
         ol {
             @include margin(0 null);
         }
+    }
+
+    hr {
+        @extend .hr;
     }
 
     //== Fixed Elements

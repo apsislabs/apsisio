@@ -6,14 +6,14 @@
     };
 
     $.oembed.config = {
-      width: 420,
-      height: 345
+      width: 1280,
+      height: 720
     };
 
     // URLs to JSONP apis.
     $.oembed.apis = {
         youtube: "https://gdata.youtube.com/feeds/api/videos/#tag#?v=2&alt=json-in-script&callback=?",
-        vimeo: "https://vimeo.com/api/oembed.jsonp?url=#tag#&callback=?",
+        vimeo: "https://vimeo.com/api/oembed.json?url=#tag#&callback=?",
         dailyMotion: "https://www.dailymotion.com/api/oembed?url=#tag#&callback=?",
         twitter: "https://api.twitter.com/1/statuses/oembed.json?url=#tag#&callback=?"
     };
@@ -21,14 +21,14 @@
     // URLs to match in links.
     $.oembed.schemes = {
         youtube: [
-            "https?:\/\/www\.youtube\\.com/watch.+v=[\\w-]+&?",
-            "https?:\/\/www\.youtu\\.be/[\\w-]+",
-            "https?:\/\/www\.youtube.com/embed"],
+            "https?:\/\/(www\.)?youtube\\.com/watch.+v=[\\w-]+&?",
+            "https?:\/\/(www\.)?youtu\\.be/[\\w-]+",
+            "https?:\/\/(www\.)?youtube.com/embed"],
         vimeo: [
-            "https?:\/\/www\.vimeo\.com\/groups\/.*\/videos\/.*",
-            "https?:\/\/www\.vimeo\.com\/.*",
-            "https?:\/\/www\.vimeo\.com\/groups\/.*\/videos\/.*",
-            "https?:\/\/www\.vimeo\.com\/.*"],
+            "https?:\/\/(www\.)?vimeo\.com\/groups\/.*\/videos\/.*",
+            "https?:\/\/(www\.)?vimeo\.com\/.*",
+            "https?:\/\/(www\.)?vimeo\.com\/groups\/.*\/videos\/.*",
+            "https?:\/\/(www\.)?vimeo\.com\/.*"],
         dailyMotion: ["https?:\/\/www\.dailymotion\\.com/.+"],
         twitter: ["https?:\/\/twitter.com/.+"]
     };
@@ -41,8 +41,7 @@
 
     // Templates to build HTML from a tag (URL/ID),
     $.oembed.templates = {
-        youtube: "<iframe src=\"https://www.youtube.com/embed/#tag#\"" +
-                 "width=\"#width#\" height=\"#height#\"></embed>"
+        youtube: "<iframe src=\"https://www.youtube.com/embed/#tag#\" allowfullscreen width=\"#width#\" height=\"#height#\"></embed>"
     };
 
     // Get HTML either by building an HTML template with
@@ -53,10 +52,13 @@
         node.replaceWith(template.replace("#tag#", tag)
         .replace("#width#", this.config.width)
         .replace("#height#", this.config.height));
+
+        $(document).trigger('oembed.replace');
       } else {
         var url = this.apis[provider].replace('#tag#', tag);
         $.getJSON(url, null, function (data) {
             node.replaceWith(data.html);
+            $(document).trigger('oembed.replace');
         });
       }
     };

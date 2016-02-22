@@ -3,21 +3,19 @@
     {% include head.html %}
 
     <body class="{{ page.body_class }}">
-        <div id="wrapper">
-            <!-- !START navbar -->
-            {% include navbar.html %}
-            <!-- !END navbar -->
+        <!-- !START navbar -->
+        {% include components/navbar.html %}
+        <!-- !END navbar -->
 
-            <!-- !START content -->
-            <div id="content">
-                {{ content }}
-            </div>
-            <!-- !END content -->
-
-            <!-- !START footer -->
-            {% include footer.html %}
-            <!-- !END footer -->
+        <!-- !START content -->
+        <div id="content">
+            {{ content }}
         </div>
+        <!-- !END content -->
+
+        <!-- !START footer -->
+        {% include footer.html %}
+        <!-- !END footer -->
 
         <!-- !START javascript includes -->
         {% javascript vendor %}

@@ -1,7 +1,12 @@
 .post {
-    padding: $padding-base;
+    @include padding(null $padding-base);
 
+    &__header,
     &__content {
         @extend .typography;
+    }
+
+    @include media($mobile) {
+        @include padding(null $padding-sm);
     }
 }

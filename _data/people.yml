@@ -1,0 +1,43 @@
+wyatt:
+    name: "Wyatt Kirby"
+    image: "/assets/img/authors/wyatt.jpg"
+    bio: >
+        Co-founder and Creative Director at Apsis Labs,
+        Wyatt is your typical English-major turned front-end
+        guy turned back-end guy. He hates Javascript, but
+        writes it anyway.
+
+noah:
+    name: "Noah Callaway"
+    image: "/assets/img/authors/noah.jpg"
+    bio: >
+        Noah is a founding partner of Apsis Labs and the kind
+        of crazy person who likes digging through a brand new
+        code-base. When he's not doing software development
+        things, he can be found trying to get better at making
+        things up (improv) and playing sports (football and
+        rugby).
+
+henry:
+    name: "Henry Keiter"
+    image: "/assets/img/authors/henry.jpg"
+    bio: >
+        Henry is an eldritch horror, bound to an interdimensional
+        coding machine until his blood debt is repaid in full.
+        His original job title was Spider Wrangler, but he requested
+        a transfer after the first day. It was not granted.
+
+eric:
+    name: "Eric Greer"
+    image: "/assets/img/authors/eric.jpg"
+    bio: >
+        Eric is generalist software developer who can crawl through
+        SQL optimizations, or match a front-end to a design document.
+        In his off time from Apsis he is working on running his own
+        company.
+
+niall:
+    name: "Niall Wingham"
+    image:
+    bio: >
+        Niall is Canadian.

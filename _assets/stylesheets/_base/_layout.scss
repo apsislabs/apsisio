@@ -34,3 +34,7 @@ body {
         padding-top: $navbar-height + $grid-unit-base;
     }
 }
+
+#content {
+    overflow-x: hidden;
+}

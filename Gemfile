@@ -6,6 +6,7 @@ gem "jekyll-assets", "~> 2.0"
 gem 'jekyll-compose', group: [:jekyll_plugins]
 gem "rake"
 
+gem "redcarpet"
 gem "sprockets-es6"
 gem "autoprefixer-rails"
 gem "therubyracer"

@@ -56,6 +56,7 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    redcarpet (3.3.4)
     ref (2.0.0)
     rouge (1.10.1)
     safe_yaml (1.0.4)
@@ -90,6 +91,7 @@ DEPENDENCIES
   jekyll-paginate
   neat
   rake
+  redcarpet
   sprockets-es6
   therubyracer
   uglifier

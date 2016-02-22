@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 3.0"
 gem "jekyll-paginate"
 gem "jekyll-assets", "~> 2.0"
-gem "jekyll-compose"
+gem 'jekyll-compose', group: [:jekyll_plugins]
 gem "rake"
 
 gem "sprockets-es6"

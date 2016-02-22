@@ -99,6 +99,19 @@ body {
         @extend .hr;
     }
 
+    sup {
+        @include margin(null 1ex);
+        font-weight: normal;
+
+        a {
+            @extend .link--underline;
+        }
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
     //== Fixed Elements
     //
 

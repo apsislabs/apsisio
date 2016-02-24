@@ -4,7 +4,10 @@ title: Development Chop Shop
 email: contact@apsis.io
 
 description: >
-  Tomato sauce is the lifeblood of the internet.
+  The Apsis Labs team offers a broad range of software development
+  and design services. With experience in everything from web-based
+  enterprise solutions to 3D games development, we provide years of
+  practical experience in full-stack development of all sorts.
 
 permalink: /blog/:year/:month/:day/:title
 paginate_path: "/blog/:num/"

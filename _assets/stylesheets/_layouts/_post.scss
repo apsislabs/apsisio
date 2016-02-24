@@ -26,4 +26,18 @@
         max-width: 100%;
         height: auto;
     }
+
+    &__meta {
+        font-size: .85em;
+        color: $gray;
+    }
+
+    &--list {
+        padding-top: $padding-lg;
+        border-top: 1px solid $gray-lighter;
+
+        &:first-child {
+            border-top: 0;
+        }
+    }
 }

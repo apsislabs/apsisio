@@ -1,10 +1,10 @@
 <header class="post__header">
     {% if post.image %}
         <div class="post__image-wrapper">
-            {% img {{post.image}} alt:{{post.title}} class:"post__image" %}
+            <img src="{% asset_path {{post.image}} %}" alt="{{post.title}}" class="post__image" data-action="zoom">
         </div>
     {% endif %}
-    
+
     <h2 class="post__title" itemprop="name headline">
         <a href="{{ post_link }}">
             {{ post.title }}

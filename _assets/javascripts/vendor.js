@@ -2,3 +2,5 @@
 //= require vendor/jquery.ohembed.js
 //= require vendor/jquery.fitvids.js
 //= require vendor/slick.js
+//= require vendor/transition.js
+//= require vendor/zoom.js

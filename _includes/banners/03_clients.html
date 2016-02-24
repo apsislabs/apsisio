@@ -7,7 +7,18 @@
 
         <div class="banner__copy">
             {{ banner.copy | markdownify }}
-            <br>
+
+            <div class="slider">
+                {% for testimonial in site.data.testimonials %}
+                    <div>
+                        {% include components/testimonial.html testimonial=testimonial %}
+                    </div>
+                {% endfor %}
+            </div>
+
+
+            <hr>
+
             {% include components/image_list.html images=site.data.clients %}
         </div>
     </div>

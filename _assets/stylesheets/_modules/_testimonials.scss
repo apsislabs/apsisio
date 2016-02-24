@@ -1,0 +1,52 @@
+$arrow-width: 32px;
+$border-color: $gray-lighter;
+
+.testimonial {
+    margin: $padding-lg 0;
+
+    &__quote {
+        color: $apsis-gray;
+        font-size: modular-scale(1);
+        font-family: $font-family-serif;
+        font-style: italic;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: $padding-base;
+        @include padding(0 $padding-base $padding-base);
+        position: relative;
+
+        &:after,
+        &:before {
+            border-style: solid;
+            border-color: transparent;
+            margin-left: -($arrow-width / 2);
+
+            @include size($arrow-width);
+            @include position(absolute, 100% 50% null);
+            @include border-width($arrow-width / 2 $arrow-width / 2 null);
+        }
+
+        @include before {
+            @include border-color(white transparent transparent);
+            margin-top: -1.5px;
+            z-index: 2;
+        }
+
+        @include after {
+            @include border-color($border-color transparent transparent);
+            z-index: 1;
+        }
+    }
+
+    &__name {
+        color: $apsis-blue;
+        font-style: normal;
+        display: block;
+    }
+
+    &__company {
+        display: block;
+        text-transform: lowercase;
+        font-weight: 300;
+        color: $gray;
+    }
+}

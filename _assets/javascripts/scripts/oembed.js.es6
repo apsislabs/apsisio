@@ -1,1 +1,3 @@
-$('.post').oembed();
+(function($) {
+    $('.post').oembed();
+}(jQuery));

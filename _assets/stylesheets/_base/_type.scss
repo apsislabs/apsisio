@@ -119,7 +119,7 @@ body {
         border: 0;
     }
 
-    //== Fixed Elements
+    //== Paragraph Elements
     //
 
     p > pre,
@@ -133,5 +133,9 @@ body {
 
     p > a {
         @extend .link--underline;
+    }
+
+    p > img {
+        max-width: 100%;
     }
 }

@@ -55,6 +55,20 @@ We follow a fairly simple publication workflow that relies on `git`.
 
 Because the `_drafts` folder is in the `.gitignore` you can work on as many posts as you'd like without worrying about branching.
 
+# Writing Posts
+
+## Using Assets
+
+Jekyll supports Github Flavored Markdown really well; eventually, I'm sure you'll want to use an image in the body of your post. In that case, the best way to do so is to take advantage of the Jekyll Assets gem. Placing your image on its own line, like so:
+
+```
+    ![My helpful screenshot]({% asset_path posts/image_path.jpg %})
+```
+
+## oEmbeds
+
+We support oEmbeds for a few services, and adding more is simple. If you'd like to include a YouTube or Vimeo video or a link to a tweet, simply paste the URL into the body of your post on its own line. The interpreter will auto link it, and javascript will render it as an oEmbed template.
+
 # Deploying the Site
 
 Deploying is as easy as `bundle exec rake site:publish`. This will

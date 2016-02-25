@@ -18,9 +18,7 @@
 
     <nav class="navbar__nav">
         {% for link in site.data.nav %}
-            <a class="navbar__nav-link" href="{{ site.baseurl }}/{{ link.url }}">
-                {{ link.label }}
-            </a>
+            <a class="navbar__nav-link" href="{{ site.baseurl }}/{{ link.url }}">{{ link.label }}</a>
         {% endfor %}
     </nav>
 </header>

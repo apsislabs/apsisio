@@ -10,8 +10,8 @@ $border-color: $gray-lighter;
         font-family: $font-family-serif;
         font-style: italic;
         border-bottom: 1px solid $border-color;
-        margin-bottom: $padding-base;
-        @include padding(0 $padding-base $padding-base);
+        @include margin(0 0 $padding-base);
+        @include padding(0 0 $padding-base);
         position: relative;
 
         &:after,
@@ -34,6 +34,10 @@ $border-color: $gray-lighter;
         @include after {
             @include border-color($border-color transparent transparent);
             z-index: 1;
+        }
+
+        @include media($tablet) {
+            @include padding(0 $padding-base $padding-base);
         }
     }
 

@@ -1,13 +1,9 @@
 {% assign testimonial = include.testimonial %}
 
 <div class="testimonial">
-    <blockquote class="testimonial__quote">
-        {{ testimonial.quote }}
-    </blockquote>
+    <blockquote class="testimonial__quote">{{ testimonial.quote }}</blockquote>
     <cite class="testimonial__attribution">
         <span class="testimonial__name">{{ testimonial.attribution }}</span>
-        <span class="testimonial__company">
-            {{ testimonial.title }} @ {{ testimonial.company }}
-        </span>
+        <span class="testimonial__company">{{ testimonial.title }} @ {{ testimonial.company }}</span>
     </cite>
 </div>

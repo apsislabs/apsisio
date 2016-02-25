@@ -15,7 +15,7 @@
     <meta content="{{ site.description | strip_newlines }}" property="og:description">
 {% endif %}
 {% if page.url %}
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <meta content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" property="og:url">
 {% endif %}
 {% if page.date %}
     <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
@@ -26,5 +26,5 @@
 {% if page.image %}
     <meta content="{{ site.url }}{% asset_path {{page.image}} %}" property="og:image">
 {% else %}
-    <meta content="{{ site.url }}{% asset_path apsis.svg alt:{{site.name}} %}" property="og:image">
+    <meta content="{{ site.url }}{% asset_path apsis_social.jpg %}" property="og:image">
 {% endif %}

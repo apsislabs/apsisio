@@ -1,3 +1,6 @@
 # Prod Settings
 url: http://apsislabs.github.io
 baseurl: /apsisio
+
+jekyll_tidy:
+    compress_html: true

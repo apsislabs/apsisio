@@ -11,6 +11,7 @@ gem "sprockets-es6"
 gem "autoprefixer-rails"
 gem "therubyracer"
 gem "uglifier"
+gem "jekyll-press"
 
 gem "bourbon"
 gem "neat"

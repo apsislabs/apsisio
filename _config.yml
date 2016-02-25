@@ -25,3 +25,5 @@ assets:
   prefix: /assets
   features:
     automatic_img_size: false
+
+exclude: [Gemfile, Gemfile.lock, Rakefile, README.md]

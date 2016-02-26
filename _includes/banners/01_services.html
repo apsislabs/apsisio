@@ -9,7 +9,7 @@
             {{ banner.copy | markdownify }}
             <hr>
             <h3>{{ banner.subheader }}</h3>
-            {% include components/image_list.html images=site.data.tools %}
+            {% include components/image_list.html images=site.data.tools link_target="_blank" %}
         </div>
     </div>
 </section>

@@ -1,7 +1,7 @@
 <ul class="image-list {{include.classes}}">
     {% for list_image in include.images %}
         <li class="image-list__item">
-            <a href="{{ list_image.link }}" title="{{ list_image.name }}">
+            <a href="{{ list_image.link }}" title="{{ list_image.name }}" target="{{include.link_target}}">
                 {% img {{list_image.source}} alt:"{{ list_image.name }}" class:"image-list__image" %}
             </a>
         </li>

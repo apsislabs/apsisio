@@ -1,6 +1,6 @@
 -
     name: "Weber Shandwick"
-    source: homepage/clients/weber-shandwick.png
+    source: homepage/clients/weber.png
     link: http://www.webershandwick.com/
 -
     name: "Boku"
@@ -8,7 +8,7 @@
     link: http://www.boku.com/
 -
     name: "CallidusCloud"
-    source: homepage/clients/calliduscloud.png
+    source: homepage/clients/callidus.png
     link: http://www.calliduscloud.com/
 -
     name: "Natera"

@@ -8,13 +8,9 @@
         <div class="banner__copy">
             {{ banner.copy | markdownify }}
 
-            <ul class="link-list">
-                <li class="link-list__item">
-                    <a class="link-list__link" href="{{ site.baseurl }}/files/pdfs/portfolio.pdf" download>
-                        Download our portfolio &raquo;
-                    </a>
-                </li>
-            </ul>
+            <a class="btn btn--primary" href="{{ site.baseurl }}/files/pdfs/portfolio.pdf" download>
+                Download our portfolio
+            </a>
 
             <div class="slider">
                 {% for testimonial in site.data.testimonials %}

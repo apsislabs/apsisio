@@ -9,6 +9,14 @@
             p {
                 color: $text-color;
             }
+
+            a {
+                @extend .link--underline;
+            }
+
+            blockquote {
+                @extend .blockquote;
+            }
         }
     }
 

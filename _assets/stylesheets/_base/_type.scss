@@ -59,6 +59,16 @@ body {
     border-top: 1px solid $gray-lighter;
 }
 
+.blockquote {
+    @include margin(1em 0);
+    @include padding(0 0 0 1.5em);
+    border-left: 3px solid $gray-lighter;
+
+    > p {
+        color: $apsis-gray;
+    }
+}
+
 .typography {
     h1 {
         @extend .h1;
@@ -117,6 +127,10 @@ body {
 
     iframe {
         border: 0;
+    }
+
+    blockquote {
+        @extend .blockquote;
     }
 
     //== Paragraph Elements

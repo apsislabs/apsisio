@@ -1,8 +1,9 @@
 <header class="post__header">
     {% if post.image %}
         <div class="post__image-wrapper">
-            <img src="{% asset_path {{post.image}} %}" alt="{{post.title}}" class="post__image" data-action="zoom">
+            <img src="{% asset_path {{post.image}} %}" alt="{{post.title}}. {% if post.credit %}Photo by {{post.credit}}.{% endif %}" class="post__image" data-action="zoom">
         </div>
+        {% if post.credit %}<small class="post__photo-credit">Image by {{post.credit}}</small>{% endif %}
     {% endif %}
 
     <h2 class="post__title" itemprop="name headline">

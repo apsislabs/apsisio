@@ -25,6 +25,12 @@
         height: auto;
     }
 
+    &__photo-credit {
+        color: $gray-lighter;
+        font-style: italic;
+        font-weight: 300;
+    }
+
     &__meta {
         font-size: .85em;
         color: $gray;

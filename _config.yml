@@ -16,7 +16,7 @@ gems: [jekyll-paginate, jekyll-assets, jekyll-tidy]
 
 markdown: redcarpet
 redcarpet:
-  extensions: [footnotes, superscript, highlight, autolink]
+  extensions: [footnotes, superscript, highlight, autolink, smart]
 
 # Assets settings
 assets:

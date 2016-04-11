@@ -39,6 +39,7 @@ GEM
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.4.0)
       sass (~> 3.4)
+    jekyll-sitemap (0.10.0)
     jekyll-tidy (0.0.1)
       htmlbeautifier
       htmlcompressor
@@ -94,6 +95,7 @@ DEPENDENCIES
   jekyll-assets (~> 2.0)
   jekyll-compose
   jekyll-paginate
+  jekyll-sitemap
   jekyll-tidy
   neat
   rake
@@ -101,3 +103,6 @@ DEPENDENCIES
   sprockets-es6
   therubyracer
   uglifier
+
+BUNDLED WITH
+   1.11.2

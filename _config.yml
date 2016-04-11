@@ -12,7 +12,7 @@ description: >
 permalink: /blog/:year/:month/:day/:title
 paginate_path: "/blog/:num/"
 paginate: 5
-gems: [jekyll-paginate, jekyll-assets, jekyll-tidy]
+gems: [jekyll-paginate, jekyll-assets, jekyll-tidy, jekyll-sitemap]
 
 markdown: redcarpet
 redcarpet:

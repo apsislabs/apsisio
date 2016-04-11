@@ -12,6 +12,7 @@ gem "autoprefixer-rails"
 gem "therubyracer"
 gem "uglifier"
 gem "jekyll-tidy"
+gem "jekyll-sitemap"
 
 gem "bourbon"
 gem "neat"

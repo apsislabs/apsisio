@@ -5,7 +5,7 @@ title: Communicating Estimates
 image: 'posts/time-train-station-clock-deadline.jpg'
 ---
 
-Communication is hard. It's also extremely important. We're lucky that in the field of software development miscommunication tends to lead to project delays instead of loss of life [^1]. Estimates are _also_ hard. It's challenging to produce accurate estimates at all, but _even_ after a good estimate has been produced, comes the challenge of communicating about the estimate.
+Communication is hard. It's also extremely important. We're lucky that in the field of software development miscommunication tends to lead to project delays instead of loss of life [^1]. Estimates are also hard. It's challenging to produce accurate estimates in the first place, but even after a good estimate has been produced, comes the challenging work of communicating the estimates to interested parties.
 
 There are two very common miscommunications that occur about an estimate:
 
@@ -14,7 +14,7 @@ There are two very common miscommunications that occur about an estimate:
 
 #### Precision and Probability Distributions
 
-Software estimates are usually presented as a single value — the expected duration of the project. "This project should take about 8 weeks". Unfortunately, estimates are more complicated than this. We usually represent an estimate as a probability distribution [^2]. Given our expected duration of 8 weeks, there are _many_ [^3] possible probability distributions.
+Software estimates are usually presented as a single value — the expected duration of the project. "This project should take about 8 weeks". Unfortunately, estimates are more complicated than this. We usually represent an estimate as a probability distribution [^2]. Given our expected duration of 8 weeks, there are _many_ possible probability distributions.
 
 {% include components/image.html url="posts/communicating-estimates/probability-distributions.png" caption="Various probability distributions that can produce the statement: &quot;The project should take about 8 weeks&quot;." alt="Graph of several probability distributions" %}
 

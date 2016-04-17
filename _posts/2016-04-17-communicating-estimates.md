@@ -43,14 +43,28 @@ When communicating an estimate, it needs to be _clear_ to all parties that this 
 
 If you found this post interesting or informative I'd highly recommend [Steve McConnell’s Software Estimation](http://www.amazon.com/Software-Estimation-Demystifying-Developer-Practices/dp/0735605351).
 
-[^1]: Disasters in other industries can often be attributed to a miscommunication. The deadliest airplane crash was caused by miscommunication during takeoff at the [Tenerife airport](https://en.wikipedia.org/wiki/Tenerife_airport_disaster). In medicine [miscommunications are a common source of error](http://ww2.kqed.org/stateofhealth/2014/11/25/miscommunication-a-major-cause-of-medical-error-study-shows/), especially [in surgery](http://www.cnn.com/2010/HEALTH/10/18/health.surgery.mixups.common/).
+[^1]:
+    Disasters in other industries can often be attributed to a miscommunication. The deadliest airplane crash was caused by miscommunication during takeoff at the [Tenerife airport](https://en.wikipedia.org/wiki/Tenerife_airport_disaster). In medicine [miscommunications are a common source of error](http://ww2.kqed.org/stateofhealth/2014/11/25/miscommunication-a-major-cause-of-medical-error-study-shows/), especially [in surgery](http://www.cnn.com/2010/HEALTH/10/18/health.surgery.mixups.common/).
 
-[^2]: [A quick refresher in case you haven't thought about probability in a while](http://stattrek.com/probability-distributions/probability-distribution.aspx) ; If you haven’t taken any courses on statistics and probability I _strongly_ encourage it. It’s one of the most useful mathematical tools in software engineering and daily life. [Kahn Academy](https://www.khanacademy.org/math/probability) has a good series on the course, and there are plenty of great courses on [EdX](https://www.edx.org/course?search_query=probability) and [Coursera](https://www.coursera.org/courses?languages=en&query=probability).
+[^2]:
+    [A quick refresher in case you haven't thought about probability in a while](http://stattrek.com/probability-distributions/probability-distribution.aspx) ; If you haven’t taken any courses on statistics and probability I _strongly_ encourage it. It’s one of the most useful mathematical tools in software engineering and daily life. [Kahn Academy](https://www.khanacademy.org/math/probability) has a good series on the course, and there are plenty of great courses on [EdX](https://www.edx.org/course?search_query=probability) and [Coursera](https://www.coursera.org/courses?languages=en&query=probability).
 
-[^3]: Discussing the worst case scenario: ![Comparison of worst case probability distribution with estimate]({% asset_path posts/communicating-estimates/footnote-3-worst-case.png %})
+[^3]:
+    Discussing the worst case scenario:
 
-[^4]: Discussing confidence intervals ![Comparison of confidence interval probability distribution with estimate]({% asset_path posts/communicating-estimates/footnote-4-conf-interval.png %})
+    ![Comparison of worst case probability distribution with estimate]({% asset_path posts/communicating-estimates/footnote-3-worst-case.png %})
 
-[^5]: Only mentioning the upper bound ![Comparison of upper bound only probability distribution with estimate]({% asset_path posts/communicating-estimates/footnote-5-upper-bound.png %})
+[^4]:
+    Discussing confidence intervals
 
-[^6]: Just totally give up ![Comparison of upper bound only probability distribution with estimate]({% asset_path posts/communicating-estimates/footnote-6-give-up.png %})
+    ![Comparison of confidence interval probability distribution with estimate]({% asset_path posts/communicating-estimates/footnote-4-conf-interval.png %})
+
+[^5]:
+    Only mentioning the upper bound
+
+    ![Comparison of upper bound only probability distribution with estimate]({% asset_path posts/communicating-estimates/footnote-5-upper-bound.png %})
+
+[^6]:
+    Just totally give up
+
+    ![Comparison of upper bound only probability distribution with estimate]({% asset_path posts/communicating-estimates/footnote-6-give-up.png %})

@@ -113,11 +113,10 @@ body {
     }
 
     sup {
-        @include margin(null 1ex);
         font-weight: normal;
 
         a {
-            @extend .link--underline;
+            @extend .link;
         }
     }
 

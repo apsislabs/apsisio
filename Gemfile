@@ -13,6 +13,7 @@ gem "therubyracer"
 gem "uglifier"
 gem "jekyll-tidy"
 gem "jekyll-sitemap"
+gem "jekyll-figure"
 
 gem "bourbon"
 gem "neat"

@@ -149,7 +149,8 @@ body {
         @extend .link--underline;
     }
 
-    p > img {
+    p > img,
+    figure > img {
         max-width: 100%;
     }
 }

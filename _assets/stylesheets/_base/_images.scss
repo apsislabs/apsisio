@@ -3,3 +3,12 @@
         border-radius: 999em;
     }
 }
+
+.image-wrapper {
+    text-align: center;
+    font-size: .8em;
+
+    .image-caption {
+        color: $gray;
+    }
+}

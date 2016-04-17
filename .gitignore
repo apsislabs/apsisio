@@ -2,6 +2,6 @@
 .asset-cache
 .bundle
 .jekyll-metadata
-
+.DS_Store
 _site/
 _drafts/

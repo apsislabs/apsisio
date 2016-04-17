@@ -2,6 +2,7 @@
 layout: post
 author: noah
 title: Communicating Estimates
+image: 'posts/time-train-station-clock-deadline.jpg'
 ---
 
 Communication is hard. It's also extremely important. We're lucky that in the field of software development miscommunication tends to lead to project delays instead of loss of life [^1]. Estimates are _also_ hard. It's challenging to produce accurate estimates at all, but _even_ after a good estimate has been produced, comes the challenge of communicating about the estimate.

@@ -153,4 +153,12 @@ body {
     figure > img {
         max-width: 100%;
     }
+
+    figure > figcaption {
+        font-size: .85em;
+        color: $apsis-gray;
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+    }
 }

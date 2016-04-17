@@ -3,6 +3,7 @@ layout: post
 author: noah
 title: Communicating Estimates
 image: 'posts/time-train-station-clock-deadline.jpg'
+credit: Ryan McGuire
 ---
 
 Communication is hard. It's also extremely important. We're lucky that in the field of software development miscommunication tends to lead to project delays instead of loss of life [^1]. Estimates are also hard. It's challenging to produce accurate estimates in the first place, but even after a good estimate has been produced, comes the challenging work of communicating the estimates to interested parties.
@@ -63,6 +64,6 @@ If you found this post interesting or informative I'd highly recommend [Steve Mc
     Disasters in other industries can often be attributed to a miscommunication. The deadliest airplane crash was caused by miscommunication during takeoff at the [Tenerife airport](https://en.wikipedia.org/wiki/Tenerife_airport_disaster). In medicine [miscommunications are a common source of error](http://ww2.kqed.org/stateofhealth/2014/11/25/miscommunication-a-major-cause-of-medical-error-study-shows/), especially [in surgery](http://www.cnn.com/2010/HEALTH/10/18/health.surgery.mixups.common/).
 
 [^2]:
-    [A quick refresher in case you haven't thought about probability in a while](http://stattrek.com/probability-distributions/probability-distribution.aspx) ; If you haven’t taken any courses on statistics and probability I _strongly_ encourage it. It’s one of the most useful mathematical tools in software engineering and daily life. [Kahn Academy](https://www.khanacademy.org/math/probability) has a good series on the course, and there are plenty of great courses on [EdX](https://www.edx.org/course?search_query=probability) and [Coursera](https://www.coursera.org/courses?languages=en&query=probability).
+    A [quick refresher on probability distributions](https://www.khanacademy.org/math/probability/random-variables-topic/random_variables_prob_dist/v/probability-density-functions) in case you haven't thought about probability in a while. If you haven’t taken any courses on statistics and probability I _strongly_ encourage it. It’s one of the most useful mathematical tools in software engineering and daily life. [Kahn Academy](https://www.khanacademy.org/math/probability) has a good series, and there are plenty of great courses on [EdX](https://www.edx.org/course?search_query=probability) and [Coursera](https://www.coursera.org/courses?languages=en&query=probability).
 
 [^3]: See also: [Soon&trade;](http://gaming.stackexchange.com/questions/23112/where-did-soon-originate)

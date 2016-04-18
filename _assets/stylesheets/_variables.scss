@@ -22,6 +22,8 @@ $link-active-color: darken($apsis-blue, 15%);
 // Typography
 
 $text-color: $apsis-dark;
+$subheading-color: lighten($apsis-dark, 20%);
+$mobile-modular-scale-base: $modular-scale-base * .75;
 
 //== Sizes
 //

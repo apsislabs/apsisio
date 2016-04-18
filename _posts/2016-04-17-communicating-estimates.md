@@ -35,7 +35,7 @@ Here we simply add the worst-case scenario to our estimates, to help skew someon
 {% include components/image.html url="posts/communicating-estimates/footnote-3-worst-case.png" caption="This project should take about 8 weeks, but in the worst case it could take up to 24 weeks." alt="Comparison of worst case probability distribution with estimate" %}
 
 ##### Confidence Interval
-This is similar to the way a political poll might be reported. You specify the range over which you have 90% — or another specific value — confidence that the project will complete within this range. This tends to flatten people's expectation over the entire range.
+This is similar to the way a political poll might be reported. You specify the range over which you have 90% --- or another specific value --- confidence that the project will complete within this range. This tends to flatten people's expectation over the entire range.
 
 {% include components/image.html url="posts/communicating-estimates/footnote-4-conf-interval.png" caption="There’s a 90% chance that the project is finished between 6 weeks and 16 weeks. The most likely duration is 8 weeks." alt="Comparison of confidence interval probability distribution with estimate" %}
 
@@ -50,7 +50,7 @@ This tends to be used by projects with no requirements, rapidly changing require
 {% include components/image.html url="posts/communicating-estimates/footnote-6-give-up.png" caption="This project will take as long as it takes." alt="A graph with a lot of question marks and no other helpful information" %}
 
 #### Estimate or Commitment
-Estimates and commitments are two different things. An estimate should be an unbiased guess at reality; a commitment is a promise to another party about the timeline for a deliverable. A commitment _should_ be reduced to a single-value. You don’t make a promise that there’s a 50% chance you’ll do your work by Tuesday. You make a promise that you _will_ do your work by Tuesday. Commitments should be a date taken from the higher-end of the probability distribution at the level you're most comfortable with — we usually go with 95% or 99% depending on the project.
+Estimates and commitments are two different things. An estimate should be an unbiased guess at reality; a commitment is a promise to another party about the timeline for a deliverable. A commitment _should_ be reduced to a single-value. You don’t make a promise that there’s a 50% chance you’ll do your work by Tuesday. You make a promise that you _will_ do your work by Tuesday. Commitments should be a date taken from the higher-end of the probability distribution at the level you're most comfortable with --- we usually go with 95% or 99% depending on the project.
 
 {% include components/image.html url="posts/communicating-estimates/estimates-vs-commitments.png" caption="Estimates are often reported at 50% likelihood; Commitments are often reported in the 90-99% likelihood range." alt="Graph of a single probability distribution" %}
 

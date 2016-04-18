@@ -20,23 +20,45 @@ body {
 .h1 {
     font-size: modular-scale(5);
     letter-spacing: -2px;
+
+    @include media($mobile) {
+        font-size: modular-scale(5, $mobile-modular-scale-base);
+    }
 }
 
 .h2 {
     font-size: modular-scale(4);
     letter-spacing: -1px;
+
+    @include media($mobile) {
+        font-size: modular-scale(4, $mobile-modular-scale-base);
+    }
 }
 
 .h3 {
     font-size: modular-scale(3);
+
+    @include media($mobile) {
+        font-size: modular-scale(3, $mobile-modular-scale-base);
+    }
 }
 
 .h4 {
+    color: $subheading-color;
     font-size: modular-scale(2);
+
+    @include media($mobile) {
+        font-size: modular-scale(2, $mobile-modular-scale-base);
+    }
 }
 
 .h5 {
+    color: $subheading-color;
     font-size: modular-scale(1);
+
+    @include media($mobile) {
+        font-size: modular-scale(1, $mobile-modular-scale-base);
+    }
 }
 
 .h1,
@@ -146,9 +168,19 @@ body {
 
     p > a {
         @extend .link--underline;
+        white-space: nowrap;
     }
 
-    p > img {
+    p > img,
+    figure > img {
         max-width: 100%;
+    }
+
+    figure > figcaption {
+        font-size: .85em;
+        color: $apsis-gray;
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
     }
 }

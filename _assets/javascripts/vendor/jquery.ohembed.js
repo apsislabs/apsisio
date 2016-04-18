@@ -30,7 +30,7 @@
             "https?:\/\/(www\.)?vimeo\.com\/groups\/.*\/videos\/.*",
             "https?:\/\/(www\.)?vimeo\.com\/.*"],
         dailyMotion: ["https?:\/\/www\.dailymotion\\.com/.+"],
-        twitter: ["https?:\/\/twitter.com/.+"]
+        twitter: ["https?:\/\/twitter.com/.*/status/.+"]
     };
 
     // Regexps to extract IDs from URLs, when it is

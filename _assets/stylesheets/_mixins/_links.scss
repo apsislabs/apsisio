@@ -2,8 +2,7 @@
     color: $color;
     text-decoration: none;
     position: relative;
-    white-space: nowrap;
-    
+
     @include transition(color .2s);
 
     @include before {

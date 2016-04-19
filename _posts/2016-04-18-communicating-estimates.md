@@ -1,7 +1,7 @@
 ---
 layout: post
 author: noah
-title: Communicating Estimates
+title: Communicating Software Estimates
 image: 'posts/time-train-station-clock-deadline.jpg'
 credit: Ryan McGuire, Gratisopgraphy
 ---

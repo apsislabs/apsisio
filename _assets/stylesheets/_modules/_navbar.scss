@@ -55,12 +55,6 @@
     //
 
     &--white {
-        .navbar__logo {
-            .logo__image {
-                filter: grayscale(1) brightness(100);
-            }
-        }
-
         .navbar__nav-link {
             @include underline-link(white, white, white);
             @extend .navlink-intro;

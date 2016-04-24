@@ -1,6 +1,6 @@
 .logo {
-    &__image {
-        vertical-align: middle;
+    &__text {
+        @extend .sr;
     }
 
     &--navbar {
@@ -9,23 +9,7 @@
         padding: $padding-base / 2;
 
         .logo__image {
-            max-height: $navbar-height - $padding-base;
-        }
-    }
-
-    &--desktop {
-        display: none;
-
-        @include media($desktop) {
-            display: block;
-        }
-    }
-
-    &--mobile {
-        display: block;
-
-        @include media($desktop) {
-            display: none;
+            height: $navbar-height - $padding-base;
         }
     }
 }

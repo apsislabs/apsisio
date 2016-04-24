@@ -24,6 +24,15 @@
     {% include components/favicons.html %}
     <!-- !END favicons -->
 
+    <!-- !START polyfill -->
+        <!--[if lt IE 9]>
+            {% javascript vendor/html5shiv.min %}
+            {% javascript vendor/html5shiv-printshiv.min %}
+        <![endif]-->
+
+        {% javascript polyfill async:"async" %}
+    <!-- !END polyfill -->
+
     <!-- !START styles -->
     {% stylesheet app %}
     <!-- !END styles -->

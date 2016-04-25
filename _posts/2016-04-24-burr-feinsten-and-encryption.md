@@ -73,7 +73,7 @@ In this subsection the government states that it doesn't have veto power over _s
 
 This section is **a massive problem for all software developers**. Almost all best practices in software security would violate this proposed law.
 
-Consider storing a custom's password. As a developer you should _always_ store customer passwords using a cryptographically secure one-way hash. [^4] This one-way transformation would be a violation of this subsection, as you would not be able to recover the plain-text of the customer's password if presented with a court order.
+Consider storing a customer's password. As a developer you should _always_ store customer passwords using a cryptographically secure one-way hash. [^4] This one-way transformation would be a violation of this subsection, as you would not be able to recover the plain-text of the customer's password if presented with a court order.
 
 Essentially _all_ one way hashes [^5] of data could be considered a violation of this bill. Any encryption that you, yourself, cannot decrypt could be considered a violation of this bill.
 

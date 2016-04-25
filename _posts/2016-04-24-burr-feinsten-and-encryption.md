@@ -6,7 +6,7 @@ credit: Giulio Magnifico
 author: noah
 ---
 
-In the wake of the [San Bernadino iPhone controversy](http://www.wired.com/2016/02/apples-fbi-battle-is-complicated-heres-whats-really-going-on/) the Senate Intelligence Committee has produced a draft bill that would force Apple and other software companies to decrypt data for the government when they receive court orders. The bill — titled the "Compliance with Court Orders Act of 2016" — that would force Apple and other software companies to decrypt anything that they have encrypted.
+In the wake of the [San Bernadino iPhone controversy](http://www.wired.com/2016/02/apples-fbi-battle-is-complicated-heres-whats-really-going-on/) the Senate Intelligence Committee has produced a draft bill that would force Apple and other software companies to decrypt data for the government when they receive court orders. The bill — titled the "Compliance with Court Orders Act of 2016" — would force Apple and other software companies to decrypt anything that they have encrypted.
 
 There have been a number of critiques written about this bill already. [^1] This is such an important topic to software developers and [the draft bill](https://www.burr.senate.gov/imo/media/doc/BAG16460.pdf) only comes in at 9-pages long, I think it's worth taking the time to dive into the <span class="strikethrough">source code</span> actual text of the law to understand how it really works.
 

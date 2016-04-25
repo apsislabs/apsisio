@@ -183,4 +183,12 @@ body {
         max-width: 80%;
         margin: 0 auto;
     }
+
+    p.indent {
+        padding-left: 20px;
+    }
+
+    .strikethrough {
+        text-decoration: line-through;
+    }
 }

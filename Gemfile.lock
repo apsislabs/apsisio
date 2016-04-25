@@ -117,6 +117,3 @@ DEPENDENCIES
   sprockets-es6
   therubyracer
   uglifier
-
-BUNDLED WITH
-   1.11.2

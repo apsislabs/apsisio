@@ -49,7 +49,7 @@ This part seems pretty manageable. Intelligible just means plain-text data and U
 
 > <p class="indent">(B) provide such <strong>technical assistance as is necessary</strong> to obtain such information or data in an intelligible format or to achieve the purpose of the court order.</p>
 
-This section says that any _covered entity_ that receives a court order for data must provide the plain-text version of the data or must do the work necessary to produce the plain-text. There is no exception here in the event that it is _impossible_ to produce the plain-text. We'll see in a later section that _you are required to design the system to make sure its not impossible_.
+This section says that any _covered entity_ that receives a court order for data must provide the plain-text version of the data or must do the work necessary to produce the plain-text. There is no exception here in the event that it is _impossible_ to produce the plain-text. We'll see in a later section that _you are required to design the system to make sure it's not impossible_.
 
 The phrase in bold — "technical assistance as is necessary" — is also important. Most court orders to third parties require them to provide _reasonable assistance_ to facilitate court order. This proposed law goes a _significant_ step further and requires a covered entity to provide "assistance as necessary". There is a large gap between these two levels of assistance. [^2]
 

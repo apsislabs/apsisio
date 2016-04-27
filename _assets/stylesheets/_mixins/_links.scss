@@ -1,27 +1,9 @@
 @mixin underline-link($color: blue, $hover-color: blue, $active-color: blue) {
     color: $color;
     text-decoration: none;
-    position: relative;
-
-    @include transition(color .2s);
-
-    @include before {
-        @include transition(all .2s);
-        @include position(absolute, auto 0 0);
-        @include transform(scaleX(0));
-        @include size(100% 1px);
-
-        backface-visibility: hidden;
-        background-color: $color;
-    }
 
     &:hover {
         color: $hover-color;
-
-        @include before {
-            @include transform(scaleX(1));
-            background-color: $hover-color;
-        }
     }
 
     &:active {
@@ -29,4 +11,26 @@
         top: 1px;
     }
 
+    @include media($tablet) {
+        position: relative;
+
+        @include transition(color .2s);
+
+        @include before {
+            @include transition(all .2s);
+            @include position(absolute, auto 0 0);
+            @include transform(scaleX(0));
+            @include size(100% 1px);
+
+            backface-visibility: hidden;
+            background-color: $color;
+        }
+
+        &:hover {
+            @include before {
+                @include transform(scaleX(1));
+                background-color: $hover-color;
+            }
+        }
+    }
 }

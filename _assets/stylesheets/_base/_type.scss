@@ -14,7 +14,7 @@ body {
 }
 
 .block-margins {
-    @include margin(1em 0);
+    @include margin(1.5rem 0);
 }
 
 .h1 {
@@ -82,13 +82,17 @@ body {
 }
 
 .blockquote {
-    @include margin(1em 0);
+    @extend .block-margins;
     @include padding(0 0 0 1.5em);
     border-left: 3px solid $gray-lighter;
 
     > p {
         color: $apsis-gray;
     }
+}
+
+.indent {
+    padding-left: 2rem;
 }
 
 .typography {
@@ -182,13 +186,5 @@ body {
         text-align: center;
         max-width: 80%;
         margin: 0 auto;
-    }
-
-    p.indent {
-        padding-left: 20px;
-    }
-
-    .strikethrough {
-        text-decoration: line-through;
     }
 }

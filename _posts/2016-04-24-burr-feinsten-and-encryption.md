@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Read the Source&colon; Encryption Draft Bill
+title: "Read the Source: Encryption Draft Bill"
 image: 'posts/locks.jpg'
 credit: Giulio Magnifico
 author: noah

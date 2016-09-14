@@ -1,8 +1,11 @@
 # Apsis Website
 
-Getting up and running should be very fast. Once you've cloned the repo, all you'll need to do is `cd` to the proper directory, and run `bundle install`.
+Getting up and running should be very fast.
 
-To run the development site, run `jekyll serve` and visit `http://localhost:4000`.
+- `vagrant up`
+- `_bin/serve.sh`
+- Visit `http://localhost:4000`.
+- Rejoice.
 
 # Creating Content
 

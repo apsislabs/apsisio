@@ -19,12 +19,6 @@ New content belongs in `_drafts`. Once the draft has been reviewed, it can be mo
     page       # Creates a new page with the given NAME
 ```
 
-Create your new post using:
-
-```
-    $ bundle exec jekyll post "My New Post"
-```
-
 Create your new draft using:
 
 ```
@@ -74,4 +68,4 @@ We support oEmbeds for a few services, and adding more is simple. If you'd like 
 
 # Deploying the Site
 
-Deploying is as easy as `bundle exec rake site:publish`. This will
+Deploying is as easy as `_bin\deploy.sh`, hopefully. This rebuilds `master` into `gh-pages`, which is the actual live branch.

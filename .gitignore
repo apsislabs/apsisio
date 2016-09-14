@@ -1,9 +1,9 @@
 .vagrant/
 tmp/
-apsisio/.sass-cache
-apsisio/.asset-cache
-apsisio/.bundle
-apsisio/.jekyll-metadata
-apsisio/.DS_Store
-apsisio/_site/
-apsisio/_drafts/
+.sass-cache
+.asset-cache
+.bundle
+.jekyll-metadata
+.DS_Store
+_site/
+_drafts/

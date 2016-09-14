@@ -13,14 +13,14 @@ Vagrant.configure(2) do |config|
     # Provisioners
 
     config.vm.provision "change ssh directory", type: "shell" do |s|
-        s.inline = "echo 'cd /vagrant/apsisio' >> /home/vagrant/.bashrc"
+        s.inline = "echo 'cd /vagrant' >> /home/vagrant/.bashrc"
     end
 
     config.vm.provision "install bundler", type: "shell" do |s|
-        s.inline = "cd /vagrant/apsisio && gem install bundler"
+        s.inline = "cd /vagrant && gem install bundler"
     end
 
     config.vm.provision "bundle install", type: "shell", run: "always" do |s|
-        s.inline = "cd /vagrant/apsisio && sudo bundle install"
+        s.inline = "cd /vagrant && sudo bundle install"
     end
 end

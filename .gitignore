@@ -1,3 +1,5 @@
+.vagrant/
+tmp/
 .sass-cache
 .asset-cache
 .bundle

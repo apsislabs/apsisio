@@ -68,4 +68,14 @@ We support oEmbeds for a few services, and adding more is simple. If you'd like 
 
 # Deploying the Site
 
+## From the VM
+
 Deploying is as easy as `_bin\deploy.sh`, hopefully. This rebuilds `master` into `gh-pages`, which is the actual live branch.
+
+## From Host Machine
+
+If you're running jekyll locally on your host machine, the `_bin` script won't work. Instead, you'll want to use the `rake` task:
+
+```
+    bundle exec rake site:publish
+```

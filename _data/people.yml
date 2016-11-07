@@ -45,3 +45,14 @@ niall:
         in Toronto and is by default the head of the Canadian branch
         of Apsis. When he grows up he wants to be a farmer, or maybe
         a ballet dancer, or no, wait, a sailor!
+
+chris:
+    name: "Chris Pfohl"
+    image: "people/chris.jpg"
+    bio: >
+        Chris accidentally became a software developer when he realized
+        how much he enjoyed his first programming class in college. He's
+        never written a tetris clone in Q-Basic, and to date has never
+        created a todo app or twitter clone. When he's not working he's
+        most likely roasting coffee, brewing beer, or playing a board
+        game.

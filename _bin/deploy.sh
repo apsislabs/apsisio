@@ -1,1 +1,1 @@
-vagrant ssh -c 'cd /vagrant/apsisio && bundle exec rake site:publish'
+vagrant ssh -c 'cd /vagrant && bundle exec rake site:publish'

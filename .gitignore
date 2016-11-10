@@ -5,5 +5,7 @@ tmp/
 .bundle
 .jekyll-metadata
 .DS_Store
+*.sublime-project
+*.sublime-workspace
 _site/
 _drafts/

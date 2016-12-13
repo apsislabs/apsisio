@@ -15,7 +15,7 @@ The phone screening went well -- well enough to schedule a more formal interview
 
 This only confirmed in my mind that it probably *wasn't* a real company. I was bummed, but I was coincidentally given a bit more responsibility at work which helped me tough it out for another few months. I was spared quitting *that* job when we didn't manage to get a signed contract with a huge client [^2].
 
-For the next 9 months I worked at an awesome startup ([Rollbar](https://www.rollbar.com)) as a support engineer. While it wasn't _primarily_ a programming job, I did learn a lot about working with customers and I enjoyed the chance to try out work in a radically different environment than I'd worked in to date. On April Fools Day Wyatt sent me a note asking if I'd be open to interviewing again[^3]. I happily accepted the interview and eventually the job offer that followed.
+For the next 9 months I worked at an awesome startup ([Rollbar](https://www.rollbar.com)) as a support engineer. While it wasn't _primarily_ a programming job, I did learn a lot about working with customers and I enjoyed the chance to try out work in a radically different environment than I'd worked in to date. On April Fools Day, Wyatt sent me a note asking if I'd be open to interviewing again[^3]. I happily accepted the interview and eventually the job offer that followed.
 
 ## The Lesson
 

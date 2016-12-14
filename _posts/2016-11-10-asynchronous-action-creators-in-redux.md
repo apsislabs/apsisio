@@ -2,6 +2,7 @@
 author: niall
 layout: post
 title: Asynchronous Action Creators in Redux
+image: 'posts/clocke.jpg'
 ---
 
 Redux applications often use the [redux-thunk](https://github.com/gaearon/redux-thunk) middleware to dispatch actions for interacting with an HTTP API.  A pattern for asynchronous action creators is demonstrated in the [documentation](http://redux.js.org/docs/advanced/AsyncActions.html) as follows (adding the error catching logic it recommends for a real-world application):

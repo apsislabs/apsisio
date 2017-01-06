@@ -8,11 +8,11 @@ credit: olafpictures
 
 It is a dark winter day at your desk in Maine and your boss gets back from sunny California and says "Docker is the best, we need to start using this for everything!". You internally groan because you just got all the infrastructure working correctly, but you start frantically searching how to setup and run Docker and jump right into figuring out how to apply it to your current projects because it needs to be done yesterday.
 
-Before looking into how to setup Docker, lets fill in the basics of what you always wanted to know about Docker but didn't know you needed to ask.
+Before looking into how to setup Docker, let's fill in the basics of what you always wanted to know about Docker but didn't know you needed to ask.
 
 ## What is Docker?
 
-Docker is a tool for developing applications in a virtualized operating system, called a container, which can run on any hardware guaranteeing that the software runs the same in any environment.
+Docker is a tool for developing applications in a virtualized operating system, called a container, which can run on any hardware, guaranteeing that the software runs the same in any environment.
 
 Docker containers allow you to install anything that would normally be installed on a server to run your application into a portable file that can be moved from environment to environment without any need to reinstall the dependencies.
 
@@ -25,7 +25,7 @@ There are many reasons for choosing Docker:
 
 * Ease of Creation - Image is defined in one file, with simple run commands
 * Speed - Much faster than a full VM for startup ( after the initial download )
-* Size - Although the images can inflate really quickly they are generally smaller then full VMs
+* Size - Although the images can inflate really quickly they are generally smaller than full VMs
 * Consistency - The image used locally can be the same as production
 * Reproducibility - Container configuration is a file which can be stored in version control
 
@@ -51,7 +51,7 @@ Cloud 66 has a great article detailing these items before using Docker in produc
 Deciding whether Nginx in front of the Rails application or Memcached in front of the DB is the right choice for the system will help determine how to setup a Docker network. Docker Compose allows setup for networking between multiple containers, any external dependencies, volumes, and environmental variables the containers may need.
 
 ## Image Size
-Docker container can grow in size very quickly, and minimizing the size helps portability. Every command run in the DockerFile creates its own container as a snapshot which helps reuse across Docker builds but increases the size significantly. To minimize the container, start by finding the minimal image that will support the software and only install the minimal software needed. The next step is to condense all the run commands into the fewest number needed.
+Docker containers can grow in size very quickly, and minimizing the size helps portability. Every command run in the DockerFile creates its own container as a snapshot which helps reuse across Docker builds but increases the size significantly. To minimize the container, start by finding the minimal image that will support the software and only install the minimal software needed. The next step is to condense all the run commands into the fewest number needed.
 
 For example when installing dependencies a typical install might look like:
 
@@ -74,7 +74,7 @@ Codeship has a great article detailing some of the optimizations for the Dockerf
 
 
 ## Cleanup
-Monitoring the hosts disk space where Docker containers are deployed is crucial, especially develop environments where several versions of a Docker container may be pushed a day. Easy way to clean up is to setup a cron to run:
+Monitoring the host's disk space where Docker containers are deployed is crucial, especially in development environments where several versions of a Docker container may be pushed a day. The easy way to clean up is to setup a cron to run:
 
 ```
 sudo docker images -q | xargs sudo docker rmi
@@ -85,9 +85,9 @@ Or you can run a full container to manage garbage collection for you: https://gi
 
 ## Wrap up
 
-Docker is a great technology for development environments and simpler applications, but use careful consideration about whether it is a good fit for your particular applications' needs especially if there is already a technology stack in place.
+Docker is a great technology for development environments and simpler applications, but consider carefully whether it is a good fit for your particular application's needs, especially if there is already a technology stack in place.
 
-Here at Apsis we use the technology that is right for the application and are constantly looking out for changes in best practices and supporting technologies so I'm sure you'll hear more about our exploration with Docker in future posts.
+Here at Apsis we use the technology that is right for the application and are constantly looking out for changes in best practices and supporting technologies, so I'm sure you'll hear more about our exploration with Docker in future posts.
 
 
 ## Resources

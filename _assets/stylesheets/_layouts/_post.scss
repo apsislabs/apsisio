@@ -18,11 +18,21 @@
 
     &__image-wrapper {
         @include margin(null -1 * $padding-base);
+        overflow: hidden;
+
+        .zoom-overlay-open & {
+            overflow: visible;
+        }
     }
 
     &__image {
         max-width: 100%;
         height: auto;
+        @include transition(transform $ease-in-out-quad 0.5s);
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__photo-credit {

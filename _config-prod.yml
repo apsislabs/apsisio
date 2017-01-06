@@ -1,6 +1,6 @@
 # Prod Settings
-url: http://apsis.io
-baseurl: 
+url: http://www.apsis.io
+baseurl:
 
 jekyll_tidy:
     compress_html: true

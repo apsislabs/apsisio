@@ -50,7 +50,7 @@ Cloud 66 has a great article detailing these items before using Docker in produc
 ### Planning the Architecture
 Deciding whether Nginx in front of the Rails application or Memcached in front of the DB is the right choice for the system will help determine how to setup a Docker network. Docker Compose allows setup for networking between multiple containers, any external dependencies, volumes, and environmental variables the containers may need.
 
-## Image Size
+### Image Size
 Docker containers can grow in size very quickly, and minimizing the size helps portability. Every command run in the DockerFile creates its own container as a snapshot which helps reuse across Docker builds but increases the size significantly. To minimize the container, start by finding the minimal image that will support the software and only install the minimal software needed. The next step is to condense all the run commands into the fewest number needed.
 
 For example when installing dependencies a typical install might look like:
@@ -73,7 +73,7 @@ RUN apt-get update -qq && apt-get install -y \
 Codeship has a great article detailing some of the optimizations for the Dockerfile: https://blog.codeship.com/reduce-docker-image-size/
 
 
-## Cleanup
+### Cleanup
 Monitoring the host's disk space where Docker containers are deployed is crucial, especially in development environments where several versions of a Docker container may be pushed a day. The easy way to clean up is to setup a cron to run:
 
 ```
@@ -89,6 +89,7 @@ Docker is a great technology for development environments and simpler applicatio
 
 Here at Apsis we use the technology that is right for the application and are constantly looking out for changes in best practices and supporting technologies, so I'm sure you'll hear more about our exploration with Docker in future posts.
 
+*"Wait, what do you mean we aren't going to use Docker anymore? I just got everything converted... Noaaahhh!!!"*
 
 ## Resources
 

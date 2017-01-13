@@ -30,7 +30,7 @@ Publish your draft using:
 ```
     $ bundle exec jekyll publish _drafts/my-new-draft.md
     # or specify a specific date on which to publish it
-    $ bundle exec jekyll publish _drafts/my-new-draft.md --date 2014-01-24
+    $ bundle exec jekyll publish _drafts/my-new-draft.md [--date yyyy-mm-dd]
 ```
 
 Unpublish your post using:
@@ -43,14 +43,13 @@ Unpublish your post using:
 
 We follow a fairly simple publication workflow that relies on `git`.
 
-1. `bundle exec jekyll draft "My New Draft"`
+1. `_bin/new-draft.sh` > `"My New Draft"`
 2. `$EDITOR _drafts/my-new-draft.md`
 3. `git checkout -b draft/my-draft`
-4. `bundle exec jekyll publish _drafts/my-draft.md`
-5. `git add _posts`
-6. `git commit -m "Adding My Draft"`
-
-Because the `_drafts` folder is in the `.gitignore` you can work on as many posts as you'd like without worrying about branching.
+4. `git add _drafts/my-new-draft.md`
+5. `git commit -m "Adding My Draft"`
+6. Open a Pull request from `draft/my-draft` to `master`.
+7. Henry will publish your draft on the next available publication day!
 
 # Writing Posts
 
@@ -70,7 +69,7 @@ We support oEmbeds for a few services, and adding more is simple. If you'd like 
 
 ## From the VM
 
-Deploying is as easy as `_bin\deploy.sh`, hopefully. This rebuilds `master` into `gh-pages`, which is the actual live branch.
+Deploying is as easy as `_bin\deploy.sh`, hopefully. This rebuilds *the current branch* into `gh-pages`, which is the actual live branch.
 
 ## From Host Machine
 

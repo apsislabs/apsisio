@@ -4,12 +4,14 @@ layout: default
 
 {% assign post = page %}
 
+{% include posts/post_schema.html %}
+
 <div class="post-wrapper post-wrapper--single">
     <div class="container">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post">
             {% include posts/post_header.html %}
 
-            <div class="post__content" itemprop="articleBody">
+            <div class="post__content">
                 {{ content }}
             </div>
 

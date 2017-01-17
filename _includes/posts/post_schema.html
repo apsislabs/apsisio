@@ -1,0 +1,29 @@
+{% assign author = site.data.people[post.author] %}
+
+<!-- !START schema.org -->
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ post.title }}",
+    "datePublished": "{{ post.date }}",
+    "dateModified": "{{ post.date }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ author.name }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.name }}",
+      "logo": "{% asset_path 'logos/apsis_blue.png' %}"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ post.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+    },
+    {% if post.image %}
+      "image": ["{% asset_path {{post.image}} %}"]
+    {% endif %}
+  }
+</script>
+<!-- !END schema.org -->

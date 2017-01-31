@@ -4,16 +4,13 @@ author: niall
 title: Parsing JSON with Types (Part 1)
 ---
 
-
-## Deserialization and Types
-
 I like to have well-defined models of my application data, especially at service boundaries.  I usually also define types in my application code to reflect these models.  When data are sent from a service, their values are serialized and their types are mapped onto the type system of the serialization format.  Then, when receiving data, I need to deserialize the values _and also_ map the types back into the richer type system of my application code.
 
 In statically typed languages, application frameworks or libraries typically handle this for me.  In dynamically typed languages, the situation is usually worse.  All a library has to go off is the runtime type of the deserialized values, which restricts it to types representable in the serialization format.  For JSON being deserialized into a JavaScript application, this means all I get are strings, numbers, booleans, and arrays or objects (i.e. string-keyed maps) of those basic types.
 
 I want a systematic way to deserialize JSON data into my application types.
 
-## Prior Art
+### Prior Art
 
 I thought there must exist a JavaScript package to do this already but I wasn’t able to find anything very promising.[^prior-art]
 
@@ -21,7 +18,7 @@ Some work has been done on recognizing certain types, especially ISO date string
 
 There are some more promising projects like [typed-json](https://github.com/pd/typed-json) which attempt to deal with types in general, but these still have significant limitations.  They require type information, like a constructor name, to be embedded in the data.  This couples your service code to the type system of one particular client, which is... not great.  And of course, if you don’t control the service you are receiving data from, this is impossible to implement.
 
-## Type Mapping
+### Type Mapping
 
 What I really wanted was something that would (a) not require services to be aware of what my client was doing, and (b) give me powerful building blocks for mapping data into my application types.
 
@@ -29,14 +26,14 @@ For clarity, let me define a few terms as they will be used in the remainder of 
 
 * **JSON Object:** A JavaScript object whose values are exclusively JSON types.  This is the kind of object you get back from JSON.parse().
 * **Application Object:** A JavaScript object whose values may include JavaScript’s other built-in types (e.g. Date) and application-defined types (e.g. ES6 classes or objects with custom prototype chains).
- * **Deserialization:** Turn a JSON Object into an Application Object.  Serialization is the reverse.
- * **Type:** A JavaScript object with `fromJSON` and `toJSON` properties, which are functions that implement deserialization and serialization.
+* **Deserialization**: The process of turning a JSON object into an application object.  **Serialization** is the reverse.
+* **Type Mapper:** A JavaScript object with `fromJSON` and `toJSON` properties, which are functions that implement deserialization and serialization.
 
 Now, on to the code...
 
-### Basic Types
+#### Basic Types
 
-Basic types are the primitives of a type system.  Based on our definition above, let's define a few basic types by hand:
+Basic types are the primitives of a type system.  Based on our definition above, let's define a few type mappers for basic types:
 
 ```
 const string = {
@@ -63,7 +60,7 @@ const date = {
 };
 ```
 
-Fantastic.  Of course, we could also represent dates in our application using [moment](https://momentjs.com/) and they could be represented in our JSON data as time values (number of milliseconds since Unix epoch).  Then, our date type would look like:
+Fantastic.  Of course, we could also represent dates in our application using [moment](https://momentjs.com/) and they could be represented in our JSON data as time values (number of milliseconds since Unix epoch).  Then, our date type mapper would look like:
 
 ```
 import moment from 'moment';
@@ -74,11 +71,11 @@ const date = {
 };
 ```
 
-Even basic types should be flexible based on the needs of the application or the eccentricities of the services it connects to.
+So even basic type mappers can be redefined based on the needs of the application or the eccentricities of the services it connects to.
 
-### Type Constructors
+#### Parameterized Types
 
-It doesn't make sense to define all basic types this way.  Some types may be parameterized, e.g. an array of numbers vs. an array of strings, and a **type constructor** is a way to implement them.  Let's define a few type constructors:
+It doesn't make sense to define all basic type mappers this way.  Some types may be parameterized, e.g. an array of numbers vs. an array of strings.  A **type mapper constructor**, which is a function that returns a type mapper, is a way to implement them.  Let's define a few type mapper constructors:
 
 ```
 function arrayOf(type) {
@@ -107,7 +104,7 @@ console.log(type.fromJSON(fibonacci));
 // Set {1, 2, 3, 4}
 ```
 
-Note that JavaScript arrays and sets have the same representation in JSON's type system but we can choose how to deserialize it by specifying a type.
+Note that JavaScript arrays and sets have the same representation in JSON's type system but we can choose how to deserialize it by specifying a type mapper.
 
 Maps are another useful parameterized type to implement.  In JavaScript, we often use objects if all we need is a string-keyed map, but let's also add the possibility of using actual Map objects which support keys of any type.  Again, both of these will be represented the same way in JSON's type system.
 
@@ -150,9 +147,9 @@ console.log(type.fromJSON(holidays));
 // }
 ```
 
-### Composite Types
+#### Composite Types
 
-Okay, lets move on to composite types.  Composite types contain basic types and other composite types.  You could define a `fromJSON` and `toJSON` function for every composite type as well, but there is a much simpler solution.  Let's define a **schema** to be a JavaScript object whose values are all **types**.
+Okay, lets move on to composite types.  Composite types contain basic types and other composite types.  You could define a `fromJSON` and `toJSON` function for every composite type as well, but there is a much simpler solution.  Let's define a **schema** to be a JavaScript object whose values are all **type mappers**.
 
 ```
 const commentSchema = {
@@ -164,22 +161,22 @@ const commentSchema = {
 };
 ```
 
-And we can turn arbitrary **schemas** into **types** by mapping over their properties:
+Then we can turn arbitrary **schemas** into **type mappers**:
 
 ```
 import _ from 'lodash';
 
-function type(schema) {
+function typeMapper(schema) {
     return {
         fromJSON: object => _.mapValues(schema, (type, key) => type.fromJSON(object[key])),
         toJSON:   object => _.mapValues(schema, (type, key) => type.toJSON(object[key]))
     };
 }
 
-const commentType = type(commentSchema);
+const commentType = typeMapper(commentSchema);
 ```
 
-Now we can plug this type into our application code:
+And now we can plug this type into an appropriate location in our application code, for example:
 
 ```
 function loadComment(id) {
@@ -203,7 +200,7 @@ function createComment(commentObject) {
 That composite type contained only basic types.  Let's look at one that also uses type constructors and other composite types:
 
 ```
-const articleType = type({
+const articleType = typeMapper({
     author: string,
     content: string,
     published: boolean,
@@ -215,7 +212,7 @@ function loadArticle(id) {
 }
 ```
 
-## Up Next
+### Up Next
 
 In part two of this series I'll show how we can:
 

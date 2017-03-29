@@ -55,6 +55,7 @@ We support oEmbeds for a few services, and adding more is simple. If you'd like 
     - Add any missing metadata (author, photo (800px width), etc).
     - When everything looks good, run `_bin/deploy.sh` from the host machine.
     - Visit www.apsis.io/blog and ensure that everything looks good.
+    - Merge the `release/` branch into `master` and push.
     - Promote:
         - On Twitter, from the Apsis account.
         - Internally on Slack

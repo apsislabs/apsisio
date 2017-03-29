@@ -56,13 +56,14 @@ We support oEmbeds for a few services, and adding more is simple. If you'd like 
     - When everything looks good, run `_bin/deploy.sh` from the host machine.
     - Visit www.apsis.io/blog and ensure that everything looks good.
     - Promote:
-        - On Twitter
+        - On Twitter, from the Apsis account.
         - Internally on Slack
         - Ping relevant PROMOTERS on Slack
     - Update the Post History on the internal wiki
     - Ensure that at least the next three blog post JIRAs exist on the Apsis Jira board. If they don't, ping Henry to create them.
 - PROMOTERS:
     - If so inclined, promote using relevant personal accounts (e.g. Facebook, Reddit, Hacker News, etc.)
+        - If relevant, link promotions internally on Slack so that other employees can contribute to any discussion, etc.
 
 ## List of Promoters
 

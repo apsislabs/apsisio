@@ -12,5 +12,8 @@
     label: Contact
     url: "#contact"
 -
+    label: Jobs
+    url: jobs
+-
     label: Blog
     url: blog

@@ -8,9 +8,9 @@ credit: Tina Hartung
 
 Over the weekend, my usual sources for industry news exploded in response to [the postponement](http://electronconf.com/) of the first ElectronConf because the panel of speakers did not "reflect the standards to which we hold ourselves."
 
-First: _thank you_. Thank you to ElectronConf and to GitHub for self reflection and recognizing when something is wrong. We need more leading members of our industry to stand up for diversity. At Apsis Labs, we don't develop for or with Electron, but Noah and myself will be attending ElectronConf (whenever it does take place) to show support for taking an active role in increasing the diversity of our community. I hope others will do the same.
+First: _thank you_. Thank you to ElectronConf and to GitHub for self-reflection and recognition that something is wrong. We need more leading members of our industry to stand up for diversity. At Apsis Labs, we don't develop for or with Electron, but Noah and myself will be attending ElectronConf (whenever it does take place) to show support for taking an active role in increasing the diversity of our community. I hope others will do the same.
 
-Second, to the people decrying this move as being itself prejudiced, you embarrass me. It is shameful that you have gaul to stand up and say that the way things are is the way things should remain, and that taking affirmative action to increase the diversity of tech is wrong.
+Second, to members of the tech community who consider this move as being itself prejudiced: you embarrass me. It is shameful that you have gall to stand up and say that the way things are is the way things should remain, and that taking affirmative action to increase the diversity of tech is wrong.
 
 Right now, one of the most upvoted comments on Hacker News says:
 
@@ -26,7 +26,7 @@ And below that:
 
 I'd like to say thank you to the commenters who took on these misguided positions in direct response, but their rise to the top speaks of a silent majority who agree with these deeply problematic sentiments.
 
-Apsis Labs is hardly a diverse company -- something about which I feel routinely embarrassed -- consisting of 6, middle-class, cisgendered, straight white men. When Noah and I started, we didn't set out to hire 6 clones of ourselves: it just happened.
+Apsis Labs is hardly a diverse company -- something about which I feel routinely embarrassed -- consisting of 6, middle-class, cisgendered, straight white men[^whiteguys]. When Noah and I started, we didn't set out to hire 6 clones of ourselves: it just happened.
 
 We plumbed our networks, found the best-qualified candidates, and hired them. We did our best to bring no conscious bias to our process, actively sought out minority applicants (limited as they were), but we still ended up here. It's easy to make a lot of excuses: we can't control who applies (true), as a small business we can't make explicit diversity hires (false), with 4 employees it's not our job to promote diversity in tech (offensive and false)... the list goes on. The truth is, in our hires to date, we haven't had the courage to take a stand on creating a diverse work environment.
 
@@ -37,6 +37,8 @@ At Apsis, we're hiring again, and we're doing our best to avoid the same problem
 > Nobody made a greater mistake than he who did nothing because he could do only a little.
 
 So thank you, ElectronConf, for doing the little you can.
+
+[^whiteguys]: There's nothing wrong with being any or all of these things. I am, and have enjoyed being, a reasonably well privileged white man for my entire life, and I have no problem with my self identity. But my experience also comes with a responsibility to recognize that I am neither unique nor representative. It's part of my job to be aware that my 1/8th Japanese heritage makes me the closest thing to diversity at our company; that the only racism I've experienced was when someone in Florida thought I was Mexican; that the closest thing to street harassment I've been through was a woman yelling "nice butt!" as I walked by. Awareness of my privilege is a small price to pay for the privilege itself, and that awareness is neither a dismissal nor condemnation of the experience of white men everywhere.
 
 [^jonstewart]: This same point is made eloquently by Jon Stewart in [this video](https://www.youtube.com/watch?v=p1H7KxPlbQw&feature=youtu.be&t=2507) linked on reddit by u/zetchri.
 

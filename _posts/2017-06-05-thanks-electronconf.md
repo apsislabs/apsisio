@@ -38,7 +38,7 @@ At Apsis, we're hiring again, and we're doing our best to avoid the same problem
 
 So thank you, ElectronConf, for doing the little you can.
 
-[^whiteguys]: There's nothing wrong with being any or all of these things. I am, and have enjoyed being, a reasonably well privileged white man for my entire life, and I have no problem with my self identity. But my experience also comes with a responsibility to recognize that I am neither unique nor representative. It's part of my job to be aware that my 1/8th Japanese heritage makes me the closest thing to diversity at our company; that the only racism I've experienced was when someone in Florida thought I was Mexican; that the closest thing to street harassment I've been through was a woman yelling "nice butt!" as I walked by. Awareness of my privilege is a small price to pay for the privilege itself, and that awareness is neither a dismissal nor condemnation of the experience of white men everywhere.
+[^whiteguys]: There's nothing wrong with being any or all of these things. I am, and have enjoyed being, a reasonably well privileged white man for my entire life, and I have no problem with my self identity. But my experience also comes with a responsibility to recognize that I am neither unique nor representative. It's part of my job to be aware that my 1/8th Japanese heritage makes me the closest thing to diversity at our company. Awareness of my privilege is a small price to pay for the privilege itself, and that awareness is neither a dismissal nor condemnation of the experience of white men everywhere.
 
 [^jonstewart]: This same point is made eloquently by Jon Stewart in [this video](https://www.youtube.com/watch?v=p1H7KxPlbQw&feature=youtu.be&t=2507) linked on reddit by u/zetchri.
 

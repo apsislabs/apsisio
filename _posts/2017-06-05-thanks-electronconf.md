@@ -2,8 +2,8 @@
 layout: post
 author: wyatt
 title: Thanks, ElectronConf
-image: 'posts/minified.jpg'
-credit: Markus Spiske
+image: 'posts/electronconf.jpg'
+credit: Tina Hartung
 ---
 
 Over the weekend, my usual sources for industry news exploded in response to [the postponement](http://electronconf.com/) of the first ElectronConf because the panel of speakers did not "reflect the standards to which we hold ourselves."

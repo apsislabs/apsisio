@@ -81,17 +81,7 @@ This list indicates people who have expressed willingness to promote certain blo
 
 # Deploying the Site
 
-## With the VM
-
-Deploying is as easy as running `_bin\deploy.sh` on the host machine while the VM is running. This rebuilds *the current branch* into `gh-pages`, which is the actual live branch.
-
-## From Bare Host Machine
-
-If you're running jekyll locally on your host machine, the `_bin` script won't work. Instead, you'll want to use the `rake` task:
-
-```
-    bundle exec rake site:publish
-```
+You must be running the site locally.  To deploy, run `bundle exec rake site:publish`. This rebuilds *the current branch* into `gh-pages`, which is the actual live branch.
 
 # Jekyll Command Reference
 

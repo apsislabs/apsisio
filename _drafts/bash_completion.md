@@ -12,17 +12,24 @@ Obviously there are diminshing returns here[^2].
 
 Some of my customizations include bash aliases for my most used git commands. `ga` is
 short for `git add`, `gap` is short for `git add -p`, etc. I also like to have a
-colorized `cat` and `less` available to me using [Pygments](http://pygments.org/).
+syntax highlighted `cat` and `less` available to me using [Pygments](http://pygments.org/).
 
 Today I added something I've wanted for a long time: a `cd` that works relative to
 the directory I do most of my development work in. Now I can run `cdx subdir_of_x`
 and it will take me to `~/x/subdir_of_x`.
 
-What follows is a primer on bash autocompletion and a tiny bit of bash programming.
+You may be wondering "Why use precious kilobytes of storage and hours of time writing
+this up!?" And you'd be corect. By itself, this is not worthy of a blog post.
+I, however, also added autocompletion for the contents of that directory, and *that*
+is worth writing about.
+
+What follows is a short tutorial on bash autocompletion and a tiny bit of bash programming
+information. It assumes you have a working knowledge of programming, and at least passing
+familiarity with your terminal.
 
 ## The Function
 
-In and of itself, this a very easy function[^1] to write. In your `~/.bashrc`:
+In and of itself, this a very easy function[^1] to write. In your `~/.bashrc` add:
 
 ```
 function cdx {
@@ -30,20 +37,20 @@ function cdx {
 }
 ```
 
-I was thrilled when I got this working until I started testing it...
+My first test looked like this:
 
 ```
 cdx my_code  <TAB>  _base
 ```
 
-No autocomplete, just big gaping tabs in the middle of my command. What's
-an enterprising developer[^4] to do? Spend the morning figuring it out,
-of course.
+No autocomplete, just big gaping tabs in the middle of my command. What's an enterprising
+developer[^4] to do? Spend the morning figuring it out, of course.
 
 ## The Code
 
 First, the good stuff. All together, when placed in your `~/.bashrc` and `source`ed,
-the following works for hypothetical directory `x` in your home directory using `cdx`:
+the following works for hypothetical directory `x` in your home directory using the new
+command `cdx`:
 
 ```
 function cdx {
@@ -61,9 +68,14 @@ function _cdx {
 complete -F _cdx cdx
 ```
 
-Insert this in `~/.bashrc` replace all instances of "x" with a directory from your $HOME
-directory, and call `source ~/.bashrc`. You may want to rename `cdx` with a more intuitive
-name (for Apsis code, for example, I'd use `cda` and `_cda`).
+To make it work:
+
+ 1. Insert this in `~/.bashrc`.
+ 2. Replace all instances of "x" with a directory from your `$HOME` directory.
+ 3. Call `source ~/.bashrc`.
+
+You may want to rename `cdx` with a more intuitive name (for Apsis code, for example,
+I'd use `cda` and `_cda`).
 
 ## The Explanation
 
@@ -96,10 +108,10 @@ knowledge of bash). I've left the most basic stuff (like explaining `ls`) out.
 
     > Set the variable 'cur' to the last word on the command line.
 
- 5. `opts="$(ls -1 ~/x)"` is where we set the available options by creating an array from the output of
-    `ls -1 ~/x`. This gets used in the `compgen` command. In English:
+ 5. `opts="$(ls -1 ~/x)"` is where we set the available options by creating an array (space separated string)
+    from the output of `ls -1 ~/x`. This gets used in the `compgen` command. In English:
 
-    > I want to use the results of `ls -1 ~/x` as the list of potential options to autocomplete from.
+    > Set "opts" to the output of "ls -1 ~/x" as the list of potential options to autocomplete from.
 
  6. `local cur opts` is a declaration of the cur and opts variables. By using `local` we avoid cluttering
     the global variable namespace. In English:
@@ -140,22 +152,28 @@ If that's not the problem, you will have to debug this the old fashioned way. Us
 of variables. Finally you may want to read the docs.
 
 I didn't initially suggest reading the docs because, unfortunately, the documentation for anything contained in the
-bash manpages is terribly undiscoverable, difficult to search, and not always easy to read [^3]. All of the above
-is in the bash manpages. Here's how you can read those docs:
+bash man pages is terribly undiscoverable, difficult to search, and not always easy to read [^3]. All of the above
+is in the bash man pages. Here's how you can find the relevant docs:
 
- * `man bash` to open the documentation.
+ * `man bash` to open the documentation for bash itself.
  * Press `/` to start searching.
  * Once you've entered your search term hit "Enter" and then use `n` and `N` to search forward and backwards
    (respectively) for the content you want.
  * You'll want the following search terms:
-   * "Programming Completion" for an overview of the completion
-   * "compgen" for the function that matches input and the search term.
-   * "complete" for the function used to setup completion.
+   * "Programming Completion" for an overview of completion in bash.
+   * "compgen" for the function that we use to match input with the search term.
+   * "complete" for the function used to tell bash to use programmable completion for a given command.
+
+## In Closing
+
+Bash Programmable Autocompletion is powerful, but intimidating at first. Hopefully this post helps you get started.
+If you build something awesome write it up and ping us on twitter! We're [@ApsisLabs](https://twitter.com/apsislabs).
+
 
 [^1]: Couldn't use an alias, because aliases can't interpolate arguments, they're strictly dumb text replacements , and they always include a space at the end.
 
 [^2]: [xkcd is relevant here](https://xkcd.com/1205/)
 
-[^3]: The bash manpages use tons of bolded references to dozens of other locations in a what is a huge doc with no links. This is becuase it's a manpage, and manpages, as useful as they are, are dinosaurs [from a prehistoric time before hypertext was invented](https://unix.stackexchange.com/a/18161/34182).
+[^3]: The bash man pages use tons of bolded references to dozens of other locations in a what is a huge doc with no links. This is becuase it's a man page, and man pages, as useful as they are, are dinosaurs [from a prehistoric time before hypertext was invented](https://unix.stackexchange.com/a/18161/34182).
 
 [^4]: One with a head cold, limited exposure to bash internals like autocomplete, and more important work to accomplish.

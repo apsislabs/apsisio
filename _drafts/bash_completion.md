@@ -40,7 +40,9 @@ First the good stuff. All together, the following works for hypothetical directo
 in your home directory:
 
 ```
-function cdx { cd "$HOME/x/$1" }
+function cdx {
+    cd "$HOME/x/$1"
+}
 function _cdx {
     local cur opts
 

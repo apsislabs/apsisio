@@ -3,6 +3,10 @@ layout: post
 author: chris
 title: Bash Directory Completion
 image: 'posts/bash.gif'
+excerpt: >
+    What follows is a short tutorial on bash autocompletion and a tiny bit of bash programming
+    information. It assumes you have a working knowledge of programming, and at least passing
+    familiarity with your terminal.
 ---
 
 Every developer should have at least a basic mastery of their command line. I'd argue
@@ -164,6 +168,8 @@ is in the bash man pages. Here's how you can find the relevant docs:
    * "compgen" for the function that we use to match input with the search term.
    * "complete" for the function used to tell bash to use programmable completion for a given command.
 
+Update: After completing my first draft of this post, Niall pointed me to the far more readable and digestible [TLDP](http://www.tldp.org/LDP/abs/html/tabexpansion.html).
+
 ## In Closing
 
 Bash Programmable Autocompletion is powerful, but intimidating at first. Hopefully this post helps you get started.
@@ -174,6 +180,6 @@ If you build something awesome write it up and ping us on twitter! We're [@Apsis
 
 [^2]: [xkcd is relevant here](https://xkcd.com/1205/)
 
-[^3]: The bash man pages use tons of bolded references to dozens of other locations in a what is a huge doc with no links. This is becuase it's a man page, and man pages, as useful as they are, are dinosaurs [from a prehistoric time before hypertext was invented](https://unix.stackexchange.com/a/18161/34182).
+[^3]: Man pages, as useful as they are, are dinosaurs [from a prehistoric time before hypertext was invented](https://unix.stackexchange.com/a/18161/34182). You can't follow bolded text as if they were links.
 
 [^4]: One with a head cold, limited exposure to bash internals like autocomplete, and more important work to accomplish.

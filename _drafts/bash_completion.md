@@ -1,7 +1,7 @@
 ---
 layout: post
 author: chris
-title: Bash Directory Completion
+title: Save Time with Bash Programmable Autocompletion
 image: 'posts/bash.gif'
 excerpt: >
     What follows is a short tutorial on bash autocompletion and a tiny bit of bash programming

@@ -50,7 +50,7 @@ We support oEmbeds for a few services, and adding more is simple. If you'd like 
     - Pull latest from `master`; `vagrant up`.
     - Create branch: `release/yyyy-mm-dd-publish-whatever-post`.
     - SSH into the machine; `bundle exec jekyll publish _drafts/whatever-draft.md`.
-    - Host machine: `_bin/serve.sh`.
+    - Host machine: `_bin/serve-published.sh`.
     - Visit `localhost:4000/blog`. Ensure that the new post appears and looks good.
     - Add any missing metadata (author, photo (800px width), etc).
     - When everything looks good, run `_bin/deploy.sh` from the host machine.

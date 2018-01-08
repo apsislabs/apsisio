@@ -9,7 +9,7 @@ Getting up and running should be very fast.
 
 # Creating Content
 
-New content belongs in `_drafts`. Once the draft has been reviewed, it will be moved to `_posts` on a scheduled publication day. The content creation workflow is fairly simple:
+New Blog content belongs in `_drafts`. Once the draft has been reviewed, it will be moved to `_posts` on a scheduled publication day. The content creation workflow is fairly simple:
 
 1. `_bin/new-draft.sh` > `"My New Draft"`
 2. `$EDITOR _drafts/my-new-draft.md`
@@ -44,7 +44,7 @@ We support oEmbeds for a few services, and adding more is simple. If you'd like 
 
 ## Publication Day
 
-- A post to publish is decided upon. Usually this will just be the oldest approved and unpublished post. Particularly topical posts may occasionally warrant being pushed to the front of the line.
+- A post to publish is decided upon. Usually this will just be the oldest merged and unpublished post. Particularly topical posts may occasionally warrant being pushed to the front of the line.
 - PUBLISHER declared (default: Henry).
 - PUBLISHER:
     - Pull latest from `master`; `vagrant up`.

@@ -7,7 +7,7 @@ image: 'posts/diagram.jpg'
 
 Apsis Labs is about to wrap up our largest contract yet, and has openings for new clients! [Contact us](mailto:contact@apsis.io) to tell us about your project.
 
-In case you hadn't figured it out yet, Apsis is a small custom software consultancy. That means we help you use software to solve your business problems. We specialize in mobile and web applications in the healthtech, business workflow, and game industries. We're flexible, fast, and easy to work with.
+Apsis is a small custom software consultancy. That means we help you use software to solve your business problems. We specialize in mobile and web applications in the healthtech, business workflow, and game industries. We're flexible, fast, and easy to work with.
 
 We'd love to build something for you. Got this far and still not sure you need us? Here are some good clues we could help you out:
 

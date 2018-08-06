@@ -16,13 +16,15 @@ gems: [jekyll-paginate, jekyll-assets, jekyll-tidy, jekyll-sitemap]
 
 markdown: redcarpet
 redcarpet:
-  extensions: [footnotes, superscript, highlight, autolink, smart]
+  extensions: [footnotes, superscript, highlight, autolink, smart, strikethrough]
 
 # Assets settings
 assets:
   css_compressor: sass
   cachebust: soft
   prefix: /assets
+  sources:
+    - assets/images
   features:
     automatic_img_size: false
 

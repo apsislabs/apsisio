@@ -56,3 +56,11 @@ chris:
         created a todo app or twitter clone. When he's not working he's
         most likely roasting coffee, brewing beer, or playing a board
         game.
+
+mo:
+    name: "Mo Cohen"
+    image: "people/mo.jpg"
+    bio: >
+        Programmer by day, video game designer by later day.  I like making
+        faces at babies, giving other people's dogs new names, and eating
+        Nutella out of the jar with a spoon.

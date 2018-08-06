@@ -13,7 +13,7 @@
     url: "#contact"
 -
     label: Jobs
-    url: jobs
+    url: jobs/
 -
     label: Blog
-    url: blog
+    url: blog/

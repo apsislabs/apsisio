@@ -7,6 +7,14 @@
 
         <div class="banner__copy">
             {{ banner.copy | markdownify }}
+            <br/>
+            <ul class="link-list">
+                <li class="link-list__item">
+                    <a class="link-list__link" href="{{ site.baseurl }}work-with-us">
+                        Learn more about our unique approach &raquo;
+                    </a>
+                </li>
+            </ul>
             <hr>
             <h3>{{ banner.subheader }}</h3>
             {% include components/image_list.html images=site.data.tools link_target="_blank" %}

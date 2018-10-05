@@ -104,3 +104,11 @@ Jekyll commands run through bundler on the VM, so all the following would look l
     publish _drafts/NAME.md [--date yyyy-mm-dd] # Moves a draft into the _posts directory and sets the date
     unpublish _posts/NAME.md                    # Moves a post back into the _drafts directory
 ```
+
+---
+
+# Built by Apsis
+
+[![apsis](https://s3-us-west-2.amazonaws.com/apsiscdn/apsis.png)](https://www.apsis.io)
+
+`apsisio` was built by Apsis Labs. We love sharing what we build! Check out our [other libraries on Github](https://github.com/apsislabs), and if you like our work you can [hire us](https://www.apsis.io/work-with-us/) to build your vision.

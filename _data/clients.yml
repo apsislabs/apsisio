@@ -11,10 +11,6 @@
     source: homepage/clients/callidus.png
     link: http://www.calliduscloud.com/
 -
-    name: "Natera"
-    source: homepage/clients/natera.png
-    link: http://www.natera.com/
--
     name: "Columbia University"
     source: homepage/clients/columbia.png
     link: http://www.columbia.edu/

@@ -2,8 +2,7 @@
 
 Getting up and running should be very fast.
 
-- `vagrant up`
-- `_bin/serve.sh`
+- `docker-compose up`
 - Visit `http://localhost:4000`.
 - Rejoice.
 

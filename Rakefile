@@ -1,3 +1,5 @@
+Encoding.default_external = Encoding::UTF_8
+
 require "rubygems"
 require "tmpdir"
 
@@ -30,7 +32,7 @@ namespace :site do
       system "git add ."
       message = "Site updated at #{Time.now.utc}"
       system "git commit -m #{message.inspect}"
-      system "git remote add origin git@github.com:#{GIT_REPO}.git"
+      system "git remote add origin https://github.com/#{GIT_REPO}.git"
       system "git push origin master:refs/heads/gh-pages --force"
 
       Dir.chdir pwd

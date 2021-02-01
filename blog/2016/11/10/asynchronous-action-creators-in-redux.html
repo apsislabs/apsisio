@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Apsis Labs | Asynchronous Action Creators in Redux</title>
+    <!-- !START meta -->
+    <meta name="description" content="Improving the logic-to-boilerplate ratio of asynchronous action definitions.">
+    <link rel="canonical" href="/blog/2016/11/10/asynchronous-action-creators-in-redux">
+    <link rel="alternate" type="application/rss+xml" title="Development Chop Shop" href="/feed.xml">
+    <meta content="Apsis Labs" property="og:site_name">
+    <meta content="Asynchronous Action Creators in Redux" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="Improving the logic-to-boilerplate ratio of asynchronous action definitions." property="og:description">
+    <meta content="/blog/2016/11/10/asynchronous-action-creators-in-redux" property="og:url">
+    <meta content="2016-11-10T00:00:00+00:00" property="article:published_time">
+    <meta content="/assets/posts/clocke.jpg" property="og:image">
+    <!-- !END meta -->
+    <!-- !START favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon.ico">
+    <!-- !END favicons -->
+    <!-- !START polyfill -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="/assets/vendor/html5shiv.min.js"></script>
+      <script type="text/javascript" src="/assets/vendor/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="/assets/polyfill.js" async="async"></script>
+    <!-- !END polyfill -->
+    <!-- !START styles -->
+    <link type="text/css" rel="stylesheet" href="/assets/app.css">
+    <!-- !END styles -->
+  </head>
+  <body class="">
+    <!-- !START navbar -->
+    <header id="navbar" class="navbar ">
+      <div class="navbar__header">
+        <a href="/" class="logo logo--navbar logo--mobile navbar__logo">
+          <picture>
+            <source media="(min-width: 960px)" srcset="/assets/logos/apsis_blue.png" />
+            <source srcset="/assets/logos/apsis_mobile_blue.png" />
+            <img src="/assets/logos/apsis_blue.png" alt="Apsis Labs" class="logo__image">
+          </picture>
+          <h1 class="logo__text">Apsis Labs</h1>
+        </a>
+        <button id="nav-toggle" class="navbar__nav-toggle">
+          <span class="navicon ">
+            <span class="navicon__bar"></span>
+          </span>
+          <span class="sr">Toggle Menu</span>
+        </button>
+      </div>
+      <nav class="navbar__nav">
+        <a class="navbar__nav-link" href="/#services">Services</a>
+        <a class="navbar__nav-link" href="/#about">About</a>
+        <a class="navbar__nav-link" href="/#clients">Clients</a>
+        <a class="navbar__nav-link" href="/#contact">Contact</a>
+        <a class="navbar__nav-link" href="/jobs/">Jobs</a>
+        <a class="navbar__nav-link" href="/blog/">Blog</a>
+      </nav>
+    </header>
+    <!-- !END navbar -->
+    <!-- !START content -->
+    <div id="content">
+      <!-- !START schema.org -->
+      <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Asynchronous Action Creators in Redux",
+            "datePublished": "2016-11-10 00:00:00 +0000",
+            "dateModified": "2016-11-10 00:00:00 +0000",
+            "author": {
+              "@type": "Person",
+              "name": "Niall Wingham"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Apsis Labs",
+              "logo": "/assets/logos/apsis_blue.png"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "/blog/2016/11/10/asynchronous-action-creators-in-redux"
+            },
+        
+              "image": ["/assets/posts/clocke.jpg"]
+        
+          }
+      </script>
+      <!-- !END schema.org -->
+      <div class="post-wrapper post-wrapper--single">
+        <div class="container">
+          <article class="post">
+            <header class="post__header">
+              <div class="post__image-wrapper">
+                <img src="/assets/posts/clocke.jpg" alt="Asynchronous Action Creators in Redux. " class="post__image" data-action="zoom">
+              </div>
+              <h2 class="post__title" itemprop="name headline">
+                <a href="">
+                  Asynchronous Action Creators in Redux
+        </a>
+              </h2>
+            </header>
+            <div class="post__content">
+              <p>Redux applications often use the <a href="https://github.com/gaearon/redux-thunk">redux-thunk</a> middleware to dispatch actions for interacting with an HTTP API.  A pattern for asynchronous action creators is demonstrated in the <a href="http://redux.js.org/docs/advanced/AsyncActions.html">documentation</a> as follows (adding the error catching logic it recommends for a real-world application):</p>
+              <div class="highlight">
+                <pre><code class="language-javascript" data-lang="javascript"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">REQUEST_POSTS</span> <span class="o">=</span> <span class="s1">'REQUEST_POSTS'</span>
+<span class="kd">function</span> <span class="nx">requestPosts</span><span class="p">(</span><span class="nx">subreddit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">type</span><span class="p">:</span> <span class="nx">REQUEST_POSTS</span><span class="p">,</span>
+        <span class="nx">subreddit</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">RECEIVE_POSTS</span> <span class="o">=</span> <span class="s1">'RECEIVE_POSTS'</span>
+<span class="kd">function</span> <span class="nx">receivePosts</span><span class="p">(</span><span class="nx">subreddit</span><span class="p">,</span> <span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">type</span><span class="p">:</span> <span class="nx">RECEIVE_POSTS</span><span class="p">,</span>
+        <span class="nx">subreddit</span><span class="p">,</span>
+        <span class="na">posts</span><span class="p">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">child</span> <span class="o">=&gt;</span> <span class="nx">child</span><span class="p">.</span><span class="nx">data</span><span class="p">),</span>
+        <span class="na">receivedAt</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">RECEIVE_POSTS_ERROR</span> <span class="o">=</span> <span class="s1">'RECEIVE_POSTS_ERROR'</span>
+<span class="kd">function</span> <span class="nx">receivePostsError</span><span class="p">(</span><span class="nx">subreddit</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">type</span><span class="p">:</span> <span class="nx">RECEIVE_POSTS_ERROR</span><span class="p">,</span>
+        <span class="nx">subreddit</span><span class="p">,</span>
+        <span class="nx">error</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">fetchPosts</span><span class="p">(</span><span class="nx">subreddit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">requestPosts</span><span class="p">(</span><span class="nx">subreddit</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="err">`</span><span class="nx">http</span><span class="err">:</span><span class="c1">//www.reddit.com/r/${subreddit}.json`)</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">receivePosts</span><span class="p">(</span><span class="nx">subreddit</span><span class="p">,</span> <span class="nx">json</span><span class="p">)))</span>
+            <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">receivePostsError</span><span class="p">(</span><span class="nx">subreddit</span><span class="p">,</span> <span class="nx">error</span><span class="p">)))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+              </div>
+              <p>This is a simple pattern to follow, but it&rsquo;s a lot of code to write for the little bit of logic contained here.  Even worse, that logic is separated into two non-adjacent blocks which appear out of order of their execution.<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup></p>
+              <div class="highlight">
+                <pre><code class="language-javascript" data-lang="javascript"><span class="nx">posts</span><span class="err">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">child</span> <span class="o">=&gt;</span> <span class="nx">child</span><span class="p">.</span><span class="nx">data</span><span class="p">),</span>
+<span class="nx">receivedAt</span><span class="err">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+
+<span class="p">...</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="err">`</span><span class="nx">http</span><span class="err">:</span><span class="c1">//www.reddit.com/r/${subreddit}.json`)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+</code></pre>
+              </div>
+              <p>I generally favour simple repetitive code over complex succinct code.  But if your application were to implement this for every API call it made, the typographical burden could prove too great to bear!</p>
+              <p>Let&rsquo;s see if we can improve the signal-to-noise (i.e. logic-to-boilerplate) ratio of this action definition without introducing any new dependencies or abstractions.<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup></p>
+              <p>Here is the common structure I see in the pattern:</p>
+              <ol>
+                <li>
+                  <p>Every asynchronous action is going to dispatch three types of synchronous actions corresponding to the <code>pending</code>, <code>fulfilled</code>, and <code>rejected</code> state of a promise.  These are the actions that will actually be handled by a reducer.</p>
+                </li>
+                <li>
+                  <p>The asynchronous action creator will have to accept some number of arguments in order to create the promise&mdash;in this example, it was just the name of the subreddit&mdash;and these arguments should also passed along to the reducer as part of the action object.</p>
+                </li>
+                <li>
+                  <p>The promise is returned to the code calling dispatch, in case it needs to chain some logic of its own.</p>
+                </li>
+              </ol>
+              <p>Those observations lead us to a helper function&mdash;I suppose you could call it an asynchronous action creator <em>creator</em>&mdash;that looks like this:</p>
+              <div class="highlight">
+                <pre><code class="language-javascript" data-lang="javascript"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">promiseAction</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">createPromise</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">actionTypes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">START</span><span class="p">:</span> <span class="nx">type</span> <span class="o">+</span> <span class="s1">'_START'</span><span class="p">,</span>
+        <span class="na">SUCCESS</span><span class="p">:</span> <span class="nx">type</span> <span class="o">+</span> <span class="s1">'_SUCCESS'</span><span class="p">,</span>
+        <span class="na">ERROR</span><span class="p">:</span> <span class="nx">type</span> <span class="o">+</span> <span class="s1">'_ERROR'</span>
+    <span class="p">}</span>
+
+    <span class="kr">const</span> <span class="nx">actionCreator</span> <span class="o">=</span> <span class="nx">args</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span> <span class="nx">getState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">dispatch</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="nx">actionTypes</span><span class="p">.</span><span class="nx">START</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span> <span class="p">})</span>
+        <span class="k">return</span> <span class="nx">createPromise</span><span class="p">({</span> <span class="na">state</span><span class="p">:</span> <span class="nx">getState</span><span class="p">(),</span> <span class="p">...</span><span class="nx">args</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span>
+            <span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="nx">actionTypes</span><span class="p">.</span><span class="nx">SUCCESS</span><span class="p">,</span> <span class="nx">result</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span> <span class="p">}),</span>
+            <span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="nx">actionTypes</span><span class="p">.</span><span class="nx">ERROR</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span> <span class="p">})</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="nx">actionTypes</span><span class="p">,</span> <span class="nx">actionCreator</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+              </div>
+              <p>Now the action definition from the example can be written with almost no boilerplate:</p>
+              <div class="highlight">
+                <pre><code class="language-javascript" data-lang="javascript"><span class="kr">export</span> <span class="kr">const</span> <span class="p">[</span><span class="nx">FETCH_POSTS</span><span class="p">,</span> <span class="nx">fetchPosts</span><span class="p">]</span> <span class="o">=</span> <span class="nx">promiseAction</span><span class="p">(</span><span class="s1">'FETCH_POSTS'</span><span class="p">,</span> <span class="p">({</span> <span class="nx">subreddit</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="err">`</span><span class="na">http</span><span class="p">:</span><span class="c1">//www.reddit.com/r/${subreddit}.json`)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="p">({</span>
+            <span class="na">posts</span><span class="p">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">child</span> <span class="o">=&gt;</span> <span class="nx">child</span><span class="p">.</span><span class="nx">data</span><span class="p">),</span>
+            <span class="na">receivedAt</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+        <span class="p">}))</span>
+<span class="p">})</span>
+</code></pre>
+              </div>
+              <p>A few notes on the implementation:</p>
+              <ol>
+                <li>
+                  <p>We pass the state into the promise creator.  This makes it possible to implement logic like executing an HTTP request only if the resource hasn&rsquo;t already been loaded (see the subsequent <code>fetchPostsIfNeeded</code> example from the redux docs) without creating an additional thunk.</p>
+                </li>
+                <li>
+                  <p>The asynchronous action creator is called with object-style arguments rather than an argument list, so they can be passed along as named properties of the synchronous action objects.  Calling code looks like <code>dispatch(createPost({ author, content }))</code>  instead of <code>dispatch(createPost(author, content))</code></p>
+                </li>
+                <li>
+                  <p>We export the three action types as a single object with <code>START</code>, <code>SUCCESS</code>, and <code>ERROR</code> properties instead of exporting three separate strings.  This is really just to have shorter import statements in the reducer.</p>
+                </li>
+              </ol>
+              <p>I like this kind of helper because it makes our code less repetitive while keeping the simplicity of the original.  No new dependencies are added, no new abstractions need to be learned; we just extract a pattern which was already present.</p>
+              <div class="footnotes">
+                <hr>
+                <ol>
+                  <li id="fn1">
+                    <p>Of course, you can&rsquo;t always write code in order of execution, but when you have a few statements like: parse this JSON, then extract these properties, then set a timestamp; <em>which are always executed together and in that order,</em> it seems silly not to.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+                  </li>
+                  <li id="fn2">
+                    <p>If you are willing to increase complexity, there are certainly dependencies that you can introduce!  For example, <a href="https://github.com/acdlite/redux-promise">redux-promise</a> and <a href="https://github.com/pburtchaell/redux-promise-middleware">redux-promise-middleware</a> each implement middleware that allow you to dispatch promises directly.  They also use <a href="https://github.com/acdlite/flux-standard-action">flux standard actions</a>, so that&rsquo;s another small standard you&rsquo;ll need to learn.  You may be disappointed if their choice of abstraction does not line up with what you need.  redux-promise does not dispatch a starting action so you&rsquo;ll probably end up using it in combination with redux-thunk.  redux-promise-middleware has gone through four major versions, changing its interface a bit each time.  Neither exposes application state.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <aside class="author-block">
+              <img src="/assets/people/niall.jpg" alt="Niall Wingham" class="author-block__image">
+              <header class="author-block__header">
+                <h5 class="author-block__title">Niall Wingham</h5>
+              </header>
+              <div class="author-block__content">
+                <p>Niall is a cheerful curmudgeon and likes reading language and protocol specifications. He lives with his professorial wife and pint-sized daughter in Toronto, and is by default the head of the Canadian branch of Apsis. When he grows up he wants to be a farmer, or maybe a ballet dancer, or no, wait, a sailor!</p>
+              </div>
+            </aside>
+          </article>
+        </div>
+      </div>
+    </div>
+    <!-- !END content -->
+    <!-- !START footer -->
+    <footer id="footer" class="site-footer">
+      <div class="container">
+        <small>
+          &copy; 2021 apsis labs
+            |
+            shuttle image credit NASA
+        </small>
+      </div>
+    </footer>
+    <!-- !END footer -->
+    <!-- !START javascript includes -->
+    <script type="text/javascript" src="/assets/vendor.js"></script>
+    <script type="text/javascript" src="/assets/scripts.js"></script>
+    <!-- !END javascript includes -->
+    <!-- !START Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+                  ga('create', 'UA-47858702-1', 'auto');
+                  ga('send', 'pageview');
+    </script>
+    <!-- !END Google Analytics -->
+    <!-- !START google fonts -->
+    <script type="text/javascript">
+      WebFontConfig = {
+              google: { families: [ 'Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic:latin', 'Source+Code+Pro:400,500,600,700:latin', 'Lora:400,400italic,700,700italic:latin' ] }
+          };
+      
+          (function() {
+              var wf = document.createElement('script');
+              wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+              wf.type = 'text/javascript';
+              wf.async = 'true';
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(wf, s);
+          })();
+    </script>
+    <!-- !END google fonts -->
+  </body>
+</html>

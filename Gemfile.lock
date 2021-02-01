@@ -61,7 +61,7 @@ GEM
       sass (>= 3.3)
     pathutil (0.9.0)
       forwardable-extended (~> 2.6)
-    rack (1.6.4)
+    rack (2.2.3)
     rake (11.1.2)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)

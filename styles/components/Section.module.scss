@@ -3,6 +3,7 @@
 .section {
   --siteWidth: #{vars.$site_width};
 
+  overflow: hidden;
   position: relative;
   background-color: var(--sectionBackground);
 
@@ -13,7 +14,15 @@
 
   &--spaced {
     .section__content {
-      padding: vars.$spacing_xl * 3 vars.$spacing_xl * 2;
+      padding: vars.$spacing_xl vars.$spacing_lg;
+
+      @media (min-width: vars.$tablet) {
+        padding: vars.$spacing_xl * 2 vars.$spacing_xl;
+      }
+
+      @media (min-width: vars.$desktop) {
+        padding: vars.$spacing_xl * 3 vars.$spacing_xl * 2;
+      }
     }
   }
 
@@ -42,7 +51,11 @@
   }
 
   &--narrow {
-    --siteWidth: #{vars.$site_width * 0.6};
+    --siteWidth: #{vars.$site_width * 0.5};
+
+    @media (min-width: vars.$desktop) {
+      --siteWidth: #{vars.$site_width * 0.6};
+    }
   }
 
   &__mask {
@@ -70,20 +83,42 @@
     width: 100%;
   }
 
+  &__label_container {
+    background-color: vars.$surface_blue;
+    padding: vars.$spacing_xs vars.$spacing;
+    display: inline-block;
+
+    @media (min-width: vars.$desktop) {
+      position: absolute;
+      padding-right: vars.$spacing_lg * 2;
+    }
+
+    @media (min-width: vars.$largedesktop) {
+      white-space: nowrap;
+      transform: translateX(calc(-100vw / 2 + var(--siteWidth) / 2)) translateY(-50%);
+      width: calc(((100vw - var(--siteWidth)) / 2) + #{vars.$spacing_lg});
+      transition: width ease-in-out 0.25s;
+      top: 15%;
+
+      &:hover {
+        width: calc(((100vw - var(--siteWidth)) / 2) + #{vars.$spacing_xl});
+      }
+    }
+  }
+
   &__label {
     font-family: vars.$serif;
     font-size: vars.$font_size_lg;
+    font-weight: 700;
     color: vars.$apsis_blue;
-    background-color: vars.$surface_blue;
-    display: inline-block;
-    padding: vars.$spacing_xs vars.$spacing;
 
-    text-align: right;
-    padding-right: vars.$spacing_lg * 2;
-    margin-left: calc(-100vw / 2 + var(--siteWidth) / 2);
-    width: calc(((100vw - var(--siteWidth)) / 2) + #{vars.$spacing_lg});
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: vars.$spacing;
   }
 }

@@ -2,21 +2,41 @@
 
 .hero {
   display: flex;
-  align-items: center;
-  padding: vars.$spacing_xl * 4;
+  flex-direction: column;
+  padding: vars.$spacing_xl;
+
+  @media (min-width: vars.$tablet) {
+    padding: vars.$spacing_xl * 2 vars.$spacing_xl;
+    // flex-direction: row;
+  }
+
+  @media (min-width: vars.$desktop) {
+    flex-direction: row;
+    align-items: center;
+    padding: vars.$spacing_xl * 4;
+  }
 
   &__headline {
     flex: 1;
-    margin-right: vars.$spacing_xl;
     text-shadow: 0 1px 2px rgba(vars.$apsis_dark, 0.25);
+    margin-bottom: vars.$spacing_lg;
+
+    @media (min-width: vars.$desktop) {
+      margin-right: vars.$spacing_xl;
+    }
   }
 
   &__title {
     font-family: vars.$serif;
-    font-size: vars.$font_size_d1;
+    font-size: vars.$font_size_d2;
     text-transform: lowercase;
-    line-height: 0.5;
     font-weight: 700;
+    line-height: 1;
+
+    @media (min-width: vars.$desktop) {
+      font-size: vars.$font_size_d1;
+      line-height: 0.5;
+    }
   }
 
   &__highlight {

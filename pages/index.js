@@ -4,7 +4,7 @@ import { Navbar } from "components/Navbar";
 import { Hero } from "components/Hero";
 import { ServicesSection } from "../components/ServicesSection";
 import { Button } from "components/Button";
-import { ChevronRight } from "react-feather";
+import { ChevronRight, GitHub, List } from "react-feather";
 
 export const IndexPage = () => {
   return (
@@ -12,13 +12,16 @@ export const IndexPage = () => {
       <Section className="theme--blue" bordered>
         <Navbar />
       </Section>
+
       <Section className="theme--blue">
         <Hero />
       </Section>
+
       <Section guides={false} className="theme--gray" bordered>
         <Clients />
       </Section>
-      <Section label="Services" spaced>
+
+      <Section label="Services" spaced Icon={List}>
         <ServicesSection />
       </Section>
 
@@ -41,7 +44,7 @@ export const IndexPage = () => {
         </div>
       </Section>
 
-      <Section label="Open Source" spaced>
+      <Section label="Open Source" spaced Icon={GitHub}>
         <ServicesSection />
       </Section>
 

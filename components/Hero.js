@@ -17,17 +17,11 @@ export const Hero = () => {
         </h3>
       </div>
 
-      <div className={clsx(styles.hero__copy, 'typography')}>
-        <p>
-          We believe the right software isn’t just innovative: it’s inspiring.
-          At Apsis, our team of dedicated engineers works hard to provide
-          solutions that will work today without sacrificing tomorrow.
-        </p>
-
+      <div className={clsx(styles.hero__copy, "typography")}>
         <p>
           Born and raised in the Pacific North West, we have worked with
-          everyone from startups to enterprise, anpm i typewriter-effectnd we’re
-          looking forward to discovering what we can do working with you.
+          everyone from startups to enterprise, and we’re looking forward to
+          discovering what we can do working with you.
         </p>
 
         <Button EndIcon={ChevronRight}>Let's get to work</Button>

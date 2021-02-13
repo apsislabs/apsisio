@@ -5,20 +5,12 @@ $logos_per_row: 4;
 .clients {
   margin-top: vars.$spacing;
   margin-bottom: vars.$spacing;
-
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(
-      calc(
-        #{vars.$site_width / $logos_per_row} - #{vars.$spacing * (
-            $logos_per_row - 1
-          )}
-      ),
-      1fr
-    )
-  );
-  grid-gap: vars.$spacing;
+  grid-template-columns: repeat(auto-fill, 1fr);
+
+  @media (min-width: vars.$tablet) {
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  }
 
   &__logo_frame {
     margin: 0;

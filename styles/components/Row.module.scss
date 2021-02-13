@@ -1,19 +1,38 @@
 @use 'styles/vars';
 
 .row {
-  padding: vars.$spacing_lg;
-  margin-left: -1 * vars.$spacing_lg;
-  margin-right: -1 * vars.$spacing_lg;
+  padding: 0 vars.$spacing_lg;
+  margin: 0 (-1 * vars.$spacing_lg);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
 
   & > * {
-    flex: 1;
-    margin-right: vars.$spacing_lg;
+    margin-bottom: vars.$spacing_lg;
 
     &:last-child {
-      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: vars.$mobile) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & > * {
+      flex: 0 calc(50% - #{vars.$spacing});
+      margin-right: vars.$spacing;
+
+      &:nth-child(2n) {
+        margin-right: none;
+      }
+    }
+  }
+
+  @media (min-width: vars.$desktop) {
+    & > * {
+      flex: 1;
+      margin-bottom: 0;
     }
   }
 }

@@ -10,6 +10,7 @@ export const Section = ({
   kebabed = false,
   narrow = false,
   label,
+  Icon,
   ...props
 }) => {
   return (
@@ -27,7 +28,14 @@ export const Section = ({
       </div>
 
       <div className={styles.section__container}>
-        {label && <h4 className={styles.section__label}>{label}</h4>}
+        {label && (
+          <div className={styles.section__label_container}>
+            <h4 className={styles.section__label}>
+              {Icon && <Icon size={18} className={styles.section__icon} />}
+              {label}
+            </h4>
+          </div>
+        )}
         <div className={styles.section__content}>{children}</div>
       </div>
     </section>

@@ -1,0 +1,16 @@
+@use "../vars";
+
+.logotype {
+  font-size: 2em;
+  color: vars.$apsis_blue;
+  text-transform: lowercase;
+  font-weight: 700;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__planet {
+    margin-right: vars.$spacing_sm;
+  }
+}

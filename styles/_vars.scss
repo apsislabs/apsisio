@@ -1,0 +1,18 @@
+//= COLORS
+
+$apsis_blue: #2173aa;
+$apsis_dark: #2c3e50;
+$apsis_gray: #596d79;
+$base_bg_color: #fff;
+$button_color: #ccc;
+
+$gray_darker: darken($apsis_dark, 15%);
+$gray: lighten($apsis_gray, 30%);
+$gray_lighter: lighten($apsis_gray, 40%);
+$gray_lightest: lighten($apsis_gray, 55%);
+
+//= SPACING
+
+$spacing: 1rem;
+$spacing_sm: $spacing / 2;
+$spacing_xs: $spacing_sm / 2;

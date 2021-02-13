@@ -13,13 +13,13 @@
 
 .typing {
   &__cursor {
-    width: 0.035em;
-    margin-left: 0.1em;
-    margin-right: 0.1em;
+    width: 0.05em;
+    margin-left: 0.15em;
+    margin-right: 0.15em;
     height: 1em;
-    transform: translateY(0.25em);
     background-color: vars.$gray_lighter;
     display: inline-block;
+    position: absolute;
   }
 
   &__cursor--blinking {

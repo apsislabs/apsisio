@@ -1,0 +1,31 @@
+@use 'styles/vars';
+.hero {
+  display: flex;
+  align-items: center;
+  padding: vars.$spacing_xl * 4;
+
+  &__headline {
+    flex: 1;
+    margin-right: vars.$spacing_xl;
+  }
+
+  &__title {
+    font-family: vars.$serif;
+    font-size: vars.$font_size_d1;
+    text-transform: lowercase;
+    line-height: 0.5;
+    font-weight: 700;
+  }
+
+  &__highlight {
+    color: vars.$apsis_blue;
+  }
+
+  &__copy {
+    flex: 1;
+
+    > p {
+      margin-bottom: vars.$spacing;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use 'styles/vars';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: vars.$spacing_sm vars.$spacing;
+
+  &__tagline {
+    position: relative;
+    margin-left: auto;
+    font-size: vars.$font_size_sm;
+    color: vars.$apsis_blue;
+    text-transform: lowercase;
+    padding: vars.$spacing_xs;
+
+    &::after {
+      z-index: -1;
+      display: block;
+      content: "";
+      background-color: rgba(vars.$apsis_blue, 0.15);
+      width: 140%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+  }
+}

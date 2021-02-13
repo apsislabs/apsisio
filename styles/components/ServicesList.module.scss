@@ -1,0 +1,44 @@
+@use 'styles/vars';
+
+$variant_colors: (
+  "blue": vars.$apsis_blue,
+  "pink": pink,
+  "green": green,
+  "yellow": gold,
+);
+
+.services_list {
+  &__title {
+    color: vars.$apsis_blue;
+    margin-bottom: vars.$spacing_sm;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: vars.$spacing_sm;
+  }
+
+  &__list {
+    padding-left: 2rem;
+    margin-left: vars.$spacing;
+
+    li::before {
+      content: "•";
+      color: vars.$gray;
+      display: inline-block;
+      width: vars.$spacing;
+      margin-left: -1 * vars.$spacing_xl;
+      font-weight: 600;
+    }
+  }
+
+  @each $variant, $color in $variant_colors {
+    &--#{$variant} {
+      .services_list__title {
+        color: $color;
+      }
+    }
+  }
+}

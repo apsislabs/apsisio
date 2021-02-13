@@ -1,8 +1,26 @@
 @use "./vars";
 
 @import "minireset.css/minireset.sass";
+@import "styles/fonts";
 
 html,
 body {
   color: vars.$apsis_dark;
+  font-family: vars.$sans;
+  font-size: 100%;
+  line-height: 1.4124;
+}
+
+:root {
+  --guideColor: #{vars.$border_gray};
+}
+
+.theme--gray {
+  --sectionBackground: #{vars.$surface_gray};
+  --guideColor: #{vars.$border_gray};
+}
+
+.theme--blue {
+  --sectionBackground: #{vars.$surface_blue};
+  --guideColor: #{vars.$border_blue};
 }

@@ -1,0 +1,40 @@
+@use 'styles/vars';
+
+.button {
+  appearance: none;
+  background-color: vars.$apsis_blue;
+  border: 0;
+  color: vars.$white;
+  display: inline-block;
+  font: inherit;
+  font-size: vars.$font_size;
+  padding: vars.$spacing_sm vars.$spacing;
+  text-decoration: none;
+  transition: box-shadow ease-in-out 0.125s;
+  width: auto;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__end_icon {
+    margin-left: vars.$spacing_md;
+    transition: margin ease-in-out 0.125s;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    box-shadow: 0 1px 5px rgba(vars.$apsis_dark, 0.5);
+
+    .button__end_icon {
+      margin-left: vars.$spacing_lg;
+    }
+  }
+
+  &:active {
+    box-shadow: inset 0 1px 5px rgba(vars.$apsis_dark, 0.5);
+  }
+}

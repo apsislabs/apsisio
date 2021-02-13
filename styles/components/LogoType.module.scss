@@ -1,10 +1,10 @@
-@use "../vars";
+@use "styles/vars";
 
 .logotype {
-  font-size: 2em;
+  font-size: vars.$font_size_h4;
   color: vars.$apsis_blue;
   text-transform: lowercase;
-  font-weight: 700;
+  font-weight: 500;
 
   display: flex;
   flex-direction: row;

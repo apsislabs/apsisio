@@ -1,0 +1,19 @@
+@use 'styles/vars';
+
+.row {
+  padding: vars.$spacing_lg;
+  margin-left: -1 * vars.$spacing_lg;
+  margin-right: -1 * vars.$spacing_lg;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  & > * {
+    flex: 1;
+    margin-right: vars.$spacing_lg;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

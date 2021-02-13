@@ -4,7 +4,7 @@
   box-sizing: border-box;
   transform: rotate(45deg);
   display: inline-block;
-  border-color: red;
+  border-color: inherit;
 
   &::before {
     content: "";

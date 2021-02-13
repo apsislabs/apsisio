@@ -3,16 +3,48 @@
 $apsis_blue: #2173aa;
 $apsis_dark: #2c3e50;
 $apsis_gray: #596d79;
-$base_bg_color: #fff;
-$button_color: #ccc;
+$white: #fff;
+
+$border_gray: rgba($apsis_gray, 0.15);
+$surface_gray: rgba($apsis_gray, 0.0375);
+$border_blue: rgba($apsis_blue, 0.15);
+$surface_blue: rgba($apsis_blue, 0.075);
 
 $gray_darker: darken($apsis_dark, 15%);
 $gray: lighten($apsis_gray, 30%);
 $gray_lighter: lighten($apsis_gray, 40%);
 $gray_lightest: lighten($apsis_gray, 55%);
 
+//= FONTS
+
+$sans: "Roboto", sans-serif;
+$serif: "Lora", serif;
+
+$font_size: 1rem;
+$font_size_xxs: 0.65rem;
+$font_size_xs: 0.75rem;
+$font_size_sm: 0.889rem;
+$font_size_lg: 1.125rem;
+
+$font_size_d1: 3.653rem;
+$font_size_d2: 2.887rem;
+$font_size_d3: 2.281rem;
+
+$font_size_h1: 1.802rem;
+$font_size_h2: 1.602rem;
+$font_size_h3: 1.424rem;
+$font_size_h4: 1.266rem;
+$font_size_h5: 1.125rem;
+
 //= SPACING
 
 $spacing: 1rem;
-$spacing_sm: $spacing / 2;
-$spacing_xs: $spacing_sm / 2;
+$spacing_xs: $spacing * 0.35;
+$spacing_sm: $spacing * 0.5;
+$spacing_md: $spacing;
+$spacing_lg: $spacing * 1.5;
+$spacing_xl: $spacing * 2;
+
+//= SIZES
+
+$site_width: 1200px;

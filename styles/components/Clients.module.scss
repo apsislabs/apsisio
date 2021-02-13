@@ -1,12 +1,28 @@
+@use 'styles/vars';
+
+$logos_per_row: 4;
+
 .clients {
+  margin-top: vars.$spacing;
+  margin-bottom: vars.$spacing;
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
-  grid-gap: 1rem;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(
+      calc(
+        #{vars.$site_width / $logos_per_row} - #{vars.$spacing * (
+            $logos_per_row - 1
+          )}
+      ),
+      1fr
+    )
+  );
+  grid-gap: vars.$spacing;
 
   &__logo_frame {
     margin: 0;
     padding: 0;
-    background-color: orange;
     position: relative;
 
     &::before {
@@ -18,9 +34,11 @@
 
   &__logo {
     position: absolute;
-    max-width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    max-width: 80%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
   }
 }

@@ -1,0 +1,59 @@
+@use 'styles/vars';
+
+.section {
+  position: relative;
+  background-color: var(--sectionBackground);
+
+  &--bordered {
+    border-top: 1px solid var(--guideColor);
+    border-bottom: 1px solid var(--guideColor);
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__guides {
+    height: 100%;
+    margin: 0 auto;
+    max-width: vars.$site_width;
+    width: 100%;
+    border-left: 1px solid var(--guideColor);
+    border-right: 1px solid var(--guideColor);
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: vars.$site_width;
+    width: 100%;
+  }
+
+  &--spaced {
+    .section__content {
+      padding: vars.$spacing_xl * 3 vars.$spacing_xl * 2;
+    }
+  }
+
+  &__label {
+    font-family: vars.$serif;
+    font-size: vars.$font_size_lg;
+    color: vars.$apsis_blue;
+    background-color: vars.$surface_blue;
+    display: inline-block;
+    padding: vars.$spacing_xs vars.$spacing;
+
+    text-align: right;
+    padding-right: vars.$spacing_lg * 2;
+    margin-left: calc(-100vw / 2 + #{vars.$site_width} / 2);
+    width: calc(((100vw - #{vars.$site_width}) / 2) + #{vars.$spacing_lg});
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

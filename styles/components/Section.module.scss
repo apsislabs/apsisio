@@ -1,12 +1,48 @@
 @use 'styles/vars';
 
 .section {
+  --siteWidth: #{vars.$site_width};
+
   position: relative;
   background-color: var(--sectionBackground);
 
   &--bordered {
     border-top: 1px solid var(--guideColor);
     border-bottom: 1px solid var(--guideColor);
+  }
+
+  &--spaced {
+    .section__content {
+      padding: vars.$spacing_xl * 3 vars.$spacing_xl * 2;
+    }
+  }
+
+  &--kebabed {
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      background-color: var(--guideColor);
+      height: 1px;
+      width: calc((100vw - var(--siteWidth)) / 2 + #{vars.$spacing});
+    }
+
+    &::before {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--narrow {
+    --siteWidth: #{vars.$site_width * 0.6};
   }
 
   &__mask {
@@ -30,14 +66,8 @@
 
   &__container {
     margin: 0 auto;
-    max-width: vars.$site_width;
+    max-width: var(--siteWidth);
     width: 100%;
-  }
-
-  &--spaced {
-    .section__content {
-      padding: vars.$spacing_xl * 3 vars.$spacing_xl * 2;
-    }
   }
 
   &__label {
@@ -50,8 +80,8 @@
 
     text-align: right;
     padding-right: vars.$spacing_lg * 2;
-    margin-left: calc(-100vw / 2 + #{vars.$site_width} / 2);
-    width: calc(((100vw - #{vars.$site_width}) / 2) + #{vars.$spacing_lg});
+    margin-left: calc(-100vw / 2 + var(--siteWidth) / 2);
+    width: calc(((100vw - var(--siteWidth)) / 2) + #{vars.$spacing_lg});
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

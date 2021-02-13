@@ -3,6 +3,7 @@ import styles from "styles/components/Hero.module.scss";
 import { Button } from "components/Button";
 import { TypeEffect } from "./TypeEffect";
 import { ChevronRight, ChevronsDown } from "react-feather";
+import clsx from "clsx";
 
 const PEOPLE = ["people", "wyatt", "eric", "henry", "chris", "noah", "apsis"];
 
@@ -16,7 +17,7 @@ export const Hero = () => {
         </h3>
       </div>
 
-      <div className={styles.hero__copy}>
+      <div className={clsx(styles.hero__copy, 'typography')}>
         <p>
           We believe the right software isn’t just innovative: it’s inspiring.
           At Apsis, our team of dedicated engineers works hard to provide

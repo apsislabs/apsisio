@@ -1,4 +1,5 @@
 @use 'styles/vars';
+
 .hero {
   display: flex;
   align-items: center;
@@ -7,6 +8,7 @@
   &__headline {
     flex: 1;
     margin-right: vars.$spacing_xl;
+    text-shadow: 0 1px 2px rgba(vars.$apsis_dark, 0.25);
   }
 
   &__title {
@@ -23,9 +25,5 @@
 
   &__copy {
     flex: 1;
-
-    > p {
-      margin-bottom: vars.$spacing;
-    }
   }
 }

@@ -19,7 +19,7 @@ export const Button = ({
     >
       <span className={styles.button__content}>
         {children}
-        {EndIcon && <EndIcon className={styles.button__end_icon} />}
+        {EndIcon && <EndIcon size={18} className={styles.button__end_icon} />}
       </span>
     </Component>
   );

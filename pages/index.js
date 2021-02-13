@@ -3,6 +3,8 @@ import { Section } from "components/Section";
 import { Navbar } from "components/Navbar";
 import { Hero } from "components/Hero";
 import { ServicesSection } from "../components/ServicesSection";
+import { Button } from "components/Button";
+import { ChevronRight } from "react-feather";
 
 export const IndexPage = () => {
   return (
@@ -18,6 +20,48 @@ export const IndexPage = () => {
       </Section>
       <Section label="Services" spaced>
         <ServicesSection />
+      </Section>
+
+      <Section spaced kebabed narrow>
+        <div className="typography">
+          <p>
+            We believe the right software isn’t just innovative: it’s inspiring.
+            At Apsis, our team of dedicated engineers works hard to provide
+            solutions that will work today without sacrificing tomorrow.
+          </p>
+
+          <p>
+            Born and raised in the Pacific North West, we have worked with
+            everyone from startups to enterprise, anpm i typewriter-effectnd
+            we’re looking forward to discovering what we can do working with
+            you.
+          </p>
+
+          <Button EndIcon={ChevronRight}>Let's get to work</Button>
+        </div>
+      </Section>
+
+      <Section label="Open Source" spaced>
+        <ServicesSection />
+      </Section>
+
+      <Section spaced kebabed narrow>
+        <div className="typography">
+          <p>
+            We believe the right software isn’t just innovative: it’s inspiring.
+            At Apsis, our team of dedicated engineers works hard to provide
+            solutions that will work today without sacrificing tomorrow.
+          </p>
+
+          <p>
+            Born and raised in the Pacific North West, we have worked with
+            everyone from startups to enterprise, anpm i typewriter-effectnd
+            we’re looking forward to discovering what we can do working with
+            you.
+          </p>
+
+          <Button EndIcon={ChevronRight}>Let's get to work</Button>
+        </div>
       </Section>
     </>
   );

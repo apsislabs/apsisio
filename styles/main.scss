@@ -24,3 +24,9 @@ body {
   --sectionBackground: #{vars.$surface_blue};
   --guideColor: #{vars.$border_blue};
 }
+
+.typography {
+  > p {
+    margin-bottom: vars.$spacing;
+  }
+}

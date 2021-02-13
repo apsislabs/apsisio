@@ -7,6 +7,8 @@ export const Section = ({
   guides = true,
   bordered = false,
   spaced = false,
+  kebabed = false,
+  narrow = false,
   label,
   ...props
 }) => {
@@ -15,6 +17,8 @@ export const Section = ({
       className={clsx(className, styles.section, {
         [styles["section--bordered"]]: bordered,
         [styles["section--spaced"]]: spaced,
+        [styles["section--kebabed"]]: kebabed,
+        [styles["section--narrow"]]: narrow,
       })}
       {...props}
     >

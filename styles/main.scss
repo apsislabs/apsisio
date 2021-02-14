@@ -30,3 +30,8 @@ body {
     margin-bottom: vars.$spacing;
   }
 }
+
+.page {
+  background: transparent url("/img/trails.svg") center bottom -400px no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,77 @@
+@use 'styles/vars';
+
+@mixin directional($x, $y) {
+  &::after {
+    transform: translateX($x) translateY($y);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::after {
+      transform: none;
+    }
+  }
+}
+
+$v: (
+  "n": -1,
+  "s": 1,
+);
+
+$h: (
+  "w": -1,
+  "e": 1,
+);
+
+.repo_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: monospace;
+  background-color: vars.$surface_blue;
+  border: 1px solid vars.$border_blue;
+  padding: vars.$spacing_md;
+  position: relative;
+  color: vars.$apsis_dark;
+  text-decoration: none;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    opacity: 0.75;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: vars.$surface_blue;
+    transition: transform ease-in-out 0.15s;
+  }
+
+  &__media {
+    margin-right: vars.$spacing_lg;
+    color: vars.$gray;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: vars.$font_size;
+  }
+
+  &__content {
+    font-size: vars.$font_size_sm;
+  }
+
+  @each $hdir, $hcoef in $h {
+    @each $vdir, $vcoef in $v {
+      &--#{$vdir}#{$hdir} {
+        @include directional(
+          vars.$spacing_sm * $hcoef,
+          vars.$spacing_sm * $vcoef
+        );
+      }
+    }
+  }
+}

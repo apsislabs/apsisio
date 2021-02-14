@@ -24,7 +24,11 @@
       margin-right: vars.$spacing;
 
       &:nth-child(2n) {
-        margin-right: none;
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-bottom: vars.$spacing_lg;
       }
     }
   }
@@ -33,6 +37,16 @@
     & > * {
       flex: 1;
       margin-bottom: 0;
+      margin-right: vars.$spacing_xl;
+
+      &:nth-child(2n) {
+        margin-right: vars.$spacing_xl;
+      }
+
+      &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }

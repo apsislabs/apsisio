@@ -4,6 +4,11 @@
   display: flex;
   flex-direction: column;
   padding: vars.$spacing_xl;
+  position: relative;
+
+  &__particles {
+    position: absolute;
+  }
 
   @media (min-width: vars.$tablet) {
     padding: vars.$spacing_xl * 2 vars.$spacing_xl;

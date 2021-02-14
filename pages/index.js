@@ -5,6 +5,8 @@ import { Hero } from "components/Hero";
 import { ServicesSection } from "../components/ServicesSection";
 import { Button } from "components/Button";
 import { ChevronRight, GitHub, List } from "react-feather";
+import { Row } from "components/Row";
+import { RepoCard } from "../components/RepoCard";
 
 export const IndexPage = () => {
   return (
@@ -13,7 +15,7 @@ export const IndexPage = () => {
         <Navbar />
       </Section>
 
-      <Section className="theme--blue">
+      <Section className="theme--blue page">
         <Hero />
       </Section>
 
@@ -25,47 +27,83 @@ export const IndexPage = () => {
         <ServicesSection />
       </Section>
 
-      <Section spaced kebabed narrow>
-        <div className="typography">
-          <p>
-            We believe the right software isn’t just innovative: it’s inspiring.
-            At Apsis, our team of dedicated engineers works hard to provide
-            solutions that will work today without sacrificing tomorrow.
-          </p>
+      <div className="page">
+        <Section spaced kebabed narrow>
+          <div className="typography">
+            <p>
+              We believe the right software isn’t just innovative: it’s
+              inspiring. At Apsis, our team of dedicated engineers works hard to
+              provide solutions that will work today without sacrificing
+              tomorrow.
+            </p>
 
-          <p>
-            Born and raised in the Pacific North West, we have worked with
-            everyone from startups to enterprise, anpm i typewriter-effectnd
-            we’re looking forward to discovering what we can do working with
-            you.
-          </p>
+            <p>
+              Born and raised in the Pacific North West, we have worked with
+              everyone from startups to enterprise, anpm i typewriter-effectnd
+              we’re looking forward to discovering what we can do working with
+              you.
+            </p>
 
-          <Button EndIcon={ChevronRight}>Let's get to work</Button>
-        </div>
-      </Section>
+            <Button EndIcon={ChevronRight}>Let's get to work</Button>
+          </div>
+        </Section>
 
-      <Section label="Open Source" spaced Icon={GitHub}>
-        <ServicesSection />
-      </Section>
+        <Section label="Open Source" spaced Icon={GitHub}>
+          <Row>
+            <RepoCard
+              title="slayer"
+              Icon={GitHub}
+              href="https://github.com/apsislabs/slayer"
+              description="a service layer for ruby"
+              direction="se"
+            />
 
-      <Section spaced kebabed narrow>
-        <div className="typography">
-          <p>
-            We believe the right software isn’t just innovative: it’s inspiring.
-            At Apsis, our team of dedicated engineers works hard to provide
-            solutions that will work today without sacrificing tomorrow.
-          </p>
+            <RepoCard
+              title="cf7 gated content"
+              Icon={GitHub}
+              description="gated files for wordpress"
+              direction="ne"
+              href="https://github.com/apsislabs/cf7-gated-content"
+            />
 
-          <p>
-            Born and raised in the Pacific North West, we have worked with
-            everyone from startups to enterprise, anpm i typewriter-effectnd
-            we’re looking forward to discovering what we can do working with
-            you.
-          </p>
+            <RepoCard
+              title="orca"
+              Icon={GitHub}
+              description="simple javascript orechestration"
+              direction="sw"
+              href="https://github.com/apsislabs/orca"
+            />
 
-          <Button EndIcon={ChevronRight}>Let's get to work</Button>
-        </div>
-      </Section>
+            <RepoCard
+              title="phi_attrs"
+              Icon={GitHub}
+              description="hipaa logging for rails"
+              direction="nw"
+              href="https://github.com/apsislabs/phi_attrs"
+            />
+          </Row>
+        </Section>
+
+        <Section spaced kebabed narrow>
+          <div className="typography">
+            <p>
+              We believe the right software isn’t just innovative: it’s
+              inspiring. At Apsis, our team of dedicated engineers works hard to
+              provide solutions that will work today without sacrificing
+              tomorrow.
+            </p>
+
+            <p>
+              Born and raised in the Pacific North West, we have worked with
+              everyone from startups to enterprise, anpm i typewriter-effectnd
+              we’re looking forward to discovering what we can do working with
+              you.
+            </p>
+
+            <Button EndIcon={ChevronRight}>Let's get to work</Button>
+          </div>
+        </Section>
+      </div>
     </>
   );
 };

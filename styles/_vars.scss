@@ -3,14 +3,19 @@
 $apsis_blue: #2173aa;
 $apsis_dark: #2c3e50;
 $apsis_gray: #596d79;
+$apsis_orange: #e59927;
+$apsis_fuschia: #c7399f;
+$apsis_green: #31a560;
 $white: #fff;
 
 $border_gray: rgba($apsis_gray, 0.15);
 $surface_gray: rgba($apsis_gray, 0.0375);
 $border_blue: rgba($apsis_blue, 0.15);
 $surface_blue: rgba($apsis_blue, 0.075);
+$surface_orange: rgba($apsis_orange, 0.075);
 
 $gray_darker: darken($apsis_dark, 15%);
+$gray_dark: darken($apsis_gray, 5%);
 $gray: lighten($apsis_gray, 30%);
 $gray_lighter: lighten($apsis_gray, 40%);
 $gray_lightest: lighten($apsis_gray, 55%);
@@ -47,11 +52,12 @@ $spacing_xl: $spacing * 2;
 
 //= SIZES
 
-$site_width: 1200px;
+$site_width: 1360px;
 
 //= MEDIA_QUERIES
 
 $mobile: 480px;
 $tablet: 768px;
 $desktop: 960px;
-$largedesktop: 1440px;
+$lgdesktop: 1440px;
+$xldesktop: 1600px;

@@ -11,7 +11,7 @@
     font-size: vars.$font_size_sm;
     color: vars.$apsis_blue;
     text-transform: lowercase;
-    padding: vars.$spacing_xs;
+    padding: vars.$spacing_xs vars.$spacing_sm;
 
     &::after {
       z-index: -1;
@@ -26,5 +26,9 @@
       bottom: 0;
       pointer-events: none;
     }
+  }
+
+  &__highlight {
+    color: vars.$apsis_orange;
   }
 }

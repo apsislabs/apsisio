@@ -15,7 +15,7 @@ export const IndexPage = () => {
         <Navbar />
       </Section>
 
-      <Section className="theme--blue page">
+      <Section className="theme--blue">
         <Hero />
       </Section>
 
@@ -48,7 +48,7 @@ export const IndexPage = () => {
           </div>
         </Section>
 
-        <Section label="Open Source" spaced Icon={GitHub}>
+        <Section label="Open Source" centerLabel spaced Icon={GitHub}>
           <Row>
             <RepoCard
               title="slayer"

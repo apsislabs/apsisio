@@ -2,9 +2,9 @@
 
 $variant_colors: (
   "blue": vars.$apsis_blue,
-  "pink": pink,
-  "green": green,
-  "yellow": gold,
+  "pink": vars.$apsis_fuschia,
+  "green": vars.$apsis_green,
+  "yellow": vars.$apsis_orange,
 );
 
 .services_list {

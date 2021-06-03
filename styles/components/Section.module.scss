@@ -93,15 +93,22 @@
       padding-right: vars.$spacing_lg * 2;
     }
 
-    @media (min-width: vars.$largedesktop) {
+    @media (min-width: vars.$xldesktop) {
       white-space: nowrap;
-      transform: translateX(calc(-100vw / 2 + var(--siteWidth) / 2)) translateY(-50%);
+      transform: translateX(calc(-100vw / 2 + var(--siteWidth) / 2));
       width: calc(((100vw - var(--siteWidth)) / 2) + #{vars.$spacing_lg});
       transition: width ease-in-out 0.25s;
-      top: 15%;
+      top: vars.$spacing_xl;
 
       &:hover {
         width: calc(((100vw - var(--siteWidth)) / 2) + #{vars.$spacing_xl});
+      }
+    }
+
+    &--centered {
+      @media (min-width: vars.$xldesktop) {
+        top: 50%;
+        transform: translateX(calc(-100vw / 2 + var(--siteWidth) / 2)) translateY(-50%);
       }
     }
   }

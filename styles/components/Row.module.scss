@@ -14,7 +14,7 @@
     }
   }
 
-  @media (min-width: vars.$mobile) {
+  @media (min-width: vars.$tablet) {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -30,6 +30,28 @@
       &:last-child {
         margin-bottom: vars.$spacing_lg;
       }
+    }
+
+    &--top {
+      align-items: flex-start;
+    }
+
+    &--middle {
+      align-items: center;
+    }
+
+    &--bottom {
+      align-items: flex-end;
+    }
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+
+    &--narrow {
+      max-width: calc(var(--siteWidth) * 0.75);
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

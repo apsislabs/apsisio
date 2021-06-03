@@ -1,29 +1,44 @@
 @use 'styles/vars';
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+}
+
 .hero {
+  --animation-time: 5s;
+
   display: flex;
   flex-direction: column;
   padding: vars.$spacing_xl;
   position: relative;
 
-  &__particles {
+
+  &__particle {
+    animation: fadeOut var(--animation-time) ease;
+    display: block;
     position: absolute;
   }
 
   @media (min-width: vars.$tablet) {
     padding: vars.$spacing_xl * 2 vars.$spacing_xl;
-    // flex-direction: row;
   }
 
   @media (min-width: vars.$desktop) {
     flex-direction: row;
     align-items: center;
-    padding: vars.$spacing_xl * 4;
+    padding: vars.$spacing_xl * 2;
+    min-height: 78vh;
   }
 
   &__headline {
     flex: 1;
-    text-shadow: 0 1px 2px rgba(vars.$apsis_dark, 0.25);
     margin-bottom: vars.$spacing_lg;
 
     @media (min-width: vars.$desktop) {
@@ -36,18 +51,55 @@
     font-size: vars.$font_size_d2;
     text-transform: lowercase;
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.125;
+    margin-bottom: vars.$spacing_xl;
 
     @media (min-width: vars.$desktop) {
       font-size: vars.$font_size_d1;
     }
   }
 
+  &__input {
+    margin-right: vars.$spacing_sm;
+    padding: vars.$spacing_sm;
+    appearance: none;
+    border: 1px solid vars.$border_gray;
+    display: inline-block;
+    transition: border-color 0.25s ease-in-out, outline-color 0.25s ease-in-out;
+    outline: 3px solid transparent;
+
+    &:focus,
+    &:focus-within {
+      border-color: vars.$apsis_blue;
+      outline: 3px solid rgba(vars.$apsis_blue, 0.25);
+    }
+  }
+
   &__highlight {
-    color: vars.$apsis_blue;
+    color: vars.$apsis_orange;
   }
 
   &__copy {
+    font-size: vars.$font_size_lg;
+    margin-bottom: vars.$spacing_xl;
+    text-shadow: none;
+    color: vars.$gray_dark;
+  }
+
+  &__image_container {
     flex: 1;
+  }
+
+  &__image {
+    display: none;
+
+    opacity: 0.9;
+
+    @media (min-width: vars.$tablet) {
+      display: block;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

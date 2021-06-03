@@ -1,0 +1,50 @@
+@use 'styles/vars';
+
+$variant_colors: (
+  "blue": vars.$apsis_blue,
+  "pink": vars.$apsis_fuschia,
+  "green": vars.$apsis_green,
+  "gold": vars.$apsis_orange,
+);
+
+.service_row {
+  &__row {
+    margin-bottom: vars.$spacing_lg * 2;
+
+    @media (min-width: vars.$desktop) {
+      margin-bottom: vars.$spacing_lg * 4;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: vars.$spacing_md;
+    font-size: vars.$font_size_h5;
+    font-weight: 600;
+  }
+
+  &__image_container {
+    text-align: center;
+    margin-bottom: vars.$spacing_lg;
+
+    @media (min-width: vars.$desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    width: 50%;
+    max-width: 220px;
+  }
+
+  @each $variant, $color in $variant_colors {
+    &--#{$variant} {
+      .service_row__title {
+        color: $color;
+      }
+    }
+  }
+}

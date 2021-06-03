@@ -10,6 +10,7 @@ export const Section = ({
   kebabed = false,
   narrow = false,
   label,
+  centerLabel = false,
   Icon,
   ...props
 }) => {
@@ -29,7 +30,12 @@ export const Section = ({
 
       <div className={styles.section__container}>
         {label && (
-          <div className={styles.section__label_container}>
+          <div
+            className={
+              clsx(styles.section__label_container,
+              centerLabel && styles["section__label_container--centered"])
+            }
+          >
             <h4 className={styles.section__label}>
               {Icon && <Icon size={18} className={styles.section__icon} />}
               {label}

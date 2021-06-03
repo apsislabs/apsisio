@@ -6,28 +6,31 @@
   border: 0;
   color: vars.$white;
   display: inline-block;
-  font: inherit;
-  font-size: vars.$font_size;
+  font-size: vars.$font_size_sm;
   padding: vars.$spacing_sm vars.$spacing;
   text-decoration: none;
   transition: box-shadow ease-in-out 0.125s;
   width: auto;
-
-  &__content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  outline: 3px solid transparent;
 
   &__end_icon {
-    margin-left: vars.$spacing_md;
+    vertical-align: text-top;
+    margin-left: vars.$spacing_sm;
     transition: margin ease-in-out 0.125s;
+    display: inline-block;
   }
 
   &:hover,
   &:focus {
-    cursor: pointer;
     box-shadow: 0 1px 5px rgba(vars.$apsis_dark, 0.5);
+    outline: 3px solid rgba(vars.$apsis_blue, 0.25);
+  }
+
+  &:hover {
+    cursor: pointer;
 
     .button__end_icon {
       margin-left: vars.$spacing_lg;

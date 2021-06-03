@@ -1,13 +1,26 @@
 @use 'styles/vars';
+@use "sass:math";
+
+// $timing_function: cubic-bezier(0.280, 0.840, 0.420, 1);
+$timing_function: ease-in-out;
 
 @mixin directional($x, $y) {
+  transform: translateX(math.div($x, 2)) translateY(math.div($y, 2));
+
+  &::before {
+    transform: translateX(math.div(-$x, 2)) translateY(math.div(-$y, 2));
+  }
+
   &::after {
-    transform: translateX($x) translateY($y);
+    transform: translateX(math.div($x, 2)) translateY(math.div($y, 2));
   }
 
   &:hover,
   &:focus,
   &:active {
+    transform: translateX(math.div($x, 2)) translateY(math.div($y, 2) - 0.5);
+
+    &::before,
     &::after {
       transform: none;
     }
@@ -29,13 +42,21 @@ $h: (
   flex-direction: row;
   align-items: center;
   font-family: monospace;
-  background-color: vars.$surface_blue;
-  border: 1px solid vars.$border_blue;
   padding: vars.$spacing_md;
+  border: 1px solid transparent;
   position: relative;
   color: vars.$apsis_dark;
   text-decoration: none;
+  transition: border-color 0.25s $timing_function 0.25s,
+    transform 0.125s $timing_function;
 
+  height: 120px;
+
+  &:hover {
+    border-color: vars.$apsis_orange;
+  }
+
+  &::before,
   &::after {
     display: block;
     content: "";
@@ -47,7 +68,13 @@ $h: (
     bottom: 0;
     z-index: -1;
     background-color: vars.$surface_blue;
-    transition: transform ease-in-out 0.15s;
+    transition: transform $timing_function 0.25s,
+      background-color $timing_function 0.25s;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    background-color: vars.$surface_orange;
   }
 
   &__media {
@@ -67,10 +94,14 @@ $h: (
   @each $hdir, $hcoef in $h {
     @each $vdir, $vcoef in $v {
       &--#{$vdir}#{$hdir} {
-        @include directional(
-          vars.$spacing_sm * $hcoef,
-          vars.$spacing_sm * $vcoef
-        );
+        @include directional(vars.$spacing_sm, vars.$spacing_sm);
+        
+        @media (min-width: vars.$desktop) {
+          @include directional(
+            vars.$spacing_sm * $hcoef,
+            vars.$spacing_sm * $vcoef
+          );
+        }
       }
     }
   }

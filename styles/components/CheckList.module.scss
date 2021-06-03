@@ -1,0 +1,33 @@
+@use 'styles/vars';
+
+.check_list {
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  padding-left: 1.5rem;
+
+  > li {
+    break-inside: avoid;
+    margin-bottom: vars.$spacing_sm;
+    text-indent: -1.5rem;
+
+    &:hover {
+      .check_list__marker {
+        color: vars.$apsis_green;
+      }
+    }
+  }
+
+  &__marker {
+    margin-right: vars.$spacing_sm;
+    vertical-align: text-top;
+    display: inline-block;
+    color: vars.$gray_lighter;
+    transition: color 0.15s ease-in-out;
+  }
+
+  @media (min-width: vars.$mobile) {
+    columns: 2;
+    column-gap: vars.$spacing_lg;
+  }
+}

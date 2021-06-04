@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import { Button } from "components/Button";
-import { useEffect, useRef, useState } from "react";
+import useInterval from "hooks/useInterval";
+import { useRef } from "react";
 import { ChevronRight } from "react-feather";
-import useInterval from "src/hooks/useInterval";
 import styles from "styles/components/Hero.module.scss";
 import { TypeEffect } from "./TypeEffect";
 

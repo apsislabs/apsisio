@@ -2,8 +2,9 @@
 layout: post
 author: niall
 title: Parsing JSON with Types (Part 1)
-image: 'posts/minified.jpg'
+image: '/img/posts/minified.jpg'
 credit: Markus Spiske
+date: 2017-03-03
 ---
 
 I like to have well-defined models of my application data, especially at service boundaries.  I usually also define types in my application code to reflect these models.  When data are sent from a service, their values are serialized and their types are mapped onto the type system of the serialization format.  Then, when receiving data, I need to deserialize the values _and also_ map the types back into the richer type system of my application code.

@@ -1,18 +1,20 @@
-import { Post } from "lib/posts";
+import { Post } from "lib/types";
+import styles from "styles/components/blog/Post.module.scss"
 
 export const PostMeta: React.FC<{ post: Post }> = ({ post }) => {
+	console.log(post.date);
 	return (
-		<footer className="post__meta">
+		<footer className={styles["post__meta"]}>
 			Posted on
-			<time
+			{" "}<time
 				dateTime="{{ post.date | date_to_xmlschema }}"
 				itemProp="datePublished"
 			>
 				{post.date}
-			</time>
+			</time>{" "}
 			{post.author && (
 				<>
-					by
+					by{" "}
 					<span itemProp="author" itemScope itemType="http://schema.org/Person">
 						<span itemProp="name">{post.author}</span>
 					</span>

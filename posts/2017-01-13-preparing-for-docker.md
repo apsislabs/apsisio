@@ -2,8 +2,9 @@
 author: eric
 layout: post
 title: Preparing for Docker
-image: 'posts/shipping-containers.jpg'
+image: '/img/posts/shipping-containers.jpg'
 credit: olafpictures
+date: 2017-01-13
 ---
 
 It is a dark winter day at your desk in Maine and your boss gets back from sunny California and says "Docker is the best, we need to start using this for everything!". You internally groan because you just got all the infrastructure working correctly, but you start frantically searching how to setup and run Docker and jump right into figuring out how to apply it to your current projects because it needs to be done yesterday.

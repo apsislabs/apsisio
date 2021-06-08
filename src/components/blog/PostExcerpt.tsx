@@ -1,23 +1,19 @@
 import Link from "next/link";
-import { Post } from "lib/posts";
+import { Post } from "lib/types";
 import { PostHeader } from "./PostHeader";
 import { PostMeta } from "./PostMeta";
+import styles from "styles/components/blog/Post.module.scss";
+import clsx from "clsx";
 
 export const PostExcerpt: React.FC<{ post: Post }> = ({ post }) => {
 	return (
 		<article
-			className="post post--list"
+			className={clsx(styles.post, styles["post--list"])}
 			itemType="http://schema.org/BlogPosting"
 		>
 			<PostHeader post={post} />
 
-			<div className="post__content">
-				{post.excerpt}
-
-				<p>
-					<Link href={post.href}>Read More &raquo;</Link>
-				</p>
-			</div>
+			<div className={styles["post__content"]} dangerouslySetInnerHTML={{__html: post.excerpt}} />
 
 			<PostMeta post={post} />
 		</article>

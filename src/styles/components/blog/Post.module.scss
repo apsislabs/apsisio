@@ -1,0 +1,68 @@
+@use "styles/vars";
+@use "styles/global";
+@use "styles/utils/underlineLink";
+
+.post-wrapper {
+  padding-left: vars.$spacing_md;
+  padding-right: vars.$spacing_md;
+}
+
+.post {
+  margin-bottom: vars.$spacing_xl * 2;
+
+  &__title {
+    font-size: vars.$font_size_h1;
+    margin-bottom: vars.$spacing_lg;
+    margin-top: vars.$spacing_lg;
+
+    > a {
+      color: vars.$apsis_dark;
+      text-decoration: none;
+      font-family: vars.$serif;
+      font-weight: 700;
+
+      @include underlineLink.underline-link(vars.$apsis_dark, vars.$apsis_blue, vars.$apsis_blue);
+    }
+  }
+
+  &__header,
+  &__content {
+    @extend .typography;
+  }
+
+  &__image-wrapper {
+    margin-left: vars.$spacing_md * -1;
+    margin-right: vars.$spacing_md * -1;
+
+    overflow: hidden;
+
+    .zoom-overlay-open & {
+      overflow: visible;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__photo-credit {
+    color: vars.$gray_lighter;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  &__meta {
+    font-size: 0.85em;
+    color: vars.$gray;
+  }
+
+  &--list {
+    padding-top: vars.$spacing_xl * 2;
+    border-top: 1px solid vars.$gray_lighter;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+}

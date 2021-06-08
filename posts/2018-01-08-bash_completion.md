@@ -2,11 +2,12 @@
 layout: post
 author: chris
 title: Save Time with Bash Programmable Autocompletion
-image: 'posts/bash.gif'
+image: '/img/posts/bash.gif'
 excerpt: >
     What follows is a short tutorial on bash autocompletion and a tiny bit of bash programming
     information. It assumes you have a working knowledge of programming, and at least passing
     familiarity with your terminal.
+date: 2018-01-08
 ---
 
 Every developer should have at least a basic mastery of their command line. I'd argue

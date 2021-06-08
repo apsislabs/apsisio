@@ -2,8 +2,9 @@
 layout: post
 author: wyatt
 title: Caring for the Grindstone
-image: 'posts/office.jpg'
+image: '/img/posts/office.jpg'
 credit: Vladimir Kudinov
+date: 2016-05-05
 ---
 
 If I'm completely honest, I never meant to become a job creator (that's what we call ourselves, it was in the pamphlet). I've had a lot of career aspirations in my life: writer, designer, cowboy; whatever it was, they've all come with some kind of shape: some way to describe the job in a social setting that resonates with others.

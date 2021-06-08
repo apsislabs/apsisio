@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Read the Source: Encryption Draft Bill"
-image: 'posts/locks.jpg'
+image: '/img/posts/locks.jpg'
 credit: Giulio Magnifico
 author: noah
+date: 2016-04-24
 ---
 
 In the wake of the [San Bernadino iPhone controversy](http://www.wired.com/2016/02/apples-fbi-battle-is-complicated-heres-whats-really-going-on/) the Senate Intelligence Committee has produced a draft bill that would force Apple and other software companies to decrypt data for the government when they receive court orders. The bill --- titled the "Compliance with Court Orders Act of 2016" --- would force Apple and other software companies to decrypt anything that they have encrypted.

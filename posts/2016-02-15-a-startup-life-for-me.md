@@ -2,8 +2,9 @@
 layout: post
 author: eric
 title: 'A Startup Life For Me'
-image: 'posts/acadia.jpg'
+image: '/img/posts/acadia.jpg'
 credit: Eric Greer
+date: 2016-02-15
 ---
 
 Working at a startup is both very exciting and challenging as it allows you significant freedom to explore new spaces and new technologies and at the same time introduces you to new skills and area of business operations that you normally wouldn’t see at a larger company. I am a developer who likes these challenges.

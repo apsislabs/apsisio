@@ -2,8 +2,9 @@
 layout: post
 author: wyatt
 title: Don't be a Hero
-image: 'posts/hero.jpg'
+image: '/img/posts/hero.jpg'
 credit: Henry Hustava
+date: 2017-01-31
 ---
 
 Last month, Noah and I performed what is commonly called an act of heroic programming: We had a demo due, and we stayed up until 4 am --- 2 nights in a row --- to finish the work. We came out the other end bleary eyed, but triumphant; the demo was on time, the client was happy, and some might have expected us to celebrate.

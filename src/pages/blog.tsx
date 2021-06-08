@@ -1,18 +1,17 @@
+import { PostExcerpt } from "components/blog/PostExcerpt";
 import { Navbar } from "components/Navbar";
 import { Section } from "components/Section";
-import Link from "next/link";
-import { getSortedPostsData, Post } from "lib/posts";
-import { PostExcerpt } from "components/blog/PostExcerpt";
-
-
+import { getSortedPostsData } from "lib/posts";
+import { Post } from "lib/types";
 
 export const BlogIndexPage = ({ posts }: { posts: Post[] }) => {
 	return (
 		<>
 			<Section guides={false} bordered>
-				<Navbar />
+				<Navbar showTagline={false} />
 			</Section>
-			<Section spaced guides={false}>
+
+			<Section narrow spaced guides={false}>
 				{posts.map((p) => (
 					<PostExcerpt key={p.id} post={p} />
 				))}
@@ -22,11 +21,9 @@ export const BlogIndexPage = ({ posts }: { posts: Post[] }) => {
 };
 
 export async function getStaticProps() {
-	const posts = getSortedPostsData();
-
 	return {
 		props: {
-			posts,
+			posts: await getSortedPostsData(),
 		},
 	};
 }

@@ -10,8 +10,11 @@ $white: #fff;
 
 $border_gray: rgba($apsis_gray, 0.15);
 $surface_gray: rgba($apsis_gray, 0.0375);
+
 $border_blue: rgba($apsis_blue, 0.15);
 $surface_blue: rgba($apsis_blue, 0.075);
+
+$border_orange: rgba($apsis_orange, 0.015);
 $surface_orange: rgba($apsis_orange, 0.075);
 
 $gray_darker: darken($apsis_dark, 15%);
@@ -24,6 +27,7 @@ $gray_lightest: lighten($apsis_gray, 55%);
 
 $sans: "Roboto", sans-serif;
 $serif: "Lora", serif;
+$mono: monospace;
 
 $font_size: 1rem;
 $font_size_xxs: 0.65rem;

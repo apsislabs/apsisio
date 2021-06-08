@@ -5,6 +5,37 @@
   align-items: center;
   padding: vars.$spacing_sm vars.$spacing;
 
+  &__logo {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__nav {
+    margin-left: vars.$spacing_lg;
+  }
+
+  &__nav_item {
+    font-size: vars.$font_size_sm;
+    color: vars.$apsis_dark;
+    text-decoration: none;
+    padding: vars.$spacing_xs;
+    margin-right: vars.$spacing_md;
+    line-height: 1;
+
+    &:hover {
+      border-radius: vars.$spacing_xs;
+      background-color: vars.$border_blue;
+    }
+
+    &:active {
+      background-color: vars.$surface_blue;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
   &__tagline {
     position: relative;
     margin-left: auto;

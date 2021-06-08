@@ -1,0 +1,148 @@
+@use 'styles/vars';
+@use "styles/utils/underlineLink";
+
+.theme--gray {
+  --sectionBackground: #{vars.$surface_gray};
+  --guideColor: #{vars.$border_gray};
+}
+
+.theme--blue {
+  --sectionBackground: #{vars.$surface_blue};
+  --guideColor: #{vars.$border_blue};
+}
+
+.link {
+  color: vars.$apsis_dark;
+  text-decoration: none;
+
+  &:visited {
+    color: vars.$apsis_blue;
+  }
+
+  &:hover,
+  &:visited:hover {
+    text-decoration: underline;
+    color: vars.$apsis_blue;
+  }
+
+  &--underline {
+    @include underlineLink.underline-link(
+      vars.$apsis_dark,
+      vars.$apsis_blue,
+      vars.$apsis_blue
+    );
+  }
+}
+
+.typography {
+  > p {
+    margin-bottom: vars.$spacing;
+  }
+
+  a {
+    @extend .link--underline;
+  }
+
+  // h1 {
+  // @extend .h1;
+  // }
+
+  // h2 {
+  // @extend .h2;
+  // }
+
+  // h3 {
+  // @extend .h3;
+  // }
+
+  // h4 {
+  // @extend .h4;
+  // }
+
+  // h5 {
+  // @extend .h5;
+  // }
+
+  //== Block Elements
+  //
+
+  p,
+  ul,
+  ol,
+  pre {
+    margin-bottom: vars.$spacing_md;
+  }
+
+  ul,
+  ol {
+    ul,
+    ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  hr {
+    width: 20%;
+    margin: vars.$spacing_md 0;
+    border: 0;
+    border-top: 1px solid vars.$gray_lighter;
+  }
+
+  sup {
+    font-weight: normal;
+
+    a {
+      @extend .link;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  iframe {
+    border: 0;
+  }
+
+  blockquote {
+    // @extend .blockquote;
+  }
+
+  //== Paragraph Elements
+  //
+
+  p > pre,
+  p > code {
+    font-family: vars.$mono;
+    border: 1px solid vars.$border_gray;
+    background-color: vars.$gray_lightest;
+    padding: 0 5px;
+    border-radius: 4px;
+  }
+
+  p > a {
+    @extend .link--underline;
+    @media (min-width: vars.$tablet) {
+      white-space: nowrap;
+    }
+  }
+
+  p > img,
+  figure > img {
+    max-width: 100%;
+  }
+
+  figure > figcaption {
+    font-size: 0.85em;
+    color: vars.$apsis_gray;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.page {
+  background: transparent url("/img/trails.svg") center bottom -400px no-repeat;
+  background-size: cover;
+}

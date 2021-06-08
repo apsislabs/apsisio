@@ -2,6 +2,7 @@
 
 @import "minireset.css/minireset.sass";
 @import "styles/fonts";
+@import "styles/global";
 
 html,
 body {
@@ -15,23 +16,3 @@ body {
   --guideColor: #{vars.$border_gray};
 }
 
-.theme--gray {
-  --sectionBackground: #{vars.$surface_gray};
-  --guideColor: #{vars.$border_gray};
-}
-
-.theme--blue {
-  --sectionBackground: #{vars.$surface_blue};
-  --guideColor: #{vars.$border_blue};
-}
-
-.typography {
-  > p {
-    margin-bottom: vars.$spacing;
-  }
-}
-
-.page {
-  background: transparent url("/img/trails.svg") center bottom -400px no-repeat;
-  background-size: cover;
-}

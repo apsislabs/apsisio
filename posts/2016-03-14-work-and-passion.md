@@ -2,8 +2,9 @@
 layout: post
 author: niall
 title: Work & Passion
-image: 'posts/forest.jpg'
+image: '/img/posts/forest.jpg'
 excerpt: Hi, I'm Niall.  I'm the third hire (fifth including founders) at Apsis. The first thing you ought to know about me is that I disdain work.
+date: 2016-03-14
 ---
 
 Hi, I'm Niall.  I'm the third hire (fifth including founders) at Apsis.

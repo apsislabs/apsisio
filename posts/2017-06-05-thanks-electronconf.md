@@ -2,8 +2,9 @@
 layout: post
 author: wyatt
 title: Thanks, ElectronConf
-image: 'posts/electronconf.jpg'
+image: '/img/posts/electronconf.jpg'
 credit: Tina Hartung
+date: 2017-06-05
 ---
 
 Over the weekend, my usual sources for industry news exploded in response to [the postponement](http://electronconf.com/) of the first ElectronConf because the panel of speakers did not "reflect the standards to which we hold ourselves."

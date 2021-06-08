@@ -2,8 +2,9 @@
 layout: post
 author: mo
 title: And Then There Were Eight
-image: posts/mount_hood.jpg
+image: /img/posts/mount_hood.jpg
 credit: Sarah McDevitt
+date: 2018-07-09
 ---
 
 Hi, I’m Mo. I’m employee number eight. I’ve been at Apsis Labs for a little under half a year now, but working remotely 20 hours a week does a funny thing to your sense of time. I was really nervous about switching over, I always thought small companies meant big risks and I feared they lacked the foundation that larger companies needed to move constantly forward. I was wrong. Big companies have a lot of processes, sure, but that doesn’t mean small companies lack them. If anything, I’ve learned that smaller companies are more aware of their processes, and have more flexibility to change what isn’t working. I thought I’d miss the safety net of a larger company's routines, but I don’t. I don’t miss job matrixes. I don’t miss a calendar half full of ~~bikesheds~~ meetings. At Apsis, I get to sit and write code, which can be a surprisingly hard trait to find in a programming job.

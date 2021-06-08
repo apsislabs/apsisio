@@ -2,8 +2,9 @@
 layout: post
 author: wyatt
 title: The Books I Kept
-image: 'posts/books.jpg'
+image: '/img/posts/books.jpg'
 credit: Patrick Tomasso
+date: 2016-04-11
 ---
 
 I studied literature at [Bennington College](http://bennington.edu/). There, I wrote my thesis on the past, present, and future of the book object. Five years later, I'm still fascinated by the subject. The role that bound paper has played not just in my life, but in the history of humankind, is staggering. Men and women have died for books; we've burned them, banned them, mass manufactured and hand crafted them; we keep them like pets, we lend them and lose them, and some we revisit again and again --- staining their pages, breaking their spines.

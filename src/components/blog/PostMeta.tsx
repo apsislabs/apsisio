@@ -2,7 +2,6 @@ import { Post } from "lib/types";
 import styles from "styles/components/blog/Post.module.scss"
 
 export const PostMeta: React.FC<{ post: Post }> = ({ post }) => {
-	console.log(post.date);
 	return (
 		<footer className={styles["post__meta"]}>
 			Posted on

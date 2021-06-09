@@ -13,7 +13,7 @@ export const PostExcerpt: React.FC<{ post: Post }> = ({ post }) => {
 		>
 			<PostHeader post={post} />
 
-			<div className={styles["post__content"]} dangerouslySetInnerHTML={{__html: post.excerpt}} />
+			<div className={styles["post__content"]} dangerouslySetInnerHTML={{__html: post.excerpt ?? ''}} />
 
 			<PostMeta post={post} />
 		</article>

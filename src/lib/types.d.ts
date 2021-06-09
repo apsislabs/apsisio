@@ -7,6 +7,9 @@ export type FrontmatterData = {
 	excerpt?: string;
 	title?: string;
 	date?: Date;
+	image?: string;
+	credit?: string;
+	author?: string;
 };
 
 export type PostFrontmatter = {

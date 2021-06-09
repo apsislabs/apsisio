@@ -21,6 +21,7 @@ const getPostPaths = () => {
 
 const parseMatter = async (fileContents: string): Promise<PostFrontmatter> => {
   const { content, data, excerpt } = matter(fileContents, {
+    // @ts-expect-error: type is wrong from source
     excerpt: (file: GrayMatterFile) => {
       file.excerpt = file.content.split(".").slice(0, 5).join(".");
     },

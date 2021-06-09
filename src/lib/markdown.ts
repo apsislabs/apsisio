@@ -13,9 +13,7 @@ export const processMarkdown = async (
 ): Promise<string> => {
   const processedContent = await remark()
     .use(gfm)
-    .use(remarkPrism, {
-      transformInlineCode: true,
-    })
+    .use(remarkPrism)
     .use(footnotes, { inlineNotes: true })
     .use(html)
     .process(markdownString);

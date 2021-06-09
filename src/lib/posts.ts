@@ -43,7 +43,7 @@ async function getAllPosts(): Promise<Post[]> {
     getPostPaths().map(async ({ path, name }): Promise<Post> => {
       const fileContents = readFileSync(path, "utf8");
       const matterResult = await parseMatter(fileContents);
-      const id = name.replace(".md", "").replace("_", "-");
+      const id = name.replace(".md", "");
       return {
         id,
         params: { id },

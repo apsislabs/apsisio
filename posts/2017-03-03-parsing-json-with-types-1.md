@@ -38,7 +38,7 @@ Now, on to the code...
 
 Basic types are the primitives of a type system.  Based on our definition above, let's define a few type mappers for basic types:
 
-```
+```javascript
 const string = {
     fromJSON: s => s,
     toJSON: s => s
@@ -56,7 +56,7 @@ const boolean = {
 
 It's brilliant, right?  Well, these types are shared by JSON and JavaScript's type systems, so there's nothing to do.  Let's try dates next:
 
-```
+```javascript
 const date = {
     fromJSON: isoString => new Date(isoString),
     toJSON: date => date.toISOString()
@@ -65,7 +65,7 @@ const date = {
 
 Fantastic.  Of course, we could also represent dates in our application using [moment](https://momentjs.com/) and they could be represented in our JSON data as time values (number of milliseconds since Unix epoch).  Then, our date type mapper would look like:
 
-```
+```javascript
 import moment from 'moment';
 
 const date = {

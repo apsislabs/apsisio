@@ -11,7 +11,7 @@ type SectionProps = {
   kebabed?: boolean;
   narrow?: boolean;
   centerLabel?: boolean;
-  Icon?: React.ReactNode;
+  Icon?: React.ComponentType | keyof JSX.IntrinsicElements;
 };
 
 export const Section: React.FC<SectionProps> = ({

@@ -24,7 +24,7 @@
     "husky": "^6.0.0",
     "js-yaml": "^4.1.0",
     "minireset.css": "^0.0.7",
-    "next": "^10.2.3",
+    "next": "^11.0.0",
     "prettier": "^2.3.0",
     "pretty-quick": "^3.1.0",
     "prism": "^4.1.2",

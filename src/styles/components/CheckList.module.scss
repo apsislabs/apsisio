@@ -1,33 +1,36 @@
 @use 'styles/vars';
 
 .check_list {
+  --padding_left: 1.5rem;
+
   margin-left: auto;
   margin-right: auto;
   list-style: none;
-  padding-left: 1.5rem;
+  padding-left: var(--padding_left);
 
   > li {
     break-inside: avoid;
-    margin-bottom: vars.$spacing_sm;
-    text-indent: -1.5rem;
+    margin-bottom: var(--spacing_sm);
+    text-indent: calc(var(--padding_left) * -1);
 
     &:hover {
       .check_list__marker {
-        color: vars.$apsis_green;
+        color: var(--apsis_green);
       }
     }
   }
 
   &__marker {
-    margin-right: vars.$spacing_sm;
+    margin-right: var(--spacing_sm);
     vertical-align: text-top;
     display: inline-block;
-    color: vars.$gray_lighter;
-    transition: color 0.15s ease-in-out;
+    color: var(--gray_lighter);
+    transition: color var(--timing_sm) var(--easing);
   }
+
 
   @media (min-width: vars.$mobile) {
     columns: 2;
-    column-gap: vars.$spacing_lg;
+    column-gap: var(--spacing_lg);
   }
 }

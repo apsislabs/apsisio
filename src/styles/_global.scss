@@ -1,76 +1,44 @@
-@use 'styles/vars';
 @use "styles/utils/underlineLink";
 
-.theme--gray {
-  --sectionBackground: #{vars.$surface_gray};
-  --guideColor: #{vars.$border_gray};
-}
-
-.theme--blue {
-  --sectionBackground: #{vars.$surface_blue};
-  --guideColor: #{vars.$border_blue};
-}
-
 .link {
-  color: vars.$apsis_dark;
+  color: var(--apsis_dark);
   text-decoration: none;
 
   &:visited {
-    color: vars.$apsis_blue;
+    color: var(--apsis_blue);
   }
 
   &:hover,
   &:visited:hover {
     text-decoration: underline;
-    color: vars.$apsis_blue;
+    color: var(--apsis_blue);
   }
 
   &--underline {
     @include underlineLink.underline-link(
-      vars.$apsis_dark,
-      vars.$apsis_blue,
-      vars.$apsis_blue
+      var(--apsis_dark),
+      var(--apsis_blue),
+      var(--apsis_blue)
     );
   }
 }
 
 .typography {
   > p {
-    margin-bottom: vars.$spacing;
+    margin-bottom: var(--spacing);
   }
 
   a {
     @extend .link--underline;
   }
 
-  // h1 {
-  // @extend .h1;
-  // }
-
-  // h2 {
-  // @extend .h2;
-  // }
-
-  // h3 {
-  // @extend .h3;
-  // }
-
-  // h4 {
-  // @extend .h4;
-  // }
-
-  // h5 {
-  // @extend .h5;
-  // }
-
-  //== Block Elements
-  //
+  //= BLOCK ELEMENTS
 
   p,
   ul,
   ol,
   pre {
-    margin-bottom: vars.$spacing_md;
+    margin-bottom: var(--spacing_md);
   }
 
   ul,
@@ -84,9 +52,9 @@
 
   hr {
     width: 20%;
-    margin: vars.$spacing_md 0;
+    margin: var(--spacing_md) 0;
     border: 0;
-    border-top: 1px solid vars.$gray_lighter;
+    border-top: 1px solid var(--border_gray);
   }
 
   sup {
@@ -105,25 +73,20 @@
     border: 0;
   }
 
-  blockquote {
-    // @extend .blockquote;
-  }
-
-  //== Paragraph Elements
-  //
+  //= PARAGRAPH ELEMENTS
 
   p > pre,
   p > code {
-    font-family: vars.$mono;
-    border: 1px solid vars.$border_gray;
-    background-color: vars.$gray_lightest;
+    font-family: var(--mono);
+    border: 1px solid var(--border_gray);
+    background-color: var(--gray_lightest);
     padding: 0 5px;
     border-radius: 4px;
   }
 
   p > a {
     @extend .link--underline;
-    @media (min-width: vars.$tablet) {
+    @media (min-width: var(--tablet)) {
       white-space: nowrap;
     }
   }
@@ -135,14 +98,9 @@
 
   figure > figcaption {
     font-size: 0.85em;
-    color: vars.$apsis_gray;
+    color: var(--apsis_gray);
     text-align: center;
     max-width: 80%;
     margin: 0 auto;
   }
-}
-
-.page {
-  background: transparent url("/img/trails.svg") center bottom -400px no-repeat;
-  background-size: cover;
 }

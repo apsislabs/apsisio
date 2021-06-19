@@ -17,27 +17,27 @@ $variant_colors: (
   }
 
   &__title {
-    color: vars.$apsis_blue;
-    margin-bottom: vars.$spacing_sm;
+    color: var(--apsis_blue);
+    margin-bottom: var(--spacing_sm);
     font-weight: 700;
     display: flex;
     align-items: center;
   }
 
   &__icon {
-    margin-right: vars.$spacing_sm;
+    margin-right: var(--spacing_sm);
   }
 
   &__list {
     padding-left: 2rem;
-    margin-left: vars.$spacing;
+    margin-left: var(--spacing);
 
     li::before {
       content: "•";
-      color: vars.$gray;
+      color: var(--gray);
       display: inline-block;
-      width: vars.$spacing;
-      margin-left: -1 * vars.$spacing_xl;
+      width: var(--spacing);
+      margin-left: calc(-1 * var(--spacing_xl));
       font-weight: 600;
     }
   }

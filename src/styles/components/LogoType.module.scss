@@ -1,8 +1,8 @@
 @use "styles/vars";
 
 .logotype {
-  font-size: vars.$font_size_h4;
-  color: vars.$apsis_blue;
+  font-size: var(--font_size_h4);
+  color: var(--apsis_blue);
   text-transform: lowercase;
   font-weight: 500;
 
@@ -11,6 +11,6 @@
   align-items: center;
 
   &__planet {
-    margin-right: vars.$spacing_sm;
+    margin-right: var(--spacing_sm);
   }
 }

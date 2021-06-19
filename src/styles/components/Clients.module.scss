@@ -1,10 +1,8 @@
 @use 'styles/vars';
 
-$logos_per_row: 4;
-
 .clients {
-  margin-top: vars.$spacing;
-  margin-bottom: vars.$spacing;
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 

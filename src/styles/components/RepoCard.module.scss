@@ -1,9 +1,6 @@
 @use 'styles/vars';
 @use "sass:math";
 
-// $timing_function: cubic-bezier(0.280, 0.840, 0.420, 1);
-$timing_function: ease-in-out;
-
 @mixin directional($x, $y) {
   transform: translateX(math.div($x, 2)) translateY(math.div($y, 2));
 
@@ -42,18 +39,18 @@ $h: (
   flex-direction: row;
   align-items: center;
   font-family: monospace;
-  padding: vars.$spacing_md;
+  padding: var(--spacing_md);
   border: 1px solid transparent;
   position: relative;
-  color: vars.$apsis_dark;
+  color: var(--apsis_dark);
   text-decoration: none;
-  transition: border-color 0.25s $timing_function 0.25s,
-    transform 0.125s $timing_function;
+  transition: border-color var(--timing_md) var(--easing) var(--timing_md),
+    transform 0.125s var(--easing);
 
   height: 120px;
 
   &:hover {
-    border-color: vars.$apsis_orange;
+    border-color: var(--apsis_orange);
   }
 
   &::before,
@@ -67,28 +64,28 @@ $h: (
     left: 0;
     bottom: 0;
     z-index: -1;
-    background-color: vars.$surface_blue;
-    transition: transform $timing_function 0.25s,
-      background-color $timing_function 0.25s;
+    background-color: var(--surface_blue);
+    transition: transform var(--easing) var(--timing_md),
+      background-color var(--easing) var(--timing_md);
   }
 
   &:hover::after,
   &:hover::before {
-    background-color: vars.$surface_orange;
+    background-color: var(--surface_orange);
   }
 
   &__media {
-    margin-right: vars.$spacing_lg;
-    color: vars.$gray;
+    margin-right: var(--spacing_lg);
+    color: var(--gray);
   }
 
   &__title {
     font-weight: bold;
-    font-size: vars.$font_size;
+    font-size: var(--font_size);
   }
 
   &__content {
-    font-size: vars.$font_size_sm;
+    font-size: var(--font_size_sm);
   }
 
   @each $hdir, $hcoef in $h {

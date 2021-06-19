@@ -9,10 +9,10 @@ $variant_colors: (
 
 .service_row {
   &__row {
-    margin-bottom: vars.$spacing_lg * 2;
+    margin-bottom: calc(var(--spacing_lg) * 2);
 
     @media (min-width: vars.$desktop) {
-      margin-bottom: vars.$spacing_lg * 4;
+      margin-bottom: calc(var(--spacing_lg) * 4);
 
       &:last-of-type {
         margin-bottom: 0;
@@ -21,14 +21,14 @@ $variant_colors: (
   }
 
   &__title {
-    margin-bottom: vars.$spacing_md;
-    font-size: vars.$font_size_h5;
+    margin-bottom: var(--spacing_md);
+    font-size: var(--font_size_h5);
     font-weight: 600;
   }
 
   &__image_container {
     text-align: center;
-    margin-bottom: vars.$spacing_lg;
+    margin-bottom: var(--spacing_lg);
 
     @media (min-width: vars.$desktop) {
       margin-bottom: 0;

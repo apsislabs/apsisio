@@ -1,15 +1,23 @@
 @use 'styles/vars';
 
 .section {
-  --siteWidth: #{vars.$site_width};
-
   overflow: hidden;
   position: relative;
-  background-color: var(--sectionBackground);
+  background-color: var(--section_background);
+
+  &--gray {
+    --section_background: var(--surface_gray);
+    --guide_color: var(--border_gray);
+  }
+
+  &--blue {
+    --section_background: var(--surface_blue);
+    --guide_color: var(--border_blue);
+  }
 
   &--bordered {
-    border-top: 1px solid var(--guideColor);
-    border-bottom: 1px solid var(--guideColor);
+    border-top: 1px solid var(--guide_color);
+    border-bottom: 1px solid var(--guide_color);
   }
 
   &--spaced {
@@ -32,9 +40,9 @@
       position: absolute;
       display: block;
       content: "";
-      background-color: var(--guideColor);
+      background-color: var(--guide_color);
       height: 1px;
-      width: calc((100vw - var(--siteWidth)) / 2 + #{vars.$spacing});
+      width: calc((100vw - var(--site_width)) / 2 + #{vars.$spacing});
     }
 
     &::before {
@@ -51,10 +59,10 @@
   }
 
   &--narrow {
-    --siteWidth: #{vars.$site_width * 0.5};
+    --site_width: #{vars.$site_width * 0.5};
 
     @media (min-width: vars.$desktop) {
-      --siteWidth: #{vars.$site_width * 0.6};
+      --site_width: #{vars.$site_width * 0.6};
     }
   }
 
@@ -73,13 +81,13 @@
     margin: 0 auto;
     max-width: vars.$site_width;
     width: 100%;
-    border-left: 1px solid var(--guideColor);
-    border-right: 1px solid var(--guideColor);
+    border-left: 1px solid var(--guide_color);
+    border-right: 1px solid var(--guide_color);
   }
 
   &__container {
     margin: 0 auto;
-    max-width: var(--siteWidth);
+    max-width: var(--site_width);
     width: 100%;
   }
 
@@ -95,20 +103,20 @@
 
     @media (min-width: vars.$xldesktop) {
       white-space: nowrap;
-      transform: translateX(calc(-100vw / 2 + var(--siteWidth) / 2));
-      width: calc(((100vw - var(--siteWidth)) / 2) + #{vars.$spacing_lg});
+      transform: translateX(calc(-100vw / 2 + var(--site_width) / 2));
+      width: calc(((100vw - var(--site_width)) / 2) + #{vars.$spacing_lg});
       transition: width ease-in-out 0.25s;
       top: vars.$spacing_xl;
 
       &:hover {
-        width: calc(((100vw - var(--siteWidth)) / 2) + #{vars.$spacing_xl});
+        width: calc(((100vw - var(--site_width)) / 2) + #{vars.$spacing_xl});
       }
     }
 
     &--centered {
       @media (min-width: vars.$xldesktop) {
         top: 50%;
-        transform: translateX(calc(-100vw / 2 + var(--siteWidth) / 2)) translateY(-50%);
+        transform: translateX(calc(-100vw / 2 + var(--site_width) / 2)) translateY(-50%);
       }
     }
   }

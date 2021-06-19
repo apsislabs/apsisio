@@ -1,89 +1,72 @@
 @use 'styles/vars';
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-}
-
 .hero {
-  --animation-time: 5s;
+  --hero_height: 78vh;
 
   display: flex;
   flex-direction: column;
   padding: vars.$spacing_xl;
   position: relative;
 
-
-  &__particle {
-    animation: fadeOut var(--animation-time) ease;
-    display: block;
-    position: absolute;
-  }
-
   @media (min-width: vars.$tablet) {
-    padding: vars.$spacing_xl * 2 vars.$spacing_xl;
+    padding: calc(var(--spacing_xl) * 2) var(--spacing_xl);
   }
 
   @media (min-width: vars.$desktop) {
     flex-direction: row;
     align-items: center;
-    padding: vars.$spacing_xl * 2;
-    min-height: 78vh;
+    padding: calc(var(--spacing_xl) * 2);
+    min-height: var(--hero_height);
   }
 
   &__headline {
     flex: 1;
-    margin-bottom: vars.$spacing_lg;
+    margin-bottom: var(--spacing_lg);
 
     @media (min-width: vars.$desktop) {
-      margin-right: vars.$spacing_xl;
+      margin-right: var(--spacing_xl);
     }
   }
 
   &__title {
-    font-family: vars.$serif;
-    font-size: vars.$font_size_d2;
+    font-family: var(--serif);
+    font-size: var(--font_size_d2);
     text-transform: lowercase;
     font-weight: 700;
     line-height: 1.125;
-    margin-bottom: vars.$spacing_xl;
+    margin-bottom: var(--spacing_xl);
 
     @media (min-width: vars.$desktop) {
-      font-size: vars.$font_size_d1;
+      font-size: var(--font_size_d1);
     }
   }
 
   &__input {
-    margin-right: vars.$spacing_sm;
-    padding: vars.$spacing_sm;
+    margin-right: var(--spacing_sm);
+    padding: var(--spacing_sm);
     appearance: none;
-    border: 1px solid vars.$border_gray;
+    border: 1px solid var(--border_gray);
     display: inline-block;
-    transition: border-color 0.25s ease-in-out, outline-color 0.25s ease-in-out;
+    transition: border-color var(--timing_md) var(--easing),
+      outline-color var(--timing_md) var(--easing);
     outline: 3px solid transparent;
 
     &:focus,
     &:focus-within {
-      border-color: vars.$apsis_blue;
-      outline: 3px solid rgba(vars.$apsis_blue, 0.25);
+      border-color: var(--apsis_blue);
+      outline: 3px solid var(--outline_blue);
     }
   }
 
   &__highlight {
-    color: vars.$apsis_orange;
+    color: var(--apsis_orange);
   }
 
   &__copy {
-    font-size: vars.$font_size_lg;
-    margin-bottom: vars.$spacing_xl;
+    font-size: var(--font_size_lg);
+    margin-bottom: var(--spacing_xl);
     text-shadow: none;
-    color: vars.$gray_dark;
+    color: var(--gray_dark);
   }
 
   &__image_container {
@@ -92,7 +75,6 @@
 
   &__image {
     display: none;
-
     opacity: 0.9;
 
     @media (min-width: vars.$tablet) {

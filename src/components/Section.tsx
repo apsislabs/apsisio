@@ -11,6 +11,7 @@ type SectionProps = {
   kebabed?: boolean;
   narrow?: boolean;
   centerLabel?: boolean;
+  theme?: "default" | "blue" | "gray";
   Icon?: React.ComponentType | keyof JSX.IntrinsicElements;
 };
 
@@ -24,6 +25,7 @@ export const Section: React.FC<SectionProps> = ({
   narrow = false,
   label,
   centerLabel = false,
+  theme = "default",
   Icon,
   ...props
 }) => {
@@ -32,12 +34,13 @@ export const Section: React.FC<SectionProps> = ({
       clsx(
         className,
         styles.section,
+        theme !== "default" && styles[`section--${theme}`],
         bordered && styles["section--bordered"],
         spaced && styles["section--spaced"],
         kebabed && styles["section--kebabed"],
         narrow && styles["section--narrow"]
       ),
-    [className, bordered, spaced, kebabed, narrow]
+    [className, bordered, spaced, kebabed, narrow, theme]
   );
 
   return (

@@ -1,9 +1,17 @@
 import clsx from "clsx";
 import styles from "styles/components/Row.module.scss";
 
-export const Row = ({
-  children,
-  className,
+type RowProps = {
+  children?: React.ReactNode;
+  className?: string;
+  verticalAlign?: "top" | "middle" | "bottom";
+  reverse?: boolean;
+  narrow?: boolean;
+}
+
+export const Row:React.FC<RowProps> = ({
+  children = null,
+  className = null,
   verticalAlign = "top",
   reverse = false,
   narrow = false,

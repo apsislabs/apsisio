@@ -8,18 +8,18 @@ import { ChevronRight, GitHub, List } from "react-feather";
 import { Row } from "components/Row";
 import { RepoCard } from "../components/RepoCard";
 
-export const IndexPage = () => {
+export const IndexPage: React.FC = () => {
   return (
     <>
-      <Section className="theme--blue" bordered>
+      <Section theme="blue" bordered>
         <Navbar />
       </Section>
 
-      <Section className="theme--blue">
+      <Section theme="blue">
         <Hero />
       </Section>
 
-      <Section guides={false} className="theme--gray" bordered>
+      <Section guides={false} theme="gray" bordered>
         <Clients />
       </Section>
 
@@ -27,7 +27,7 @@ export const IndexPage = () => {
         <ServicesSection />
       </Section>
 
-      <div className="page">
+      <div>
         <Section spaced kebabed narrow>
           <div className="typography">
             <p>

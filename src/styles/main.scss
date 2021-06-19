@@ -1,19 +1,19 @@
 @use "./vars";
+@use "./theme";
 
 @import "minireset.css/minireset.sass";
+
 @import "styles/fonts";
 @import "styles/global";
 @import "styles/prism";
 
 html,
 body {
-  color: vars.$apsis_dark;
-  font-family: vars.$sans;
-  font-size: 100%;
-  line-height: 1.4124;
+  color: var(--apsis_dark);
+  font-family: var(--sans);
+  line-height: var(--line_height);
 }
 
-:root {
-  --guideColor: #{vars.$border_gray};
+#nprogress .bar {
+  background: var(--apsis_blue);
 }
-

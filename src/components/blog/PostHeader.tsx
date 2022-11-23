@@ -24,7 +24,7 @@ export const PostHeader: React.FC<{ post: Post }> = ({ post }) => {
 
 			<h2 className={styles["post__title"]}>
 				<Link href={post.href} passHref>
-					<a>{post.title}</a>
+					{post.title}
 				</Link>
 			</h2>
 		</header>

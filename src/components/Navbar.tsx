@@ -15,17 +15,15 @@ export const Navbar: React.FC<{ showTagline?: boolean }> = ({
 }) => {
   return (
     <nav className={styles.navbar}>
-      <Link href="/" passHref>
-        <a className={styles.navbar__logo}>
-          <LogoType />
-        </a>
+      <Link href="/" className={styles.navbar__logo}>
+        <LogoType />
       </Link>
 
       <nav className={styles.navbar__nav}>
         {NAV_ITEMS.map((n) => {
           return (
-            <Link key={n.href} href={n.href} passHref>
-              <a className={styles.navbar__nav_item}>{n.label}</a>
+            <Link key={n.href} href={n.href} className={styles.navbar__nav_item}>
+              {n.label}
             </Link>
           );
         })}

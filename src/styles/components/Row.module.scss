@@ -1,4 +1,4 @@
-@use 'styles/vars';
+@use "styles/vars";
 
 .row {
   padding: 0 var(--spacing_lg);
@@ -46,6 +46,14 @@
 
     &--reverse {
       flex-direction: row-reverse;
+
+      & > * {
+        margin-right: 0;
+
+        &:nth-child(2n) {
+          margin-right: var(--spacing);
+        }
+      }
     }
 
     &--narrow {
@@ -68,6 +76,16 @@
       &:last-child {
         margin-right: 0;
         margin-bottom: 0;
+      }
+    }
+
+    &--reverse {
+      & > * {
+        margin-right: 0;
+
+        &:nth-child(2n) {
+          margin-right: var(--spacing_xl);
+        }
       }
     }
   }

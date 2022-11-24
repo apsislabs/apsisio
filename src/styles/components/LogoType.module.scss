@@ -2,7 +2,7 @@
 
 .logotype {
   font-size: var(--font_size_h3);
-  color: var(--apsis_blue);
+  color: inherit;
   text-transform: lowercase;
   font-weight: 700;
   white-space: nowrap;
@@ -13,7 +13,6 @@
 
   &__planet {
     margin-right: var(--spacing_sm);
-    color: var(--apsis_blue);
     flex-shrink: 0;
   }
 }

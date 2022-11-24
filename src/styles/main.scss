@@ -3,9 +3,12 @@
 
 @import "minireset.css/minireset.sass";
 
+@import "utils/animations";
+
 @import "styles/fonts";
 @import "styles/global";
 @import "styles/prism";
+
 
 html,
 body {

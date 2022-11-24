@@ -3,15 +3,29 @@
 .navbar {
   display: flex;
   align-items: center;
-  padding: var(--spacing_sm) var(--spacing);
+  padding: var(--spacing);
 
   &__logo {
     text-decoration: none;
     color: inherit;
+    padding-left: var(--spacing_sm);
+    padding-right: var(--spacing_sm);
+    color: var(--apsis_blue);
+
+    &:hover {
+      background-color: var(--border_blue);
+    }
+
+    &:active {
+      background-color: var(--surface_blue);
+    }
   }
 
   &__nav {
     margin-left: var(--spacing_lg);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing);
   }
 
   &__nav_item {
@@ -19,11 +33,9 @@
     color: var(--apsis_dark);
     text-decoration: none;
     padding: var(--spacing_xs);
-    margin-right: var(--spacing_md);
     line-height: 1;
 
     &:hover {
-      border-radius: var(--spacing_xs);
       background-color: var(--border_blue);
     }
 
@@ -37,8 +49,10 @@
   }
 
   &__tagline {
+    display: none;
     position: relative;
     margin-left: auto;
+    font-family: var(--mono);
     font-size: var(--font_size_sm);
     color: var(--apsis_blue);
     text-transform: lowercase;
@@ -49,13 +63,18 @@
       display: block;
       content: "";
       background-color: var(--border_blue);
-      width: 140%;
+      width: 5000%;
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       pointer-events: none;
+    }
+
+    @media (min-width: vars.$mobile) {
+      display: block;
+      transform: none;
     }
   }
 

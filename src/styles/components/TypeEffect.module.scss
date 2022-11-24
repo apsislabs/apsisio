@@ -20,6 +20,7 @@
     background-color: var(--gray_lighter);
     display: inline-block;
     position: absolute;
+    transform: translateY(5%);
   }
 
   &__cursor--blinking {

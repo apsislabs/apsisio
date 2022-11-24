@@ -1,10 +1,10 @@
-@use 'styles/vars';
+@use "styles/vars";
 
 .hero {
   --hero_height: 78vh;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: vars.$spacing_xl;
   position: relative;
 
@@ -20,10 +20,9 @@
   }
 
   &__headline {
-    flex: 1;
-    margin-bottom: var(--spacing_lg);
+    flex-grow: 3;
 
-    @media (min-width: vars.$desktop) {
+    @media (min-width: vars.$tablet) {
       margin-right: var(--spacing_xl);
     }
   }
@@ -41,23 +40,6 @@
     }
   }
 
-  &__input {
-    margin-right: var(--spacing_sm);
-    padding: var(--spacing_sm);
-    appearance: none;
-    border: 1px solid var(--border_gray);
-    display: inline-block;
-    transition: border-color var(--timing_md) var(--easing),
-      outline-color var(--timing_md) var(--easing);
-    outline: 3px solid transparent;
-
-    &:focus,
-    &:focus-within {
-      border-color: var(--apsis_blue);
-      outline: 3px solid var(--outline_blue);
-    }
-  }
-
   &__highlight {
     color: var(--apsis_orange);
   }
@@ -70,18 +52,17 @@
   }
 
   &__image_container {
-    flex: 1;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__image {
     display: none;
-    opacity: 0.9;
 
     @media (min-width: vars.$tablet) {
       display: block;
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 }

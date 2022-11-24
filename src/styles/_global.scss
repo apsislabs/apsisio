@@ -23,6 +23,14 @@
   }
 }
 
+.inline_list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--spacing_sm);
+  list-style: none;
+}
+
 .typography {
   > p {
     margin-bottom: var(--spacing);
@@ -30,6 +38,10 @@
 
   a {
     @extend .link--underline;
+  }
+
+  h1, h2, h3, h4, h5 {
+    line-height: var(--heading_line_height);
   }
 
   //= BLOCK ELEMENTS

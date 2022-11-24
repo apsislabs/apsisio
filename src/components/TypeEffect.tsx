@@ -81,7 +81,9 @@ export const TypeEffect = ({
     };
 
     doTyping();
-    return () => (isMounted = false);
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (

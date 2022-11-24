@@ -13,6 +13,7 @@ type SectionProps = {
   centerLabel?: boolean;
   theme?: "default" | "blue" | "gray";
   Icon?: React.ComponentType | keyof JSX.IntrinsicElements;
+  children: React.ReactNode;
 };
 
 export const Section: React.FC<SectionProps> = ({

@@ -22,9 +22,9 @@ $surface_orange: rgba($apsis_orange, 0.075);
 
 $gray_darker: darken($apsis_dark, 15%);
 $gray_dark: darken($apsis_gray, 5%);
-$gray: lighten($apsis_gray, 30%);
-$gray_lighter: lighten($apsis_gray, 40%);
-$gray_lightest: lighten($apsis_gray, 55%);
+$gray: lighten($apsis_gray, 15%);
+$gray_lighter: lighten($apsis_gray, 30%);
+$gray_lightest: lighten($apsis_gray, 40%);
 
 $shadow: rgba($apsis_dark, 0.5);
 
@@ -34,7 +34,8 @@ $sans: "Inter", sans-serif;
 $mono: "IBM Plex Mono", monospace;
 
 $font_size: 1rem;
-$line_height: 1.4124;
+$line_height: 1.6125;
+$heading_line_height: 1.125;
 $font_size_xxs: 0.65rem;
 $font_size_xs: 0.75rem;
 $font_size_sm: 0.889rem;
@@ -61,12 +62,12 @@ $spacing_xl: $spacing * 2;
 
 //= SIZES
 
-$site_width: 1360px;
+$site_width: 1240px;
 
 //= MEDIA_QUERIES
 
-$mobile: 480px;
-$tablet: 768px;
+$mobile: 512px;
+$tablet: 720px;
 $desktop: 960px;
 $lgdesktop: 1440px;
 $xldesktop: 1600px;

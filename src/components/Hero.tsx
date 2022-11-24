@@ -1,7 +1,5 @@
 import clsx from "clsx";
 import { Button } from "components/Button";
-import useInterval from "hooks/useInterval";
-import { useRef } from "react";
 import { ChevronRight } from "react-feather";
 import styles from "styles/components/Hero.module.scss";
 import { TypeEffect } from "./TypeEffect";
@@ -9,21 +7,6 @@ import { TypeEffect } from "./TypeEffect";
 const PEOPLE = ["people", "wyatt", "eric", "henry", "chris", "noah", "apsis"];
 
 export const Hero = () => {
-  const particles = useRef({});
-
-  useInterval(() => {
-    const key = +new Date();
-    particles.current = { ...particles.current, [key]: "tap" };
-
-    // setTimeout(() => {
-    //   let newParticles = Object.assign({}, particles.current);
-    //   delete newParticles[key];
-    //   particles.current = newParticles;
-    // }, 5000);
-  }, 1200);
-
-  console.log(particles.current);
-
   return (
     <div className={styles.hero}>
       <div className={styles.hero__headline}>
@@ -50,14 +33,6 @@ export const Hero = () => {
       </div>
 
       <div className={styles.hero__image_container}>
-        <div>
-          {Object.entries(particles.current).map(([key, p]) => (
-            <span key={key} className={styles.hero__particle}>
-              {p}
-            </span>
-          ))}
-        </div>
-
         <img src="/img/coder.svg" className={styles.hero__image} />
       </div>
     </div>

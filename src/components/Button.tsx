@@ -1,7 +1,15 @@
 import clsx from "clsx";
 import styles from "styles/components/Button.module.scss";
 
-export const Button = ({
+type ButtonProps = {
+  children: React.ReactNode;
+  tag: any;
+  EndIcon?: any;
+  className?: string;
+  href?: string;
+};
+
+export const Button: React.FC<ButtonProps> = ({
   children,
   className,
   EndIcon,

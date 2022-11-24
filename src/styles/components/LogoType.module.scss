@@ -1,10 +1,11 @@
 @use "styles/vars";
 
 .logotype {
-  font-size: var(--font_size_h4);
+  font-size: var(--font_size_h3);
   color: var(--apsis_blue);
   text-transform: lowercase;
-  font-weight: 500;
+  font-weight: 700;
+  white-space: nowrap;
 
   display: flex;
   flex-direction: row;
@@ -12,5 +13,7 @@
 
   &__planet {
     margin-right: var(--spacing_sm);
+    color: var(--apsis_blue);
+    flex-shrink: 0;
   }
 }

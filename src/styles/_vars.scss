@@ -3,7 +3,7 @@
 $apsis_blue: #2173aa;
 $apsis_dark: #2c3e50;
 $apsis_gray: #596d79;
-$apsis_orange: #e59927;
+$apsis_orange: #c0705a;
 $apsis_fuschia: #c7399f;
 $apsis_green: #31a560;
 $white: #fff;
@@ -30,9 +30,8 @@ $shadow: rgba($apsis_dark, 0.5);
 
 //= FONTS
 
-$sans: "Roboto", sans-serif;
-$serif: "Lora", serif;
-$mono: monospace;
+$sans: "Inter", sans-serif;
+$mono: "IBM Plex Mono", monospace;
 
 $font_size: 1rem;
 $line_height: 1.4124;

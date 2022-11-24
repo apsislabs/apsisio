@@ -122,9 +122,7 @@
   }
 
   &__label {
-    font-family: vars.$serif;
-    font-size: vars.$font_size_lg;
-    font-weight: 700;
+    font-family: vars.$mono;
     color: vars.$apsis_blue;
 
     display: flex;

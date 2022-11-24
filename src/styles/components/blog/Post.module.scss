@@ -18,7 +18,7 @@
     > a {
       color: vars.$apsis_dark;
       text-decoration: none;
-      font-family: vars.$serif;
+      font-family: vars.$sans;
       font-weight: 700;
 
       @include underlineLink.underline-link(vars.$apsis_dark, vars.$apsis_blue, vars.$apsis_blue);

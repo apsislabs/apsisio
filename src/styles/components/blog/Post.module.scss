@@ -1,6 +1,5 @@
 @use "styles/vars";
 @use "styles/global";
-@use "styles/utils/underlineLink";
 
 .post-wrapper {
   padding-left: vars.$spacing_md;
@@ -14,15 +13,6 @@
     font-size: vars.$font_size_h1;
     margin-bottom: vars.$spacing_lg;
     margin-top: vars.$spacing_lg;
-
-    > a {
-      color: vars.$apsis_dark;
-      text-decoration: none;
-      font-family: vars.$sans;
-      font-weight: 700;
-
-      @include underlineLink.underline-link(vars.$apsis_dark, vars.$apsis_blue, vars.$apsis_blue);
-    }
   }
 
   &__header,

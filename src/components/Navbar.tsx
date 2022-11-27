@@ -22,7 +22,11 @@ export const Navbar: React.FC<{ showTagline?: boolean }> = ({
       <nav className={styles.navbar__nav}>
         {NAV_ITEMS.map((n) => {
           return (
-            <Link key={n.href} href={n.href} className={styles.navbar__nav_item}>
+            <Link
+              key={n.href}
+              href={n.href}
+              className={styles.navbar__nav_item}
+            >
               {n.label}
             </Link>
           );
@@ -30,10 +34,15 @@ export const Navbar: React.FC<{ showTagline?: boolean }> = ({
       </nav>
 
       {showTagline && (
-        <h2 className={styles.navbar__tagline}>
-          A <del>code</del>{" "}
-          <span className={styles.navbar__highlight}>people</span> company
-        </h2>
+        <a
+          href="/blog/2015-04-23-work-sustainably"
+          className={styles.navbar__tagline}
+        >
+          <span className={styles.navbar__attention}>
+            A <del>code</del>{" "}
+            <span className={styles.navbar__highlight}>people</span> company
+          </span>
+        </a>
       )}
     </nav>
   );

@@ -1,6 +1,7 @@
 ---
 layout: post
 author: noah
+title: Work Sustainably
 image: '/img/posts/jack-straw-office.jpg'
 date: 2015-04-23
 ---

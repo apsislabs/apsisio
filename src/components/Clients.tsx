@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import styles from "styles/components/Clients.module.scss";
 
 export const Clients = () => {
@@ -5,30 +6,30 @@ export const Clients = () => {
     <div className={styles.clients}>
       <figure className={styles.clients__logo_frame}>
         <img
-          className={styles.clients__logo}
-          alt="Logo Ipsum"
-          src="https://logoipsum.com/logo/logo-8.svg"
+          className={clsx(styles.clients__logo, "animate slide delay-0")}
+          alt="TrueVault"
+          src="/img/logos/truevault.png"
         />
       </figure>
       <figure className={styles.clients__logo_frame}>
         <img
-          className={styles.clients__logo}
-          alt="Logo Ipsum"
-          src="https://logoipsum.com/logo/logo-9.svg"
+          className={clsx(styles.clients__logo, "animate slide delay-1")}
+          alt="careviso"
+          src="/img/logos/careviso.png"
         />
       </figure>
       <figure className={styles.clients__logo_frame}>
         <img
-          className={styles.clients__logo}
-          alt="Logo Ipsum"
-          src="https://logoipsum.com/logo/logo-10.svg"
+          className={clsx(styles.clients__logo, "animate slide delay-2")}
+          alt="WelliQ"
+          src="/img/logos/welliq.png"
         />
       </figure>
       <figure className={styles.clients__logo_frame}>
         <img
-          className={styles.clients__logo}
-          alt="Logo Ipsum"
-          src="https://logoipsum.com/logo/logo-11.svg"
+          className={clsx(styles.clients__logo, "animate slide delay-3")}
+          alt="Community Boss"
+          src="/img/logos/communityboss.png"
         />
       </figure>
     </div>

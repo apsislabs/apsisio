@@ -10,9 +10,14 @@
     color: var(--gray);
   }
 
+  &__logotype {
+    font-size: var(--font_size_h6);
+  }
+
   &__tagline_container {
     display: flex;
     flex-direction: column;
+
     @media (min-width: vars.$tablet) {
       align-items: flex-end;
     }
@@ -23,7 +28,7 @@
     font-weight: bold;
 
     @media (min-width: vars.$tablet) {
-      font-size: var(--font_size_h5);
+      font-size: var(--font_size_h6);
     }
   }
 }

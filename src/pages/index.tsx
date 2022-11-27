@@ -74,9 +74,11 @@ export const IndexPage: React.FC = () => {
       <Section spaced kebabed narrow>
         <div className="typography">
           <p>
-            We believe the right software isn’t just innovative: it’s inspiring.
-            At Apsis, our team of dedicated engineers works hard to provide
-            solutions that will work today without sacrificing tomorrow.
+            We believe that arriving at the right solution is an iterative
+            process, built with hard work, strong communication, and a
+            dedication to craft. At Apsis, our team of experienced engineers
+            works provide software that will work today without sacrificing
+            tomorrow.
           </p>
 
           <p>
@@ -84,7 +86,6 @@ export const IndexPage: React.FC = () => {
             everyone from startups to enterprise, and we’re looking forward to
             discovering what we can do working with you.
           </p>
-
         </div>
 
         <Button href="mailto:contact@apsis.io" EndIcon={ChevronRight}>

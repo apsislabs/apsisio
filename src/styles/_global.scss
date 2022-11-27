@@ -1,7 +1,7 @@
 @use "styles/utils/underlineLink";
 
 .link {
-  color: var(--apsis_dark);
+  color: var(--apsis_blue);
   text-decoration: none;
 
   &:visited {
@@ -12,14 +12,6 @@
   &:visited:hover {
     text-decoration: underline;
     color: var(--apsis_blue);
-  }
-
-  &--underline {
-    @include underlineLink.underline-link(
-      var(--apsis_dark),
-      var(--apsis_blue),
-      var(--apsis_blue)
-    );
   }
 }
 
@@ -37,11 +29,38 @@
   }
 
   a {
-    @extend .link--underline;
+    @extend .link;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     line-height: var(--heading_line_height);
+    margin-bottom: var(--spacing_md);
+    margin-top: var(--spacing_lg);
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: var(--font_size_h1);
+  }
+
+  h2 {
+    font-size: var(--font_size_h2);
+  }
+
+  h3 {
+    font-size: var(--font_size_h3);
+  }
+
+  h4 {
+    font-size: var(--font_size_h4);
+  }
+
+  h5 {
+    font-size: var(--font_size_h5);
   }
 
   //= BLOCK ELEMENTS
@@ -71,10 +90,6 @@
 
   sup {
     font-weight: normal;
-
-    a {
-      @extend .link;
-    }
   }
 
   strong {
@@ -90,14 +105,16 @@
   p > pre,
   p > code {
     font-family: var(--mono);
-    border: 1px solid var(--border_gray);
     background-color: var(--gray_lightest);
-    padding: 0 5px;
-    border-radius: 4px;
+    padding: 0 var(--spacing_xs);
+  }
+
+  div > pre {
+    width: 100%;
+    overflow-x: scroll;
   }
 
   p > a {
-    @extend .link--underline;
     @media (min-width: var(--tablet)) {
       white-space: nowrap;
     }
@@ -109,7 +126,7 @@
   }
 
   figure > figcaption {
-    font-size: 0.85em;
+    font-size: var(--font_size_xs);
     color: var(--apsis_gray);
     text-align: center;
     max-width: 80%;

@@ -7,7 +7,6 @@ export const ServicesSection = () => {
         variant="blue"
         title="Software &amp; Devops"
         imgSrc={"/img/laptop.svg"}
-        className="animate slide"
         content={
           <p>
             Our bread and butter; as a team we have almost 40 years experience
@@ -31,7 +30,6 @@ export const ServicesSection = () => {
         variant="pink"
         title="Design &amp; Discovery"
         imgSrc={"/img/bulb.svg"}
-        className="animate slide delay-1"
         content={
           <p>
             Every project starts with a robust process of design and discovery
@@ -50,14 +48,13 @@ export const ServicesSection = () => {
       <ServiceRow
         variant="green"
         title="Our favorite tools"
-        className="animate slide delay-2"
         imgSrc={"/img/phone.svg"}
         content={
           <p>
-            Our motto is "when in doubt, get a taco." Our second motto,
-            though, is <strong>"be easy to hire and easy to fire."</strong>{" "}
-            We're comfortable working in most tech stacks, but there are a few
-            that we tend to favor. These represent{" "}
+            Our motto is "when in doubt, get a taco." Our second motto, though,
+            is <strong>"be easy to hire and easy to fire."</strong> We're
+            comfortable working in most tech stacks, but there are a few that we
+            tend to favor. These represent{" "}
             <strong>widely used industry standards</strong>, so when it's time
             for us to part ways you won't have any trouble finding devs to take
             over.
@@ -76,7 +73,6 @@ export const ServicesSection = () => {
         variant="gold"
         reverse
         title="How we work"
-        className="animate slide delay-3"
         imgSrc={"/img/paper.svg"}
         content={
           <p>

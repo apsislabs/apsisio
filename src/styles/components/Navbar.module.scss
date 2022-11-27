@@ -1,5 +1,26 @@
 @use 'styles/vars';
 
+@keyframes wiggle {
+  0% {
+    transform: rotate(-3deg);
+  }
+  5% {
+    transform: rotate(5deg);
+  }
+  10% {
+    transform: rotate(-4deg);
+  }
+  20% {
+    transform: rotate(3deg);
+  }
+  30% {
+    transform: rotate(-1deg);
+  }
+  40%,100% {
+    transform: rotate(0);
+  }
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -22,10 +43,14 @@
   }
 
   &__nav {
-    margin-left: var(--spacing_lg);
+    margin-left: auto;
     display: flex;
     flex-direction: row;
     gap: var(--spacing);
+
+    @media (min-width: vars.$mobile) {
+      margin-left: var(--spacing_lg)
+    }
   }
 
   &__nav_item {
@@ -57,6 +82,12 @@
     color: var(--apsis_blue);
     text-transform: lowercase;
     padding: var(--spacing_xs) var(--spacing_sm);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-shadow: 0 1px 1px var(--shadow);
+    }
 
     &::after {
       z-index: -1;
@@ -75,6 +106,16 @@
     @media (min-width: vars.$mobile) {
       display: block;
       transform: none;
+    }
+  }
+
+  &__attention {
+    display: inline-block;
+    animation: 5s wiggle ease infinite;
+    animation-delay: 3s;
+
+    &:hover {
+      animation: none;
     }
   }
 

@@ -2,8 +2,8 @@
 // Sourced from https://github.com/NickTomlin/nicktomlin.github.io/blob/3b7002c115904a16e8daad23b4766e6db3bef3d9/lib/markdown.js
 //
 
-import {unified} from 'unified'
-import parse from 'remark-parse';
+import { unified } from "unified";
+import parse from "remark-parse";
 import html from "remark-html";
 import remarkPrism from "remark-prism";
 import footnotes from "remark-footnotes";

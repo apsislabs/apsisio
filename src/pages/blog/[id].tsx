@@ -11,6 +11,7 @@ export const PostPage = ({ postData }: { postData: TPost }) => {
       <Head>
         <title>Blog: {postData.title} | Apsis Labs</title>
       </Head>
+
       <Section guides={false} bordered>
         <Navbar showTagline={false} />
       </Section>
@@ -40,23 +41,3 @@ export async function getStaticProps({ params }) {
 }
 
 export default PostPage;
-
-// export default function ({ postData }) {
-//   return (
-//     <Section>
-//       <article itemScope itemType="http://schema.org/BlogPosting">
-//         <header className={"my-4"}>
-//           <h1 className={"lead text-5xl mb-3"} itemProp="name headline">
-//             {postData.title}
-//           </h1>
-//         </header>
-
-//         <div
-//           className="typography"
-//           itemProp="articleBody"
-//           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-//         />
-//       </article>
-//     </Section>
-//   );
-// }

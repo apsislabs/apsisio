@@ -94,6 +94,7 @@
   &__tagline {
     display: none;
     position: relative;
+    z-index: 1;
     margin-left: auto;
     font-family: var(--mono);
     font-size: var(--font_size_sm);

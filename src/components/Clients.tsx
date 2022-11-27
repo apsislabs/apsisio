@@ -20,16 +20,16 @@ export const Clients = () => {
       </figure>
       <figure className={styles.clients__logo_frame}>
         <img
-          className={clsx(styles.clients__logo, "animate slide delay-2")}
-          alt="WelliQ"
-          src="/img/logos/welliq.png"
+          className={clsx(styles.clients__logo, "animate slide delay-3")}
+          alt="Community Boss"
+          src="/img/logos/communityboss.png"
         />
       </figure>
       <figure className={styles.clients__logo_frame}>
         <img
-          className={clsx(styles.clients__logo, "animate slide delay-3")}
-          alt="Community Boss"
-          src="/img/logos/communityboss.png"
+          className={clsx(styles.clients__logo, "animate slide delay-2")}
+          alt="WelliQ"
+          src="/img/logos/welliq.png"
         />
       </figure>
     </div>

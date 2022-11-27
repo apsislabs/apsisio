@@ -4,10 +4,14 @@ import { Section } from "components/Section";
 import { getAllPostIds, getPostData, getSortedPostsData } from "lib/posts";
 import { Post as TPost } from "lib/types";
 import { Post } from "components/blog/Post";
+import Head from "next/head";
 
 export const PostPage = ({ postData }: { postData: TPost }) => {
   return (
     <>
+      <Head>
+        <title>Blog: {postData.title} | Apsis Labs</title>
+      </Head>
       <Section guides={false} bordered>
         <Navbar showTagline={false} />
       </Section>

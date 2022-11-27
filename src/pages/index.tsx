@@ -15,10 +15,15 @@ import {
 import { Row } from "components/Row";
 import { RepoCard } from "../components/RepoCard";
 import { Footer } from "components/Footer";
+import Head from "next/head";
 
 export const IndexPage: React.FC = () => {
   return (
     <>
+      <Head>
+        <title>Apsis Labs – A Code Company</title>
+      </Head>
+
       <Section theme="blue" bordered>
         <Navbar />
       </Section>

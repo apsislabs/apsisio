@@ -1,9 +1,8 @@
-import { PostExcerpt } from "components/blog/PostExcerpt";
+import { Post } from "components/blog/Post";
 import { Navbar } from "components/Navbar";
 import { Section } from "components/Section";
-import { getAllPostIds, getPostData, getSortedPostsData } from "lib/posts";
+import { getAllPostIds, getPostData } from "lib/posts";
 import { Post as TPost } from "lib/types";
-import { Post } from "components/blog/Post";
 import Head from "next/head";
 
 export const PostPage = ({ postData }: { postData: TPost }) => {

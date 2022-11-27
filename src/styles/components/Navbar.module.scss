@@ -1,4 +1,4 @@
-@use 'styles/vars';
+@use "styles/vars";
 
 @keyframes wiggle {
   0% {
@@ -16,7 +16,8 @@
   30% {
     transform: rotate(-1deg);
   }
-  40%,100% {
+  40%,
+  100% {
     transform: rotate(0);
   }
 }
@@ -32,6 +33,11 @@
     padding-left: var(--spacing_sm);
     padding-right: var(--spacing_sm);
     color: var(--apsis_blue);
+    transition: background-color var(--easing) var(--timing_sm);
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
 
     &:hover {
       background-color: var(--border_blue);
@@ -39,6 +45,10 @@
 
     &:active {
       background-color: var(--surface_blue);
+    }
+
+    @media screen and (prefers-color-scheme: dark) {
+      color: var(--white);
     }
   }
 
@@ -49,19 +59,27 @@
     gap: var(--spacing);
 
     @media (min-width: vars.$mobile) {
-      margin-left: var(--spacing_lg)
+      margin-left: var(--spacing_lg);
     }
   }
 
   &__nav_item {
     font-size: var(--font_size_sm);
-    color: var(--apsis_dark);
+    color: var(--link_color_dark);
     text-decoration: none;
     padding: var(--spacing_xs);
     line-height: 1;
 
+    transition: background-color var(--easing) var(--timing_sm),
+      opacity var(--easing) var(--timing_sm);
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
     &:hover {
       background-color: var(--border_blue);
+      opacity: 0.95;
     }
 
     &:active {
@@ -116,6 +134,11 @@
 
     &:hover {
       animation: none;
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      animation: none;
+      animation-delay: none;
     }
   }
 

@@ -42,13 +42,17 @@
 
   &__highlight {
     color: var(--apsis_orange);
+
+    &:hover {
+      background-color: var(--border_blue);
+    }
   }
 
   &__copy {
     font-size: var(--font_size_lg);
     margin-bottom: var(--spacing_xl);
     text-shadow: none;
-    color: var(--gray_dark);
+    color: var(--text_muted);
   }
 
   &__image_container {
@@ -60,6 +64,7 @@
 
   &__image {
     display: none;
+    color: var(--apsis_blue);
 
     @media (min-width: vars.$tablet) {
       display: block;

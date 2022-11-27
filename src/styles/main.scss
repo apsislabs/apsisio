@@ -12,10 +12,16 @@
 
 html,
 body {
-  color: var(--apsis_dark);
+  background-color: var(--section_background);
+  color: var(--text_color);
   font-family: var(--sans);
   line-height: var(--line_height);
   border-bottom: 30px solid var(--apsis_blue);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
 }
 
 #nprogress .bar {

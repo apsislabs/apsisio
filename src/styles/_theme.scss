@@ -1,4 +1,4 @@
-@use './vars';
+@use "./vars";
 
 :root {
   //= COLORS
@@ -15,6 +15,12 @@
   --gray: #{vars.$gray};
   --gray_lighter: #{vars.$gray_lighter};
   --gray_lightest: #{vars.$gray_lightest};
+
+  --section_background: #{vars.$white};
+  --text_color: #{vars.$apsis_dark};
+  --text_muted: #{vars.$gray_dark};
+  --link_color: #{vars.$apsis_blue};
+  --link_color_dark: #{vars.$apsis_dark};
 
   --border_gray: #{vars.$border_gray};
   --outline_gray: #{vars.$outline_gray};
@@ -76,4 +82,34 @@
   --timing_sm: #{vars.$timing_sm};
   --timing_md: #{vars.$timing_md};
   --timing_lg: #{vars.$timing_lg};
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --section_background: #{vars.$gray_darker};
+    --text_color: #{vars.$gray_lightest};
+    --text_muted: #{vars.$gray_lighter};
+    --link_color_dark: #{vars.$gray_lighter};
+
+    --gray_darker: #{vars.$gray_darker};
+    --gray_dark: #{vars.$gray_dark};
+    --gray: #{vars.$gray};
+    --gray_lighter: #{vars.$gray_lighter};
+    --gray_lightest: #{vars.$gray_darker};
+
+    --border_gray: #{vars.$border_gray};
+    --outline_gray: #{vars.$outline_gray};
+    --surface_gray: #{vars.$gray_darker};
+
+    --border_blue: #{vars.$border_blue};
+    --outline_blue: #{vars.$outline_blue};
+    --surface_blue: #{vars.$apsis_dark};
+
+    --border_orange: #{vars.$border_orange};
+    --outline_orange: #{vars.$outline_orange};
+    --surface_orange: #{vars.$surface_orange};
+
+    --guide_color: #{vars.$border_gray};
+    --shadow: #{vars.$shadow};
+  }
 }

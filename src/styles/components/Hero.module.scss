@@ -65,6 +65,12 @@
   &__image {
     display: none;
     color: var(--apsis_blue);
+    transition: opacity var(--easing) var(--timing_sm);
+
+    @media screen and (prefers-color-scheme: dark) {
+      filter: invert(100%);
+      opacity: 0.65;
+    }
 
     @media (min-width: vars.$tablet) {
       display: block;

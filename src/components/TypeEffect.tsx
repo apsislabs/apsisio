@@ -81,10 +81,11 @@ export const TypeEffect = ({
     };
 
     doTyping();
+
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [strings]);
 
   return (
     <span className={clsx(styles.typing, className)}>

@@ -23,6 +23,7 @@
     "gray-matter": "^4.0.3",
     "husky": "^8.0.2",
     "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
     "lottie-react": "^2.3.1",
     "lucide": "^0.102.0",
     "lucide-react": "^0.102.0",

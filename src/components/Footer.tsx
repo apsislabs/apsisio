@@ -30,7 +30,7 @@ export const Footer = () => (
               <a
                 className="link"
                 target="_blank"
-                href="https://linkedin.com/apsislabs"
+                href="https://www.linkedin.com/company/apsislabs/"
               >
                 LinkedIn
               </a>

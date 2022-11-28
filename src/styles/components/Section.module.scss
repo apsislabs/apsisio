@@ -3,6 +3,7 @@
 .section {
   position: relative;
   background-color: var(--section_background);
+  overflow-x: hidden;
 
   &--gray {
     --section_background: var(--surface_gray);

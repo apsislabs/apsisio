@@ -43,10 +43,18 @@ export const IndexPage: React.FC = () => {
       <Section label="Open Source" centerLabel spaced Icon={Github}>
         <Row>
           <RepoCard
+            title="phi_attrs"
+            Icon={Gem}
+            description="hipaa logging for rails"
+            direction="nw"
+            href="https://github.com/apsislabs/phi_attrs"
+          />
+
+          <RepoCard
             title="slayer"
             Icon={Gem}
             href="https://github.com/apsislabs/slayer"
-            description="a service layer for ruby"
+            description="a killer service layer for ruby"
             direction="se"
           />
 
@@ -59,19 +67,11 @@ export const IndexPage: React.FC = () => {
           />
 
           <RepoCard
-            title="orca"
+            title="papers please"
             Icon={FileJson}
-            description="simple javascript orechestration"
+            description="type-safe role-based access control"
             direction="sw"
-            href="https://github.com/apsislabs/orca"
-          />
-
-          <RepoCard
-            title="phi_attrs"
-            Icon={Gem}
-            description="hipaa logging for rails"
-            direction="nw"
-            href="https://github.com/apsislabs/phi_attrs"
+            href="https://github.com/apsislabs/papers_please_ts"
           />
         </Row>
       </Section>

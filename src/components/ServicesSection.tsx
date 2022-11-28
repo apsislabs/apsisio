@@ -22,6 +22,7 @@ export const ServicesSection = () => {
           "HIPAA-compliant solutions",
           "Infrastructure management",
           "Continuous integration",
+          "Third-Party Integrations",
         ]}
       />
 
@@ -63,9 +64,9 @@ export const ServicesSection = () => {
         listItems={[
           "Ruby on Rails",
           "React",
-          "Wordpress",
-          "Java Springboot",
-          "PostgreSQL & MySQL",
+          "JVM & Spring Framework",
+          "Amazon Web Services",
+          "PostgreSQL, SQLServer, MySQL",
         ]}
       />
 

@@ -35,6 +35,14 @@ export const Footer = () => (
                 LinkedIn
               </a>
             </li>
+            <li>
+              <a
+                className="link"
+                href="mailto:contact@apsis.io"
+              >
+                contact@apsis.io
+              </a>
+            </li>
           </ul>
         </small>
       </div>

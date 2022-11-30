@@ -4,11 +4,7 @@
   margin-top: var(--spacing);
   margin-bottom: var(--spacing);
   display: grid;
-  grid-template-columns: repeat(auto-fill, 1fr);
-
-  @media (min-width: vars.$mobile) {
-    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-  }
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 
   @media (min-width: vars.$tablet) {
     grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));

@@ -1,4 +1,5 @@
 import Router from "next/router";
+import Script from "next/script";
 import NProgress from "nprogress";
 
 import "nprogress/nprogress.css";
@@ -9,5 +10,10 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Script defer data-domain="apsis.io" src="https://plausible.io/js/script.js" />
+      <Component {...pageProps} />
+    </>
+  );
 }

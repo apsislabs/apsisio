@@ -75,7 +75,7 @@ export const TypeEffect = ({
           // If we are in the final iteration, set the string
           // with a terminal character
           await sleep(randInt(typeDelayMin, typeDelayMax));
-          updateString(`${string}.`);
+          updateString(string);
         }
       }
     };

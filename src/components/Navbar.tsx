@@ -35,7 +35,7 @@ export const Navbar: React.FC<{ showTagline?: boolean }> = ({
 
       {showTagline && (
         <a
-          href="/blog/2015-04-23-work-sustainably"
+          href="/blog/2015/04/23/work-sustainably"
           className={styles.navbar__tagline}
         >
           <span className={styles.navbar__attention}>

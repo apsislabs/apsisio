@@ -45,6 +45,7 @@
 
     &:active {
       background-color: var(--surface_blue);
+      transform: translateY(1px);
     }
 
     @media screen and (prefers-color-scheme: dark) {
@@ -84,6 +85,7 @@
 
     &:active {
       background-color: var(--surface_blue);
+      transform: translateY(1px);
     }
 
     &:last-of-type {

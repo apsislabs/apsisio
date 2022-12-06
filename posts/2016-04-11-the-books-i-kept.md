@@ -61,7 +61,7 @@ These are the books I kept, and (for some) why I kept them.
 44. **Gallant, Mavis. _Paris Stories_.**
 45. **Garner, Bryan A. _Garner's Modern American Usage_.** The only reference to English usage your library needs.
 46. **Greene, Graham. _The Quiet American_.**
-47. **Greene, Graham. _The Ministry of Fear_.** Greene's fiction is exemplary in its ability to bring the thriller to high literary standards. I am embarrassed for David Patterson and his ilk every time I pick up one of Greene's books.
+47. **Greene, Graham. _The Ministry of Fear_.** Greene's fiction is exemplary in its ability to bring the thriller to high literary standards. I am embarrassed for James Patterson and his ilk every time I pick up one of Greene's books.
 48. **Haldeman, Joe. _The Forever War_.** The anguish of Vietnam distilled through science fiction; still relevant today as the definition of modern warfare changes.
 49. **Hardy, Thomas. _Jude the Obscure_.**
 50. **Hazard, Shirley. _Cliffs of Fall_.**

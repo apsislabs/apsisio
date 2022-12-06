@@ -1,7 +1,0 @@
-@mixin delay-each($n, $delay: 150ms) {
-    @for $i from 1 through $n {
-        &:nth-child(#{$i}) {
-            @include transition-delay($delay + ($i * 50ms));
-        }
-    }
-}

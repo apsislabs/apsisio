@@ -1,0 +1,79 @@
+@use "styles/vars";
+
+.hero {
+  --hero_height: 78vh;
+
+  display: flex;
+  flex-direction: row;
+  padding: vars.$spacing_xl;
+  position: relative;
+
+  @media (min-width: vars.$tablet) {
+    padding: calc(var(--spacing_xl) * 2) var(--spacing_xl);
+  }
+
+  @media (min-width: vars.$desktop) {
+    flex-direction: row;
+    align-items: center;
+    padding: calc(var(--spacing_xl) * 2);
+    min-height: var(--hero_height);
+  }
+
+  &__headline {
+    flex-grow: 3;
+
+    @media (min-width: vars.$tablet) {
+      margin-right: var(--spacing_xl);
+    }
+  }
+
+  &__title {
+    font-family: var(--sans);
+    font-size: var(--font_size_d2);
+    text-transform: lowercase;
+    font-weight: 700;
+    line-height: 1.125;
+    margin-bottom: var(--spacing_xl);
+
+    @media (min-width: vars.$desktop) {
+      font-size: var(--font_size_d1);
+    }
+  }
+
+  &__highlight {
+    color: var(--apsis_orange);
+
+    &:hover {
+      background-color: var(--border_blue);
+    }
+  }
+
+  &__copy {
+    font-size: var(--font_size_lg);
+    margin-bottom: var(--spacing_xl);
+    text-shadow: none;
+    color: var(--text_muted);
+  }
+
+  &__image_container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    display: none;
+    color: var(--apsis_blue);
+    transition: opacity var(--easing) var(--timing_sm);
+
+    @media screen and (prefers-color-scheme: dark) {
+      filter: invert(100%);
+      opacity: 0.65;
+    }
+
+    @media (min-width: vars.$tablet) {
+      display: block;
+    }
+  }
+}

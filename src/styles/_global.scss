@@ -1,0 +1,145 @@
+.link {
+  color: var(--apsis_blue);
+  text-decoration: none;
+
+  &:visited {
+    color: var(--apsis_blue);
+  }
+
+  &:hover,
+  &:visited:hover {
+    text-decoration: underline;
+    color: var(--apsis_blue);
+  }
+}
+
+.inline_list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--spacing_sm);
+  list-style: none;
+}
+
+.typography {
+  > p {
+    margin-bottom: var(--spacing);
+  }
+
+  a {
+    @extend .link;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    line-height: var(--heading_line_height);
+    margin-bottom: var(--spacing_md);
+    margin-top: var(--spacing_lg);
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: var(--font_size_h1);
+  }
+
+  h2 {
+    font-size: var(--font_size_h2);
+  }
+
+  h3 {
+    font-size: var(--font_size_h3);
+  }
+
+  h4 {
+    font-size: var(--font_size_h4);
+  }
+
+  h5 {
+    font-size: var(--font_size_h5);
+  }
+
+  //= BLOCK ELEMENTS
+
+  p,
+  ul,
+  ol,
+  pre {
+    margin-bottom: var(--spacing_md);
+  }
+
+  ul,
+  ol {
+    ul,
+    ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  hr {
+    width: 20%;
+    margin: var(--spacing_md) 0;
+    border: 0;
+    border-top: 1px solid var(--border_gray);
+  }
+
+  sup {
+    font-weight: normal;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  iframe {
+    border: 0;
+  }
+
+  blockquote {
+    border-left: 2px solid var(--border_gray);
+    padding-left: var(--spacing_md);
+    padding-top: var(--spacing_sm);
+    padding-bottom: var(--spacing_sm);
+    margin-bottom: var(--spacing_md);
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //= PARAGRAPH ELEMENTS
+
+  p > pre,
+  p > code {
+    font-family: var(--mono);
+    background-color: var(--gray_lightest);
+    padding: 0 var(--spacing_xs);
+  }
+
+  div > pre {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  p > a {
+    @media (min-width: var(--tablet)) {
+      white-space: nowrap;
+    }
+  }
+
+  p > img,
+  figure > img {
+    max-width: 100%;
+  }
+
+  figure > figcaption {
+    font-size: var(--font_size_xs);
+    color: var(--apsis_gray);
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}

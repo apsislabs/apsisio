@@ -1,0 +1,29 @@
+@use "./vars";
+@use "./theme";
+
+@import "minireset.css/minireset.sass";
+
+@import "utils/animations";
+
+@import "styles/fonts";
+@import "styles/global";
+@import "styles/prism";
+
+
+html,
+body {
+  background-color: var(--section_background);
+  color: var(--text_color);
+  font-family: var(--sans);
+  line-height: var(--line_height);
+  border-bottom: 30px solid var(--apsis_blue);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+}
+
+#nprogress .bar {
+  background: var(--apsis_blue);
+}

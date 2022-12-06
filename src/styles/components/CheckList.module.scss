@@ -1,0 +1,40 @@
+@use 'styles/vars';
+
+.check_list {
+  --padding_left: 1.5rem;
+
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+
+  > li {
+    break-inside: avoid;
+    margin-bottom: var(--spacing_sm);
+
+    display: flex;
+    flex-direction: row;
+
+    &:hover {
+      .check_list__marker {
+        color: var(--apsis_green);
+      }
+    }
+  }
+
+  &__marker {
+    margin-right: var(--spacing_sm);
+    vertical-align: text-top;
+    display: inline-block;
+    transform: translateY(4px);
+    color: var(--gray_lighter);
+    transition: color var(--timing_sm) var(--easing);
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+
+  @media (min-width: vars.$mobile) {
+    columns: 2;
+    column-gap: var(--spacing_lg);
+  }
+}

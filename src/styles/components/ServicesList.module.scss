@@ -1,0 +1,52 @@
+@use 'styles/vars';
+
+$variant_colors: (
+  "blue": vars.$apsis_blue,
+  "pink": vars.$apsis_fuschia,
+  "green": vars.$apsis_green,
+  "yellow": vars.$apsis_orange,
+);
+
+.services_list {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: vars.$mobile) {
+    width: auto;
+  }
+
+  &__title {
+    color: var(--apsis_blue);
+    margin-bottom: var(--spacing_sm);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: var(--spacing_sm);
+  }
+
+  &__list {
+    padding-left: 2rem;
+    margin-left: var(--spacing);
+
+    li::before {
+      content: "•";
+      color: var(--gray);
+      display: inline-block;
+      width: var(--spacing);
+      margin-left: calc(-1 * var(--spacing_xl));
+      font-weight: 600;
+    }
+  }
+
+  @each $variant, $color in $variant_colors {
+    &--#{$variant} {
+      .services_list__title {
+        color: $color;
+      }
+    }
+  }
+}

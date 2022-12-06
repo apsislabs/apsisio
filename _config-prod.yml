@@ -1,6 +1,0 @@
-# Prod Settings
-url: http://www.apsis.io
-baseurl:
-
-jekyll_tidy:
-    compress_html: true

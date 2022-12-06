@@ -1,0 +1,29 @@
+@use 'styles/vars';
+
+@keyframes blinker {
+  from,
+  49.9% {
+    opacity: 0;
+  }
+  50%,
+  to {
+    opacity: 1;
+  }
+}
+
+.typing {
+  &__cursor {
+    width: 0.05em;
+    margin-left: 0.15em;
+    margin-right: 0.15em;
+    height: 1em;
+    background-color: var(--gray_lighter);
+    display: inline-block;
+    position: absolute;
+    transform: translateY(5%);
+  }
+
+  &__cursor--blinking {
+    animation: blinker 1.25s linear infinite alternate;
+  }
+}

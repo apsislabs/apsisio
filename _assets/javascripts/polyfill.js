@@ -1,1 +1,0 @@
-//= require vendor/picturefill.js

@@ -1,0 +1,20 @@
+.arrow {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+  display: inline-block;
+  border-color: inherit;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-width: 2px 2px 0 0;
+    border-style: solid;
+    border-color: inherit;
+    transition: 0.2s ease;
+    display: block;
+    transform-origin: 100% 0;
+  }
+}

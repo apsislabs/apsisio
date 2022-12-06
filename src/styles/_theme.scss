@@ -1,0 +1,115 @@
+@use "./vars";
+
+:root {
+  //= COLORS
+  --apsis_blue: #{vars.$apsis_blue};
+  --apsis_dark: #{vars.$apsis_dark};
+  --apsis_gray: #{vars.$apsis_gray};
+  --apsis_orange: #{vars.$apsis_orange};
+  --apsis_fuschia: #{vars.$apsis_fuschia};
+  --apsis_green: #{vars.$apsis_green};
+
+  --white: #{vars.$white};
+  --gray_darker: #{vars.$gray_darker};
+  --gray_dark: #{vars.$gray_dark};
+  --gray: #{vars.$gray};
+  --gray_lighter: #{vars.$gray_lighter};
+  --gray_lightest: #{vars.$gray_lightest};
+
+  --section_background: #{vars.$white};
+  --text_color: #{vars.$apsis_dark};
+  --text_muted: #{vars.$gray_dark};
+  --link_color: #{vars.$apsis_blue};
+  --link_color_dark: #{vars.$apsis_dark};
+
+  --border_gray: #{vars.$border_gray};
+  --outline_gray: #{vars.$outline_gray};
+  --surface_gray: #{vars.$surface_gray};
+
+  --border_blue: #{vars.$border_blue};
+  --outline_blue: #{vars.$outline_blue};
+  --surface_blue: #{vars.$surface_blue};
+
+  --border_orange: #{vars.$border_orange};
+  --outline_orange: #{vars.$outline_orange};
+  --surface_orange: #{vars.$surface_orange};
+
+  --guide_color: #{vars.$border_gray};
+  --shadow: #{vars.$shadow};
+
+  //= FONTS
+  --sans: #{vars.$sans};
+  --mono: #{vars.$mono};
+
+  --font_size: #{vars.$font_size};
+  --line_height: #{vars.$line_height};
+  --heading_line_height: #{vars.$heading_line_height};
+  --font_size_xxs: #{vars.$font_size_xxs};
+  --font_size_xs: #{vars.$font_size_xs};
+  --font_size_sm: #{vars.$font_size_sm};
+  --font_size_lg: #{vars.$font_size_lg};
+
+  --font_size_d1: #{vars.$font_size_d1};
+  --font_size_d2: #{vars.$font_size_d2};
+  --font_size_d3: #{vars.$font_size_d3};
+
+  --font_size_h1: #{vars.$font_size_h1};
+  --font_size_h2: #{vars.$font_size_h2};
+  --font_size_h3: #{vars.$font_size_h3};
+  --font_size_h4: #{vars.$font_size_h4};
+  --font_size_h5: #{vars.$font_size_h5};
+
+  //= SPACING
+  --spacing: #{vars.$spacing};
+  --spacing_xs: #{vars.$spacing_xs};
+  --spacing_sm: #{vars.$spacing_sm};
+  --spacing_md: #{vars.$spacing_md};
+  --spacing_lg: #{vars.$spacing_lg};
+  --spacing_xl: #{vars.$spacing_xl};
+
+  //= SIZES
+  --site_width: #{vars.$site_width};
+
+  //= MEDIA QUERIES
+  --mobile: #{vars.$mobile};
+  --tablet: #{vars.$tablet};
+  --desktop: #{vars.$desktop};
+  --lgdesktop: #{vars.$lgdesktop};
+  --xldesktop: #{vars.$xldesktop};
+
+  //= ANIMATION
+  --easing: #{vars.$easing};
+  --timing_sm: #{vars.$timing_sm};
+  --timing_md: #{vars.$timing_md};
+  --timing_lg: #{vars.$timing_lg};
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --section_background: #{vars.$gray_darker};
+    --text_color: #{vars.$gray_lightest};
+    --text_muted: #{vars.$gray_lighter};
+    --link_color_dark: #{vars.$gray_lighter};
+
+    --gray_darker: #{vars.$gray_darker};
+    --gray_dark: #{vars.$gray_dark};
+    --gray: #{vars.$gray};
+    --gray_lighter: #{vars.$gray_lighter};
+    --gray_lightest: #{vars.$gray_darker};
+
+    --border_gray: #{vars.$border_gray};
+    --outline_gray: #{vars.$outline_gray};
+    --surface_gray: #{vars.$gray_darker};
+
+    --border_blue: #{vars.$border_blue};
+    --outline_blue: #{vars.$outline_blue};
+    --surface_blue: #{vars.$apsis_dark};
+
+    --border_orange: #{vars.$border_orange};
+    --outline_orange: #{vars.$outline_orange};
+    --surface_orange: #{vars.$surface_orange};
+
+    --guide_color: #{vars.$border_gray};
+    --shadow: #{vars.$shadow};
+  }
+}

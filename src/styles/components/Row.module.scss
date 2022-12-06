@@ -1,0 +1,92 @@
+@use "styles/vars";
+
+.row {
+  padding: 0 var(--spacing_lg);
+  margin: 0 calc(-1 * var(--spacing_lg));
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin-bottom: var(--spacing_lg);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: vars.$tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & > * {
+      flex: 0 calc(50% - var(--spacing));
+      margin-right: var(--spacing);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-bottom: var(--spacing_lg);
+      }
+    }
+
+    &--top {
+      align-items: flex-start;
+    }
+
+    &--middle {
+      align-items: center;
+    }
+
+    &--bottom {
+      align-items: flex-end;
+    }
+
+    &--reverse {
+      flex-direction: row-reverse;
+
+      & > * {
+        margin-right: 0;
+
+        &:nth-child(2n) {
+          margin-right: var(--spacing);
+        }
+      }
+    }
+
+    &--narrow {
+      max-width: calc(var(--site_width) * 0.75);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (min-width: vars.$desktop) {
+    & > * {
+      flex: 1;
+      margin-bottom: 0;
+      margin-right: var(--spacing_xl);
+
+      &:nth-child(2n) {
+        margin-right: var(--spacing_xl);
+      }
+
+      &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &--reverse {
+      & > * {
+        margin-right: 0;
+
+        &:nth-child(2n) {
+          margin-right: var(--spacing_xl);
+        }
+      }
+    }
+  }
+}

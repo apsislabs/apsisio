@@ -1,0 +1,105 @@
+@use 'styles/vars';
+@use "sass:math";
+
+@mixin directional($x, $y) {
+  transform: translateX(math.div($x, 2)) translateY(math.div($y, 2));
+
+  &::before {
+    transform: translateX(math.div(-$x, 2)) translateY(math.div(-$y, 2));
+  }
+
+  &::after {
+    transform: translateX(math.div($x, 2)) translateY(math.div($y, 2));
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateX(math.div($x, 2)) translateY(math.div($y, 2) - 0.5);
+
+    &::before,
+    &::after {
+      transform: none;
+    }
+  }
+}
+
+$v: (
+  "n": -1,
+  "s": 1,
+);
+
+$h: (
+  "w": -1,
+  "e": 1,
+);
+
+.repo_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: monospace;
+  padding: var(--spacing_md);
+  border: 1px solid transparent;
+  position: relative;
+  color: var(--text_color);
+  text-decoration: none;
+  transition: border-color var(--timing_md) var(--easing) var(--timing_md),
+    transform 0.125s var(--easing);
+
+  height: 120px;
+
+  &:hover {
+    border-color: var(--apsis_orange);
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    opacity: 0.75;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--surface_blue);
+    transition: transform var(--easing) var(--timing_md),
+      background-color var(--easing) var(--timing_md);
+  }
+
+  &:hover::after,
+  &:hover::before {
+    background-color: var(--surface_orange);
+  }
+
+  &__media {
+    margin-right: var(--spacing_lg);
+    color: var(--gray);
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: var(--font_size);
+  }
+
+  &__content {
+    font-size: var(--font_size_sm);
+  }
+
+  @each $hdir, $hcoef in $h {
+    @each $vdir, $vcoef in $v {
+      &--#{$vdir}#{$hdir} {
+        @include directional(vars.$spacing_sm, vars.$spacing_sm);
+        
+        @media (min-width: vars.$desktop) {
+          @include directional(
+            vars.$spacing_sm * $hcoef,
+            vars.$spacing_sm * $vcoef
+          );
+        }
+      }
+    }
+  }
+}

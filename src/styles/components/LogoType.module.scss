@@ -1,0 +1,18 @@
+@use "styles/vars";
+
+.logotype {
+  font-size: var(--font_size_h3);
+  color: inherit;
+  text-transform: lowercase;
+  font-weight: 700;
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__planet {
+    margin-right: var(--spacing_sm);
+    flex-shrink: 0;
+  }
+}

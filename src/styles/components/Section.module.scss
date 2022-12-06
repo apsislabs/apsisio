@@ -1,0 +1,137 @@
+@use 'styles/vars';
+
+.section {
+  position: relative;
+  background-color: var(--section_background);
+  overflow-x: hidden;
+
+  &--gray {
+    --section_background: var(--surface_gray);
+    --guide_color: var(--border_gray);
+  }
+
+  &--blue {
+    --section_background: var(--surface_blue);
+    --guide_color: var(--border_blue);
+  }
+
+  &--bordered {
+    border-top: 1px solid var(--guide_color);
+    border-bottom: 1px solid var(--guide_color);
+  }
+
+  &--spaced {
+    .section__content {
+      padding: vars.$spacing_xl vars.$spacing_lg;
+
+      @media (min-width: vars.$tablet) {
+        padding: vars.$spacing_xl * 2 vars.$spacing_xl;
+      }
+
+      @media (min-width: vars.$desktop) {
+        padding: vars.$spacing_xl * 3 vars.$spacing_xl * 2;
+      }
+    }
+  }
+
+  &--kebabed {
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      background-color: var(--guide_color);
+      height: 1px;
+      width: calc((100vw - var(--site_width)) / 2 + #{vars.$spacing});
+    }
+
+    &::before {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--narrow {
+    --site_width: #{vars.$site_width * 0.5};
+
+    @media (min-width: vars.$desktop) {
+      --site_width: #{vars.$site_width * 0.6};
+    }
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__guides {
+    height: 100%;
+    margin: 0 auto;
+    max-width: vars.$site_width;
+    width: 100%;
+    border-left: 1px solid var(--guide_color);
+    border-right: 1px solid var(--guide_color);
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: var(--site_width);
+    width: 100%;
+  }
+
+  &__label_container {
+    background-color: vars.$surface_blue;
+    padding: vars.$spacing_xs vars.$spacing;
+    display: inline-block;
+
+    @media (min-width: vars.$desktop) {
+      position: absolute;
+      padding-right: vars.$spacing_lg * 2;
+    }
+
+    @media (min-width: vars.$xldesktop) {
+      white-space: nowrap;
+      transform: translateX(calc(-100vw / 2 + var(--site_width) / 2));
+      width: calc(((100vw - var(--site_width)) / 2) + #{vars.$spacing_lg});
+      transition: width ease-in-out 0.25s;
+      top: vars.$spacing_xl;
+
+      &:hover {
+        width: calc(((100vw - var(--site_width)) / 2) + #{vars.$spacing_xl});
+      }
+    }
+
+    &--centered {
+      @media (min-width: vars.$xldesktop) {
+        top: 50%;
+        transform: translateX(calc(-100vw / 2 + var(--site_width) / 2)) translateY(-50%);
+      }
+    }
+  }
+
+  &__label {
+    font-family: vars.$mono;
+    color: vars.$apsis_blue;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: vars.$spacing;
+  }
+}

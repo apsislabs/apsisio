@@ -1,361 +1,173 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>Apsis Labs | Save Time with Bash Programmable Autocompletion</title>
-    <!-- !START meta -->
-    <meta name="description" content="What follows is a short tutorial on bash autocompletion and a tiny bit of bash programming information. It assumes you have a working knowledge of programmin...">
-    <link rel="canonical" href="/blog/2018/01/08/bash_completion">
-    <link rel="alternate" type="application/rss+xml" title="Development Chop Shop" href="/feed.xml">
-    <meta content="Apsis Labs" property="og:site_name">
-    <meta content="Save Time with Bash Programmable Autocompletion" property="og:title">
-    <meta content="article" property="og:type">
-    <meta content="What follows is a short tutorial on bash autocompletion and a tiny bit of bash programming information. It assumes you have a working knowledge of programmin..." property="og:description">
-    <meta content="/blog/2018/01/08/bash_completion" property="og:url">
-    <meta content="2018-01-08T00:00:00+00:00" property="article:published_time">
-    <meta content="/assets/posts/bash.gif" property="og:image">
-    <!-- !END meta -->
-    <!-- !START favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/png" href="/assets/favicons/favicon.ico">
-    <!-- !END favicons -->
-    <!-- !START polyfill -->
-    <!--[if lt IE 9]>
-      <script type="text/javascript" src="/assets/vendor/html5shiv.min.js"></script>
-      <script type="text/javascript" src="/assets/vendor/html5shiv-printshiv.min.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="/assets/polyfill.js" async="async"></script>
-    <!-- !END polyfill -->
-    <!-- !START styles -->
-    <link type="text/css" rel="stylesheet" href="/assets/app.css">
-    <!-- !END styles -->
-  </head>
-  <body class="">
-    <!-- !START navbar -->
-    <header id="navbar" class="navbar ">
-      <div class="navbar__header">
-        <a href="/" class="logo logo--navbar logo--mobile navbar__logo">
-          <picture>
-            <source media="(min-width: 960px)" srcset="/assets/logos/apsis_blue.png" />
-            <source srcset="/assets/logos/apsis_mobile_blue.png" />
-            <img src="/assets/logos/apsis_blue.png" alt="Apsis Labs" class="logo__image">
-          </picture>
-          <h1 class="logo__text">Apsis Labs</h1>
-        </a>
-        <button id="nav-toggle" class="navbar__nav-toggle">
-          <span class="navicon ">
-            <span class="navicon__bar"></span>
-          </span>
-          <span class="sr">Toggle Menu</span>
-        </button>
-      </div>
-      <nav class="navbar__nav">
-        <a class="navbar__nav-link" href="/#services">Services</a>
-        <a class="navbar__nav-link" href="/#about">About</a>
-        <a class="navbar__nav-link" href="/#clients">Clients</a>
-        <a class="navbar__nav-link" href="/#contact">Contact</a>
-        <a class="navbar__nav-link" href="/jobs/">Jobs</a>
-        <a class="navbar__nav-link" href="/blog/">Blog</a>
-      </nav>
-    </header>
-    <!-- !END navbar -->
-    <!-- !START content -->
-    <div id="content">
-      <!-- !START schema.org -->
-      <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "BlogPosting",
-            "headline": "Save Time with Bash Programmable Autocompletion",
-            "datePublished": "2018-01-08 00:00:00 +0000",
-            "dateModified": "2018-01-08 00:00:00 +0000",
-            "author": {
-              "@type": "Person",
-              "name": "Chris Pfohl"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Apsis Labs",
-              "logo": "/assets/logos/apsis_blue.png"
-            },
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "/blog/2018/01/08/bash_completion"
-            },
-        
-              "image": ["/assets/posts/bash.gif"]
-        
-          }
-      </script>
-      <!-- !END schema.org -->
-      <div class="post-wrapper post-wrapper--single">
-        <div class="container">
-          <article class="post">
-            <header class="post__header">
-              <div class="post__image-wrapper">
-                <img src="/assets/posts/bash.gif" alt="Save Time with Bash Programmable Autocompletion. " class="post__image" data-action="zoom">
-              </div>
-              <h2 class="post__title" itemprop="name headline">
-                <a href="">
-                  Save Time with Bash Programmable Autocompletion
-        </a>
-              </h2>
-            </header>
-            <div class="post__content">
-              <p>Every developer should have at least a basic mastery of their command line. I&rsquo;d argue
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>Blog: <!-- -->Save Time with Bash Programmable Autocompletion<!-- --> | Apsis Labs</title><meta name="next-head-count" content="3"/><link rel="preload" href="/_next/static/css/7ea3d415ea71f454.css" as="style"/><link rel="stylesheet" href="/_next/static/css/7ea3d415ea71f454.css" data-n-g=""/><link rel="preload" href="/_next/static/css/961fd35f9900dccb.css" as="style"/><link rel="stylesheet" href="/_next/static/css/961fd35f9900dccb.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-38cee4c0e358b1a3.js" defer=""></script><script src="/_next/static/chunks/framework-3b5a00d5d7e8d93b.js" defer=""></script><script src="/_next/static/chunks/main-11be7a5831576890.js" defer=""></script><script src="/_next/static/chunks/pages/_app-60e4b95a798f8b57.js" defer=""></script><script src="/_next/static/chunks/978-02f2bca0ad96aa84.js" defer=""></script><script src="/_next/static/chunks/pages/blog/%5Byear%5D/%5Bmonth%5D/%5Bday%5D/%5Bslug%5D-9807efe570c05d86.js" defer=""></script><script src="/_next/static/bxHrMQxhjEPrVOtKnfS7s/_buildManifest.js" defer=""></script><script src="/_next/static/bxHrMQxhjEPrVOtKnfS7s/_ssgManifest.js" defer=""></script></head><body><div id="__next"><section class="Section_section__7lFyd Section_section--bordered__3mks7"><div class="Section_section__mask__uzacw"></div><div class="Section_section__container__jhnN5"><div class="Section_section__content__AfzlM"><nav class="Navbar_navbar__D8UBJ"><a class="Navbar_navbar__logo__ZXb6W" href="/"><h1 class="LogoType_logotype__xLdSu"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="LogoType_logotype__planet__7itPr" width="24" height="24"><path fill-rule="evenodd" clip-rule="evenodd" d="M32 64C49.6731 64 64 49.6731 64 32C64 14.3269 49.6731 0 32 0C14.3269 0 0 14.3269 0 32C0 49.6731 14.3269 64 32 64ZM32 61C48.0163 61 61 48.0163 61 32C61 15.9837 48.0163 3 32 3C15.9837 3 3 15.9837 3 32C3 48.0163 15.9837 61 32 61ZM58 32C58 46.3594 46.3594 58 32 58C17.6406 58 6 46.3594 6 32C6 17.6406 17.6406 6 32 6C46.3594 6 58 17.6406 58 32ZM44 26C47.3137 26 50 23.3137 50 20C50 16.6863 47.3137 14 44 14C40.6863 14 38 16.6863 38 20C38 23.3137 40.6863 26 44 26Z" fill="currentColor"></path></svg>Apsis Labs</h1></a><nav class="Navbar_navbar__nav__cBTmU"><a class="Navbar_navbar__nav_item__B61tg" href="/">Home</a><a class="Navbar_navbar__nav_item__B61tg" href="/blog">Blog</a></nav></nav></div></div></section><section class="Section_section__7lFyd Section_section--spaced__2aRLR Section_section--narrow__yR9qo"><div class="Section_section__mask__uzacw"></div><div class="Section_section__container__jhnN5"><div class="Section_section__content__AfzlM"><div class="Post_post-wrapper__J2rnw"><article class="Post_post__jsVSv" itemType="http://schema.org/BlogPosting"><header class="Post_post__header__y928C"><div class="Post_post__image-wrapper__SbkFK"><img src="/img/posts/bash.gif" alt="Save Time with Bash Programmable Autocompletion" class="Post_post__image__T2oS9" data-action="zoom"/></div><h2 class="Post_post__title__Dldfn"><a href="/blog/2018/01/08/bash_completion">Save Time with Bash Programmable Autocompletion</a></h2></header><div class="Post_post__content__xE3U_"><p>Every developer should have at least a basic mastery of their command line. I'd argue
 that part of that mastery is to develop a set of customizations they take with them
 wherever they go. These customizations should make things you do all the time faster.
-Obviously there are diminshing returns here<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>.</p>
-              <p>Some of my customizations include bash aliases for my most used git commands. <code>ga</code> is
+Obviously there are diminshing returns here<sup><a href="#user-content-fn-2" id="user-content-user-content-fnref-2" aria-describedby="footnote-label">1</a></sup>.</p>
+<p>Some of my customizations include bash aliases for my most used git commands. <code>ga</code> is
 short for <code>git add</code>, <code>gap</code> is short for <code>git add -p</code>, etc. I also like to have a
 syntax highlighted <code>cat</code> and <code>less</code> available to me using <a href="http://pygments.org/">Pygments</a>.</p>
-              <p>Today I added something I&rsquo;ve wanted for a long time: a <code>cd</code> that works relative to
+<p>Today I added something I've wanted for a long time: a <code>cd</code> that works relative to
 the directory I do most of my development work in. Now I can run <code>cdx subdir_of_x</code>
-                and it will take me to <code>~/x/subdir_of_x</code>.</p>
-              <p>You may be wondering &ldquo;Why use precious kilobytes of storage and hours of time writing
-this up!?&rdquo; And you&rsquo;d be corect. By itself, this is not worthy of a blog post.
+and it will take me to <code>~/x/subdir_of_x</code>.</p>
+<p>You may be wondering "Why use precious kilobytes of storage and hours of time writing
+this up!?" And you'd be corect. By itself, this is not worthy of a blog post.
 I, however, also added autocompletion for the contents of that directory, and <em>that</em>
-                is worth writing about.</p>
-              <p>What follows is a short tutorial on bash autocompletion and a tiny bit of bash programming
+is worth writing about.</p>
+<p>What follows is a short tutorial on bash autocompletion and a tiny bit of bash programming
 information. It assumes you have a working knowledge of programming, and at least passing
 familiarity with your terminal.</p>
-              <h2>The Function</h2>
-              <p>In and of itself, this a very easy function<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup> to write. In your <code>~/.bashrc</code> add:</p>
-              <div class="highlight">
-                <pre><code class="language-" data-lang="">function cdx {
-    cd "$HOME/x/$1"
-}
-</code></pre>
-              </div>
-              <p>My first test looked like this:</p>
-              <div class="highlight">
-                <pre><code class="language-" data-lang="">cdx my_code  &lt;TAB&gt;  _base
-</code></pre>
-              </div>
-              <p>No autocomplete, just big gaping tabs in the middle of my command. What&rsquo;s an enterprising
-developer<sup id="fnref3"><a href="#fn3" rel="footnote">3</a></sup> to do? Spend the morning figuring it out, of course.</p>
-              <h2>The Code</h2>
-              <p>First, the good stuff. All together, when placed in your <code>~/.bashrc</code> and <code>source</code>ed,
+<h2>The Function</h2>
+<p>In and of itself, this a very easy function<sup><a href="#user-content-fn-1" id="user-content-user-content-fnref-1" aria-describedby="footnote-label">2</a></sup> to write. In your <code>~/.bashrc</code> add:</p>
+<div><pre><code>function cdx {
+    cd &#x26;quot;$HOME/x/$1&#x26;quot;
+}</code></pre></div>
+<p>My first test looked like this:</p>
+<div><pre><code>cdx my_code  &#x26;lt;TAB&#x26;gt;  _base</code></pre></div>
+<p>No autocomplete, just big gaping tabs in the middle of my command. What's an enterprising
+developer<sup><a href="#user-content-fn-4" id="user-content-user-content-fnref-4" aria-describedby="footnote-label">3</a></sup> to do? Spend the morning figuring it out, of course.</p>
+<h2>The Code</h2>
+<p>First, the good stuff. All together, when placed in your <code>~/.bashrc</code> and <code>source</code>ed,
 the following works for hypothetical directory <code>x</code> in your home directory using the new
 command <code>cdx</code>:</p>
-              <div class="highlight">
-                <pre><code class="language-" data-lang="">function cdx {
-    cd "$HOME/x/$1"
+<div><pre><code>function cdx {
+    cd &#x26;quot;$HOME/x/$1&#x26;quot;
 }
 function _cdx {
     local cur opts
 
-    opts="$(ls -1 ~/x)"
-    cur="${COMP_WORDS[COMP_CWORD]}"
+    opts=&#x26;quot;$(ls -1 ~/x)&#x26;quot;
+    cur=&#x26;quot;${COMP_WORDS[COMP_CWORD]}&#x26;quot;
 
-    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    COMPREPLY=( $(compgen -W &#x26;quot;${opts}&#x26;quot; -- ${cur}) )
     return 0
 }
-complete -F _cdx cdx
-</code></pre>
-              </div>
-              <p>To make it work:</p>
-              <ol>
-                <li>Insert this in <code>~/.bashrc</code>.</li>
-                <li>Replace all instances of &ldquo;x&rdquo; with a directory from your <code>$HOME</code> directory.</li>
-                <li>Call <code>source ~/.bashrc</code>.</li>
-              </ol>
-              <p>You may want to rename <code>cdx</code> with a more intuitive name (for Apsis code, for example,
-I&rsquo;d use <code>cda</code> and <code>_cda</code>).</p>
-              <h2>The Explanation</h2>
-              <p>Now to break the <code>_cdx</code> function down. When it gets obvious feel free to skip to the end, I&rsquo;ve
+complete -F _cdx cdx</code></pre></div>
+<p>To make it work:</p>
+<ol>
+<li>Insert this in <code>~/.bashrc</code>.</li>
+<li>Replace all instances of "x" with a directory from your <code>$HOME</code> directory.</li>
+<li>Call <code>source ~/.bashrc</code>.</li>
+</ol>
+<p>You may want to rename <code>cdx</code> with a more intuitive name (for Apsis code, for example,
+I'd use <code>cda</code> and <code>_cda</code>).</p>
+<h2>The Explanation</h2>
+<p>Now to break the <code>_cdx</code> function down. When it gets obvious feel free to skip to the end, I've
 attempted to order this from most specific to broadest bash knowledge. (In order of <em>my</em> current
-knowledge of bash). I&rsquo;ve left the most basic stuff (like explaining <code>ls</code>) out.</p>
-              <ol>
-                <li>
-                  <p><code>complete -F _cdx cdx</code> is how you let bash know to attempt an autocomplete. In English it&rsquo;s:</p>
-                  <blockquote>
-                    <p>When I run the cdx command please use the function _cdx to autocomplete the command.</p>
-                  </blockquote>
-                </li>
-                <li>
-                  <p><code>compgen -W &quot;${opts}&quot; -- ${cur}</code> is the function that searches an array of possibilities (<code>-W</code>)
-for the text after <code>--</code>. It&rsquo;s pretty rigid: no fuzzy searching, no autocorrecting. It just returns
-&ldquo;things from the array that start with what you typed.&rdquo; You are free to replace it with
+knowledge of bash). I've left the most basic stuff (like explaining <code>ls</code>) out.</p>
+<ol>
+<li>
+<p><code>complete -F _cdx cdx</code> is how you let bash know to attempt an autocomplete. In English it's:</p>
+<blockquote>
+<p>When I run the cdx command please use the function _cdx to autocomplete the command.</p>
+</blockquote>
+</li>
+<li>
+<p><code>compgen -W "${opts}" -- ${cur}</code> is the function that searches an array of possibilities (<code>-W</code>)
+for the text after <code>--</code>. It's pretty rigid: no fuzzy searching, no autocorrecting. It just returns
+"things from the array that start with what you typed." You are free to replace it with
 whatever you want as long as it too returns an array (space separated string) of the options.
 In English:</p>
-                  <blockquote>
-                    <p>Please give me all the words in the string &lsquo;opts&rsquo; that start with what&rsquo;s in &#39;cur&rsquo;.</p>
-                  </blockquote>
-                </li>
-                <li>
-                  <p><code>COMPREPLY</code> is basically the return value of this function. Whatever array you return here will be
+<blockquote>
+<p>Please give me all the words in the string 'opts' that start with what's in 'cur'.</p>
+</blockquote>
+</li>
+<li>
+<p><code>COMPREPLY</code> is basically the return value of this function. Whatever array you return here will be
 presented to you on the command line as options for autocompletion. In English:</p>
-                  <blockquote>
-                    <p>Here&rsquo;s what I want to pick from when autocompleting with the current inputs.</p>
-                  </blockquote>
-                </li>
-                <li>
-                  <p><code>cur=&quot;${COMP_WORDS[COMP_CWORD]}&quot;</code> is setting <code>cur</code> to the last word on the command line. <code>COMP_WORDS</code>
-                    and <code>COMP_CWORD</code> are the inputs to this function. (You can actually make them real bash function
-parameters if you want to, but they&rsquo;re already acceptably named). They are special bash variables
+<blockquote>
+<p>Here's what I want to pick from when autocompleting with the current inputs.</p>
+</blockquote>
+</li>
+<li>
+<p><code>cur="${COMP_WORDS[COMP_CWORD]}"</code> is setting <code>cur</code> to the last word on the command line. <code>COMP_WORDS</code>
+and <code>COMP_CWORD</code> are the inputs to this function. (You can actually make them real bash function
+parameters if you want to, but they're already acceptably named). They are special bash variables
 that are only available in completion functions. <code>COMP_WORDS</code> is the array of strings currently
 entered on the command line. <code>COMP_CWORDS</code> is the current length of the <code>COMP_WORDS</code> array. In English:</p>
-                  <blockquote>
-                    <p>Set the variable &#39;cur&rsquo; to the last word on the command line.</p>
-                  </blockquote>
-                </li>
-                <li>
-                  <p><code>opts=&quot;$(ls -1 ~/x)&quot;</code> is where we set the available options by creating an array (space separated string)
+<blockquote>
+<p>Set the variable 'cur' to the last word on the command line.</p>
+</blockquote>
+</li>
+<li>
+<p><code>opts="$(ls -1 ~/x)"</code> is where we set the available options by creating an array (space separated string)
 from the output of <code>ls -1 ~/x</code>. This gets used in the <code>compgen</code> command. In English:</p>
-                  <blockquote>
-                    <p>Set &ldquo;opts&rdquo; to the output of &ldquo;ls -1 ~/x&rdquo; as the list of potential options to autocomplete from.</p>
-                  </blockquote>
-                </li>
-                <li>
-                  <p><code>local cur opts</code> is a declaration of the cur and opts variables. By using <code>local</code> we avoid cluttering
+<blockquote>
+<p>Set "opts" to the output of "ls -1 ~/x" as the list of potential options to autocomplete from.</p>
+</blockquote>
+</li>
+<li>
+<p><code>local cur opts</code> is a declaration of the cur and opts variables. By using <code>local</code> we avoid cluttering
 the global variable namespace. In English:</p>
-                  <blockquote>
-                    <p>I&rsquo;m going to use the cur and opts variables. You can forget them when this function ends.</p>
-                  </blockquote>
-                </li>
-                <li>
-                  <p><code>return 0</code> quits the function and sets the bash exit code. <code>0</code> is success, all other values are failures.
-This is useful in other bash scripts when you want to use it with <code>&amp;&amp;</code> <code>||</code>. Here it simply informs bash
+<blockquote>
+<p>I'm going to use the cur and opts variables. You can forget them when this function ends.</p>
+</blockquote>
+</li>
+<li>
+<p><code>return 0</code> quits the function and sets the bash exit code. <code>0</code> is success, all other values are failures.
+This is useful in other bash scripts when you want to use it with <code>&#x26;&#x26;</code> <code>||</code>. Here it simply informs bash
 that the completion script was successful. In English:</p>
-                  <blockquote>
-                    <p>IT WORKED! Show the user the values in &ldquo;COMPREPLY&rdquo;!</p>
-                  </blockquote>
-                </li>
-              </ol>
-              <h2>Improvements</h2>
-              <p>This is a great start, and super useful as is, but there is more that could be done:</p>
-              <ol>
-                <li>
-                  <p>Going deeper: it&rsquo;d be nice if I could keep autocompleting deeper into the directory, so <code>cdx ydir/zdi</code>
-                    could autocomplete to <code>~/x/ydir/zdir</code>. This would involve making the <code>opts=</code> line more intelligent.</p>
-                </li>
-                <li>
-                  <p>Fuzzy searching: I am great at typos. It&rsquo;d be nice if I could replace <code>compgen</code> with something more
+<blockquote>
+<p>IT WORKED! Show the user the values in "COMPREPLY"!</p>
+</blockquote>
+</li>
+</ol>
+<h2>Improvements</h2>
+<p>This is a great start, and super useful as is, but there is more that could be done:</p>
+<ol>
+<li>
+<p>Going deeper: it'd be nice if I could keep autocompleting deeper into the directory, so <code>cdx ydir/zdi</code>
+could autocomplete to <code>~/x/ydir/zdir</code>. This would involve making the <code>opts=</code> line more intelligent.</p>
+</li>
+<li>
+<p>Fuzzy searching: I am great at typos. It'd be nice if I could replace <code>compgen</code> with something more
 intelligent that will ignore small typos.</p>
-                </li>
-                <li>
-                  <p>More generic: Being able to match <code>cda</code> or <code>cdb</code> to switch to subdirectories of <code>~/apsis</code> or <code>~/bread</code>
-                    would be nice. Writing a script to handle the unique cases when bash fires up would be easily doable.
+</li>
+<li>
+<p>More generic: Being able to match <code>cda</code> or <code>cdb</code> to switch to subdirectories of <code>~/apsis</code> or <code>~/bread</code>
+would be nice. Writing a script to handle the unique cases when bash fires up would be easily doable.
 It would, however, require separate autocomplete functions for each named function becuase <code>complete</code>
-                    only accepts literal command names.</p>
-                </li>
-              </ol>
-              <h2>Troubleshooting/Further Reading</h2>
-              <p>If the above doesn&rsquo;t work it&rsquo;s possible your <code>progcomp</code> bash option isn&rsquo;t set. You can check with:</p>
-              <p><code>echo $BASHOPTS | grep -q progcomp &amp;&amp; echo &quot;YES&quot; || echo &quot;NO&quot;</code></p>
-              <p>By default it&rsquo;s set, but if for whatever reason it&rsquo;s not, and you didn&rsquo;t knowingly do it yourself, you can set it
+only accepts literal command names.</p>
+</li>
+</ol>
+<h2>Troubleshooting/Further Reading</h2>
+<p>If the above doesn't work it's possible your <code>progcomp</code> bash option isn't set. You can check with:</p>
+<p><code>echo $BASHOPTS | grep -q progcomp &#x26;&#x26; echo "YES" || echo "NO"</code></p>
+<p>By default it's set, but if for whatever reason it's not, and you didn't knowingly do it yourself, you can set it
 with <code>shopt -s progcomp</code>. That can be added to your <code>.bashrc</code>.</p>
-              <p>If that&rsquo;s not the problem, you will have to debug this the old fashioned way. Use <code>echo &quot;$VARNAME&quot;</code> to see the values
+<p>If that's not the problem, you will have to debug this the old fashioned way. Use <code>echo "$VARNAME"</code> to see the values
 of variables. Finally you may want to read the docs.</p>
-              <p>I didn&rsquo;t initially suggest reading the docs because, unfortunately, the documentation for anything contained in the
-bash man pages is terribly undiscoverable, difficult to search, and not always easy to read <sup id="fnref4"><a href="#fn4" rel="footnote">4</a></sup>. All of the above
-is in the bash man pages. Here&rsquo;s how you can find the relevant docs:</p>
-              <ul>
-                <li><code>man bash</code> to open the documentation for bash itself.</li>
-                <li>Press <code>/</code> to start searching.</li>
-                <li>Once you&rsquo;ve entered your search term hit &ldquo;Enter&rdquo; and then use <code>n</code> and <code>N</code> to search forward and backwards
+<p>I didn't initially suggest reading the docs because, unfortunately, the documentation for anything contained in the
+bash man pages is terribly undiscoverable, difficult to search, and not always easy to read <sup><a href="#user-content-fn-3" id="user-content-user-content-fnref-3" aria-describedby="footnote-label">4</a></sup>. All of the above
+is in the bash man pages. Here's how you can find the relevant docs:</p>
+<ul>
+<li><code>man bash</code> to open the documentation for bash itself.</li>
+<li>Press <code>/</code> to start searching.</li>
+<li>Once you've entered your search term hit "Enter" and then use <code>n</code> and <code>N</code> to search forward and backwards
 (respectively) for the content you want.</li>
-                <li>You&rsquo;ll want the following search terms:
-
-                  <ul>
-                    <li>&ldquo;Programming Completion&rdquo; for an overview of completion in bash.</li>
-                    <li>&ldquo;compgen&rdquo; for the function that we use to match input with the search term.</li>
-                    <li>&ldquo;complete&rdquo; for the function used to tell bash to use programmable completion for a given command.</li>
-                  </ul>
-                </li>
-              </ul>
-              <p>Update: After completing my first draft of this post, Niall pointed me to the far more readable and digestible <a href="http://www.tldp.org/LDP/abs/html/tabexpansion.html">TLDP</a>.</p>
-              <h2>In Closing</h2>
-              <p>Bash Programmable Autocompletion is powerful, but intimidating at first. Hopefully this post helps you get started.
-If you build something awesome write it up and ping us on twitter! We&rsquo;re <a href="https://twitter.com/apsislabs">@ApsisLabs</a>.</p>
-              <div class="footnotes">
-                <hr>
-                <ol>
-                  <li id="fn1">
-                    <p><a href="https://xkcd.com/1205/">xkcd is relevant here</a>&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
-                  </li>
-                  <li id="fn2">
-                    <p>Couldn&rsquo;t use an alias, because aliases can&rsquo;t interpolate arguments, they&rsquo;re strictly dumb text replacements , and they always include a space at the end.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
-                  </li>
-                  <li id="fn3">
-                    <p>One with a head cold, limited exposure to bash internals like autocomplete, and more important work to accomplish.&nbsp;<a href="#fnref3" rev="footnote">&#8617;</a></p>
-                  </li>
-                  <li id="fn4">
-                    <p>Man pages, as useful as they are, are dinosaurs <a href="https://unix.stackexchange.com/a/18161/34182">from a prehistoric time before hypertext was invented</a>. You can&rsquo;t follow bolded text as if they were links.&nbsp;<a href="#fnref4" rev="footnote">&#8617;</a></p>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <aside class="author-block">
-              <img src="/assets/people/chris.jpg" alt="Chris Pfohl" class="author-block__image">
-              <header class="author-block__header">
-                <h5 class="author-block__title">Chris Pfohl</h5>
-              </header>
-              <div class="author-block__content">
-                <p>Chris accidentally became a software developer when he realized how much he enjoyed his first programming class in college. He&rsquo;s never written a tetris clone in Q-Basic, and to date has never created a todo app or twitter clone. When he&rsquo;s not working he&rsquo;s most likely roasting coffee, brewing beer, or playing a board game.</p>
-              </div>
-            </aside>
-          </article>
-        </div>
-      </div>
-    </div>
-    <!-- !END content -->
-    <!-- !START footer -->
-    <footer id="footer" class="site-footer">
-      <div class="container">
-        <small>
-          &copy; 2021 apsis labs
-            |
-            shuttle image credit NASA
-        </small>
-      </div>
-    </footer>
-    <!-- !END footer -->
-    <!-- !START javascript includes -->
-    <script type="text/javascript" src="/assets/vendor.js"></script>
-    <script type="text/javascript" src="/assets/scripts.js"></script>
-    <!-- !END javascript includes -->
-    <!-- !START Google Analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      
-                  ga('create', 'UA-47858702-1', 'auto');
-                  ga('send', 'pageview');
-    </script>
-    <!-- !END Google Analytics -->
-    <!-- !START google fonts -->
-    <script type="text/javascript">
-      WebFontConfig = {
-              google: { families: [ 'Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic:latin', 'Source+Code+Pro:400,500,600,700:latin', 'Lora:400,400italic,700,700italic:latin' ] }
-          };
-      
-          (function() {
-              var wf = document.createElement('script');
-              wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-              wf.type = 'text/javascript';
-              wf.async = 'true';
-              var s = document.getElementsByTagName('script')[0];
-              s.parentNode.insertBefore(wf, s);
-          })();
-    </script>
-    <!-- !END google fonts -->
-  </body>
-</html>
+<li>You'll want the following search terms:
+<ul>
+<li>"Programming Completion" for an overview of completion in bash.</li>
+<li>"compgen" for the function that we use to match input with the search term.</li>
+<li>"complete" for the function used to tell bash to use programmable completion for a given command.</li>
+</ul>
+</li>
+</ul>
+<p>Update: After completing my first draft of this post, Niall pointed me to the far more readable and digestible <a href="http://www.tldp.org/LDP/abs/html/tabexpansion.html">TLDP</a>.</p>
+<h2>In Closing</h2>
+<p>Bash Programmable Autocompletion is powerful, but intimidating at first. Hopefully this post helps you get started.
+If you build something awesome write it up and ping us on twitter! We're <a href="https://twitter.com/apsislabs">@ApsisLabs</a>.</p>
+<h2 id="user-content-footnote-label">Footnotes</h2>
+<ol>
+<li id="user-content-user-content-fn-2">
+<p><a href="https://xkcd.com/1205/">xkcd is relevant here</a> <a href="#user-content-fnref-2" aria-label="Back to content">↩</a></p>
+</li>
+<li id="user-content-user-content-fn-1">
+<p>Couldn't use an alias, because aliases can't interpolate arguments, they're strictly dumb text replacements , and they always include a space at the end. <a href="#user-content-fnref-1" aria-label="Back to content">↩</a></p>
+</li>
+<li id="user-content-user-content-fn-4">
+<p>One with a head cold, limited exposure to bash internals like autocomplete, and more important work to accomplish. <a href="#user-content-fnref-4" aria-label="Back to content">↩</a></p>
+</li>
+<li id="user-content-user-content-fn-3">
+<p>Man pages, as useful as they are, are dinosaurs <a href="https://unix.stackexchange.com/a/18161/34182">from a prehistoric time before hypertext was invented</a>. You can't follow bolded text as if they were links. <a href="#user-content-fnref-3" aria-label="Back to content">↩</a></p>
+</li>
+</ol>
+</div><footer class="Post_post__meta__zdaho">Posted on<!-- --> <time dateTime="{{ post.date | date_to_xmlschema }}" itemProp="datePublished">2018-01-08</time> <!-- -->by<!-- --> <span itemProp="author" itemscope="" itemType="http://schema.org/Person"><span itemProp="name">chris</span></span></footer></article></div></div></div></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"id":"bash_completion","href":{"pathname":"/blog/[year]/[month]/[day]/[slug]","query":{"year":"2018","month":"01","day":"08","slug":"bash_completion"}},"contentHtml":"\u003cp\u003eEvery developer should have at least a basic mastery of their command line. I'd argue\nthat part of that mastery is to develop a set of customizations they take with them\nwherever they go. These customizations should make things you do all the time faster.\nObviously there are diminshing returns here\u003csup\u003e\u003ca href=\"#user-content-fn-2\" id=\"user-content-user-content-fnref-2\" aria-describedby=\"footnote-label\"\u003e1\u003c/a\u003e\u003c/sup\u003e.\u003c/p\u003e\n\u003cp\u003eSome of my customizations include bash aliases for my most used git commands. \u003ccode\u003ega\u003c/code\u003e is\nshort for \u003ccode\u003egit add\u003c/code\u003e, \u003ccode\u003egap\u003c/code\u003e is short for \u003ccode\u003egit add -p\u003c/code\u003e, etc. I also like to have a\nsyntax highlighted \u003ccode\u003ecat\u003c/code\u003e and \u003ccode\u003eless\u003c/code\u003e available to me using \u003ca href=\"http://pygments.org/\"\u003ePygments\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eToday I added something I've wanted for a long time: a \u003ccode\u003ecd\u003c/code\u003e that works relative to\nthe directory I do most of my development work in. Now I can run \u003ccode\u003ecdx subdir_of_x\u003c/code\u003e\nand it will take me to \u003ccode\u003e~/x/subdir_of_x\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eYou may be wondering \"Why use precious kilobytes of storage and hours of time writing\nthis up!?\" And you'd be corect. By itself, this is not worthy of a blog post.\nI, however, also added autocompletion for the contents of that directory, and \u003cem\u003ethat\u003c/em\u003e\nis worth writing about.\u003c/p\u003e\n\u003cp\u003eWhat follows is a short tutorial on bash autocompletion and a tiny bit of bash programming\ninformation. It assumes you have a working knowledge of programming, and at least passing\nfamiliarity with your terminal.\u003c/p\u003e\n\u003ch2\u003eThe Function\u003c/h2\u003e\n\u003cp\u003eIn and of itself, this a very easy function\u003csup\u003e\u003ca href=\"#user-content-fn-1\" id=\"user-content-user-content-fnref-1\" aria-describedby=\"footnote-label\"\u003e2\u003c/a\u003e\u003c/sup\u003e to write. In your \u003ccode\u003e~/.bashrc\u003c/code\u003e add:\u003c/p\u003e\n\u003cdiv\u003e\u003cpre\u003e\u003ccode\u003efunction cdx {\n    cd \u0026#x26;quot;$HOME/x/$1\u0026#x26;quot;\n}\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\u003cp\u003eMy first test looked like this:\u003c/p\u003e\n\u003cdiv\u003e\u003cpre\u003e\u003ccode\u003ecdx my_code  \u0026#x26;lt;TAB\u0026#x26;gt;  _base\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\u003cp\u003eNo autocomplete, just big gaping tabs in the middle of my command. What's an enterprising\ndeveloper\u003csup\u003e\u003ca href=\"#user-content-fn-4\" id=\"user-content-user-content-fnref-4\" aria-describedby=\"footnote-label\"\u003e3\u003c/a\u003e\u003c/sup\u003e to do? Spend the morning figuring it out, of course.\u003c/p\u003e\n\u003ch2\u003eThe Code\u003c/h2\u003e\n\u003cp\u003eFirst, the good stuff. All together, when placed in your \u003ccode\u003e~/.bashrc\u003c/code\u003e and \u003ccode\u003esource\u003c/code\u003eed,\nthe following works for hypothetical directory \u003ccode\u003ex\u003c/code\u003e in your home directory using the new\ncommand \u003ccode\u003ecdx\u003c/code\u003e:\u003c/p\u003e\n\u003cdiv\u003e\u003cpre\u003e\u003ccode\u003efunction cdx {\n    cd \u0026#x26;quot;$HOME/x/$1\u0026#x26;quot;\n}\nfunction _cdx {\n    local cur opts\n\n    opts=\u0026#x26;quot;$(ls -1 ~/x)\u0026#x26;quot;\n    cur=\u0026#x26;quot;${COMP_WORDS[COMP_CWORD]}\u0026#x26;quot;\n\n    COMPREPLY=( $(compgen -W \u0026#x26;quot;${opts}\u0026#x26;quot; -- ${cur}) )\n    return 0\n}\ncomplete -F _cdx cdx\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\n\u003cp\u003eTo make it work:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003eInsert this in \u003ccode\u003e~/.bashrc\u003c/code\u003e.\u003c/li\u003e\n\u003cli\u003eReplace all instances of \"x\" with a directory from your \u003ccode\u003e$HOME\u003c/code\u003e directory.\u003c/li\u003e\n\u003cli\u003eCall \u003ccode\u003esource ~/.bashrc\u003c/code\u003e.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eYou may want to rename \u003ccode\u003ecdx\u003c/code\u003e with a more intuitive name (for Apsis code, for example,\nI'd use \u003ccode\u003ecda\u003c/code\u003e and \u003ccode\u003e_cda\u003c/code\u003e).\u003c/p\u003e\n\u003ch2\u003eThe Explanation\u003c/h2\u003e\n\u003cp\u003eNow to break the \u003ccode\u003e_cdx\u003c/code\u003e function down. When it gets obvious feel free to skip to the end, I've\nattempted to order this from most specific to broadest bash knowledge. (In order of \u003cem\u003emy\u003c/em\u003e current\nknowledge of bash). I've left the most basic stuff (like explaining \u003ccode\u003els\u003c/code\u003e) out.\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ecomplete -F _cdx cdx\u003c/code\u003e is how you let bash know to attempt an autocomplete. In English it's:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eWhen I run the cdx command please use the function _cdx to autocomplete the command.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ecompgen -W \"${opts}\" -- ${cur}\u003c/code\u003e is the function that searches an array of possibilities (\u003ccode\u003e-W\u003c/code\u003e)\nfor the text after \u003ccode\u003e--\u003c/code\u003e. It's pretty rigid: no fuzzy searching, no autocorrecting. It just returns\n\"things from the array that start with what you typed.\" You are free to replace it with\nwhatever you want as long as it too returns an array (space separated string) of the options.\nIn English:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003ePlease give me all the words in the string 'opts' that start with what's in 'cur'.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eCOMPREPLY\u003c/code\u003e is basically the return value of this function. Whatever array you return here will be\npresented to you on the command line as options for autocompletion. In English:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eHere's what I want to pick from when autocompleting with the current inputs.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ecur=\"${COMP_WORDS[COMP_CWORD]}\"\u003c/code\u003e is setting \u003ccode\u003ecur\u003c/code\u003e to the last word on the command line. \u003ccode\u003eCOMP_WORDS\u003c/code\u003e\nand \u003ccode\u003eCOMP_CWORD\u003c/code\u003e are the inputs to this function. (You can actually make them real bash function\nparameters if you want to, but they're already acceptably named). They are special bash variables\nthat are only available in completion functions. \u003ccode\u003eCOMP_WORDS\u003c/code\u003e is the array of strings currently\nentered on the command line. \u003ccode\u003eCOMP_CWORDS\u003c/code\u003e is the current length of the \u003ccode\u003eCOMP_WORDS\u003c/code\u003e array. In English:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eSet the variable 'cur' to the last word on the command line.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eopts=\"$(ls -1 ~/x)\"\u003c/code\u003e is where we set the available options by creating an array (space separated string)\nfrom the output of \u003ccode\u003els -1 ~/x\u003c/code\u003e. This gets used in the \u003ccode\u003ecompgen\u003c/code\u003e command. In English:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eSet \"opts\" to the output of \"ls -1 ~/x\" as the list of potential options to autocomplete from.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003elocal cur opts\u003c/code\u003e is a declaration of the cur and opts variables. By using \u003ccode\u003elocal\u003c/code\u003e we avoid cluttering\nthe global variable namespace. In English:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eI'm going to use the cur and opts variables. You can forget them when this function ends.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003ereturn 0\u003c/code\u003e quits the function and sets the bash exit code. \u003ccode\u003e0\u003c/code\u003e is success, all other values are failures.\nThis is useful in other bash scripts when you want to use it with \u003ccode\u003e\u0026#x26;\u0026#x26;\u003c/code\u003e \u003ccode\u003e||\u003c/code\u003e. Here it simply informs bash\nthat the completion script was successful. In English:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eIT WORKED! Show the user the values in \"COMPREPLY\"!\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2\u003eImprovements\u003c/h2\u003e\n\u003cp\u003eThis is a great start, and super useful as is, but there is more that could be done:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003eGoing deeper: it'd be nice if I could keep autocompleting deeper into the directory, so \u003ccode\u003ecdx ydir/zdi\u003c/code\u003e\ncould autocomplete to \u003ccode\u003e~/x/ydir/zdir\u003c/code\u003e. This would involve making the \u003ccode\u003eopts=\u003c/code\u003e line more intelligent.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFuzzy searching: I am great at typos. It'd be nice if I could replace \u003ccode\u003ecompgen\u003c/code\u003e with something more\nintelligent that will ignore small typos.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eMore generic: Being able to match \u003ccode\u003ecda\u003c/code\u003e or \u003ccode\u003ecdb\u003c/code\u003e to switch to subdirectories of \u003ccode\u003e~/apsis\u003c/code\u003e or \u003ccode\u003e~/bread\u003c/code\u003e\nwould be nice. Writing a script to handle the unique cases when bash fires up would be easily doable.\nIt would, however, require separate autocomplete functions for each named function becuase \u003ccode\u003ecomplete\u003c/code\u003e\nonly accepts literal command names.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2\u003eTroubleshooting/Further Reading\u003c/h2\u003e\n\u003cp\u003eIf the above doesn't work it's possible your \u003ccode\u003eprogcomp\u003c/code\u003e bash option isn't set. You can check with:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eecho $BASHOPTS | grep -q progcomp \u0026#x26;\u0026#x26; echo \"YES\" || echo \"NO\"\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eBy default it's set, but if for whatever reason it's not, and you didn't knowingly do it yourself, you can set it\nwith \u003ccode\u003eshopt -s progcomp\u003c/code\u003e. That can be added to your \u003ccode\u003e.bashrc\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003eIf that's not the problem, you will have to debug this the old fashioned way. Use \u003ccode\u003eecho \"$VARNAME\"\u003c/code\u003e to see the values\nof variables. Finally you may want to read the docs.\u003c/p\u003e\n\u003cp\u003eI didn't initially suggest reading the docs because, unfortunately, the documentation for anything contained in the\nbash man pages is terribly undiscoverable, difficult to search, and not always easy to read \u003csup\u003e\u003ca href=\"#user-content-fn-3\" id=\"user-content-user-content-fnref-3\" aria-describedby=\"footnote-label\"\u003e4\u003c/a\u003e\u003c/sup\u003e. All of the above\nis in the bash man pages. Here's how you can find the relevant docs:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eman bash\u003c/code\u003e to open the documentation for bash itself.\u003c/li\u003e\n\u003cli\u003ePress \u003ccode\u003e/\u003c/code\u003e to start searching.\u003c/li\u003e\n\u003cli\u003eOnce you've entered your search term hit \"Enter\" and then use \u003ccode\u003en\u003c/code\u003e and \u003ccode\u003eN\u003c/code\u003e to search forward and backwards\n(respectively) for the content you want.\u003c/li\u003e\n\u003cli\u003eYou'll want the following search terms:\n\u003cul\u003e\n\u003cli\u003e\"Programming Completion\" for an overview of completion in bash.\u003c/li\u003e\n\u003cli\u003e\"compgen\" for the function that we use to match input with the search term.\u003c/li\u003e\n\u003cli\u003e\"complete\" for the function used to tell bash to use programmable completion for a given command.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eUpdate: After completing my first draft of this post, Niall pointed me to the far more readable and digestible \u003ca href=\"http://www.tldp.org/LDP/abs/html/tabexpansion.html\"\u003eTLDP\u003c/a\u003e.\u003c/p\u003e\n\u003ch2\u003eIn Closing\u003c/h2\u003e\n\u003cp\u003eBash Programmable Autocompletion is powerful, but intimidating at first. Hopefully this post helps you get started.\nIf you build something awesome write it up and ping us on twitter! We're \u003ca href=\"https://twitter.com/apsislabs\"\u003e@ApsisLabs\u003c/a\u003e.\u003c/p\u003e\n\u003ch2 id=\"user-content-footnote-label\"\u003eFootnotes\u003c/h2\u003e\n\u003col\u003e\n\u003cli id=\"user-content-user-content-fn-2\"\u003e\n\u003cp\u003e\u003ca href=\"https://xkcd.com/1205/\"\u003exkcd is relevant here\u003c/a\u003e \u003ca href=\"#user-content-fnref-2\" aria-label=\"Back to content\"\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli id=\"user-content-user-content-fn-1\"\u003e\n\u003cp\u003eCouldn't use an alias, because aliases can't interpolate arguments, they're strictly dumb text replacements , and they always include a space at the end. \u003ca href=\"#user-content-fnref-1\" aria-label=\"Back to content\"\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli id=\"user-content-user-content-fn-4\"\u003e\n\u003cp\u003eOne with a head cold, limited exposure to bash internals like autocomplete, and more important work to accomplish. \u003ca href=\"#user-content-fnref-4\" aria-label=\"Back to content\"\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli id=\"user-content-user-content-fn-3\"\u003e\n\u003cp\u003eMan pages, as useful as they are, are dinosaurs \u003ca href=\"https://unix.stackexchange.com/a/18161/34182\"\u003efrom a prehistoric time before hypertext was invented\u003c/a\u003e. You can't follow bolded text as if they were links. \u003ca href=\"#user-content-fnref-3\" aria-label=\"Back to content\"\u003e↩\u003c/a\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n","layout":"post","author":"chris","title":"Save Time with Bash Programmable Autocompletion","image":"/img/posts/bash.gif","excerpt":"\u003cp\u003eEvery developer should have at least a basic mastery of their command line. I'd argue\nthat part of that mastery is to develop a set of customizations they take with them\nwherever they go. These customizations should make things you do all the time faster.\nObviously there are diminshing returns here[^2].\u003c/p\u003e\n\u003cp\u003eSome of my customizations include bash aliases for my most used git commands\u003c/p\u003e\n","date":"2018-01-08"}},"__N_SSG":true},"page":"/blog/[year]/[month]/[day]/[slug]","query":{"year":"2018","month":"01","day":"08","slug":"bash_completion"},"buildId":"bxHrMQxhjEPrVOtKnfS7s","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

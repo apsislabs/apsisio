@@ -1,5 +1,3 @@
-
-
 //
 // Sourced from https://github.com/NickTomlin/nicktomlin.github.io/blob/3b7002c115904a16e8daad23b4766e6db3bef3d9/lib/posts.js
 //
@@ -11,7 +9,7 @@ import fg from "fast-glob";
 import { processMarkdown } from "./markdown";
 import yaml from "js-yaml";
 
-import { PostFrontmatter, Post } from "lib/types";
+import { PostFrontmatter, Post, PostParams } from "lib/types";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -39,18 +37,40 @@ const parseMatter = async (fileContents: string): Promise<PostFrontmatter> => {
   };
 };
 
+const POST_SLUG_REGEX = /(\d{4})-(\d{2})-(\d{2})-(.*).md/;
+
+const parseNameToParams = (name: string): PostParams | null => {
+  const match = name.match(POST_SLUG_REGEX);
+
+  if (!match) {
+    return null;
+  }
+
+  const year = match[1];
+  const month = match[2];
+  const day = match[3];
+  const slug = match[4];
+
+  return { year, month, day, slug };
+};
+
 async function getAllPosts(): Promise<Post[]> {
   return await Promise.all(
     getPostPaths().map(async ({ path, name }): Promise<Post> => {
       const fileContents = readFileSync(path, "utf8");
       const matterResult = await parseMatter(fileContents);
-      const id = name.replace(".md", "");
+      const params = parseNameToParams(name);
+
+      if (!params) {
+        return null;
+      }
+
       return {
-        id,
-        params: { id },
+        id: params.slug,
+        params,
         href: {
-          pathname: "/blog/[id]",
-          query: { id },
+          pathname: "/blog/[year]/[month]/[day]/[slug]",
+          query: params,
         },
         ...matterResult.data,
       };
@@ -78,17 +98,25 @@ export async function getAllPostIds() {
   }));
 }
 
-export async function getPostData({ id }: { id: string }): Promise<Post> {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+export async function getPostData({
+  year,
+  month,
+  day,
+  slug,
+}: PostParams): Promise<Post> {
+  const fullPath = path.join(
+    postsDirectory,
+    `${year}-${month}-${day}-${slug}.md`
+  );
   const fileContents = readFileSync(fullPath, "utf8");
   const { content, data } = await parseMatter(fileContents);
   const contentHtml = await processMarkdown(content);
 
   return {
-    id,
+    id: slug,
     href: {
-      pathname: "/posts/[name]",
-      query: { id },
+      pathname: "/blog/[year]/[month]/[day]/[slug]",
+      query: { year, month, day, slug },
     },
     contentHtml,
     ...data,

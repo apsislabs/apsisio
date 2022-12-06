@@ -9,7 +9,11 @@ export const PostPage = ({ postData }: { postData: TPost }) => {
   return (
     <>
       <Head>
-        <title>Blog: {postData.title} | Apsis Labs</title>
+        {postData.title ? (
+          <title>Blog: {postData.title} | Apsis Labs</title>
+        ) : (
+          <title>Blog | Apsis Labs</title>
+        )}
       </Head>
 
       <Section guides={false} bordered>

@@ -11,8 +11,14 @@
 
   &__title {
     font-size: vars.$font_size_h1;
-    margin-bottom: vars.$spacing_lg;
-    margin-top: vars.$spacing_lg;
+    margin: 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: vars.$spacing_md;
+    margin-bottom: vars.$spacing_md;
   }
 
   &__header,
@@ -21,8 +27,8 @@
   }
 
   &__image-wrapper {
-    margin-left: vars.$spacing_md * -1;
-    margin-right: vars.$spacing_md * -1;
+    margin-left: vars.$spacing_md * -3;
+    margin-right: vars.$spacing_md * -3;
 
     overflow: hidden;
 

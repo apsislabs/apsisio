@@ -80,7 +80,7 @@ So even basic type mappers can be redefined based on the needs of the applicatio
 
 It doesn't make sense to define all basic type mappers this way.  Some types may be parameterized, e.g. an array of numbers vs. an array of strings.  A **type mapper constructor**, which is a function that returns a type mapper, is a way to implement them.  Let's define a few type mapper constructors:
 
-```
+```js
 function arrayOf(type) {
     return {
         fromJSON: array => array.map(type.fromJSON),
@@ -95,7 +95,7 @@ function setOf(type) {
     };
 }
 ```
-```
+```js
 const fibonacci = [1, 1, 2, 3, 5];
 
 let type = arrayOf(number);
@@ -111,7 +111,7 @@ Note that JavaScript arrays and sets have the same representation in JSON's type
 
 Maps are another useful parameterized type to implement.  In JavaScript, we often use objects if all we need is a string-keyed map, but let's also add the possibility of using actual Map objects which support keys of any type.  Again, both of these will be represented the same way in JSON's type system.
 
-```
+```js
 function objectOf(type) {
     return {
         fromJSON: object => _.mapValues(object, type.fromJSON),
@@ -129,7 +129,7 @@ function mapOf(keyType, valueType) {
     };
 }
 ```
-```
+```js
 const holidays = {
     "2017-01-01": ["New Year's Day", "Public Domain Day"],
     "2017-01-25": ["Republic Day", "Australia Day"]
@@ -154,7 +154,7 @@ console.log(type.fromJSON(holidays));
 
 Okay, lets move on to composite types.  Composite types contain basic types and other composite types.  You could define a `fromJSON` and `toJSON` function for every composite type as well, but there is a much simpler solution.  Let's define a **schema** to be a JavaScript object whose values are all **type mappers**.
 
-```
+```js
 const commentSchema = {
     author: string,
     content: string,
@@ -166,7 +166,7 @@ const commentSchema = {
 
 Then we can turn arbitrary **schemas** into **type mappers**:
 
-```
+```js
 import _ from 'lodash';
 
 function typeMapper(schema) {
@@ -181,7 +181,7 @@ const commentType = typeMapper(commentSchema);
 
 And now we can plug this type into an appropriate location in our application code, for example:
 
-```
+```js
 function loadComment(id) {
     return fetch(`/comments/${id}`).then(response => {
         const jsonObject = response.json();
@@ -202,7 +202,7 @@ function createComment(commentObject) {
 
 That composite type contained only basic types.  Let's look at one that also uses type constructors and other composite types:
 
-```
+```js
 const articleType = typeMapper({
     author: string,
     content: string,

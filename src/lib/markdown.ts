@@ -1,24 +1,23 @@
-//
-// Sourced from https://github.com/NickTomlin/nicktomlin.github.io/blob/3b7002c115904a16e8daad23b4766e6db3bef3d9/lib/markdown.js
-//
+import { Marked } from "marked";
+import { markedHighlight } from "marked-highlight";
+import markedFootnote from "marked-footnote";
+import hljs from "highlight.js";
 
-import { unified } from "unified";
-import parse from "remark-parse";
-import html from "remark-html";
-import remarkPrism from "remark-prism";
-import footnotes from "remark-footnotes";
-import gfm from "remark-gfm";
+const marked = new Marked(
+  {
+    gfm: true,
+    pedantic: false,
+  },
+  markedHighlight({
+    langPrefix: "hljs language-",
+    highlight(code, lang, info) {
+      const language = hljs.getLanguage(lang) ? lang : "plaintext";
+      return hljs.highlight(code, { language }).value;
+    },
+  }),
+  markedFootnote()
+);
 
-export const processMarkdown = async (
-  markdownString: string
-): Promise<string> => {
-  const processedContent = await unified()
-    .use(parse)
-    .use(gfm)
-    .use(remarkPrism)
-    .use(footnotes, { inlineNotes: true })
-    .use(html)
-    .process(markdownString);
-
-  return processedContent.toString();
+export const processMarkdown = (markdownString: string): string => {
+  return marked.parse(markdownString, { async: false });
 };

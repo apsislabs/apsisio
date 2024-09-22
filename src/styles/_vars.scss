@@ -31,8 +31,8 @@ $shadow: rgba($apsis_dark, 0.5);
 
 //= FONTS
 
-$sans: "Inter", sans-serif;
-$mono: "IBM Plex Mono", monospace;
+$sans: var(--font-inter), sans-serif;
+$mono: Var(--font-mono), monospace;
 
 $font_size: 1rem;
 $line_height: 1.6125;

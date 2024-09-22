@@ -1,9 +1,10 @@
-import { Clients } from "components/Clients";
-import { Section } from "components/Section";
-import { Navbar } from "components/Navbar";
-import { Hero } from "components/Hero";
-import { ServicesSection } from "../components/ServicesSection";
 import { Button } from "components/Button";
+import { Clients } from "components/Clients";
+import { Footer } from "components/Footer";
+import { Hero } from "components/Hero";
+import { Navbar } from "components/Navbar";
+import { Row } from "components/Row";
+import { Section } from "components/Section";
 import {
   ChevronRight,
   FileJson,
@@ -12,10 +13,9 @@ import {
   Github,
   List,
 } from "lucide-react";
-import { Row } from "components/Row";
-import { RepoCard } from "../components/RepoCard";
-import { Footer } from "components/Footer";
 import Head from "next/head";
+import { RepoCard } from "../components/RepoCard";
+import { ServicesSection } from "../components/ServicesSection";
 
 export const IndexPage: React.FC = () => {
   return (

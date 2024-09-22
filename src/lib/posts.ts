@@ -32,7 +32,7 @@ const parseMatter = async (fileContents: string): Promise<PostFrontmatter> => {
     content,
     data: {
       ...data,
-      excerpt: await processMarkdown(excerpt ?? data.excerpt ?? ""),
+      excerpt: processMarkdown(excerpt ?? data.excerpt ?? ""),
     },
   };
 };
@@ -82,7 +82,7 @@ export async function getSortedPostsData() {
   // Sort posts by date
   const posts = await getAllPosts();
   return posts.sort((a, b) => {
-    if (a.date && b.date && a.date < b.date) {
+    if (a.date && b.date && new Date(a.date) < new Date(b.date)) {
       return 1;
     } else {
       return -1;
@@ -110,7 +110,7 @@ export async function getPostData({
   );
   const fileContents = readFileSync(fullPath, "utf8");
   const { content, data } = await parseMatter(fileContents);
-  const contentHtml = await processMarkdown(content);
+  const contentHtml = processMarkdown(content);
 
   return {
     id: slug,

@@ -6,7 +6,7 @@ export type Modify3<T, R, Q> = Modify<Modify<T, R>, Q>;
 export type FrontmatterData = {
   excerpt?: string;
   title?: string;
-  date?: Date;
+  date?: string;
   image?: string;
   credit?: string;
   author?: string;

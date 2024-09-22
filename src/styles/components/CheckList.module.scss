@@ -34,7 +34,8 @@
 
 
   @media (min-width: vars.$mobile) {
-    columns: 2;
+    display: grid;
     column-gap: var(--spacing_lg);
+    grid-template-columns: repeat(2, 1fr);
   }
 }

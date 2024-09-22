@@ -1,4 +1,5 @@
 import { Post } from "components/blog/Post";
+
 import { Navbar } from "components/Navbar";
 import { Section } from "components/Section";
 import { getAllPostIds, getPostData } from "lib/posts";

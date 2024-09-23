@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
+      - uses: jongwooo/next-cache@v1
       - name: Install and Build
         run: |
           npm ci

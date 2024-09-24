@@ -14,34 +14,51 @@ export const Footer = () => (
         </Link>
 
         <small>
-          <ul className="inline_list">
+          <ul role="list" className="inline_list">
             <li>Copyright {now.getFullYear()} Apsis Labs, LLP</li>
 
             <li>
-              <a
+              <Link
                 className="link"
                 target="_blank"
                 href="https://github.com/apsislabs"
               >
                 Github
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="link"
                 target="_blank"
                 href="https://www.linkedin.com/company/apsislabs/"
               >
                 LinkedIn
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                className="link"
-                href="mailto:contact@apsis.io"
-              >
+              <Link className="link" href="mailto:contact@apsis.io">
                 contact@apsis.io
-              </a>
+              </Link>
+            </li>
+          </ul>
+        </small>
+
+        <small>
+          <ul role="list" className="inline_list">
+            <li>
+              <Link className="link" href="/privacy">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link className="link" href="/conduct">
+                Code of Conduct
+              </Link>
+            </li>
+            <li>
+              <Link className="link" href="/mdbn">
+                Data Breach Notification Policy
+              </Link>
             </li>
           </ul>
         </small>

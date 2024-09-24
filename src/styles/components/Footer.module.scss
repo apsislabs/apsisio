@@ -17,6 +17,7 @@
   &__tagline_container {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing_sm);
 
     @media (min-width: vars.$tablet) {
       align-items: flex-end;

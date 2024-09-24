@@ -33,7 +33,6 @@
     "marked": "^14.1.2",
     "marked-footnote": "^1.2.4",
     "marked-highlight": "^2.1.4",
-    "minireset.css": "^0.0.7",
     "next": "^14.2.13",
     "nprogress": "^0.2.0",
     "prettier": "^3.3.3",

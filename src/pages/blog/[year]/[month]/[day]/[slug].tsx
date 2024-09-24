@@ -2,6 +2,7 @@ import { Post } from "components/blog/Post";
 
 import { Navbar } from "components/Navbar";
 import { Section } from "components/Section";
+import { SiteLayout } from "components/SiteLayout";
 import { getAllPostIds, getPostData } from "lib/posts";
 import { Post as TPost } from "lib/types";
 import Head from "next/head";
@@ -17,13 +18,9 @@ export const PostPage = ({ postData }: { postData: TPost }) => {
         )}
       </Head>
 
-      <Section guides={false} bordered>
-        <Navbar showTagline={false} />
-      </Section>
-
-      <Section narrow spaced guides={false}>
+      <SiteLayout contained>
         <Post post={postData} />
-      </Section>
+      </SiteLayout>
     </>
   );
 };

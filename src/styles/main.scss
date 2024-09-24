@@ -1,12 +1,12 @@
 @use "./vars";
 @use "./theme";
 
-@import "minireset.css/minireset.sass";
+@import "vendor/reset.css";
+@import "vendor/dracula.css";
 
 @import "utils/animations";
 
 @import "styles/global";
-@import "vendor/dracula.css";
 
 
 html,

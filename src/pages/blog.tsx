@@ -1,6 +1,5 @@
 import { PostExcerpt } from "components/blog/PostExcerpt";
-import { Navbar } from "components/Navbar";
-import { Section } from "components/Section";
+import { SiteLayout } from "components/SiteLayout";
 import { getSortedPostsData } from "lib/posts";
 import { Post } from "lib/types";
 
@@ -12,15 +11,12 @@ export const BlogIndexPage = ({ posts }: { posts: Post[] }) => {
       <Head>
         <title>Blog | Apsis Labs</title>
       </Head>
-      <Section guides={false} bordered>
-        <Navbar showTagline={false} />
-      </Section>
 
-      <Section narrow spaced guides={false}>
+      <SiteLayout contained>
         {posts.map((p) => (
           <PostExcerpt key={p.id} post={p} />
         ))}
-      </Section>
+      </SiteLayout>
     </>
   );
 };

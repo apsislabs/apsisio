@@ -21,7 +21,7 @@ There are two very common miscommunications that occur about an estimate:
 Software estimates are usually presented as a single value --- the expected duration of the project, i.e. "This project should take about 8 weeks". Unfortunately, estimates are more complicated than this. We usually represent an estimate as a probability distribution.[^2] Given our expected duration of 8 weeks, there are _many_ possible probability distributions.
 
 <figure>
-    <img src="{% asset_path posts/communicating-estimates/probability-distributions.png %}" alt="Graph of several probability distributions">
+    <img src="/img/posts/communicating-estimates/probability-distributions.png" alt="Graph of several probability distributions">
     <figcaption>Various probability distributions that can produce the statement: "The project should take about 8 weeks"</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ Below are some of our techniques for trying to concisely communicate this inform
 Here we simply add the worst-case scenario to our estimates, to help skew someone's perception to the possibility of a longer duration.
 
 <figure>
-    <img src="{% asset_path posts/communicating-estimates/footnote-3-worst-case.png %}" alt="Comparison of worst case probability distribution with estimate">
+    <img src="/img/posts/communicating-estimates/footnote-3-worst-case.png" alt="Comparison of worst case probability distribution with estimate">
     <figcaption>This project should take about 8 weeks, but in the worst case it could take up to 24 weeks.</figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ Here we simply add the worst-case scenario to our estimates, to help skew someon
 This is similar to the way a political poll might be reported. You specify the range over which you have 90% --- or another specific value --- confidence that the project will complete within this range. This tends to flatten people's expectation over the entire range.
 
 <figure>
-    <img src="{% asset_path posts/communicating-estimates/footnote-4-conf-interval.png %}"
+    <img src="/img/posts/communicating-estimates/footnote-4-conf-interval.png"
          alt="Comparison of confidence interval probability distribution with estimate">
     <figcaption>There’s a 90% chance that the project is finished between 6 weeks and 16 weeks. The most likely duration is 8 weeks.</figcaption>
 </figure>
@@ -57,7 +57,7 @@ This is similar to the way a political poll might be reported. You specify the r
 This tends to be most appropriate if there's a chance of confusion between an _estaimte_ and a _commitment_ (see below). This tends to skew people's perception to be significantly longer.
 
 <figure>
-    <img src="{% asset_path posts/communicating-estimates/footnote-5-upper-bound.png %}" alt="Comparison of upper bound only probability distribution with estimate">
+    <img src="/img/posts/communicating-estimates/footnote-5-upper-bound.png" alt="Comparison of upper bound only probability distribution with estimate">
     <figcaption>This project should not take more than 16-24 weeks. There’s a pretty good chance it takes significantly less than that.</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ This tends to be most appropriate if there's a chance of confusion between an _e
 This tends to be used by projects with no requirements, rapidly changing requirements, when the deadline has already been missed several times, or when you're really tired of thinking.[^3]
 
 <figure>
-    <img src="{% asset_path posts/communicating-estimates/footnote-6-give-up.png %}" alt="A graph with a lot of question marks and no other helpful information">
+    <img src="/img/posts/communicating-estimates/footnote-6-give-up.png" alt="A graph with a lot of question marks and no other helpful information">
     <figcaption>This project will take as long as it takes.</figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ Since a commitment is a promise we like to be very explicit with them.
 Commitments should be a date taken from the higher-end of the probability distribution at the level you're most comfortable with --- we usually go with 95% or 99% depending on the project.
 
 <figure>
-    <img src="{% asset_path posts/communicating-estimates/estimates-vs-commitments.png %}" alt="Graph of a single probability distribution">
+    <img src="/img/posts/communicating-estimates/estimates-vs-commitments.png" alt="Graph of a single probability distribution">
     <figcaption>Estimates are often reported at 50% likelihood; Commitments are often reported in the 90-99% likelihood range.</figcaption>
 </figure>
 

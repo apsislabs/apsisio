@@ -6,5 +6,5 @@ module.exports = {
   output: "export",
   exclude: ["/404"],
   generateRobotsTxt: true,
-  trailingSlash: false,
+  trailingSlash: true,
 };

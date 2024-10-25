@@ -1,4 +1,4 @@
-import { Post } from "components/blog/Post";
+import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import Head from "next/head";
 
@@ -6,7 +6,7 @@ const ConductPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Code of Conduct | Apsis Labs</title>
+        <PageMeta title="Code of Conduct" description="Code of Conduct for Apsis Labs and Apsis Labs projects. Apsis Labs is your partner in developing secure, scalable web and mobile applications." />
       </Head>
 
       <SiteLayout contained>

@@ -1,3 +1,4 @@
+import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import Head from "next/head";
 
@@ -5,7 +6,10 @@ const PrivacyPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Mandatory Data Breach Notification Policy | Apsis Labs</title>
+        <PageMeta
+          title="Mandatory Data Breach Notification Policy"
+          description="Mandatory Data Breach Notification Policy for Apsis Labs and Apsis Labs projects. At Apsis, we take data security seriously, which is why we provide documentation on our data breach policy for all clients."
+        />
       </Head>
 
       <SiteLayout contained>

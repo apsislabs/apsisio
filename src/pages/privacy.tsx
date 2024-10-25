@@ -1,3 +1,4 @@
+import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import Head from "next/head";
 
@@ -5,7 +6,10 @@ const PrivacyPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Privacy Policy | Apsis Labs</title>
+        <PageMeta
+          title="Privacy Policy"
+          description="Privacy Policy for Apsis Labs and Apsis Labs projects. Apsis Labs has over 60 years combined experience developing user-centric applications for web and mobile."
+        />
       </Head>
 
       <SiteLayout contained>

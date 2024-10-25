@@ -1,7 +1,6 @@
 import { Post } from "components/blog/Post";
 
-import { Navbar } from "components/Navbar";
-import { Section } from "components/Section";
+import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import { getAllPostIds, getPostData } from "lib/posts";
 import { Post as TPost } from "lib/types";
@@ -11,11 +10,13 @@ export const PostPage = ({ postData }: { postData: TPost }) => {
   return (
     <>
       <Head>
-        {postData.title ? (
-          <title>Blog: {postData.title} | Apsis Labs</title>
-        ) : (
-          <title>Blog | Apsis Labs</title>
-        )}
+        <PageMeta
+          title={postData.title ? `Blog: ${postData.title}` : "Blog"}
+          description={
+            postData.excerpt ??
+            "A blog post from Apsis Labs, an agency dedicated to building secure, scalable web and mobile applications."
+          }
+        />
       </Head>
 
       <SiteLayout contained>

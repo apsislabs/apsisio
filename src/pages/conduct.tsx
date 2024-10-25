@@ -1,12 +1,17 @@
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
+import { formattedTitle } from "lib/metadata";
 import Head from "next/head";
 
 const ConductPage: React.FC = () => {
   return (
     <>
       <Head>
-        <PageMeta title="Code of Conduct" description="Code of Conduct for Apsis Labs and Apsis Labs projects. Apsis Labs is your partner in developing secure, scalable web and mobile applications." />
+        <title>{formattedTitle("Code of Conduct")}</title>
+        <PageMeta
+          title="Code of Conduct"
+          description="Code of Conduct for Apsis Labs and Apsis Labs projects. Apsis Labs is your partner in developing secure, scalable web and mobile applications."
+        />
       </Head>
 
       <SiteLayout contained>

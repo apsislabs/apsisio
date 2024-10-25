@@ -1,11 +1,13 @@
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
+import { formattedTitle } from "lib/metadata";
 import Head from "next/head";
 
 const PrivacyPage: React.FC = () => {
   return (
     <>
       <Head>
+        <title>{formattedTitle("Mandatory Data Breach Notification Policy")}</title>
         <PageMeta
           title="Mandatory Data Breach Notification Policy"
           description="Mandatory Data Breach Notification Policy for Apsis Labs and Apsis Labs projects. At Apsis, we take data security seriously, which is why we provide documentation on our data breach policy for all clients."

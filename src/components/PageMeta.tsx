@@ -1,12 +1,11 @@
 import { siteConf } from "conf";
-import { PageTitle } from "./PageTitle";
+import { formattedTitle } from "lib/metadata";
 
 export const PageMeta: React.FC<{ title?: string; description?: string }> = ({
   title,
   description,
 }) => (
   <>
-    <PageTitle title={title} />
 
     <meta
       name="description"

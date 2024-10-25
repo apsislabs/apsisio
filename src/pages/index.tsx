@@ -5,6 +5,7 @@ import { PageMeta } from "components/PageMeta";
 import { Row } from "components/Row";
 import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
+import { siteConf } from "conf";
 import {
     ChevronRight,
     FileJson,
@@ -16,11 +17,13 @@ import {
 import Head from "next/head";
 import { RepoCard } from "../components/RepoCard";
 import { ServicesSection } from "../components/ServicesSection";
+import { formattedTitle } from "lib/metadata";
 
 export const IndexPage: React.FC = () => {
   return (
     <>
       <Head>
+        <title>{formattedTitle(siteConf.meta.title)}</title>
         <PageMeta />
       </Head>
 

@@ -2,6 +2,7 @@ import { Post } from "components/blog/Post";
 
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
+import { formattedTitle } from "lib/metadata";
 import { getAllPostIds, getPostData } from "lib/posts";
 import { Post as TPost } from "lib/types";
 import Head from "next/head";
@@ -10,6 +11,9 @@ export const PostPage = ({ postData }: { postData: TPost }) => {
   return (
     <>
       <Head>
+        <title>
+          {formattedTitle(postData.title ? `Apsis Blog: ${postData.title}` : "Blog")}
+        </title>
         <PageMeta
           title={postData.title ? `Blog: ${postData.title}` : "Blog"}
           description={

@@ -32,7 +32,6 @@ export const PageMeta: React.FC<{ title?: string; description?: string }> = ({
     />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <meta name="description" content={description ?? siteConf.meta.description} />
     <meta property="og:url" content="https://apsis.io" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title ?? siteConf.meta.title} />

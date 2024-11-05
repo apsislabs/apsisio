@@ -35,6 +35,8 @@ export default function MyApp({ Component, pageProps }) {
         src="https://plausible.io/js/script.js"
       />
 
+      <Script defer data-domain="apsis.io" src="https://plausible.coolify.apsis.io/js/script.js" />
+
       <Component {...pageProps} />
     </>
   );

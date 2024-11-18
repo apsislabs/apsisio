@@ -54,7 +54,7 @@ This is similar to the way a political poll might be reported. You specify the r
 
 #### Use Only the Upper Bound
 
-This tends to be most appropriate if there's a chance of confusion between an _estaimte_ and a _commitment_ (see below). This tends to skew people's perception to be significantly longer.
+This tends to be most appropriate if there's a chance of confusion between an _estimate_ and a _commitment_ (see below). This tends to skew people's perception to be significantly longer.
 
 <figure>
     <img src="/img/posts/communicating-estimates/footnote-5-upper-bound.png" alt="Comparison of upper bound only probability distribution with estimate">

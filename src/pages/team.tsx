@@ -53,8 +53,8 @@ const TeamPage: NextPage<{ team: Person[] }> = ({ team }) => {
             <section className="typography">
               <p className="lead">
                 Apsis started at brunch one morning in January, 2014. Noah and
-                Wyatt &mdash; young and foolish &mdash; sat down to eat eggs and
-                agreed to quit their jobs and start a company. The idea? "If we
+                Wyatt &mdash; young and foolish &mdash; sat down to eat pancakes, and
+                ended up quitting their jobs to start a company. The premise? "If we
                 can't find enough work to survive, we're probably
                 not very good developers."
               </p>

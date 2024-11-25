@@ -6,7 +6,6 @@ import { SiteLayout } from "components/SiteLayout";
 import { formattedTitle } from "lib/metadata";
 import { getAllPostIds, getPostData, getRandomCta } from "lib/posts";
 import { Post as TPost } from "lib/types";
-import { NextPage } from "next";
 import Head from "next/head";
 
 export async function getStaticProps({ params }) {
@@ -31,10 +30,10 @@ export async function getStaticPaths() {
 export const PostPage = ({
   postData,
   cta,
-}): NextPage<{
+}: {
   postData: TPost;
   cta: CtaProps;
-}> => {
+}) => {
   return (
     <>
       <Head>

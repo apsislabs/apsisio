@@ -8,13 +8,13 @@ const now = new Date();
 export const Footer = () => (
   <footer className={styles.footer}>
     <Row>
-      <div>
+      <div className="stack gap-md">
         <Link href="/" className={styles.footer__logo}>
           <LogoType size={18} className={styles.footer__logotype} />
         </Link>
 
         <small>
-          <ul role="list" className="inline_list">
+          <ul role="list" className={styles.footer__nav}>
             <li>Copyright {now.getFullYear()} Apsis Labs, LLP</li>
 
             <li>
@@ -44,7 +44,7 @@ export const Footer = () => (
         </small>
 
         <small>
-          <ul role="list" className="inline_list">
+          <ul role="list" className={styles.footer__nav}>
             <li>
               <Link className="link" href="/privacy">
                 Privacy Policy

@@ -22,7 +22,7 @@ export const Hero = () => {
     <div className={styles.hero}>
       <div className={styles.hero__headline}>
         <h3 className={styles.hero__title}>
-          Your app &mdash;
+          Your <span className="text-primary">app</span> &mdash;
           <br />
           built by{" "}
           <TypeEffect
@@ -36,7 +36,10 @@ export const Hero = () => {
         </div>
 
         <div className={styles.hero__actions}>
-          <Button href="mailto:contact@apsis.io?subject=Apsis Project Inquiry" EndIcon={ChevronRight}>
+          <Button
+            href="mailto:contact@apsis.io?subject=Apsis Project Inquiry"
+            EndIcon={ChevronRight}
+          >
             Let's get to work
           </Button>
 

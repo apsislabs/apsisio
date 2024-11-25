@@ -6,12 +6,13 @@ import clsx from "clsx";
 export const ServiceRow: React.FC<{
   imgSrc: string;
   title: React.ReactNode;
+  alt?: string;
   content: React.ReactNode;
   listItems: string[];
   variant: "pink" | "gold" | "blue" | "green";
   className?: string;
   reverse?: boolean;
-}> = ({ imgSrc, title, content, listItems, variant, className, ...props }) => {
+}> = ({ imgSrc, alt, title, content, listItems, variant, className, ...props }) => {
   return (
     <Row
       className={clsx(
@@ -24,7 +25,7 @@ export const ServiceRow: React.FC<{
       {...props}
     >
       <div className={styles.service_row__image_container}>
-        <img src={imgSrc} className={styles.service_row__image} />
+        <img src={imgSrc} alt={alt} className={styles.service_row__image} />
       </div>
 
       <div className="typography">

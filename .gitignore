@@ -3,6 +3,7 @@ tmp/
 .sass-cache
 .asset-cache
 .bundle
+.jampack
 .jekyll-metadata
 .DS_Store
 *.sublime-project

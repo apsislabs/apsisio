@@ -8,12 +8,12 @@ import { SiteLayout } from "components/SiteLayout";
 import { siteConf } from "conf";
 import { formattedTitle } from "lib/metadata";
 import {
-    ChevronRight,
-    FileJson,
-    FormInput,
-    Gem,
-    Github,
-    List,
+  ChevronRight,
+  FileJson,
+  FormInput,
+  Gem,
+  Github,
+  List,
 } from "lucide-react";
 import { NextPage } from "next";
 import Head from "next/head";

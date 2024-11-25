@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-sitemap",
+    "postbuild": "rm -rf out/_jampack && jampack out",
     "start": "next start"
   },
   "engines": {
@@ -32,7 +33,9 @@
     "lucide-react": "^0.445.0",
     "marked": "^14.1.2",
     "marked-footnote": "^1.2.4",
+    "marked-gfm-heading-id": "^4.1.1",
     "marked-highlight": "^2.1.4",
+    "marked-smartypants": "^1.1.9",
     "next": "^14.2.13",
     "nprogress": "^0.2.0",
     "prettier": "^3.3.3",
@@ -43,6 +46,7 @@
     "smartquotes": "^2.3.2"
   },
   "devDependencies": {
+    "@divriots/jampack": "^0.30.0",
     "@types/lodash": "^4.17.13",
     "@types/node": "^22.5.5",
     "@types/nprogress": "^0.2.3",

@@ -44,11 +44,30 @@ const getPostPaths = () => {
   return fg.sync(path.join(postsDirectory, "**"), { objectMode: true });
 };
 
+function truncate(str, n, useWordBoundary) {
+  if (str.length <= n) {
+    return str;
+  }
+
+  const subString = str.slice(0, n - 1);
+
+  let truncated = (
+    useWordBoundary ? subString.slice(0, subString.lastIndexOf(" ")) : subString
+  ).trim();
+
+  // Remove the last character if it's punctuation
+  if (/[^\w\s]+/g.test(truncated.slice(-1))) {
+    truncated = truncated.substr(0, truncated.length - 1);
+  }
+
+  return `${truncated}&hellip;`;
+}
+
 const parseMatter = async (fileContents: string): Promise<PostFrontmatter> => {
   const { content, data, excerpt } = matter(fileContents, {
     // @ts-expect-error: type is wrong from source
     excerpt: (file: GrayMatterFile) => {
-      file.excerpt = file.content.split(".").slice(0, 5).join(".");
+      file.excerpt = file.data.excerpt ?? truncate(file.content, 300, true);
     },
     engines: {
       yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),

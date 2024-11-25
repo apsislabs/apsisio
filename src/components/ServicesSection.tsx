@@ -7,6 +7,7 @@ export const ServicesSection = () => {
         variant="blue"
         title="Software &amp; Devops"
         imgSrc={"/img/laptop.svg"}
+        alt="Image of a Laptop for Software & Devops"
         content={
           <p>
             Our bread and butter; as a team we have almost 40 years experience
@@ -31,6 +32,7 @@ export const ServicesSection = () => {
         variant="pink"
         title="Design &amp; Discovery"
         imgSrc={"/img/bulb.svg"}
+        alt="Image of a lightbulb for Design & Discovery"
         content={
           <p>
             Every project starts with a robust process of design and discovery
@@ -50,12 +52,16 @@ export const ServicesSection = () => {
         variant="green"
         title="Our favorite tools"
         imgSrc={"/img/phone.svg"}
+        alt="Image of a Phone for our favorite tools"
         content={
           <p>
             Our motto is "when in doubt, get a taco." Our second motto, though,
-            is <strong>"be easy to hire and easy to fire."</strong> We're
-            comfortable working in most tech stacks, but there are a few that we
-            tend to favor. These represent{" "}
+            is{" "}
+            <a href="/blog/2024/11/25/easy-to-fire/">
+              <strong>"be easy to hire and easy to fire."</strong>
+            </a>{" "}
+            We're comfortable working in most tech stacks, but there are a few
+            that we tend to favor. These represent{" "}
             <strong>widely used industry standards</strong>, so when it's time
             for us to part ways you won't have any trouble finding devs to take
             over.
@@ -75,6 +81,7 @@ export const ServicesSection = () => {
         reverse
         title="How we work"
         imgSrc={"/img/paper.svg"}
+        alt="Image of a piece of paper for how we work"
         content={
           <p>
             At Apsis, we work within a framework we call{" "}

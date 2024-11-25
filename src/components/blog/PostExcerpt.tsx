@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Post } from "lib/types";
 import styles from "styles/components/blog/Post.module.scss";
 import { PostHeader } from "./PostHeader";
+import { MarkdownContent } from "components/MarkdownContent";
 
 export const PostExcerpt: React.FC<{ post: Post }> = ({ post }) => {
 	return (
@@ -11,7 +12,7 @@ export const PostExcerpt: React.FC<{ post: Post }> = ({ post }) => {
 		>
 			<PostHeader post={post} />
 
-			<div className={styles["post__content"]} dangerouslySetInnerHTML={{__html: post.excerpt ?? ''}} />
+			<MarkdownContent content={post.excerpt} className={styles["post__content"]} />
 		</article>
 	);
 };

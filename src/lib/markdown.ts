@@ -1,7 +1,10 @@
 import { Marked } from "marked";
 import { markedHighlight } from "marked-highlight";
 import markedFootnote from "marked-footnote";
+import { gfmHeadingId } from "marked-gfm-heading-id";
 import hljs from "highlight.js";
+
+import { markedSmartypants } from "marked-smartypants";
 
 const marked = new Marked(
   {
@@ -15,9 +18,13 @@ const marked = new Marked(
       return hljs.highlight(code, { language }).value;
     },
   }),
-  markedFootnote()
+  gfmHeadingId(),
+  markedFootnote(),
+  markedSmartypants(),
 );
 
 export const processMarkdown = (markdownString: string): string => {
-  return marked.parse(markdownString, { async: false });
+  const parsed = marked.parse(markdownString, { async: false });
+
+  return parsed;
 };

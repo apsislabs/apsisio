@@ -57,9 +57,10 @@
     margin-left: auto;
     display: flex;
     flex-direction: row;
-    gap: var(--spacing);
+    gap: var(--spacing_xs);
 
     @media (min-width: vars.$mobile) {
+      gap: var(--spacing);
       margin-left: var(--spacing_lg);
     }
   }
@@ -71,7 +72,8 @@
     padding: var(--spacing_xs);
     line-height: 1;
 
-    transition: background-color var(--easing) var(--timing_sm),
+    transition:
+      background-color var(--easing) var(--timing_sm),
       opacity var(--easing) var(--timing_sm);
 
     @media screen and (prefers-reduced-motion: reduce) {
@@ -99,7 +101,7 @@
       margin-left: auto;
       display: flex;
       align-items: center;
-      gap: var(--spacing)
+      gap: var(--spacing);
     }
   }
 

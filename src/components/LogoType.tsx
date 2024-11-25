@@ -15,7 +15,8 @@ export const LogoType: React.FC<
         width={size}
         height={size}
       />
-      Apsis Labs
+
+      <span className={styles.logotype__wordmark}>Apsis Labs</span>
     </h1>
   );
 };

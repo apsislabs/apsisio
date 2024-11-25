@@ -97,7 +97,7 @@
     --gray_lighter: #{vars.$gray_lighter};
     --gray_lightest: #{vars.$gray_darker};
 
-    --border_gray: #{vars.$border_gray};
+    --border_gray: #{rgba(vars.$white, 0.25)};
     --outline_gray: #{vars.$outline_gray};
     --surface_gray: #{vars.$gray_darker};
 

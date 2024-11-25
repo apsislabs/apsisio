@@ -6,6 +6,7 @@ import { Row } from "components/Row";
 import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
 import { siteConf } from "conf";
+import { formattedTitle } from "lib/metadata";
 import {
     ChevronRight,
     FileJson,
@@ -14,12 +15,12 @@ import {
     Github,
     List,
 } from "lucide-react";
+import { NextPage } from "next";
 import Head from "next/head";
 import { RepoCard } from "../components/RepoCard";
 import { ServicesSection } from "../components/ServicesSection";
-import { formattedTitle } from "lib/metadata";
 
-export const IndexPage: React.FC = () => {
+export const IndexPage: NextPage = () => {
   return (
     <>
       <Head>
@@ -77,25 +78,32 @@ export const IndexPage: React.FC = () => {
         </Section>
 
         <Section spaced kebabed narrow>
-          <div className="typography">
-            <p>
-              We believe that arriving at the right solution is an iterative
-              process, built with hard work, strong communication, and a
-              dedication to craft. At Apsis, our team of experienced engineers
-              works provide software that will work today without sacrificing
-              tomorrow.
-            </p>
+          <section className="stack gap-md">
+            <div className="typography">
+              <p>
+                We believe that arriving at the right solution is an iterative
+                process, built with hard work, strong communication, and a
+                dedication to craft. At Apsis, our team of experienced engineers
+                works provide software that will work today without sacrificing
+                tomorrow.
+              </p>
 
-            <p>
-              Born and raised in the Pacific North West, we have worked with
-              everyone from startups to enterprise, and we’re looking forward to
-              discovering what we can do working with you.
-            </p>
-          </div>
+              <p>
+                Born and raised in the Pacific North West, we have worked with
+                everyone from startups to enterprise, and we’re looking forward
+                to discovering what we can do working with you.
+              </p>
+            </div>
 
-          <Button href="mailto:contact@apsis.io" EndIcon={ChevronRight}>
-            Drop us a line
-          </Button>
+            <footer>
+              <Button
+                href="mailto:contact@apsis.io?subject=Apsis Project Inquiry"
+                EndIcon={ChevronRight}
+              >
+                Drop us a line
+              </Button>
+            </footer>
+          </section>
         </Section>
       </SiteLayout>
     </>

@@ -2,9 +2,7 @@
 
 .button {
   appearance: none;
-  background-color: var(--apsis_blue);
   border: 0;
-  color: var(--white);
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -32,6 +30,7 @@
     outline: 3px solid var(--outline_blue);
   }
 
+
   &:hover {
     cursor: pointer;
 
@@ -42,5 +41,55 @@
 
   &:active {
     box-shadow: inset 0 1px 5px var(--shadow);
+  }
+
+  &--lg {
+    padding: var(--spacing) var(--spacing_lg);
+    font-size: var(--font_size);
+  }
+
+  &--sm {
+    padding: var(--spacing_xs) var(--spacing_sm);
+    font-size: var(--font_size_xs);
+  }
+
+  &--primary {
+    background-color: var(--apsis_blue);
+    color: var(--white);
+
+    &:hover,
+    &:focus {
+      outline-color: var(--outline_blue);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--gray_lightest);
+    color: var(--gray_darkest);
+
+    &:hover,
+    &:focus {
+      outline-color: var(--gray_lighter);
+    }
+  }
+
+  &--tertiary {
+    background-color: transparent;
+    font-weight: 600;
+    color: var(--apsis_blue);
+    outline: none;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      color: var(--apsis_dark);
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: var(--apsis_gray);
+    }
   }
 }

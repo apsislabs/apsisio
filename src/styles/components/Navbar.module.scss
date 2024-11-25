@@ -93,11 +93,23 @@
     }
   }
 
+  &__right {
+    display: none;
+    @media (min-width: vars.$mobile) {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing)
+    }
+  }
+
+  &__actions {
+  }
+
   &__tagline {
     display: none;
     position: relative;
     z-index: 1;
-    margin-left: auto;
     font-family: var(--mono);
     font-size: var(--font_size_sm);
     color: var(--apsis_blue);

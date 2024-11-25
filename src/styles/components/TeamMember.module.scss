@@ -1,0 +1,64 @@
+@use "styles/vars";
+
+.bio {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing_lg);
+
+  &--small {
+    font-size: var(--font_size_sm);
+
+    .bio__title {
+      font-size: var(--font_size)
+    }
+
+    .bio__subtitle {
+      font-size: var(--font_size_sm);
+    }
+  }
+
+  &__image {
+    border-radius: 50rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_sm);
+  }
+
+  &__title,
+  &__subtitle {
+    margin-bottom: 0;
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+    opacity: 0.5;
+    font-weight: 600;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing_sm);
+    align-items: center;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__social_link {
+    padding: 0;
+    margin: 0;
+  }
+}

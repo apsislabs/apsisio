@@ -1,18 +1,47 @@
 import { Post } from "components/blog/Post";
+import { CtaProps } from "components/Cta";
 
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import { formattedTitle } from "lib/metadata";
-import { getAllPostIds, getPostData } from "lib/posts";
+import { getAllPostIds, getPostData, getRandomCta } from "lib/posts";
 import { Post as TPost } from "lib/types";
+import { NextPage } from "next";
 import Head from "next/head";
 
-export const PostPage = ({ postData }: { postData: TPost }) => {
+export async function getStaticProps({ params }) {
+  const postData = await getPostData(params);
+
+  return {
+    props: {
+      postData,
+      cta: getRandomCta(),
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const paths = await getAllPostIds();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export const PostPage = ({
+  postData,
+  cta,
+}): NextPage<{
+  postData: TPost;
+  cta: CtaProps;
+}> => {
   return (
     <>
       <Head>
         <title>
-          {formattedTitle(postData.title ? `Apsis Blog: ${postData.title}` : "Blog")}
+          {formattedTitle(
+            postData.title ? `Apsis Blog: ${postData.title}` : "Blog",
+          )}
         </title>
         <PageMeta
           title={postData.title ? `Blog: ${postData.title}` : "Blog"}
@@ -23,29 +52,11 @@ export const PostPage = ({ postData }: { postData: TPost }) => {
         />
       </Head>
 
-      <SiteLayout contained>
+      <SiteLayout contained cta={cta}>
         <Post post={postData} />
       </SiteLayout>
     </>
   );
 };
-
-export async function getStaticPaths() {
-  const paths = await getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params);
-
-  return {
-    props: {
-      postData,
-    },
-  };
-}
 
 export default PostPage;

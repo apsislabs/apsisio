@@ -19,7 +19,11 @@ export const PostMeta: React.FC<{ post: Post }> = ({ post }) => {
       <time dateTime={post.date} itemProp="datePublished">
         {post.date}
       </time>{" "}
-      {post.author && <Byline author={post.author} />}
+      {post.person && post.author ? (
+        <Byline author={`${post.person.name}, ${post.person.title}`} />
+      ) : (
+        <Byline author={post.author} />
+      )}
     </footer>
   );
 };

@@ -70,11 +70,10 @@ export const Footer = () => (
 
         <small>
           <ul className="inline_list">
-            <li>❤️ from:</li>
-            <li>Seattle</li>
-            <li>Boulder</li>
-            <li>Boston</li>
-            <li>Portland</li>
+            <li>Seattle <span className="text-muted">→</span></li>
+            <li>Boulder <span className="text-muted">→</span></li>
+            <li>Boston <span className="text-muted">→</span></li>
+            <li>Portland <span className="text-muted">→</span></li>
             <li>Hartford</li>
           </ul>
         </small>

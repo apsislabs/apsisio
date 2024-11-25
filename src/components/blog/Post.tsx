@@ -1,9 +1,8 @@
 import clsx from "clsx";
+import { TeamMember } from "components/TeamMember";
 import { Post as TPost } from "lib/types";
-import { Suspense } from "react";
 import styles from "styles/components/blog/Post.module.scss";
 import { PostHeader } from "./PostHeader";
-import { PostMeta } from "./PostMeta";
 
 export const Post: React.FC<{ post: TPost }> = ({ post }) => {
   return (
@@ -21,7 +20,21 @@ export const Post: React.FC<{ post: TPost }> = ({ post }) => {
           dangerouslySetInnerHTML={{ __html: post.contentHtml ?? "" }}
         />
 
-        <PostMeta post={post} />
+        {post.person && (
+          <div className="stack">
+
+            <hr className="divider" />
+
+            <TeamMember
+              small
+              name={post.person.name}
+              bio={post.person.bio_short}
+              title={post.person.title}
+              image={post.person.image}
+              size={60}
+            />
+          </div>
+        )}
       </article>
     </div>
   );

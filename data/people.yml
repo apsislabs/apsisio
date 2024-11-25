@@ -1,0 +1,177 @@
+noah:
+  name: Noah Callaway
+  current: true
+  title: Founding Partner
+  image: /img/people/noah.png
+  bio: |
+    For over 10 years, Noah has been the technical backbone of the Apsis
+    engineering team. In stark contrast to his cofounder, Noah's history is
+    about as textbook as it gets: CS classes at the University of Oregon while
+    still in high school, BS from the University of Washington with
+    specialization in physics and computer science, a stint at Microsoft, a tour
+    at Amazon, and for the last decade plus, serving as Apsis's lead engineer
+    and architect. Noah's drive for building the technically correct solution is
+    balanced by his decade of experience running Apsis Labs, where his focus is on
+    outcome-driven-development: finding the solution that delivers 90% of the value
+    at 10% of the effort.
+
+
+    Outside of work, you'll find Noah with his wife, dog, and two young children;
+    or you'll find him working, but this time on a new GUI layout engine in Rust or
+    perhaps trying to get his video drivers to work correctly --- he runs Linux after
+    all.
+  bio_short: |
+    For over a decade, Noah has led Apsis' engineering team with technical expertise.
+    His background is textbook: CS degree from UW, time at Microsoft and Amazon, and
+    now 10+ years as Apsis' lead engineer and architect.
+
+wyatt:
+  name: Wyatt Kirby
+  current: true
+  title: Founding Partner
+  image: /img/people/wyatt.png
+  bio: |
+    An accidental developer, Wyatt came to software and small business by an
+    unconventional route. As a cofounder at Apsis, he has helped build a team of
+    exceptional engineers, one equipped to deliver effective solutions fast.
+    After more than a decade, Wyatt _keeps_ coming back to software because it
+    offers a rare convergence of interests: writing, teaching, and tech.
+    A graduate of Bennington College in Vermont, Wyatt's appreciation for clear
+    communication has come to define Apsis's engineering team: understanding first,
+    technology second. This focus leads to asking the right questions, finding the
+    right answers, and delivering success year after year.
+
+
+    After work, you'll find Wyatt enjoying time with his wife and daughter, playing
+    with the cat, roasting coffee, cooking dinner, or arguing on the internet about
+    college football.
+  bio_short: |
+    An accidental developer turned entrepreneur, Wyatt has helped build a team of exceptional
+    engineers at Apsis. After a decade in the field, he continues to be drawn to software for
+    its blend of writing, teaching, and tech.
+
+eric:
+  name: Eric Greer
+  current: true
+  title: Senior Engineer & Devops Specialist
+  image: /img/people/eric.png
+  bio: |
+    Eric is a full stack software developer with a passion for DevOps. Working
+    with the nuances of AWS, he has worked move large clients and small into the
+    cloud architecture that is right for them, automating deployments and
+    ensuring applications stability. Eric has a B.S and M.S. in Computer Science
+    from WPI, a background in IT support, combined with 15 years of software
+    development projects which gives him an attention to detail and makes him a
+    go to resource for any questions a client may have. Eric finds passion
+    learning the nuances of each business and is always excited to tackle the
+    next challenging project.
+  bio_short: |
+    A full-stack developer with 15 years of experience and a passion for DevOps
+     Eric has helped numerous clients navigate the cloud with AWS. Always eager for the next challenge,
+     he loves learning each business's nuances and delivering stability
+     through automation.
+
+henry:
+  name: Henry Keiter
+  current: true
+  title: Senior Engineer & 1400 ELO
+  image: /img/people/henry.png
+  bio: |
+    Henry is an imported Coloradan who views software development as a window
+    into everyone else's fields. Every industry has fascinating hurdles that are
+    completely unknown to the outside world, and software allows us to build a catapult
+    to hurl ourselves over them, if we take the time to map the terrain first.
+    Learning the landscape from domain experts is always a rich experience.
+    Delivering a catapult that meets their actual needs is a fitting reward.
+
+
+    Beyond the office, you'll find Henry reading, gardening, or playing strategy
+    games with family. Any physical catapults in the backyard are strictly
+    coincidental.
+  bio_short: |
+    An imported Coloradan, Henry sees software as a tool to bridge industries.
+    He loves collaborating with domain experts to map the terrain, then building
+    solutions that meet their real-world needs.
+
+chris:
+  name: Chris Pfohl
+  current: true
+  title: Senior Engineer & Data Engineer
+  image: /img/people/chris.png
+  bio: |
+    Chris is an expert data mover, munger, and analyzer. He builds robust third
+    party integrations, answers tough questions with data, and brings order to
+    databases and applications to empower new features and higher reliability.
+
+
+    Chris loves to share his expertise with newer developers through code
+    review, teaching, and good documentation. He also loves writing code that's
+    hard to use wrong and creating tools that empower his team to deliver faster
+    and more reliably. He was drawn to programming, and contract work in
+    particular because of his deep love of learning, solving problems, and
+    sharing that knowledge.
+  bio_short: |
+    A master data mover and analyzer, Chris crafts robust integrations and sorts
+    through complexity with ease. He loves sharing his expertise through code review,
+    teaching, and rock-solid documentation.
+
+matt:
+  name: Matt Erhart
+  current: true
+  title: Senior Engineer & Farmhand
+  image: /img/people/matt.png
+  bio: |
+    Matt is a longtime Senior Software Engineer, fledgling farmer and
+    enthusiastic problem solver. Up or down the stack, from infrastructure to
+    planning meetings, Matt calls on nearly 2 decades of development experience
+    to help deliver client visions. With a B.S. in Pure Mathematics and an
+    unquenchable desire for getting lost in the woods, you'll find Matt either
+    pondering the inner workings of the universe perched in a bus window,
+    happily trying to relocate the trail in the backcountry of the PNW or neck
+    deep in code to help figure out why that _one_ server keeps crashing.
+  bio_short: |
+    A seasoned Senior Software Engineer and enthusiastic problem solver, Matt
+    combines nearly 2 decades of dev experience with a pure mathematician's mind.
+    When not coding, you'll find him on the farm --- his true passion.
+
+joey:
+  name: Joey Harwood
+  current: true
+  title: Senior Engineer & Big Data Specialist
+  image: /img/people/joey.png
+  bio: |
+    Joey is a lifelong problem solver. He fell in love with math at a young age
+    and eventually found his way to programming as an even more intriguing
+    puzzle. A graduate of Colby College with a B.A. in Computer Science, his
+    career started building Android applications. He moved onto designing
+    and optimizing big data tables housing terabytes of data, minimizing query
+    costs while answering complex business questions using statistical analysis.
+
+
+    Outside of work you’ll often find Joey exploring new strategies to
+    excel in local pinball tournaments or lost down a rabbit hole of
+    YouTube videos taking a deep dive into the wonders of the cosmos. Just as
+    likely, he is with his wife wrestling, chasing, training, or otherwise
+    spending time with their two dogs.
+  bio_short: |
+    With a background in Android development and big data, Joey has found a way
+    to turn his love of math and puzzles into a career in software development.
+    When not at work, he's most likely found at a pinball table.
+
+niall:
+  name: Niall Wingham
+  title: Apsis Alum
+  current: false
+  image: /img/people/niall.jpg
+  bio: |
+    Niall is a cheerful curmudgeon and likes reading language and
+    protocol specifications. He lives with his professorial wife
+    and pint-sized daughter in Toronto, and is by default the head
+    of the Canadian branch of Apsis. When he grows up he wants to
+    be a farmer, or maybe a ballet dancer, or no, wait, a sailor!
+  bio_short: |
+    Niall is a cheerful curmudgeon and likes reading language and
+    protocol specifications. He lives with his professorial wife
+    and pint-sized daughter in Toronto, and is by default the head
+    of the Canadian branch of Apsis. When he grows up he wants to
+    be a farmer, or maybe a ballet dancer, or no, wait, a sailor!

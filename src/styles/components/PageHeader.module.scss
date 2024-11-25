@@ -1,0 +1,19 @@
+@use 'styles/vars';
+
+.page_header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  margin-bottom: var(--spacing_lg);
+
+  &__title {
+    margin: 0;
+    font-size: var(--font_size_d3);
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: var(--gray);
+    font-weight: 600;
+  }
+}

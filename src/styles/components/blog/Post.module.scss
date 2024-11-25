@@ -52,13 +52,4 @@
     font-size: 0.85em;
     color: vars.$gray;
   }
-
-  &--list {
-    padding-top: vars.$spacing_xl * 2;
-    border-top: 1px solid vars.$gray_lighter;
-
-    &:first-child {
-      border-top: 0;
-    }
-  }
 }

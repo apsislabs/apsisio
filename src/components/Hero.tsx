@@ -35,9 +35,15 @@ export const Hero = () => {
           <p>Experienced developers ready to bring your ideas to life.</p>
         </div>
 
-        <Button href="mailto:contact@apsis.io" EndIcon={ChevronRight}>
-          Let's get to work
-        </Button>
+        <div className={styles.hero__actions}>
+          <Button href="mailto:contact@apsis.io?subject=Apsis Project Inquiry" EndIcon={ChevronRight}>
+            Let's get to work
+          </Button>
+
+          <Button variant="tertiary" href="/team">
+            Meet our team
+          </Button>
+        </div>
       </div>
 
       <div className={styles.hero__image_container}>

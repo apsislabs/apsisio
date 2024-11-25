@@ -9,9 +9,36 @@ import fg from "fast-glob";
 import { processMarkdown } from "./markdown";
 import yaml from "js-yaml";
 
-import { PostFrontmatter, Post, PostParams } from "lib/types";
+import { PostFrontmatter, Post, PostParams, Person } from "lib/types";
+import _ from "lodash";
 
 const postsDirectory = path.join(process.cwd(), "posts");
+const dataDirectory = path.join(process.cwd(), "data");
+
+export const getCtas = () => {
+  const ctas = readFileSync(path.join(dataDirectory, "ctas.yml"));
+  return yaml.load(ctas);
+};
+
+export const getRandomCta = () => {
+  return _.sample(getCtas());
+};
+
+export const getPeople = async (): Promise<Record<string, Person>> => {
+  const peopleFile = readFileSync(
+    path.join(dataDirectory, "people.yml"),
+    "utf8",
+  );
+  return yaml.load(peopleFile);
+};
+
+export const getCurrentPeople = async (): Promise<Record<string, Person>> => {
+  const people = await getPeople();
+
+  return Object.fromEntries(
+    Object.entries(people).filter(([_, p]) => p.current),
+  );
+};
 
 const getPostPaths = () => {
   return fg.sync(path.join(postsDirectory, "**"), { objectMode: true });
@@ -55,6 +82,8 @@ const parseNameToParams = (name: string): PostParams | null => {
 };
 
 async function getAllPosts(): Promise<Post[]> {
+  const people = await getPeople();
+
   return await Promise.all(
     getPostPaths().map(async ({ path, name }): Promise<Post> => {
       const fileContents = readFileSync(path, "utf8");
@@ -72,9 +101,10 @@ async function getAllPosts(): Promise<Post[]> {
           pathname: "/blog/[year]/[month]/[day]/[slug]",
           query: params,
         },
+        person: people[matterResult.data.author] ?? null,
         ...matterResult.data,
       };
-    })
+    }),
   );
 }
 
@@ -104,9 +134,10 @@ export async function getPostData({
   day,
   slug,
 }: PostParams): Promise<Post> {
+  const people = await getPeople();
   const fullPath = path.join(
     postsDirectory,
-    `${year}-${month}-${day}-${slug}.md`
+    `${year}-${month}-${day}-${slug}.md`,
   );
   const fileContents = readFileSync(fullPath, "utf8");
   const { content, data } = await parseMatter(fileContents);
@@ -118,6 +149,7 @@ export async function getPostData({
       pathname: "/blog/[year]/[month]/[day]/[slug]",
       query: { year, month, day, slug },
     },
+    person: people[data.author] ?? null,
     contentHtml,
     ...data,
   };

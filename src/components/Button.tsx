@@ -10,18 +10,17 @@ type BaseButtonProps = {
   variant?: "primary" | "secondary" | "tertiary";
   size?: "lg" | "sm";
   disabled?: boolean;
-}
+};
 
 type LinkButtonProps = BaseButtonProps & {
   href: string;
   onClick?: undefined;
-} & HTMLProps<HTMLAnchorElement>;
+} & Omit<HTMLProps<HTMLAnchorElement>, "size">;
 
 type ButtonButtonProps = BaseButtonProps & {
   href?: undefined;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
-} & HTMLProps<HTMLButtonElement>;
-
+} & Omit<HTMLProps<HTMLButtonElement>, "size">;
 
 type ButtonProps = LinkButtonProps | ButtonButtonProps;
 

@@ -160,7 +160,7 @@ export async function getPostData({
     `${year}-${month}-${day}-${slug}.md`,
   );
   const fileContents = readFileSync(fullPath, "utf8");
-  const { content, data, desc } = await parseMatter(fileContents);
+  const { content, data } = await parseMatter(fileContents);
   const contentHtml = processMarkdown(content);
 
   return {
@@ -170,7 +170,7 @@ export async function getPostData({
       query: { year, month, day, slug },
     },
     person: people[data.author] ?? null,
-    desc,
+    desc: data.desc,
     contentHtml,
     ...data,
   };

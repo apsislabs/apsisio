@@ -25,12 +25,12 @@ export type FrontmatterData = {
   image?: string;
   credit?: string;
   author?: string;
+  desc?: string;
 };
 
 export type PostFrontmatter = {
   content: string;
   data: FrontmatterData;
-  desc?: string;
 };
 
 export type PostParams = {

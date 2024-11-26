@@ -30,6 +30,7 @@ export type FrontmatterData = {
 export type PostFrontmatter = {
   content: string;
   data: FrontmatterData;
+  desc?: string;
 };
 
 export type PostParams = {
@@ -46,6 +47,7 @@ export type Post = Modify<
     href: string | UrlObject;
     contentHtml?: string;
     person?: Person | null;
+    desc?: string;
   },
   FrontmatterData
 >;

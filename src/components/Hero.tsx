@@ -19,39 +19,93 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className={styles.hero}>
-      <div className={styles.hero__headline}>
-        <h3 className={styles.hero__title}>
-          Your <span className="text-primary">app</span> &mdash;
-          <br />
-          built by{" "}
-          <TypeEffect
-            className={styles.hero__highlight}
-            strings={finalPeople}
-          />
-        </h3>
+    <>
+      <div className={styles.hero}>
+        <svg
+          className={clsx(styles.hero__pattern, styles.hero__pattern_left)}
+          width="404"
+          height="784"
+          fill="none"
+          viewBox="0 0 404 784"
+        >
+          <defs>
+            <pattern
+              id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b"
+              x="0"
+              y="0"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
+            </pattern>
+          </defs>{" "}
+          <rect
+            width="404"
+            height="784"
+            fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)"
+          ></rect>
+        </svg>
 
-        <div className={clsx(styles.hero__copy, "typography")}>
-          <p>Experienced developers ready to bring your ideas to life.</p>
+        <svg
+          className={clsx(styles.hero__pattern, styles.hero__pattern_right)}
+          width="404"
+          height="784"
+          fill="none"
+          viewBox="0 0 404 784"
+        >
+          <defs>
+            <pattern
+              id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b"
+              x="0"
+              y="0"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
+            </pattern>
+          </defs>{" "}
+          <rect
+            width="404"
+            height="784"
+            fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)"
+          ></rect>
+        </svg>
+
+        <div className={styles.hero__headline}>
+          <h3 className={styles.hero__title}>
+            Your <span className="text-primary">app</span> &mdash;
+            <br />
+            built by{" "}
+            <TypeEffect
+              className={styles.hero__highlight}
+              strings={finalPeople}
+            />
+          </h3>
+
+          <div className={clsx(styles.hero__copy, "typography")}>
+            <p>Experienced developers ready to bring your ideas to life.</p>
+          </div>
+
+          <div className={styles.hero__actions}>
+            <Button
+              href="mailto:contact@apsis.io?subject=Apsis Project Inquiry"
+              EndIcon={ChevronRight}
+            >
+              Let's get to work
+            </Button>
+
+            <Button variant="tertiary" href="/team">
+              Meet our team
+            </Button>
+          </div>
         </div>
 
-        <div className={styles.hero__actions}>
-          <Button
-            href="mailto:contact@apsis.io?subject=Apsis Project Inquiry"
-            EndIcon={ChevronRight}
-          >
-            Let's get to work
-          </Button>
-
-          <Button variant="tertiary" href="/team">
-            Meet our team
-          </Button>
+        <div className={styles.hero__image_container}>
+          <img src="/img/coder.svg" className={styles.hero__image} />
         </div>
       </div>
-
-      <div className={styles.hero__image_container}>
-        <img src="/img/coder.svg" className={styles.hero__image} />
-      </div>
-    </div>
+    </>
   );
 };

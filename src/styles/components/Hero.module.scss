@@ -83,4 +83,24 @@
       display: block;
     }
   }
+
+  &__pattern {
+    position: absolute;
+    opacity: 0.15;
+    transition: transform vars.$easing vars.$timing_sm;
+  }
+
+  &__pattern_left {
+    left: 100%;
+    transform: translateX(-18%) translateY(10%);
+
+    @media (min-width: vars.$tablet) {
+      transform: translateX(-25%) translateY(-88%);
+    }
+  }
+
+  &__pattern_right {
+    right: 100%;
+    transform: translateX(12%) translateY(81%);
+  }
 }

@@ -7,6 +7,7 @@ import { formattedTitle } from "lib/metadata";
 import { getAllPostIds, getPostData, getRandomCta } from "lib/posts";
 import { Post as TPost } from "lib/types";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params);
@@ -34,6 +35,8 @@ export const PostPage = ({
   postData: TPost;
   cta: CtaProps;
 }) => {
+  const { asPath } = useRouter();
+
   return (
     <>
       <Head>
@@ -44,8 +47,10 @@ export const PostPage = ({
         </title>
         <PageMeta
           title={postData.title ? `Blog: ${postData.title}` : "Blog"}
+          image={postData.image}
+          path={asPath}
           description={
-            postData.excerpt ??
+            postData.desc ??
             "A blog post from Apsis Labs, an agency dedicated to building secure, scalable web and mobile applications."
           }
         />

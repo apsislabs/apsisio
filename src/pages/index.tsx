@@ -29,7 +29,7 @@ export const IndexPage: NextPage = () => {
       </Head>
 
       <SiteLayout showTagline navTheme="blue" navGuides>
-        <Section theme="blue">
+        <Section theme="blue" className="overflow-hidden">
           <Hero />
         </Section>
 

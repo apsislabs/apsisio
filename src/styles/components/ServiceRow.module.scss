@@ -27,7 +27,10 @@ $variant_colors: (
   }
 
   &__image_container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-bottom: var(--spacing_lg);
 
     @media (min-width: vars.$desktop) {

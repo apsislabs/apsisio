@@ -40,6 +40,9 @@ export default function MyApp({ Component, pageProps }) {
         src="https://plausible.io/js/script.js"
       />
 
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2173aa" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2c3e50" />
+
       <Component {...pageProps} />
     </>
   );

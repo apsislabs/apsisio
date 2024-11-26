@@ -1,15 +1,29 @@
 import clsx from "clsx";
+import { HTMLProps } from "react";
 import styles from "styles/components/Button.module.scss";
 
-type ButtonProps = {
+type BaseButtonProps = {
   children: React.ReactNode;
   tag?: React.ComponentType | keyof JSX.IntrinsicElements;
   EndIcon?: React.ComponentType | keyof JSX.IntrinsicElements;
   className?: string;
-  href?: string;
   variant?: "primary" | "secondary" | "tertiary";
   size?: "lg" | "sm";
-};
+  disabled?: boolean;
+}
+
+type LinkButtonProps = BaseButtonProps & {
+  href: string;
+  onClick?: undefined;
+} & HTMLProps<HTMLAnchorElement>;
+
+type ButtonButtonProps = BaseButtonProps & {
+  href?: undefined;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+} & HTMLProps<HTMLButtonElement>;
+
+
+type ButtonProps = LinkButtonProps | ButtonButtonProps;
 
 export const Button: React.FC<ButtonProps> = ({
   children,
@@ -24,6 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
   const Component = href ? "a" : tag;
 
   return (
+    // @ts-ignore: this is fine
     <Component
       href={href}
       className={clsx(

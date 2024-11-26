@@ -1,0 +1,61 @@
+@use "styles/vars";
+
+.project_slide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+
+  @media (min-width: vars.$desktop) {
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--spacing_lg) * 2);
+  }
+
+  &__image {
+    @media (min-width: vars.$desktop) {
+      flex: 1;
+      max-width: 50%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_sm);
+  }
+
+  &__title,
+  &__subtitle {
+    margin-bottom: 0;
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+    opacity: 0.5;
+    font-weight: 600;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing_sm);
+    align-items: center;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__social_link {
+    padding: 0;
+    margin: 0;
+  }
+}

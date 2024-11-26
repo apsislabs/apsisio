@@ -1,26 +1,46 @@
 import { Button } from "components/Button";
+import { Carousel } from "components/Carousel";
 import { Clients } from "components/Clients";
 import { Hero } from "components/Hero";
+import { MarkdownContent } from "components/MarkdownContent";
 import { PageMeta } from "components/PageMeta";
+import { ProjectSlide } from "components/ProjectSlide";
 import { Row } from "components/Row";
 import { Section } from "components/Section";
+import { ServicesSection } from "components/ServicesSection";
 import { SiteLayout } from "components/SiteLayout";
 import { siteConf } from "conf";
+import { readFileSync } from "fs";
+import yaml from "js-yaml";
 import { formattedTitle } from "lib/metadata";
+import { dataDirectory, getRandomCta } from "lib/posts";
 import {
   ChevronRight,
   FileJson,
   FormInput,
   Gem,
-  Github,
   List,
+  PresentationIcon,
+  SquareTerminalIcon,
 } from "lucide-react";
 import { NextPage } from "next";
 import Head from "next/head";
+import path from "path";
 import { RepoCard } from "../components/RepoCard";
-import { ServicesSection } from "../components/ServicesSection";
+import { CtaProps } from "components/Cta";
 
-export const IndexPage: NextPage = () => {
+export async function getStaticProps() {
+  const projectsData = readFileSync(path.join(dataDirectory, "projects.yml"));
+
+  return {
+    props: {
+      projects: yaml.load(projectsData),
+      cta: getRandomCta()
+    },
+  };
+}
+
+export const IndexPage: NextPage<{ projects: any[], cta: CtaProps }> = ({ projects, cta }) => {
   return (
     <>
       <Head>
@@ -28,7 +48,7 @@ export const IndexPage: NextPage = () => {
         <PageMeta />
       </Head>
 
-      <SiteLayout showTagline navTheme="blue" navGuides>
+      <SiteLayout showTagline navTheme="blue" navGuides cta={cta}>
         <Section theme="blue" className="overflow-hidden">
           <Hero />
         </Section>
@@ -41,7 +61,12 @@ export const IndexPage: NextPage = () => {
           <ServicesSection />
         </Section>
 
-        <Section label="Open Source" centerLabel spaced Icon={Github}>
+        <Section
+          label="Open Source"
+          centerLabel
+          spaced
+          Icon={SquareTerminalIcon}
+        >
           <Row>
             <RepoCard
               title="phi_attrs"
@@ -104,6 +129,21 @@ export const IndexPage: NextPage = () => {
               </Button>
             </footer>
           </section>
+        </Section>
+
+        <Section label="Projects" Icon={PresentationIcon} spaced>
+          <Carousel
+            slides={projects.map((p, i) => (
+              <ProjectSlide
+                key={i}
+                title={p.title}
+                content={<MarkdownContent content={p.content} />}
+                image={p.image}
+                button={p.button}
+                link={p.link}
+              />
+            ))}
+          />
         </Section>
       </SiteLayout>
     </>

@@ -9,13 +9,22 @@
   font-size: var(--font_size_sm);
   padding: var(--spacing_sm) var(--spacing);
   text-decoration: none;
-  transition: box-shadow var(--easing) var(--timing_sm),
+  transition:
+    box-shadow var(--easing) var(--timing_sm),
     outline-color var(--easing) var(--timing_sm);
   width: auto;
   line-height: 1;
   white-space: nowrap;
   user-select: none;
   outline: 3px solid transparent;
+
+  &[disabled] {
+    opacity: 0.5;
+    &:hover {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
 
   &__end_icon {
     vertical-align: text-top;
@@ -29,7 +38,6 @@
     box-shadow: 0 1px 5px var(--shadow);
     outline: 3px solid var(--outline_blue);
   }
-
 
   &:hover {
     cursor: pointer;
@@ -66,6 +74,11 @@
   &--secondary {
     background-color: var(--gray_lightest);
     color: var(--gray_darkest);
+
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: var(--gray_lighter);
+      color: var(--gray_darker);
+    }
 
     &:hover,
     &:focus {

@@ -13,7 +13,7 @@ import { PostFrontmatter, Post, PostParams, Person } from "lib/types";
 import _ from "lodash";
 
 const postsDirectory = path.join(process.cwd(), "posts");
-const dataDirectory = path.join(process.cwd(), "data");
+export const dataDirectory = path.join(process.cwd(), "data");
 
 export const getCtas = () => {
   const ctas = readFileSync(path.join(dataDirectory, "ctas.yml"));

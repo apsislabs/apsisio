@@ -1,0 +1,41 @@
+@use "styles/vars";
+
+
+.carousel {
+  --slide-height: 19rem;
+  --slide-size: 100%;
+
+  margin: auto;
+
+  &__viewport {
+    overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+
+  &__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding: var(--spacing_lg);
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing);
+    margin-top: var(--spacing_lg);
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing_sm);
+    align-items: center;
+  }
+}

@@ -21,6 +21,8 @@
   "homepage": "https://apsis.io",
   "dependencies": {
     "clsx": "^2.1.1",
+    "embla-carousel": "^8.5.1",
+    "embla-carousel-react": "^8.5.1",
     "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.10.0",

@@ -1,4 +1,4 @@
-@use 'styles/vars';
+@use "styles/vars";
 
 .clients {
   margin-top: var(--spacing);
@@ -7,29 +7,25 @@
   grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 
   @media (min-width: vars.$tablet) {
+    padding: var(--spacing) var(--spacing_lg);
     grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   }
 
   &__logo_frame {
-    margin: 0;
-    padding: 0;
-    position: relative;
+    padding: var(--spacing_sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    &::before {
-      content: "";
-      padding-bottom: 30%;
-      display: block;
+    @media (min-width: vars.$desktop) {
+      padding: var(--spacing);
     }
   }
 
   &__logo {
-    position: absolute;
     max-width: 60%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
+    object-fit: contain;
 
     @media screen and (prefers-color-scheme: dark) {
       filter: invert(50%);

@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-sitemap",
-    "postbuild": "rm -rf out/_jampack && jampack out",
     "start": "next start"
   },
   "engines": {

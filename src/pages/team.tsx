@@ -34,7 +34,7 @@ const TeamPage: NextPage<{ team: Person[] }> = ({ team }) => {
           button: "Get in touch",
           title: "Want to be friends?",
           subtitle:
-            "Our clients love us and we love them too. Let's make something happen.",
+            "We're always looking for new projects. Let's make something happen.",
         }}
       >
         <div className="stack gap-lg">

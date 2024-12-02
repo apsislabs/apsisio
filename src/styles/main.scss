@@ -8,19 +8,36 @@
 
 @import "styles/global";
 
-
 html,
 body {
+  min-height: 100%;
   background-color: var(--section_background);
   color: var(--text_color);
   font-family: var(--sans);
   line-height: var(--line_height);
-  border-bottom: 30px solid var(--apsis_blue);
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   touch-action: manipulation;
+}
+
+body {
+  border-bottom: 12px solid var(--apsis_blue);
+}
+
+#__next {
+  min-height: 100%;
+}
+
+#wrapper {
+  min-height: calc(100dvh - 12px);
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  flex: 1;
 }
 
 #nprogress .bar {

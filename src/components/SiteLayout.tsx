@@ -40,13 +40,15 @@ export const SiteLayout: React.FC<
         />
       </Section>
 
-      {contained ? (
-        <Section narrow spaced guides={false}>
-          {children}
-        </Section>
-      ) : (
-        children
-      )}
+      <main id="main">
+        {contained ? (
+          <Section narrow spaced guides={false}>
+            {children}
+          </Section>
+        ) : (
+          children
+        )}
+      </main>
 
       {cta && (
         <Section theme="blue" bordered>

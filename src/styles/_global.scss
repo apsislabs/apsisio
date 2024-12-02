@@ -111,6 +111,10 @@
       margin-top: 0;
       margin-bottom: 0;
     }
+
+    li {
+      margin-bottom: var(--spacing_sm);
+    }
   }
 
   hr {

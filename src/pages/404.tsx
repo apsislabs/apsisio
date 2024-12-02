@@ -37,8 +37,8 @@ const NotFoundPage: NextPage = () => {
             <section className="typography">
               <p className="lead">
                 The page you were looking for has moved or never existed at all.
-                That's on us &mdash; we'll take a look and see if we build it
-                for you.
+                That's on us &mdash; we'll take a look and see if we can build
+                it for you.
               </p>
             </section>
 

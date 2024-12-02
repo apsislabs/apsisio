@@ -32,7 +32,7 @@ What makes this whole endeavor succeed is that we are upfront with each other an
 
 But that's a lot of work talk, and what you're really asking when you ask about company culture is what it looks like the rest of the time. You want to know how the company League of Legends team is doing (Silver); how my side project is coming along (slowly); how Wyatt's 3-step drop looks (terrible). To get those answers, you'll just have to ask us.
 
-[^1]: Becoming a company's first employee is much more flattering than [frightening](http://apsis.io/apsis/blog/2015/04/23/work-sustainably).
+[^1]: Becoming a company's first employee is much more flattering than [frightening](/blog/2015/04/23/work-sustainably).
 
 [^2]: Based on limited first-hand experience and conversations with others in various fields in America.
 

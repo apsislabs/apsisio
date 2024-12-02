@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://apsis.io
+Host: https://www.apsis.io
 
 # Sitemaps
-Sitemap: https://apsis.io/sitemap.xml
+Sitemap: https://www.apsis.io/sitemap.xml

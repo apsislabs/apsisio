@@ -28,13 +28,13 @@ This goal is entirely about keeping work *sustainable*, and *healthy* for our em
 
 Where to live is a huge personal decision; it affects every aspect of your life. We, as founders, don't want you to make that choice solely based on where our office happens to be located. As an employee, you should find the place that works best for you and your family. Find somewhere with an *amazing* public school, or maybe a city with a better night-life? Live there. We'll meet you on the internet.
 
-It's also a selfish choice for us. Now we can look world-wide for software development talent without demanding that people be willing to move to sunny Seattle. 37signals has written the book on how to live and work in the 21st century with remote workers. If you want more on the remote-worker philosophy check out their book [*Remote: Office Not Required*](http://37signals.com/remote/)
+It's also a selfish choice for us. Now we can look world-wide for software development talent without demanding that people be willing to move to sunny Seattle. 37signals has written the book on how to live and work in the 21st century with remote workers. If you want more on the remote-worker philosophy check out their book [*Remote: Office Not Required*](https://37signals.com/remote/)
 
 ### Take Vacations
 
 So, you've picked the perfect city to live in. You're working twenty-hours a week, so you aren't feeling particularly burnt-out. Maybe you don't *need* a vacation?
 
-Too bad, you have to take one. We firmly believe that people need some opportunities to *completely* escape their responsibilities once in a while. We really like the sound of unlimited vacation policies, but we've seen some of their downsides. Fortunately, Travis CI stepped up and solved this problem for us: [Minimum vacation policies](http://www.paperplanes.de/2014/12/10/from-open-to-minimum-vacation-policy.html). We really like the idea, and we're going to implement it.
+Too bad, you have to take one. We firmly believe that people need some opportunities to *completely* escape their responsibilities once in a while. We really like the sound of unlimited vacation policies, but we've seen some of their downsides. Fortunately, Travis CI stepped up and solved this problem for us: [Minimum vacation policies](https://www.paperplanes.de/2014/12/10/from-open-to-minimum-vacation-policy.html). We really like the idea, and we're going to implement it.
 
 Employees can take as much vacation as they need, with the requirement that they take *at least* 3 weeks off a year. That's an absolute minimum, and we'll revoke VPN access to enforce it if we have to.[^2]
 

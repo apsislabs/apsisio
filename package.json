@@ -33,6 +33,7 @@
     "lucide": "^0.445.0",
     "lucide-react": "^0.445.0",
     "marked": "^14.1.2",
+    "marked-alert": "^2.1.2",
     "marked-footnote": "^1.2.4",
     "marked-gfm-heading-id": "^4.1.1",
     "marked-highlight": "^2.1.4",

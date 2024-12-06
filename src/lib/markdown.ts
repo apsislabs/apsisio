@@ -3,7 +3,7 @@ import { markedHighlight } from "marked-highlight";
 import markedFootnote from "marked-footnote";
 import { gfmHeadingId } from "marked-gfm-heading-id";
 import hljs from "highlight.js";
-
+import markedAlert from 'marked-alert'
 import { markedSmartypants } from "marked-smartypants";
 
 const marked = new Marked(
@@ -18,6 +18,7 @@ const marked = new Marked(
       return hljs.highlight(code, { language }).value;
     },
   }),
+  markedAlert(),
   gfmHeadingId(),
   markedFootnote(),
   markedSmartypants(),

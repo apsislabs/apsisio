@@ -7,9 +7,15 @@ excerpt: Hi, I'm Niall.  I'm the third hire (fifth including founders) at Apsis.
 date: 2016-03-14
 ---
 
+> [!NOTE]
+> Niall is no longer at Apsis (though still a great friend). We have chosen to leave up this intro blog post because
+> we believe it speaks to a bit more than just his joining the company. As time has worn on, some of the materials
+> he linked to are no longer at their original location. When necessary, we have linked to the WayBackMachine to 
+> preserve Niall's original intent.
+
 Hi, I'm Niall.  I'm the third hire (fifth including founders) at Apsis.
 
-The first thing you ought to know about me is that I disdain work.  I aspire at all times to [idleness](http://www.zpub.com/notes/idle.html).  I refuse to search for some great *passion* in my employment[^1] despite digesting years of well-meaning propaganda to the contrary.
+The first thing you ought to know about me is that I disdain work.  I aspire at all times to [idleness](https://web.archive.org/web/20160320161628/http://www.zpub.com/notes/idle.html).  I refuse to search for some great *passion* in my employment[^1] despite digesting years of well-meaning propaganda to the contrary.
 
 Granted, there exist some people who have truly come alive in their work.  People who have found purpose in their own lives, who perhaps are making the world meaningfully better for others or expanding the frontiers of our collective knowledge.  We read about them in magazines and biographies.  Let us freely admire and envy them, if we wish, but let us not stake our own happiness on the odds of becoming an exception to a rule.[^2]  For most of us, our jobs will be a means to some other end.
 
@@ -17,14 +23,14 @@ That's not to say we need to be dreary about it though.  There are many pleasure
 
 It was this spirit that drew me to Apsis and to Noah & Wyatt's vision of their business.  It's a place where we want to make work as good as it can be without trying to make it something it isn't.  As consultants, we solve concrete problems for paying customers; we don't make pipe dreams funded by venture capital or advertising or steroids.  We divide up the work we get according to our interests.  It's usually rewarding, rarely either fascinating or terrible.
 
-Most importantly, I've found that we all prioritize our lives outside of Apsis.  I imagine you're aware that we have a [minimum vacation policy and a 20-hour work week](https://apsis.io/blog/2015/04/23/work-sustainably/).  But that's only a first step: research has shown that such policies can leave employees working harder than ever.[^3]  We try to communally praise each other for working less or more efficiently, and we try to dissuade each other from overwork (what we may have subconsciously been trained to view as "feats of programming strength").  This peer support helps us live in the spirit of the policy.
+Most importantly, I've found that we all prioritize our lives outside of Apsis.  I imagine you're aware that we have a [minimum vacation policy and a 20-hour work week](https://www.apsis.io/blog/2015/04/23/work-sustainably/).  But that's only a first step: research has shown that such policies can leave employees working harder than ever.[^3]  We try to communally praise each other for working less or more efficiently, and we try to dissuade each other from overwork (what we may have subconsciously been trained to view as "feats of programming strength").  This peer support helps us live in the spirit of the policy.
 
 I haven't been at Apsis for long, but so far it has been a very positive experience.  I've been spending a lot more time on my other interests, including joining a synthetic biology meetup and enrolling in woodworking classes at a nearby college.  My wife and I have our first child on the way, and it's great to not even think about a calendar or work conflicts when scheduling OB/GYN appointments... and in the longer term, to know I can easily be an active father after my parental leave ends.
 
 Oh, and the work is good too!  I got to learn React and Redux the other day to build a small line-of-business web application, we have good tooling and decent testing, my colleagues are smart, it's all great.  It's just not my passion, and I'm quite happy to have it that way.
 
 [^1]:
-    Unless you are making a tongue-in-cheek [appeal to etymology](http://itre.cis.upenn.edu/~myl/languagelog/archives/002454.html), in which case, sure, I believe that most people patiently suffer in their employment.
+    Unless you are making a tongue-in-cheek [appeal to etymology](https://web.archive.org/web/20160316031542/http://itre.cis.upenn.edu/~myl/languagelog/archives/002454.html), in which case, sure, I believe that most people patiently suffer in their employment.
 
 [^2]:
     As Alain de Botton melancholically writes in *The Pleasures and Sorrows of Work*:
@@ -42,6 +48,6 @@ Oh, and the work is good too!  I got to learn React and Redux the other day to b
 
     See, for example:
 
-    * [Doing more with less? Flexible working practices and the intensification of work](http://www.som.cranfield.ac.uk/som/media/images/research/wbl/moreless.pdf)
-    * [Work–life initiatives and organizational change: Overcoming mixed messages to move from the margin to the mainstream](http://hum.sagepub.com/content/early/2009/12/01/0018726709352385.full.pdf+html)
-    * [Flexible work practices: A source of career premiums or penalties?](FLEXIBLE%20WORK%20PRACTICES:%20A%20SOURCE%20OF%20CAREER%20PREMIUMS%20OR%20PENALTIES?)
+    * [Doing more with less? Flexible working practices and the intensification of work](https://www.som.cranfield.ac.uk/som/media/images/research/wbl/moreless.pdf)
+    * [Work–life initiatives and organizational change: Overcoming mixed messages to move from the margin to the mainstream](https://hum.sagepub.com/content/early/2009/12/01/0018726709352385.full.pdf+html)
+    * [Flexible work practices: A source of career premiums or penalties?](https://people.stern.nyu.edu/sworthen/leslie/fwp2012.pdf)

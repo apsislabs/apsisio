@@ -1,3 +1,5 @@
+@use "styles/vars";
+
 .text-primary {
   color: var(--apsis_blue);
 }
@@ -42,6 +44,49 @@
   margin: var(--spacing_lg) 0;
   border: 0;
   border-top: 1px solid var(--border_gray);
+}
+
+@mixin alert($name, $color) {
+  &.markdown-alert-#{$name} {
+    border-left-color: $color;
+    background-color: rgba($color, 0.05);
+
+    .markdown-alert-title {
+      svg {
+        fill: darken($color, 15%);
+      }
+
+      color: darken($color, 15%);
+    }
+  }
+}
+
+
+.markdown-alert {
+  border-left: 4px solid var(--border_gray);
+  padding: var(--spacing_md);
+  margin-bottom: var(--spacing_md);
+  font-size: var(--font_size_sm);
+
+  background-color: rgba(vars.$border_gray, 0.05);
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  .markdown-alert-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing_sm);
+    font-weight: bold;
+    margin-bottom: var(--spacing_sm);
+  }
+
+  @include alert('note', vars.$apsis_blue);
+  @include alert('tip', vars.$apsis_green);
+  @include alert('important', vars.$apsis_purple);
+  @include alert('warning', vars.$apsis_orange);
+  @include alert('caution', vars.$apsis_red);
 }
 
 .stack {

@@ -44,7 +44,7 @@ export type Post = Modify<
   {
     id: string;
     params?: PostParams | null;
-    href: string;
+    href: string | UrlObject;
     contentHtml?: string;
     person?: Person | null;
     desc?: string;

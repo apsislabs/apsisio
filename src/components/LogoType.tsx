@@ -6,7 +6,7 @@ export const LogoType: React.FC<
   {
     size?: number;
     className?: string;
-    as?: React.ReactElement<HTMLHeadingElement>;
+    as?: React.ElementType;
   } & React.HTMLAttributes<HTMLHeadingElement>
 > = ({ size = 24, className, as: Component = "h2", ...props }) => {
   return (

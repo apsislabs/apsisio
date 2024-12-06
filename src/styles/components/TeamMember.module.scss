@@ -54,7 +54,7 @@
   &__social {
     display: flex;
     flex-direction: row;
-    gap: var(--spacing_sm);
+    gap: var(--spacing);
     align-items: center;
 
     list-style: none;
@@ -65,5 +65,11 @@
   &__social_link {
     padding: 0;
     margin: 0;
+
+    color: var(--apsis_blue);
+    transition: color vars.$easing vars.$timing_sm;
+    &:hover {
+      color: var(--apsis_dark);
+    }
   }
 }

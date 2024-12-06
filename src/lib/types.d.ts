@@ -14,7 +14,7 @@ type Person = {
 };
 
 type SocialLink = {
-  network: "twitter" | "bluesky" | "linkedin" | "github";
+  network: "twitter" | "bluesky" | "linkedin" | "github" | "blog";
   link: string;
 };
 
@@ -44,7 +44,7 @@ export type Post = Modify<
   {
     id: string;
     params?: PostParams | null;
-    href: string | UrlObject;
+    href: string;
     contentHtml?: string;
     person?: Person | null;
     desc?: string;

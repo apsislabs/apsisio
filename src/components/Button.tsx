@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Link, { LinkProps } from "next/link";
 import { HTMLProps } from "react";
 import styles from "styles/components/Button.module.scss";
 
@@ -15,7 +16,7 @@ type BaseButtonProps = {
 type LinkButtonProps = BaseButtonProps & {
   href: string;
   onClick?: undefined;
-} & Omit<HTMLProps<HTMLAnchorElement>, "size">;
+} & Omit<LinkProps, "size">;
 
 type ButtonButtonProps = BaseButtonProps & {
   href?: undefined;
@@ -34,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
   size,
   ...props
 }) => {
-  const Component = href ? "a" : tag;
+  const Component = href ? Link : tag;
 
   return (
     // @ts-ignore: this is fine

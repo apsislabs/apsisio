@@ -7,21 +7,26 @@
 }
 
 .post {
-  margin-bottom: vars.$spacing_xl * 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_lg);
 
   &__title {
     font-size: vars.$font_size_h1;
+    color: vars.$apsis_blue;
     margin: 0;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   &__header {
     display: flex;
     flex-direction: column;
-    gap: vars.$spacing_md;
-    margin-bottom: vars.$spacing_md;
+    gap: vars.$spacing_lg;
   }
 
-  &__header,
   &__content {
     @extend .typography;
   }
@@ -51,5 +56,22 @@
   &__meta {
     font-size: 0.85em;
     color: vars.$gray;
+  }
+
+  &--list {
+    margin-bottom: vars.$spacing_xl * 2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--list-small {
+    margin-bottom: vars.$spacing_lg;
+
+    .post__title {
+      font-size: vars.$font_size_h3;
+      margin: 0;
+    }
   }
 }

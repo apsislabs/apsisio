@@ -24,6 +24,13 @@ noah:
     For over a decade, Noah has led Apsis' engineering team with technical expertise.
     His background is textbook: CS degree from UW, time at Microsoft and Amazon, and
     now 10+ years as Apsis' lead engineer and architect.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/noah-callaway-166137b/
+    - network: blog
+      link: /blog/people/noah
+    - network: github
+      link: https://github.com/ncallaway
 
 wyatt:
   name: Wyatt Kirby
@@ -49,6 +56,15 @@ wyatt:
     An accidental developer turned entrepreneur, Wyatt has helped build a team of exceptional
     engineers at Apsis. After a decade in the field, he continues to be drawn to software for
     its blend of writing, teaching, and tech.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/wyatt-kirby-b5a26726
+    - network: blog
+      link: /blog/people/wyatt
+    - network: github
+      link: https://github.com/wkirby
+    - network: bluesky
+      link: https://bsky.app/profile/wyattkirby.com
 
 eric:
   name: Eric Greer
@@ -70,6 +86,13 @@ eric:
      Eric has helped numerous clients navigate the cloud with AWS. Always eager for the next challenge,
      he loves learning each business's nuances and delivering stability
      through automation.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/greereric/
+    - network: blog
+      link: /blog/people/eric
+    - network: github
+      link: https://github.com/egreer
 
 henry:
   name: Henry Keiter
@@ -92,6 +115,13 @@ henry:
     An imported Coloradan, Henry sees software as a tool to bridge industries.
     He loves collaborating with domain experts to map the terrain, then building
     solutions that meet their real-world needs.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/henrykeiter/
+    - network: blog
+      link: /blog/people/henry
+    - network: github
+      link: https://github.com/henrykeiter
 
 chris:
   name: Chris Pfohl
@@ -114,6 +144,13 @@ chris:
     A master data mover and analyzer, Chris crafts robust integrations and sorts
     through complexity with ease. He loves sharing his expertise through code review,
     teaching, and rock-solid documentation.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/chrispfohl/
+    - network: blog
+      link: /blog/people/chris
+    - network: github
+      link: https://github.com/Crisfole
 
 matt:
   name: Matt Erhart
@@ -133,6 +170,13 @@ matt:
     A seasoned Senior Software Engineer and enthusiastic problem solver, Matt
     combines nearly 2 decades of dev experience with a pure mathematician's mind.
     When not coding, you'll find him on the farm &mdash; his true passion.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/matthewerhart/
+    - network: blog
+      link: /blog/people/matt
+    - network: github
+      link: https://github.com/matterhart
 
 joey:
   name: Joey Harwood
@@ -157,6 +201,13 @@ joey:
     With a background in Android development and big data, Joey has found a way
     to turn his love of math and puzzles into a career in software development.
     When not at work, he's most likely found at a pinball table.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/joseph-harwood-a980b9a1/
+    - network: blog
+      link: /blog/people/joey
+    - network: github
+      link: https://github.com/Joey-Harwood
 
 niall:
   name: Niall Wingham

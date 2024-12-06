@@ -1,6 +1,7 @@
 import { Button } from "components/Button";
 import { Carousel } from "components/Carousel";
 import { Clients } from "components/Clients";
+import { CtaProps } from "components/Cta";
 import { Hero } from "components/Hero";
 import { MarkdownContent } from "components/MarkdownContent";
 import { PageMeta } from "components/PageMeta";
@@ -27,7 +28,6 @@ import { NextPage } from "next";
 import Head from "next/head";
 import path from "path";
 import { RepoCard } from "../components/RepoCard";
-import { CtaProps } from "components/Cta";
 
 export async function getStaticProps() {
   const projectsData = readFileSync(path.join(dataDirectory, "projects.yml"));
@@ -35,12 +35,15 @@ export async function getStaticProps() {
   return {
     props: {
       projects: yaml.load(projectsData),
-      cta: getRandomCta()
+      cta: getRandomCta(),
     },
   };
 }
 
-export const IndexPage: NextPage<{ projects: any[], cta: CtaProps }> = ({ projects, cta }) => {
+export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
+  projects,
+  cta,
+}) => {
   return (
     <>
       <Head>

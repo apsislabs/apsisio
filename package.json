@@ -20,6 +20,7 @@
   },
   "homepage": "https://apsis.io",
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^10.2.0",
     "clsx": "^2.1.1",
     "embla-carousel": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
@@ -45,6 +46,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.79.3",
+    "simple-icons": "^13.19.0",
     "smartquotes": "^2.3.2"
   },
   "devDependencies": {

@@ -6,10 +6,11 @@ export const LogoType: React.FC<
   {
     size?: number;
     className?: string;
+    as?: React.ReactElement<HTMLHeadingElement>;
   } & React.HTMLAttributes<HTMLHeadingElement>
-> = ({ size = 24, className, ...props }) => {
+> = ({ size = 24, className, as: Component = "h2", ...props }) => {
   return (
-    <h1 className={clsx(styles.logotype, className)} {...props}>
+    <Component className={clsx(styles.logotype, className)} {...props}>
       <ApsisLogo
         className={styles.logotype__planet}
         width={size}
@@ -17,6 +18,6 @@ export const LogoType: React.FC<
       />
 
       <span className={styles.logotype__wordmark}>Apsis Labs</span>
-    </h1>
+    </Component>
   );
 };

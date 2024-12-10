@@ -76,6 +76,12 @@
       background-color var(--easing) var(--timing_sm),
       opacity var(--easing) var(--timing_sm);
 
+    &--hide_mobile {
+      @media (max-width: vars.$mobile) {
+        display: none;
+      }
+    }
+
     @media screen and (prefers-reduced-motion: reduce) {
       transition: none;
     }

@@ -1,10 +1,12 @@
 import styles from "styles/components/Navbar.module.scss";
+import clsx from "clsx";
 import Link from "next/link";
 import { LogoType } from "components/LogoType";
 
 const NAV_ITEMS = [
-  { href: "/", label: "Home" },
-  { href: "/team", label: "Our Team" },
+  { href: "/", label: "Home", hideMobile: true },
+  { href: "/team", label: "Team" },
+  { href: "/mission", label: "Mission" },
   {
     href: "/blog",
     label: "Blog",
@@ -27,7 +29,10 @@ export const Navbar: React.FC<{
             <Link
               key={n.href}
               href={n.href}
-              className={styles.navbar__nav_item}
+              className={clsx(
+                styles.navbar__nav_item,
+                n.hideMobile && styles["navbar__nav_item--hide_mobile"],
+              )}
             >
               {n.label}
             </Link>

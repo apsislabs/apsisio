@@ -10,7 +10,7 @@ export const Footer = () => (
     <Row>
       <div className="stack gap-md">
         <Link href="/" className={styles.footer__logo}>
-          <LogoType size={18} className={styles.footer__logotype} />
+          <LogoType className={styles.footer__logotype} />
         </Link>
 
         <small>
@@ -63,9 +63,10 @@ export const Footer = () => (
           </ul>
         </small>
       </div>
+
       <div className={styles.footer__tagline_container}>
         <h4 className={styles.footer__tagline}>
-          Distributed & Horizontally Scalable
+          Distributed &amp; Horizontally Scalable
         </h4>
 
         <small>

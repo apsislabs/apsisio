@@ -2,10 +2,8 @@ import { CtaProps } from "components/Cta";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { formattedTitle } from "lib/metadata";
 import { getRandomCta } from "lib/posts";
 import { NextPage } from "next";
-import Head from "next/head";
 
 export async function getStaticProps() {
   return {
@@ -18,13 +16,10 @@ export async function getStaticProps() {
 const ConductPage: NextPage<{ cta: CtaProps }> = ({ cta }) => {
   return (
     <>
-      <Head>
-        <title>{formattedTitle("Code of Conduct")}</title>
-        <PageMeta
-          title="Code of Conduct"
-          description="Code of Conduct for Apsis Labs and Apsis Labs projects. Apsis Labs is your partner in developing secure, scalable web and mobile applications."
-        />
-      </Head>
+      <PageMeta
+        title="Code of Conduct"
+        description="Code of Conduct for Apsis Labs and Apsis Labs projects. Apsis Labs is your partner in developing secure, scalable web and mobile applications."
+      />
 
       <SiteLayout contained cta={cta}>
         <article>

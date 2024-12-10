@@ -13,7 +13,6 @@ import { SiteLayout } from "components/SiteLayout";
 import { siteConf } from "conf";
 import { readFileSync } from "fs";
 import yaml from "js-yaml";
-import { formattedTitle } from "lib/metadata";
 import { dataDirectory, getRandomCta } from "lib/posts";
 import {
   ChevronRight,
@@ -25,7 +24,6 @@ import {
   SquareTerminalIcon,
 } from "lucide-react";
 import { NextPage } from "next";
-import Head from "next/head";
 import path from "path";
 import { RepoCard } from "../components/RepoCard";
 
@@ -46,10 +44,7 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
 }) => {
   return (
     <>
-      <Head>
-        <title>{formattedTitle(siteConf.meta.title)}</title>
-        <PageMeta />
-      </Head>
+      <PageMeta title={siteConf.meta.title} />
 
       <SiteLayout showTagline navTheme="blue" navGuides cta={cta}>
         <Section theme="blue" className="overflow-hidden">

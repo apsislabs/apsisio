@@ -6,12 +6,10 @@ import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import { TeamMember } from "components/TeamMember";
-import { formattedTitle } from "lib/metadata";
 import { getPeople, getSortedPostsData } from "lib/posts";
 import { Person, Post as TPost } from "lib/types";
 import { getFirstName } from "lib/utils";
 import _ from "lodash";
-import Head from "next/head";
 import { useRouter } from "next/router";
 
 const makePersonalizedCta = (person: Person): CtaProps => {
@@ -66,7 +64,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const people = await getPeople();
   const paths = Object.entries(people)
-    .filter(([key, person]) => person.current)
+    .filter(([_key, person]) => person.current)
     .map(([key, _person]) => ({
       params: {
         person: key,
@@ -89,18 +87,14 @@ export const PersonPage = ({
   person: Person;
 }) => {
   const { asPath } = useRouter();
-  const title = formattedTitle(`Blog | Posts by ${person.name}`);
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <PageMeta
-          title={title}
-          path={asPath}
-          description={`Blog posts by ${person.name} for the Apsis Labs blog. Need help building your next great idea? Apsis Labs is a team of for-hire developers here to help.`}
-        />
-      </Head>
+      <PageMeta
+        title={`Blog | Posts by ${getFirstName(person)}`}
+        path={asPath}
+        description={`Blog posts by ${person.name} for the Apsis Labs blog. Need help building your next great idea? Apsis Labs is a team of for-hire developers here to help.`}
+      />
 
       <SiteLayout contained cta={cta}>
         <div className="stack gap-lg">

@@ -2,10 +2,8 @@ import { CtaProps } from "components/Cta";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { formattedTitle } from "lib/metadata";
 import { getRandomCta } from "lib/posts";
 import { NextPage } from "next";
-import Head from "next/head";
 
 export async function getStaticProps() {
   return {
@@ -18,16 +16,10 @@ export async function getStaticProps() {
 const MdbnPage: NextPage<{ cta: CtaProps }> = ({ cta }) => {
   return (
     <>
-      <Head>
-        <title>
-          {formattedTitle("Mandatory Data Breach Notification Policy")}
-        </title>
-
-        <PageMeta
-          title="Mandatory Data Breach Notification Policy"
-          description="Mandatory Data Breach Notification Policy for Apsis Labs and Apsis Labs projects. At Apsis, we take data security seriously, which is why we provide documentation on our data breach policy for all clients."
-        />
-      </Head>
+      <PageMeta
+        title="Mandatory Data Breach Notification Policy"
+        description="Mandatory Data Breach Notification Policy for Apsis Labs and Apsis Labs projects. At Apsis, we take data security seriously, which is why we provide documentation on our data breach policy for all clients."
+      />
 
       <SiteLayout contained cta={cta}>
         <article>

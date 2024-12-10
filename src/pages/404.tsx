@@ -2,22 +2,16 @@ import { Button } from "components/Button";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { formattedTitle } from "lib/metadata";
 import { ChevronRight } from "lucide-react";
 import { NextPage } from "next";
-import Head from "next/head";
 
 const NotFoundPage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>{formattedTitle("404: Page Not Found")}</title>
-
-        <PageMeta
-          title="404: Page Not Found"
-          description="I know this isn't what you were looking for, but... maybe we can help."
-        />
-      </Head>
+      <PageMeta
+        title="404: Page Not Found"
+        description="I know this isn't what you were looking for, but... maybe we can help."
+      />
 
       <SiteLayout
         contained

@@ -1,15 +1,13 @@
 import { Pager } from "components/blog/Pager";
 import { PostExcerpt } from "components/blog/PostExcerpt";
 import { CtaProps } from "components/Cta";
+import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { formattedTitle } from "lib/metadata";
 import { getRandomCta, getSortedPostsData } from "lib/posts";
 import { Post } from "lib/types";
 import _ from "lodash";
 import { NextPage } from "next";
-
-import Head from "next/head";
 
 const paginatedPosts = async (perPage: number = 5) => {
   const posts = await getSortedPostsData();
@@ -51,20 +49,29 @@ export const BlogIndexPage: NextPage<{
 }> = ({ posts, cta, numPages, activePageIdx }) => {
   const title =
     activePageIdx > 0
-      ? formattedTitle(`Apsis Blog | Page ${activePageIdx + 1}`)
-      : formattedTitle("The Apsis Blog");
+      ? `Apsis Blog | Page ${activePageIdx + 1}`
+      : "Blog";
+
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <PageMeta
-          title={title}
-          description="Apsis Labs blog. Written by our devs to help you understand our process in developing scalable, secure web and mobile applications."
-        />
-      </Head>
+      <PageMeta
+        title={title}
+        description="Apsis Labs blog. Written by our devs to help you understand our process in developing scalable, secure web and mobile applications."
+      />
 
       <SiteLayout contained cta={cta}>
         <div className="stack gap-lg">
+          {activePageIdx === 0 && (
+            <PageHeader
+              title=<>The <span className="text-primary">Apsis</span> Blog</>
+              subtitle={
+                <>
+                  From our desks to your browser history.
+                </>
+              }
+            />
+          )}
+
           {posts.map((p) => (
             <PostExcerpt key={p.id} post={p} />
           ))}

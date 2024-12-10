@@ -6,7 +6,6 @@ import { SiteLayout } from "components/SiteLayout";
 import { formattedTitle } from "lib/metadata";
 import { getAllPostIds, getPostData, getRandomCta } from "lib/posts";
 import { Post as TPost } from "lib/types";
-import Head from "next/head";
 import { useRouter } from "next/router";
 
 export async function getStaticProps({ params }) {
@@ -43,19 +42,15 @@ export const PostPage = ({
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-
-        <PageMeta
-          title={title}
-          image={postData.image}
-          path={asPath}
-          description={
-            postData.desc ??
-            "A blog post from Apsis Labs, an agency dedicated to building secure, scalable web and mobile applications."
-          }
-        />
-      </Head>
+      <PageMeta
+        title={title}
+        image={postData.image}
+        path={asPath}
+        description={
+          postData.desc ??
+          "A blog post from Apsis Labs, an agency dedicated to building secure, scalable web and mobile applications."
+        }
+      />
 
       <SiteLayout contained cta={cta}>
         <Post post={postData} />

@@ -45,7 +45,7 @@ export const Navbar: React.FC<{
 
         {showTagline && (
           <a
-            href="/blog/2015/04/23/work-sustainably"
+            href="/mission"
             className={styles.navbar__tagline}
           >
             <span className={styles.navbar__attention}>

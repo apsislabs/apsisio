@@ -19,7 +19,6 @@ const PrivacyPage: NextPage<{ cta: CtaProps }> = ({ cta }) => {
   return (
     <>
       <Head>
-        <title>{formattedTitle("Privacy Policy")}</title>
         <PageMeta
           title="Privacy Policy"
           description="Privacy Policy for Apsis Labs and Apsis Labs projects. Apsis Labs has over 60 years combined experience developing user-centric applications for web and mobile."

@@ -1,12 +1,10 @@
 import { MarkdownContent } from "components/MarkdownContent";
+import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import { TeamMember } from "components/TeamMember";
-import { formattedTitle } from "lib/metadata";
 import { getCurrentPeople } from "lib/posts";
 import { Person } from "lib/types";
-import Head from "next/head";
-import { PageHeader } from "components/PageHeader";
 import { NextPage } from "next";
 
 export async function getStaticProps() {
@@ -20,13 +18,10 @@ export async function getStaticProps() {
 const TeamPage: NextPage<{ team: Person[] }> = ({ team }) => {
   return (
     <>
-      <Head>
-        <title>{formattedTitle("Our Team")}</title>
-        <PageMeta
-          title="Our Team"
-          description="Apsis Labs is seven dedicated senior engineers, ready to help turn your startup into a standout."
-        />
-      </Head>
+      <PageMeta
+        title="Our Team"
+        description="Apsis Labs is seven dedicated senior engineers, ready to help turn your startup into a standout."
+      />
 
       <SiteLayout
         contained
@@ -53,10 +48,10 @@ const TeamPage: NextPage<{ team: Person[] }> = ({ team }) => {
             <section className="typography">
               <p className="lead">
                 Apsis started at brunch one morning in January, 2014. Noah and
-                Wyatt &mdash; young and foolish &mdash; sat down to eat pancakes, and
-                ended up quitting their jobs to start a company. The premise? "If we
-                can't find enough work to survive, we're probably
-                not very good developers."
+                Wyatt &mdash; young and foolish &mdash; sat down to eat
+                pancakes, and ended up quitting their jobs to start a company.
+                The premise? "If we can't find enough work to survive, we're
+                probably not very good developers."
               </p>
               <p className="lead">
                 11 years, 5 babies, & 4 weddings later things <em>still</em>{" "}

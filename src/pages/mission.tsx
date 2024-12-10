@@ -4,11 +4,9 @@ import { MarkdownContent } from "components/MarkdownContent";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { formattedTitle } from "lib/metadata";
 import { getPostData, getRandomCta } from "lib/posts";
 import { Post } from "lib/types";
 import { NextPage } from "next";
-import Head from "next/head";
 
 const Disclaimer = () => (
   <MarkdownContent
@@ -36,17 +34,12 @@ const MissionPage: NextPage<{ cta: CtaProps; content: Post }> = ({
   cta,
   content,
 }) => {
-  const title = formattedTitle("Our Mission");
-
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <PageMeta
-          title={title}
-          description="Our mission: work sustainably. Build cool things with interesting people, but always, always, find time to live life."
-        />
-      </Head>
+      <PageMeta
+        title="Our Mission"
+        description="Our mission: work sustainably. Build cool things with interesting people, but always, always, find time to live life."
+      />
 
       <SiteLayout contained cta={cta}>
         <div className="stack gap-lg">

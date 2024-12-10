@@ -7,6 +7,7 @@ type BaseButtonProps = {
   children: React.ReactNode;
   tag?: React.ComponentType | keyof JSX.IntrinsicElements;
   EndIcon?: React.ComponentType | keyof JSX.IntrinsicElements;
+  StartIcon?: React.ComponentType | keyof JSX.IntrinsicElements;
   className?: string;
   variant?: "primary" | "secondary" | "tertiary";
   size?: "lg" | "sm";
@@ -29,6 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   className,
   EndIcon,
+  StartIcon,
   href,
   tag = "button",
   variant = "primary",
@@ -52,6 +54,9 @@ export const Button: React.FC<ButtonProps> = ({
       )}
       {...props}
     >
+      {StartIcon && (
+        <StartIcon size={18} className={styles.button__start_icon} />
+      )}
       {children}
       {EndIcon && <EndIcon size={18} className={styles.button__end_icon} />}
     </Component>

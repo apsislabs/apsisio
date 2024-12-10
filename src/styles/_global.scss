@@ -61,7 +61,6 @@
   }
 }
 
-
 .markdown-alert {
   border-left: 4px solid var(--border_gray);
   padding: var(--spacing_md);
@@ -82,16 +81,21 @@
     margin-bottom: var(--spacing_sm);
   }
 
-  @include alert('note', vars.$apsis_blue);
-  @include alert('tip', vars.$apsis_green);
-  @include alert('important', vars.$apsis_purple);
-  @include alert('warning', vars.$apsis_orange);
-  @include alert('caution', vars.$apsis_red);
+  @include alert("note", vars.$apsis_blue);
+  @include alert("tip", vars.$apsis_green);
+  @include alert("important", vars.$apsis_purple);
+  @include alert("warning", vars.$apsis_orange);
+  @include alert("caution", vars.$apsis_red);
 }
 
 .stack {
   display: flex;
   flex-direction: column;
+
+  &.stack-h {
+    flex-direction: row;
+    align-items: center;
+  }
 
   &.gap-md {
     gap: var(--spacing_md);

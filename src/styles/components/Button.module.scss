@@ -20,17 +20,25 @@
 
   &[disabled] {
     opacity: 0.5;
+    pointer-events: none;
     &:hover {
-      pointer-events: none;
       cursor: not-allowed;
     }
   }
 
+  &__start_icon,
   &__end_icon {
     vertical-align: text-top;
-    margin-left: var(--spacing_sm);
     transition: margin var(--easing) var(--timing_sm);
     display: inline-block;
+  }
+
+  &__start_icon {
+    margin-right: var(--spacing_sm);
+  }
+
+  &__end_icon {
+    margin-left: var(--spacing_sm);
   }
 
   &:hover,
@@ -44,6 +52,10 @@
 
     .button__end_icon {
       margin-left: var(--spacing_md);
+    }
+
+    .button__start_icon {
+      margin-right: var(--spacing_md);
     }
   }
 

@@ -7,7 +7,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { Button } from "./Button";
 import { MarkdownContent } from "./MarkdownContent";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type PropType = {
   slides: ReactNode[];
@@ -81,10 +81,20 @@ export const Carousel: React.FC<PropType> = ({ slides = [], options }) => {
 
       <div className={clsx(styles.carousel__controls)}>
         <div className={clsx(styles.carousel__buttons)}>
-          <Button variant="secondary" onClick={onPrevButtonClick} disabled={prevBtnDisabled}>
+          <Button
+            variant="tertiary"
+            StartIcon={ChevronLeftIcon}
+            onClick={onPrevButtonClick}
+            disabled={prevBtnDisabled}
+          >
             Prev
           </Button>
-          <Button variant="secondary" onClick={onNextButtonClick} disabled={nextBtnDisabled}>
+          <Button
+            variant="tertiary"
+            EndIcon={ChevronRightIcon}
+            onClick={onNextButtonClick}
+            disabled={nextBtnDisabled}
+          >
             Next
           </Button>
         </div>

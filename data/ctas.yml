@@ -1,9 +1,15 @@
-- title: What does success look like for you?
-  subtitle: We can make it happen.
-  button: Let's talk
 - title: What do you want to build?
   subtitle: We'd love to help. Let's find out how.
   button: Work with us
+
 - title: You're busy
   subtitle: Give us a shout &mdash; we can help
   button: Let's talk
+
+- title: "Your project, our expertise."
+  subtitle: "We listen, we care, and we'll deliver exactly what you need."
+  button: "Work with us"
+
+- title: "Think big &mdash; we've got your back."
+  subtitle: "Let's find out what we can build together."
+  button: "Let's do this"

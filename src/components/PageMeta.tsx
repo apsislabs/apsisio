@@ -20,7 +20,7 @@ export const PageMeta: React.FC<{
   domain = "apsis.io",
 }) => {
   const metaPath = path ? `${baseUrl}${path}` : baseUrl;
-  const canonicalPath = canonical ?? metaPath;
+  const canonicalPath = canonical ? `${baseUrl}${canonical}` : metaPath;
 
   return (
     <Head>

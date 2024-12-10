@@ -10,7 +10,7 @@ import { NextPage } from "next";
 
 const Disclaimer = () => (
   <MarkdownContent
-    content={`>[!NOTE]\n>This content originally appeared as a [blog post](/blog/2015/04/23/work-sustainably/). We've migrated the content here to make it easier to find, and reaffirm our commitment to this mission even a decade on.`}
+    content={`>[!NOTE]\n>This originally appeared as a [blog post](/blog/2015/04/23/work-sustainably/) way back in 2015. We've migrated the content here to make it easier to find, and reaffirm our commitment even a decade on.`}
   />
 );
 
@@ -39,34 +39,31 @@ const MissionPage: NextPage<{ cta: CtaProps; content: Post }> = ({
       <PageMeta
         title="Our Mission"
         description="Our mission: work sustainably. Build cool things with interesting people, but always, always, find time to live life."
+        canonical="/blog/2015/04/23/work-sustainably"
       />
 
       <SiteLayout contained cta={cta}>
-        <div className="stack gap-lg">
-          <article>
-            <PageHeader
-              title="Our Mission"
-              subtitle={
-                <>
-                  Work <s>hard</s>{" "}
-                  <span className="text-primary">sustainably</span>.
-                </>
-              }
-            />
-
-            <div className="stack gap-lg">
-              <PostImage post={content} />
-
-              <section className="typography">
-                <MarkdownContent content={content.contentHtml} />
-              </section>
-            </div>
-          </article>
-
-          <hr className="divider" />
+        <article className="stack gap-md">
+          <PageHeader
+            title="Our Mission"
+            subtitle={
+              <>
+                Work <s>hard</s>{" "}
+                <span className="text-primary">sustainably</span>.
+              </>
+            }
+          />
 
           <Disclaimer />
-        </div>
+
+          <div className="stack gap-lg">
+            <PostImage post={content} />
+
+            <section className="typography">
+              <MarkdownContent content={content.contentHtml} />
+            </section>
+          </div>
+        </article>
       </SiteLayout>
     </>
   );

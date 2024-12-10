@@ -33,7 +33,7 @@ const TeamPage: NextPage<{ team: Person[] }> = ({ team }) => {
         }}
       >
         <div className="stack gap-lg">
-          <article>
+          <article className="stack gap-md">
             <PageHeader
               title="Our Team"
               subtitle={

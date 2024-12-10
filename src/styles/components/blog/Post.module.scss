@@ -50,12 +50,12 @@
     color: vars.$gray_lighter;
     font-style: italic;
     font-weight: 300;
-    font-size: 0.85em;
+    font-size: vars.$font_size_sm;
     margin-left: vars.$spacing_md * 3;
   }
 
   &__meta {
-    font-size: 0.85em;
+    font-size: vars.$font_size_sm;
     color: vars.$gray;
   }
 

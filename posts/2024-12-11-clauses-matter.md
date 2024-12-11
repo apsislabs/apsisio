@@ -12,7 +12,7 @@ date: 2024-12-11
 
 One of our clients hasn't paid us. That happens sometimes. Sometimes they never pay you, sometimes they pay you late. Most of the time it doesn't matter that much: after some early mistakes, we've learned not to put too many gross-revenue eggs  in one client basket.
 
-But this time it does matter: we finished our work with this company 6 months ago, and they still owe us **$133,500** dollars. For anyone keeping track at home, that's almost one full FTE at Apsis.
+But this time it does matter: we finished our work with this company 6 months ago, and they still owe us **$133,500** dollars. For anyone keeping track at home, that's almost a full year's salary at Apsis.
 
 I'm not writing this to complain. I'm also not writing it to call them out by name (yet). Suffice to say this is a large company. It's a company you've heard of. Multinational. Publicly traded. Hundreds of billions of dollars in market cap. I'm writing this because last week they sent me an email --- or more precisely, an automated system sent me an email --- and it made me laugh.
 

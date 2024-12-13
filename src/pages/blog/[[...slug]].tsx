@@ -48,9 +48,7 @@ export const BlogIndexPage: NextPage<{
   cta: CtaProps;
 }> = ({ posts, cta, numPages, activePageIdx }) => {
   const title =
-    activePageIdx > 0
-      ? `Apsis Blog | Page ${activePageIdx + 1}`
-      : "Blog";
+    activePageIdx > 0 ? `Apsis Blog | Page ${activePageIdx + 1}` : "Blog";
 
   return (
     <>
@@ -63,12 +61,10 @@ export const BlogIndexPage: NextPage<{
         <div className="stack gap-lg">
           {activePageIdx === 0 && (
             <PageHeader
-              title=<>The <span className="text-primary">Apsis</span> Blog</>
-              subtitle={
-                <>
-                  From our desks to your browser history.
-                </>
-              }
+              title=<>
+                The <span className="text-primary">Apsis</span> Blog
+              </>
+              subtitle={<>From our desks to your browser history.</>}
             />
           )}
 

@@ -2,10 +2,8 @@ import { CtaProps } from "components/Cta";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { formattedTitle } from "lib/metadata";
 import { getRandomCta } from "lib/posts";
 import { NextPage } from "next";
-import Head from "next/head";
 
 export async function getStaticProps() {
   return {
@@ -18,12 +16,10 @@ export async function getStaticProps() {
 const PrivacyPage: NextPage<{ cta: CtaProps }> = ({ cta }) => {
   return (
     <>
-      <Head>
-        <PageMeta
-          title="Privacy Policy"
-          description="Privacy Policy for Apsis Labs and Apsis Labs projects. Apsis Labs has over 60 years combined experience developing user-centric applications for web and mobile."
-        />
-      </Head>
+      <PageMeta
+        title="Privacy Policy"
+        description="Privacy Policy for Apsis Labs and Apsis Labs projects. Apsis Labs has over 60 years combined experience developing user-centric applications for web and mobile."
+      />
 
       <SiteLayout contained cta={cta}>
         <article>

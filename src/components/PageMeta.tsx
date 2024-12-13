@@ -16,7 +16,7 @@ export const PageMeta: React.FC<{
   description,
   path,
   canonical,
-  baseUrl = "https://apsis.io",
+  baseUrl = "https://www.apsis.io",
   domain = "apsis.io",
 }) => {
   const metaPath = path ? `${baseUrl}${path}` : baseUrl;

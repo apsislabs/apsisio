@@ -6,10 +6,21 @@ image: 'TODO' // A stock pinball machine
 excerpt: TODO
 date: 2024-11-27
 ---
-Something people learn about me very quickly with little provocation is that I love pinball. I only seems fitting that I introduce myself in the Apsis Labs blog by rambling about my primary hobby during the last 7 to 8 years. In writing this, I've realized that there's a lot more to tell about the advanc
+Something people learn about me very quickly with little provocation is that I love pinball. It only seems fitting that I introduce myself in the Apsis Labs blog by rambling about my primary hobby for the last 7 to 8 years. It took probably 6 hours of writing this before I came to the realization that I was had way more to say on this subject than most people would care to read in one sitting. As a result, I've broken the topic down into some subtopics. 
 
-Every creative soul who upon learning about my hobby immediately asks if I'm a pinball wizard knows that the flashing lights and bells and chimes are all just distractions. And if you go back to the era when The Who first performed their hit single in 1969, this would be somewhat true; however, even then there was a method to the madness. If you pay attention to the chimes, the tone of the chime indicates how many points you just scored. The lights on the playfield give you good feedback on places to shoot for bigger points. Almost everything on a pinball machine provides feedback for the player.
+# Information in Pinball
 
+Many people's largest interaction and understanding of pinball is the most famous piece of pinball media: Pinball Wizard. They'll tell you that the flashing lights and bells and chimes are all just distractions (and obviously you need to tune in with sense of smell). And if you go back to the era when The Who first performed their hit single in 1969, this would be somewhat true; however, even then there was a method to the madness. If you pay attention to the sounds, the tone of the chime indicates how many points you just scored (10, 100, or 1000), and if you count each ding, you'd know your whole score without looking up. The lights on the playfield typically give you good feedback on places to shoot for bigger points. Almost everything on a pinball machine provides feedback for the player.
+
+In fact, compared to some particular modes on more recent pinball machines, the lights on the machines on the old machines are a complete non-issue. On Attack from Mars, released in 1995, there's a mode called "Strobe Multiball." A white flashing light, repeatedly and continuously blinds while you're bombarded with 3 balls to juggle. I can normally play through it in hopes of scoring an extra ball, but it's not an enjoyable experience. I've watched players in tournament games simply wait for the mode to end, watching from the corner of their eye.
+
+A machine that took it too far, even for me, is Willy Wonka (2019). There is a mode on that machine where they show off every one of the colorful LED playfield lights with a cacophony of colors all fighting to be on display at the same time. Even worse, this mode happened while the rest of the modes remained the same, hiding the information about your best chances to score points. I always wait for this mode to end[^0 Cradle Ball] before continuing to play.
+
+These types modes primarily hide information to add to the challenge. That information might be the location of the ball. The location of good shots to shoot at right now. It could also be information on how your brain should keep functioning normally without entering seisure mode.
+
+... blah blah analog computer...
+
+## Potentially remove this or save it for another article
 First off, let's make it clear that I'm only talking about *flipper* pinball. Pre-flippers, pinball existed in a simpler form where the only action by the player was a pull of the ball launcher (and maybe bump the machine without the shop owner noticing). This era of pinball may give some clarity on the name; the game looked largely like plinko though with more creative placement of exit holes.
 
 # Electro-magnetic Era
@@ -89,7 +100,6 @@ Now, consider Labyrinth. There is a shot---referred to as a U-turn---that when y
 // Multiball difficulties
 // Directionality
 // Funness
-
 
 [^1]: A solenoid is coil of wires with a metal rod in the center. When current is sent through a solenoid's wire, it creates a magnetic field that drives the rod in a direction converting electricity into mechanical action.
 [^2]: I found another problem solenoid to fix, but the machine still couldn't even turn on without blowing a fuse. I think I blew 7 of them before I called in the big guns. It took the pinball repair specialist another 6 hours to find that a component that had developed a pit, causing it to not turn properly.

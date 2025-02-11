@@ -1,0 +1,96 @@
+# TODO, not this is more a tour of the eras there was a lot to go over. So I'm pulling it out more specifically
+
+# Electro-magnetic Era
+
+Pinball programming for about the early years of pinball's existence was accomplished entirely with circuits and physical mechanisms. You could consider these early machines to be analog computers. Instead of storing the score in bits to display digitally, a mechanical wheel receives an electrical impulse to turn, updating the score for the player to see. Instead of a simple variable, advancing the bonus quite literally advanced a mechanical bonus reel by a notch. Once the time to count the bonus comes, a drum spins counting down the notches as they are released, perhaps double or triple counting each due to an object being achieved.
+
+My 1972 Gottlieb made machine, "Fan-Tas-Tic", recently started on fire (don't worry it went out very quickly). A fuse blew preventing catastrophe and I was able to locate the solenoid[^1] that had been overloaded. It was very clearly fried and in need replacing, but doing so had not fixed the fuse problem[^2]. This lead to me learning quite a lot about pinball circuitry to try and locate the short circuit that was occurring. The old schematics (circuitry diagrams) that I found online were something to behold (and super overwhelming at first). The schematics have all in information that you could need, but there's notation to learn and nothing is laid out in a way that directly reflects what you see in screen. Even so, as much as it's a totally different skill set, it does begin to make sense in the context of modern day programming.
+
+You can see circuits to handle conditions (if the light is lit double the input to the score motor), circuits to loop (score 1000 bonus points for each time it has been advanced so far), and circuits that look a bit like functions (if the ball drained, advance to the next player, advance to the next ball if appropriate). And the wires in the machine are all color coded based on the schematics, but similar to outdated comments in updated code, some of the wires have been replaced with different colored ones over time. The biggest difference is that stack overflows blow fuses and if you're not too careful you could electrocute yourself.
+
+During this time in pinball's history, most of the innovation was with playfield design and 
+
+# Early Solid-state Era
+
+Wire and solenoids to convert electronic signal to physical action from the electro-magnetic (EM) era of pinball continue to be integral today, but in 1975 the first solid-state(SS) pinball machine was released, which marked a rapid shift toward digitalization of other aspects of pinball. Early solid-state pinball machines used ROM to store game rules, sounds and state with static RAM (SRAM)[^3].
+
+This one change opened a world of possibilities, which were quickly capitalized on by manufacturers. SS machines are identifiable by their 7-segment display[^4] to display scores. Electronic sounds became possible. Customizations for the game were made digital enabling a larger number of options. But most importantly the amount of space to store game logic and state was shrunk down dramatically. This made it possible for manufacturers to release bugfixes and updates[^5] for machines that had already been produced by swapping out the ROM chip. The code at this point was in essence a miniaturization of the circuits that we talked about for EMs, written with assembly but burned in the form of circuits onto the ROM chip.
+
+## Frameworks
+Assembly language is no walk in the park, though with some of complexities that we deal with in today's programming paradigms, one might see the allure of writing code in the ultimate green-field. Just variables and operators. Of course, if you know anything about business, when inefficiencies crop up, solutions will be found. As solid-state became the main method of creating pinball machines, manufacturers developed proprietary frameworks for machine coding.
+
+These frameworks iterated quickly during the early days, take for example the manufacturer Williams. Unlike many prototypes of eager developers today, both system 1 and system 2 never saw the light of production, both produced in 1976. System 3 was used for a production release in 1977, and 4 releases in 1978. By the end of 1980, System 4, System 6, System 6A, and System 7 had all been used in production releases[^6.5].  In the following 7 years, System 9, 11, 11a, 11b, and 11c all played a part supporting nearly 40 new machines.
+
+## Stuck balls
+One of the first specific to pinball challenges we can talk about comes in here. Enabled by the digital state management, the physical playfields got increasingly populated and complicated. Any child can tell you that more places to hide makes hide-and-seek much more fun; pinball players will disagree. The extra places for a ball to hide outside the normal flow of the game can cut short a fun time. Thus a need for an automated ball search was first met in shortly before the. The general idea is that all the places for a ball to might be stuck or lost should be fired to move and hopefully free the ball back into play. But implemented poorly, this could cause a whole host of problems.
+
+Let's consider *all* reasons for a stuck ball.
+
+The ball is stuck on a feature[^7]. This is the main reason that a ball search will help. This is the naive case that's easy to cater to. Just look at the playfield, what move's? Make each thing move, probably with a slight offset in time for features that are close to each other. Repeat this a few times with a delay. Of course, sometimes the ball may still be stuck...
+
+The ball is somewhere entirely off the playfield and not a feature. It's almost definite that a ball search won't help in this case. It's also unlikely that the ball will come free if the player were to continue playing with a different ball. So the solution for uninterrupted play with the average player is, after repeating the search a few times, simply provide a fresh new ball to the player. This does add a disadvantage to a player during a multi-ball that would otherwise use all the balls contained in the machine.
+
+The ball is stuck somewhere with no nearby features, but still on the playfield: it's possible that the vibrations from a ball search will free the ball, but not likely. Realistically this will need the player to shake the machine to get it out. Most players will instinctively shake out this sort of stuck ball if visible, but sometimes it happens out of obvious sight. This sort of stuck ball causes problems with the last solution we decided on. If another ball enters the playfield, that ball will likely be hit by the new ball and come free. You now have two balls in play when you should have had 1. There is no way for the machine to know that this is the case. So you are now in the midst of a death multi-ball. If you lose either ball, your turn will end and the other ball will be forced to drain. 
+
+The ball was "lost", likely by a ball lock switch malfunctioning, or by hopping over the drain detector switch. These two positions are valid places for the ball to be, so the best solution for these is good playfield validation. The machine should notice that there's a new ball in the drain trough and correctly end your ball. Ideally this happens in real time. If the ball ends up in a lock and the switch is faulty, we have another recipe for a death multi-ball. In this case, simply locking the sneaky ball is a fine solution. As always when the real world and digital world touch, it is very important to accept your strongest signals for the current state, instead of assuming the state must be impossible.
+
+In real world implementations, this question of "to launch a new ball, or ball search endlessly" is left to the operator/owner of the machine to choose in settings. This allows making changes for locations that have mostly casual players and no-one to help unstick a ball or for tournament conditions and officials who can unstick balls manually. Interestingly, I've never seen a machine that offers for the player to make the choice to wait or launch a new ball once the ball has been determined to be lost. The real trick (that I always seem to forget when it matters) is to hold down a flipper, convincing the machine that the ball is under your control rather than being stuck[^7a].
+
+The solid-state era continues, but the makes a very distinctive change that deserves it's own era.
+
+# The Dot Matrix Display Era
+
+The Dot Matrix Display(DMD) represented a new major advancement in pinball. A DMD is basically a screen where every pixel is individually visible with space between the pixels. Instead of limiting 7 segment displays, graphic designers were freed to make exciting cutscenes with surprising detail to introduce modes. Jackpot in big letters accompanied shout-outs during multi-balls. And even more importantly, reasonable amounts of text could describe more complicated rules.
+
+In the end 
+
+# Pinball 2000 - A Dead-end
+
+There were 2 machines of a style named "Pinball 2000" that were intended to be an innovation and new inflection point for the direction of pinball during a time when arcade machines and video game consoles were taking over. Instead Williams halted development for these project the same year it was first released[7.1]. Revenge from Mars and Star Wars: Episode 1. These machines attempted to move one step further into merging pinball with classic arcade style games. They made use of a large CRT screen that connected to the playfield and attempted to hide the boarder between the two. Having played a copy of Revenge from Mars before, I can attest to this merging of realities; however, instead of immersion this results in mostly confusion (and anger[^7.5]).
+
+There were a host of these problems: hardware problems, buggy software problems, UI problems, backward compatibility issues and (as with any large departure from a standard) problems with reception from the most devout pinballers. For this article, the most relevant aspect to look at is UI and software bugs, which happen to be closely linked in this situation.
+
+As is the nature of something that's innovating and ground-breaking, brand new tooling needed to be developed. Since the merging of screen and playfield didn't have mature solutions to work with. Unsurprisingly, this lead large concentration of bugs in this interface. Even more damning, there were bugs at launch that prevented progressing through the deep rule set.
+
+Previous (and future) machines use their display to give instructions to the player and provide supplemental graphics for enjoyment. The display is however not entirely pivotal for play. I recently participated in a tournament, where we covered all displays with a board and only uncovered when the game was over to find out the scores. It was a blast! Though importantly, I already know the rules for these machines, and was able to track progress with playfield indicators and counting shots. On the Pinball 2000 machines, the information that you successfully hit a shot, depends on the screen correctly conveying that info.
+
+This was an early iteration of a problem that has become noticeable in newer LCD screen pinball machines as well---*too* much information shown at once. As with any cluttered UI, important information gets lost or is hard locate quickly in a fast paced game like pinball. With Dot Matrix Displays it was typical for the main object that you're following to dominate the display and most of the game state information about progression is kept in dedicated sections of the playfield. Moving this information to a screen that requires you to look away from the playfield and might have the information that you need hidden by graphics due to the current encounter was unprecedented at the time.
+
+# Flash Memory
+
+In 2003, the first pinball machine with flash memory storage was released. Similar to the step from circuits with mechanical memory, this was a new huge new step forward for pinball machine capabilities. The first benefit of this change is that it allowed very easy post-release code updates for the machine[^8]. This made possible the "deep game". Solid state built on simple beginnings and added more advanced rules. But this 
+
+
+
+# Modern era
+The modern era of pinball does not have player evident coding advances. Developers can use comfortable languages like C/C++ or hobbyists writing mods can even use a python wrapper to communicate with the system. One of the most noticeable aspects of modern machines is 
+
+One of the shaping factors of the pinball manufacturing decisions now-a-days is the shift from pinball machines mainly existing in arcades to becoming collectors items. According an interview with Stern's CEO[^9] more than 70% of new machines purchased are now by consumers rather than enterprises. Some of these machines will end up in breweries and arcade bars instead of the home, but compare this to 1995, when less than 5% of machines were purchased by consumers. This has resulted in more design decisions to benefit the player over decisions to benefit someone collecting quarters.
+
+Let's compare the ethos of one of my current favorite machines, Labyrinth (2023) versus White Water (1993). In White Water, one of the primary objectives is a shot into a whirlpool. After watching the ball spin around a funnel a few times, it sinks below the playfield. A few seconds later, the ball is spit out *hard* at your right flipper. This does evoke the theme of the machine, if you imagine a raft forced under the water suddenly *bursting* back up to the surface. Still in line with the theme is that it's difficult to be in control of your fate. Your reward for a successful shot is a sometimes impossible to save fast ball.
+
+Now, consider Labyrinth. There is a shot---referred to as a U-turn---that when you hit it correctly, after a short loop it is directed to very near the center of the playfield right between the flippers. Instead of ending the ball and punishing the player, losing the ball this way (without delay) results in a ball save[^10]. In addition, there's a ball save mechanic in the left out lane. 
+
+  you can imagine After this shot, the ball is fed out 
+
+
+// Multiball difficulties
+// Directionality
+// Funness
+
+
+
+
+[^1]: A solenoid is coil of wires with a metal rod in the center. When current is sent through a solenoid's wire, it creates a magnetic field that drives the rod in a direction converting electricity into mechanical action.
+[^2]: I found another problem solenoid to fix, but the machine still couldn't even turn on without blowing a fuse. I think I blew 7 of them before I called in the big guns. It took the pinball repair specialist another 6 hours to find that a component that had developed a pit, causing it to not turn properly.
+[^3]: Static RAM requires constant power low-level power to hold its memory and is more expensive that dynamic RAM, but it's significantly more simple to work with. Imagine a latch that is open or closed as long as power is holding it there.
+[^4]: Picture an old calculator.
+[^5]: Talk about a long compilation process https://xkcd.com/303/.
+[^6]: Examples include: Number of balls to play, cost to play, replay scores, and game volume.
+[^6.5]: Xbox fans would appreciate this level linearity in version names. 
+[^7]: By this point in pinball's history, in addition to flippers and spinners there are gates that open and close to redirect, locking mechanisms to hold a ball for later multi-balls, and "toys" that may be protracted/retracted/lifted/lowered. These could all be considered a feature.
+[^7a]: Ball control is a whole other topic, but skilled pinball players frequently "trap" the ball to hold it cradled on top of the flipper. This allows making more measured shots (or sometimes just a second to breath).
+[^7.1]: They weren't mad, just disappointed.
+[^8]: This could be considered to be a negative as well. Similar to problems with modern video game companies releasing buggy, not ready games, in recent years, many machines have been released with a large number of game-breaking bugs and while the code is still quite incomplete.
+[^9]: https://www.retailbrew.com/stories/2024/01/22/pinball-machine-maker-expands-with-rising-demand
+[^10]: A ball save---typically occurring during the first 5 to 10 second period of a new ball or a multiball---is when the machine recovers a lost ball with no penalty to the player.

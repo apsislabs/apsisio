@@ -1,3 +1,12 @@
+---
+layout: post
+author: joey
+title: Burnout and Recovery
+image: '/img/posts/balance-vs-burnout.jpg'
+date: 2025-04-02
+credit: Nataliya Vaitkevich
+---
+
 Ostensibly, I was doing well. I was managing a small team after being promoted internally, with compensation better than most of my friends in a similar age bracket. I found pinball and rock climbing as hobbies of choice, and I frequently hosted game nights[^1] with friends at my house that I bought not long before housing prices surged.
 
 Burnout is insidious. It’s a slow burn at first that you may not recognize. Eventually a catalyst causes it to explode like gasoline on coals. That catalyst for me (and many others) was the pandemic.

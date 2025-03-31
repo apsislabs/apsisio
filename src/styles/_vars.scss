@@ -1,3 +1,5 @@
+@use "sass:color";
+
 //= COLORS
 
 $apsis_blue: #2173aa;
@@ -23,11 +25,11 @@ $border_orange: rgba($apsis_orange, 0.015);
 $outline_orange: rgba($apsis_orange, 0.25);
 $surface_orange: rgba($apsis_orange, 0.075);
 
-$gray_darker: darken($apsis_dark, 15%);
-$gray_dark: darken($apsis_gray, 5%);
-$gray: lighten($apsis_gray, 15%);
-$gray_lighter: lighten($apsis_gray, 30%);
-$gray_lightest: lighten($apsis_gray, 40%);
+$gray_darker: color.scale($apsis_dark, $lightness: 15%);
+$gray_dark: color.scale($apsis_gray, $lightness: 5%);
+$gray: color.scale($apsis_gray, $lightness: 15%);
+$gray_lighter: color.scale($apsis_gray, $lightness: 30%);
+$gray_lightest: color.scale($apsis_gray, $lightness: 40%);
 
 $shadow: rgba($apsis_dark, 0.5);
 

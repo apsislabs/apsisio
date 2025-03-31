@@ -1,12 +1,13 @@
+@use "sass:meta";
 @use "./vars";
 @use "./theme";
 
 @import "vendor/reset.css";
 @import "vendor/dracula.css";
 
-@import "utils/animations";
+@include meta.load-css("utils/animations");
 
-@import "styles/global";
+@include meta.load-css("global");
 
 html,
 body {

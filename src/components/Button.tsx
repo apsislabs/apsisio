@@ -5,9 +5,9 @@ import styles from "styles/components/Button.module.scss";
 
 type BaseButtonProps = {
   children: React.ReactNode;
-  tag?: React.ComponentType | keyof JSX.IntrinsicElements;
-  EndIcon?: React.ComponentType | keyof JSX.IntrinsicElements;
-  StartIcon?: React.ComponentType | keyof JSX.IntrinsicElements;
+  tag?: React.ComponentType;
+  EndIcon?: React.ComponentType<any>;
+  StartIcon?: React.ComponentType<any>;
   className?: string;
   variant?: "primary" | "secondary" | "tertiary";
   size?: "lg" | "sm";

@@ -54,10 +54,10 @@
 
     .markdown-alert-title {
       svg {
-        fill: color.scale($color, $lightness: 15%);
+        fill: color.adjust($color, $lightness: 15%);
       }
 
-      color: color.scale($color, $lightness: 15%);
+      color: color.adjust($color, $lightness: 15%);
     }
   }
 }

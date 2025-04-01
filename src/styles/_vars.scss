@@ -25,11 +25,11 @@ $border_orange: rgba($apsis_orange, 0.015);
 $outline_orange: rgba($apsis_orange, 0.25);
 $surface_orange: rgba($apsis_orange, 0.075);
 
-$gray_darker: color.scale($apsis_dark, $lightness: 15%);
-$gray_dark: color.scale($apsis_gray, $lightness: 5%);
-$gray: color.scale($apsis_gray, $lightness: 15%);
-$gray_lighter: color.scale($apsis_gray, $lightness: 30%);
-$gray_lightest: color.scale($apsis_gray, $lightness: 40%);
+$gray_darker: color.adjust($apsis_dark, $lightness: -15%);
+$gray_dark: color.adjust($apsis_gray, $lightness: -5%);
+$gray: color.adjust($apsis_gray, $lightness: 15%);
+$gray_lighter: color.adjust($apsis_gray, $lightness: 30%);
+$gray_lightest: color.adjust($apsis_gray, $lightness: 40%);
 
 $shadow: rgba($apsis_dark, 0.5);
 

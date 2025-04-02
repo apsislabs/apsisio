@@ -7,6 +7,7 @@ date: 2025-04-02
 credit: Nataliya Vaitkevich
 excerpt: At Apsis, the general burnout triggers experienced so commonly in soul-crushing corporate jobs are the guidelines for how *not* to treat employees.
 ---
+
 Hi, I'm Joey, I've been at Apsis for nearing 5 years now. During that time, I sold my house, got married, became the dog-father to two Sheep-a-doodles, and now expect a tiny human come the fall. When asked my prospective 5 year plan in the job interview, my truthful answer was: "Still working for Apsis." Here's why I was so confident.
 
 Ostensibly, I was doing well. I was managing a small team after being promoted internally, with compensation better than most of my friends in a similar age bracket. I found pinball and rock climbing as hobbies of choice, and I frequently hosted game nights[^1] with friends at my house that I bought not long before housing prices surged.

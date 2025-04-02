@@ -12,7 +12,7 @@ type SectionProps = {
   narrow?: boolean;
   centerLabel?: boolean;
   theme?: "default" | "blue" | "gray";
-  Icon?: React.ComponentType | keyof JSX.IntrinsicElements;
+  Icon?: React.ComponentType<any>;
   children: React.ReactNode;
 };
 

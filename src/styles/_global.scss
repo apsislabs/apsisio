@@ -1,4 +1,5 @@
-@use "styles/vars";
+@use "sass:color";
+@use "./vars";
 
 .text-primary {
   color: var(--apsis_blue);
@@ -53,10 +54,10 @@
 
     .markdown-alert-title {
       svg {
-        fill: darken($color, 15%);
+        fill: color.adjust($color, $lightness: 15%);
       }
 
-      color: darken($color, 15%);
+      color: color.adjust($color, $lightness: 15%);
     }
   }
 }

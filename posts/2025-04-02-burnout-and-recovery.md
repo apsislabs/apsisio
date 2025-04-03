@@ -20,7 +20,7 @@ I had known for a while that I should look for a new job, but was paralyzed by b
 
 At Apsis, the general burnout triggers experienced so commonly in soul-crushing corporate jobs are the guidelines for how *not* to treat employees. While not infallible, Apsis has been an excellent place for me to recover and thrive. 
 
-1. Workload—This is a priority for Apsis. See [work-sustainably] and [don-t-be-a-hero] to hear from our founders on this.
+1. Workload—This is a priority for Apsis. See ["Work Sustainably"](/blog/2015/04/23/work-sustainably/) and ["Don't be a hero"](/blog/2017/01/31/don-t-be-a-hero/) to hear from our founders on this.
 1. Perceived Autonomy—Apsis is, in every way it can be, about giving the individual control back. Whether that control being in your schedule or about what work you take on. It's fully remote, so you can be a digital nomad. We make every effort to give everyone a chance to choose the projects they work on. 
 1. Community—We are a close-knit team and all end up working with each other on different projects[^4]. We only judge each other when someone overworks (and then only lightly since we're only human). We've supported each other through a variety of life events necessitating extended time off with full pay[^5]. Each Monday during our planning meeting, every team member is given the chance to voice any concerns about how the last week went.
 1. Reward—Most jobs will dangle money and prestige as the reward for your efforts but, Apsis believes in fair pay for more time with your family or to chase other ambitions.

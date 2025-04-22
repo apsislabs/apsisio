@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { Loader2Icon } from "lucide-react";
 import Link, { LinkProps } from "next/link";
 import { HTMLProps } from "react";
 import styles from "styles/components/Button.module.scss";
@@ -11,6 +12,7 @@ type BaseButtonProps = {
   className?: string;
   variant?: "primary" | "secondary" | "tertiary";
   size?: "lg" | "sm";
+  loading?: boolean;
   disabled?: boolean;
 };
 
@@ -21,7 +23,7 @@ type LinkButtonProps = BaseButtonProps & {
 
 type ButtonButtonProps = BaseButtonProps & {
   href?: undefined;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & Omit<HTMLProps<HTMLButtonElement>, "size">;
 
 type ButtonProps = LinkButtonProps | ButtonButtonProps;
@@ -35,6 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
   tag = "button",
   variant = "primary",
   size,
+  loading = false,
   ...props
 }) => {
   const Component = href ? Link : tag;
@@ -45,20 +48,29 @@ export const Button: React.FC<ButtonProps> = ({
       href={href}
       className={clsx(
         styles.button,
+        loading && styles["button--loading"],
         variant == "primary" && styles["button--primary"],
         variant == "secondary" && styles["button--secondary"],
         variant == "tertiary" && styles["button--tertiary"],
         size == "lg" && styles["button--lg"],
         size == "sm" && styles["button--sm"],
-        className,
+        className
       )}
       {...props}
     >
-      {StartIcon && (
-        <StartIcon size={18} className={styles.button__start_icon} />
+      {loading ? (
+        <>
+          <Loader2Icon size={18}  className="spin" />
+        </>
+      ) : (
+        <>
+          {StartIcon && (
+            <StartIcon size={18} className={styles.button__start_icon} />
+          )}
+          {children}
+          {EndIcon && <EndIcon size={18} className={styles.button__end_icon} />}
+        </>
       )}
-      {children}
-      {EndIcon && <EndIcon size={18} className={styles.button__end_icon} />}
     </Component>
   );
 };

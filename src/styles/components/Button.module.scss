@@ -18,7 +18,8 @@
   user-select: none;
   outline: 3px solid transparent;
 
-  &[disabled] {
+  &[disabled],
+  &--loading {
     opacity: 0.5;
     pointer-events: none;
     &:hover {

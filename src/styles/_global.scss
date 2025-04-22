@@ -1,6 +1,25 @@
 @use "sass:color";
 @use "./vars";
 
+.spin {
+  animation: spin ease-in-out 0.75s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
 .text-primary {
   color: var(--apsis_blue);
 }
@@ -9,12 +28,50 @@
   color: var(--apsis_orange);
 }
 
+.text-sm {
+  font-size: var(--font_size_sm);
+}
+
 .text-muted {
   opacity: 0.75;
 }
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-weight: 700;
+  color: var(--gray_dark);
+  font-size: var(--font_size_sm);
+  margin-bottom: var(--spacing_sm);
+
+  &.required {
+    &::after {
+      content: "*";
+      color: var(--apsis_orange);
+      vertical-align: super;
+    }
+  }
+}
+
+.input {
+  padding: var(--spacing_xs) var(--spacing_sm);
+  background-color: var(--section_background);
+  color: var(--text_color);
+  display: block;
+  border: 1px solid var(--border_gray);
+  width: 100%;
+
+  &.error {
+    border: 1px solid var(--apsis_orange);
+  }
 }
 
 .link {
@@ -48,21 +105,24 @@
 }
 
 @mixin alert($name, $color) {
-  &.markdown-alert-#{$name} {
+  &.markdown-alert-#{$name},
+  &.alert-#{$name} {
     border-left-color: $color;
     background-color: rgba($color, 0.05);
 
-    .markdown-alert-title {
+    .markdown-alert-title,
+    .alert-title {
       svg {
         fill: color.adjust($color, $lightness: 15%);
       }
 
-      color: color.adjust($color, $lightness: 15%);
+      color: $color;
     }
   }
 }
 
-.markdown-alert {
+.markdown-alert,
+.alert {
   border-left: 4px solid var(--border_gray);
   padding: var(--spacing_md);
   margin-bottom: var(--spacing_md);
@@ -74,16 +134,18 @@
     margin-bottom: 0;
   }
 
-  .markdown-alert-title {
+  .markdown-alert-title,
+  .alert-title {
     display: flex;
     align-items: center;
     gap: var(--spacing_sm);
     font-weight: bold;
-    margin-bottom: var(--spacing_sm);
+    margin-bottom: var(--spacing_xs);
   }
 
   @include alert("note", vars.$apsis_blue);
   @include alert("tip", vars.$apsis_green);
+  @include alert("success", vars.$apsis_green);
   @include alert("important", vars.$apsis_purple);
   @include alert("warning", vars.$apsis_orange);
   @include alert("caution", vars.$apsis_red);

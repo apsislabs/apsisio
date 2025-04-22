@@ -36,8 +36,8 @@ export const Footer = () => (
               </Link>
             </li>
             <li>
-              <Link className="link" href="mailto:contact@apsis.io">
-                contact@apsis.io
+              <Link className="link" href="/hire">
+                Hire us
               </Link>
             </li>
           </ul>

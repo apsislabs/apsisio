@@ -19,7 +19,7 @@ export const Cta: React.FC<CtaProps> = ({ title, subtitle, button }) => {
       </header>
 
       <div className={styles.cta__actions}>
-        <Button href="mailto:contact@apsis.io?subject=Apsis Project Inquiry" size="lg" EndIcon={ChevronRight}>{button}</Button>
+        <Button href="/hire" size="lg" EndIcon={ChevronRight}>{button}</Button>
       </div>
     </div>
   );

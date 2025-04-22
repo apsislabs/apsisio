@@ -90,7 +90,7 @@ export const Hero = () => {
 
           <div className={styles.hero__actions}>
             <Button
-              href="mailto:contact@apsis.io?subject=Apsis Project Inquiry"
+              href="/hire"
               EndIcon={ChevronRight}
             >
               Let's get to work

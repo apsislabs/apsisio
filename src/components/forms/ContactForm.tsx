@@ -118,6 +118,7 @@ export const ContactForm = () => {
           required
           data-lpignore="true"
           data-1p-ignore
+          autoComplete="name"
           {...register("name", {
             required: "A name is required",
           })}
@@ -131,6 +132,7 @@ export const ContactForm = () => {
           required
           data-lpignore="true"
           data-1p-ignore
+          autoComplete="organization"
           {...register("company", {
             required: "Please provide a company or project name",
           })}
@@ -143,6 +145,7 @@ export const ContactForm = () => {
           error={errors.email}
           required
           type="email"
+          autoComplete="email"
           data-lpignore="true"
           data-1p-ignore
           {...register("email", {
@@ -197,6 +200,7 @@ export const ContactForm = () => {
             className={clsx("input", errors.projectDetail && "error")}
             rows={3}
             id="project_detail"
+            autoComplete="off"
             {...register("projectDetail")}
           ></textarea>
         </FieldWrapper>

@@ -30,7 +30,7 @@ export const SiteLayout: React.FC<
           actions={
             !showTagline && (
               <Button
-                href="mailto:contact@apsis.io?subject=Apsis Project Inquiry"
+                href="/hire"
                 EndIcon={ChevronRight}
               >
                 Work with us

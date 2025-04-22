@@ -120,7 +120,7 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
 
             <footer>
               <Button
-                href="mailto:contact@apsis.io?subject=Apsis Project Inquiry"
+                href="/hire"
                 EndIcon={ChevronRight}
               >
                 Drop us a line

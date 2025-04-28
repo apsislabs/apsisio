@@ -9,7 +9,7 @@ import fg from "fast-glob";
 import { processMarkdown } from "./markdown";
 import yaml from "js-yaml";
 
-import { PostFrontmatter, Post, PostParams, Person } from "lib/types";
+import { PostFrontmatter, Post, PostParams, Person, Job } from "lib/types";
 import _ from "lodash";
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -27,7 +27,7 @@ export const getRandomCta = () => {
 export const getPeople = async (): Promise<Record<string, Person>> => {
   const peopleFile = readFileSync(
     path.join(dataDirectory, "people.yml"),
-    "utf8",
+    "utf8"
   );
   return yaml.load(peopleFile);
 };
@@ -36,8 +36,19 @@ export const getCurrentPeople = async (): Promise<Record<string, Person>> => {
   const people = await getPeople();
 
   return Object.fromEntries(
-    Object.entries(people).filter(([_, p]) => p.current),
+    Object.entries(people).filter(([_, p]) => p.current)
   );
+};
+
+export const getJobs = async (): Promise<Record<string, Job>> => {
+  const jobFile = readFileSync(path.join(dataDirectory, "jobs.yml"), "utf8");
+  return yaml.load(jobFile);
+};
+
+export const getActiveJobs = async (): Promise<Record<string, Job>> => {
+  const jobs = await getJobs();
+
+  return Object.fromEntries(Object.entries(jobs).filter(([_, j]) => j.active));
 };
 
 const getPostPaths = () => {
@@ -124,7 +135,7 @@ async function getAllPosts(): Promise<Post[]> {
         person: people[matterResult.data.author] ?? null,
         ...matterResult.data,
       };
-    }),
+    })
   );
 }
 
@@ -157,7 +168,7 @@ export async function getPostData({
   const people = await getPeople();
   const fullPath = path.join(
     postsDirectory,
-    `${year}-${month}-${day}-${slug}.md`,
+    `${year}-${month}-${day}-${slug}.md`
   );
   const fileContents = readFileSync(fullPath, "utf8");
   const { content, data } = await parseMatter(fileContents);

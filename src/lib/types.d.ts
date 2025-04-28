@@ -51,3 +51,11 @@ export type Post = Modify<
   },
   FrontmatterData
 >;
+
+
+export type Job = {
+  title: string;
+  content: string;
+  salary: string;
+  active: boolean;
+}

@@ -40,6 +40,11 @@ export const Footer = () => (
                 Hire us
               </Link>
             </li>
+            <li>
+              <Link className="link" href="/jobs">
+                Work here
+              </Link>
+            </li>
           </ul>
         </small>
 
@@ -55,6 +60,7 @@ export const Footer = () => (
                 Code of Conduct
               </Link>
             </li>
+
             <li>
               <Link className="link" href="/mdbn">
                 Data Breach Notification Policy
@@ -71,10 +77,18 @@ export const Footer = () => (
 
         <small>
           <ul className="inline_list">
-            <li>Seattle <span className="text-muted">→</span></li>
-            <li>Boulder <span className="text-muted">→</span></li>
-            <li>Boston <span className="text-muted">→</span></li>
-            <li>Portland <span className="text-muted">→</span></li>
+            <li>
+              Seattle <span className="text-muted">→</span>
+            </li>
+            <li>
+              Boulder <span className="text-muted">→</span>
+            </li>
+            <li>
+              Boston <span className="text-muted">→</span>
+            </li>
+            <li>
+              Portland <span className="text-muted">→</span>
+            </li>
             <li>Hartford</li>
           </ul>
         </small>

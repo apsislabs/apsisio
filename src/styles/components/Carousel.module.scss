@@ -21,21 +21,21 @@
     transform: translate3d(0, 0, 0);
     flex: 0 0 var(--slide-size);
     min-width: 0;
-    padding: var(--spacing_lg);
+    padding: var(--space-m);
   }
 
   &__controls {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing);
-    margin-top: var(--spacing_lg);
+    gap: var(--space-s);
+    margin-top: var(--space-m);
   }
 
   &__buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing_sm);
+    gap: var(--space-xs);
     align-items: center;
   }
 }

@@ -6,13 +6,13 @@
   overflow-x: hidden;
 
   &--gray {
-    --section_background: var(--surface_gray);
-    --guide_color: var(--border_gray);
+    --section_background: var(--apsis_gray_surface);
+    --guide_color: var(--apsis_gray_border);
   }
 
   &--blue {
-    --section_background: var(--surface_blue);
-    --guide_color: var(--border_blue);
+    --section_background: var(--apsis_blue_surface);
+    --guide_color: var(--apsis_blue_border);
   }
 
   &--bordered {
@@ -22,14 +22,14 @@
 
   &--spaced {
     .section__content {
-      padding: vars.$spacing_xl vars.$spacing_lg;
+      padding: var(--space-l) var(--space-m);
 
       @media (min-width: vars.$tablet) {
-        padding: vars.$spacing_xl * 2 vars.$spacing_xl;
+        padding: var(--space-xl) var(--space-l);
       }
 
       @media (min-width: vars.$desktop) {
-        padding: vars.$spacing_xl * 3 vars.$spacing_xl * 2;
+        padding: var(--space-2xl) var(--space-xl);
       }
     }
   }
@@ -42,7 +42,7 @@
       content: "";
       background-color: var(--guide_color);
       height: 1px;
-      width: calc((100vw - var(--site_width)) / 2 + #{vars.$spacing});
+      width: calc((100vw - var(--site_width)) / 2 + var(--space));
     }
 
     &::before {
@@ -59,10 +59,10 @@
   }
 
   &--narrow {
-    --site_width: #{vars.$site_width * 0.5};
-
-    @media (min-width: vars.$desktop) {
-      --site_width: #{vars.$site_width * 0.6};
+    // --site_width: var(--narrow_width);
+    .section__content {
+      margin: 0 auto;
+      max-width: var(--narrow_width);
     }
   }
 
@@ -79,7 +79,7 @@
   &__guides {
     height: 100%;
     margin: 0 auto;
-    max-width: vars.$site_width;
+    max-width: var(--site_width);
     width: 100%;
     border-left: 1px solid var(--guide_color);
     border-right: 1px solid var(--guide_color);
@@ -92,29 +92,29 @@
   }
 
   &__label_container {
-    background-color: vars.$surface_blue;
-    padding: vars.$spacing_xs vars.$spacing;
+    background-color: var(--apsis_blue_surface);
+    padding: var(--space-2xs) var(--space);
     display: inline-block;
 
     @media (min-width: vars.$desktop) {
       position: absolute;
-      padding-right: vars.$spacing_lg * 2;
+      padding-right: var(--space-l);
     }
 
-    @media (min-width: vars.$xldesktop) {
+    @media (min-width: vars.$desktop_xl) {
       white-space: nowrap;
       transform: translateX(calc(-100vw / 2 + var(--site_width) / 2));
-      width: calc(((100vw - var(--site_width)) / 2) + #{vars.$spacing_lg});
+      width: calc(((100vw - var(--site_width)) / 2) + #{var(--space-m)});
       transition: width ease-in-out 0.25s;
-      top: vars.$spacing_xl;
+      top: var(--space-l);
 
       &:hover {
-        width: calc(((100vw - var(--site_width)) / 2) + #{vars.$spacing_xl});
+        width: calc(((100vw - var(--site_width)) / 2) + #{var(--space-l)});
       }
     }
 
     &--centered {
-      @media (min-width: vars.$xldesktop) {
+      @media (min-width: vars.$desktop_xl) {
         top: 50%;
         transform: translateX(calc(-100vw / 2 + var(--site_width) / 2)) translateY(-50%);
       }
@@ -122,8 +122,8 @@
   }
 
   &__label {
-    font-family: vars.$mono;
-    color: vars.$apsis_blue;
+    font-family: var(--mono);
+    color: var(--apsis_blue);
 
     display: flex;
     flex-direction: row;
@@ -132,6 +132,6 @@
   }
 
   &__icon {
-    margin-right: vars.$spacing;
+    margin-right: var(--space-s);
   }
 }

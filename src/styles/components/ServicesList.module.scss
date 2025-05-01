@@ -1,10 +1,10 @@
 @use 'styles/vars';
 
 $variant_colors: (
-  "blue": vars.$apsis_blue,
-  "pink": vars.$apsis_fuschia,
-  "green": vars.$apsis_green,
-  "yellow": vars.$apsis_orange,
+  "blue": var(--apsis_blue),
+  "pink": var(--apsis_fuschia),
+  "green": var(--apsis_green),
+  "yellow": var(--apsis_orange),
 );
 
 .services_list {
@@ -18,26 +18,26 @@ $variant_colors: (
 
   &__title {
     color: var(--apsis_blue);
-    margin-bottom: var(--spacing_sm);
+    margin-bottom: var(--space-xs);
     font-weight: 700;
     display: flex;
     align-items: center;
   }
 
   &__icon {
-    margin-right: var(--spacing_sm);
+    margin-right: var(--space-xs);
   }
 
   &__list {
     padding-left: 2rem;
-    margin-left: var(--spacing);
+    margin-left: var(--space-s);
 
     li::before {
       content: "•";
       color: var(--gray);
       display: inline-block;
-      width: var(--spacing);
-      margin-left: calc(-1 * var(--spacing_xl));
+      width: var(--space-s);
+      margin-left: calc(-1 * var(--space-l));
       font-weight: 600;
     }
   }

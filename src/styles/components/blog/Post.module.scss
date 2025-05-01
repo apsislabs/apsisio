@@ -1,18 +1,14 @@
 @use "styles/vars";
 @use "styles/global";
 
-.post-wrapper {
-  
-}
-
 .post {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing_lg);
+  gap: var(--space-m);
 
   &__title {
-    font-size: vars.$font_size_h1;
-    color: vars.$apsis_blue;
+    font-size: var(--font_size_h2);
+    color: var(--apsis_blue);
     margin: 0;
 
     a {
@@ -23,7 +19,7 @@
   &__header {
     display: flex;
     flex-direction: column;
-    gap: vars.$spacing_lg;
+    gap: var(--space-m);
   }
 
   &__content {
@@ -31,8 +27,8 @@
   }
 
   &__image-wrapper {
-    margin-left: vars.$spacing_md * -3;
-    margin-right: vars.$spacing_md * -3;
+    margin-left: calc(var(--space-xl) * -1);
+    margin-right: calc(var(--space-xl) * -1);
 
     overflow: hidden;
 
@@ -47,20 +43,20 @@
   }
 
   &__photo-credit {
-    color: vars.$gray_lighter;
+    color: var(--apsis_gray_lighter);
     font-style: italic;
     font-weight: 300;
-    font-size: vars.$font_size_sm;
-    margin-left: vars.$spacing_md * 3;
+    font-size: var(--font_size_sm);
+    margin-left: var(--space-xl);
   }
 
   &__meta {
-    font-size: vars.$font_size_sm;
-    color: vars.$gray;
+    font-size: var(--font_size_sm);
+    color: var(--apsis_gray_light);
   }
 
   &--list {
-    margin-bottom: vars.$spacing_xl * 2;
+    margin-bottom: var(--space-xl);
 
     &:last-child {
       margin-bottom: 0;
@@ -68,10 +64,10 @@
   }
 
   &--list-small {
-    margin-bottom: vars.$spacing_lg;
+    margin-bottom: var(--space-m);
 
     .post__title {
-      font-size: vars.$font_size_h3;
+      font-size: var(--font_size_h3);
       margin: 0;
     }
   }

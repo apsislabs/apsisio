@@ -1,18 +1,18 @@
 @use 'styles/vars';
 
 $variant_colors: (
-  "blue": vars.$apsis_blue,
-  "pink": vars.$apsis_fuschia,
-  "green": vars.$apsis_green,
-  "gold": vars.$apsis_orange,
+  "blue": var(--apsis_blue),
+  "pink": var(--apsis_fuschia),
+  "green": var(--apsis_green),
+  "gold": var(--apsis_orange),
 );
 
 .service_row {
   &__row {
-    margin-bottom: calc(var(--spacing_lg) * 2);
+    margin-bottom: var(--space-xl);
 
     @media (min-width: vars.$desktop) {
-      margin-bottom: calc(var(--spacing_lg) * 4);
+      margin-bottom: var(--space-2xl);
 
       &:last-of-type {
         margin-bottom: 0;
@@ -21,7 +21,7 @@ $variant_colors: (
   }
 
   &__title {
-    margin-bottom: var(--spacing_md);
+    margin-bottom: var(--space);
     font-size: var(--font_size_h4);
     font-weight: 700;
   }
@@ -31,7 +31,7 @@ $variant_colors: (
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--spacing_lg);
+    margin-bottom: var(--space-m);
 
     @media (min-width: vars.$desktop) {
       margin-bottom: 0;

@@ -3,11 +3,11 @@
 .bio {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing);
+  gap: var(--space-s);
 
   @media (min-width: vars.$mobile) {
     flex-direction: row;
-    gap: var(--spacing_lg);
+    gap: var(--space-m);
   }
 
   &--small {
@@ -29,7 +29,7 @@
   &__header {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing_sm);
+    gap: var(--space-xs);
   }
 
   &__title,
@@ -48,13 +48,13 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing);
+    gap: var(--space-s);
   }
 
   &__social {
     display: flex;
     flex-direction: row;
-    gap: var(--spacing);
+    gap: var(--space-s);
     align-items: center;
 
     list-style: none;
@@ -67,7 +67,7 @@
     margin: 0;
 
     color: var(--apsis_blue);
-    transition: color vars.$easing vars.$timing_sm;
+    transition: color var(--easing) var(--timing_sm);
     &:hover {
       color: var(--apsis_dark);
     }

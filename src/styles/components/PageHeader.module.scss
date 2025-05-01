@@ -3,7 +3,7 @@
 .page_header {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing);
+  gap: var(--space-s);
 
   &__title {
     margin: 0;

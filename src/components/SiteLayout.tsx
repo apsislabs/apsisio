@@ -32,6 +32,7 @@ export const SiteLayout: React.FC<
               <Button
                 href="/hire"
                 EndIcon={ChevronRight}
+                size="sm"
               >
                 Work with us
               </Button>

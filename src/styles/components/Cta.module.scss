@@ -1,10 +1,10 @@
 @use "styles/vars";
 
 .cta {
-  padding: var(--spacing_xl) calc(var(--spacing_xl));
+  padding: var(--space-l) calc(var(--space-l));
   display: flex;
   flex-direction: column;
-  gap: var(--spacing_lg);
+  gap: var(--space-m);
 
   @media (min-width: vars.$mobile) {
     flex-direction: row;
@@ -15,11 +15,13 @@
   &__header {
     display: flex;
     flex-direction: column;
+    line-height: var(--heading_line_height);
+    gap: var(--space-2xs);
   }
 
   &__title {
     color: var(--apsis_blue);
-    font-size: var(--font_size_h1);
+    font-size: var(--font_size_h2);
     font-weight: bold;
     margin: 0;
   }
@@ -27,7 +29,7 @@
 
   &__subtitle {
     color: var(--apsis_gray);
-    font-size: var(--font_size_h3);
+    font-size: var(--font_size_h4);
     opacity: 0.75;
     margin: 0;
 

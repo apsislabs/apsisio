@@ -1,117 +1,105 @@
+@use "sass:color";
 @use "./vars";
 
 :root {
-  //= COLORS
-  --apsis_blue: #{vars.$apsis_blue};
-  --apsis_dark: #{vars.$apsis_dark};
-  --apsis_gray: #{vars.$apsis_gray};
-  --apsis_orange: #{vars.$apsis_orange};
-  --apsis_fuschia: #{vars.$apsis_fuschia};
-  --apsis_green: #{vars.$apsis_green};
-  --apsis_purple: #{vars.$apsis_purple};
-  --apsis_red: #{vars.$apsis_red};
+  //= COLORS & VARIANTS
+  @each $name, $color in vars.$colors {
+    --#{$name}: #{$color};
 
-  --white: #{vars.$white};
-  --gray_darker: #{vars.$gray_darker};
-  --gray_dark: #{vars.$gray_dark};
-  --gray: #{vars.$gray};
-  --gray_lighter: #{vars.$gray_lighter};
-  --gray_lightest: #{vars.$gray_lightest};
+    --#{$name}_darkest: #{color.adjust($color, $lightness: -30%)};
+    --#{$name}_darker: #{color.adjust($color, $lightness: -15%)};
+    --#{$name}_dark: #{color.adjust($color, $lightness: -5%)};
+    --#{$name}_light: #{color.adjust($color, $lightness: 15%)};
+    --#{$name}_lighter: #{color.adjust($color, $lightness: 30%)};
+    --#{$name}_lightest: #{color.adjust($color, $lightness: 40%)};
 
-  --section_background: #{vars.$white};
-  --text_color: #{vars.$apsis_dark};
-  --text_muted: #{vars.$gray_dark};
-  --link_color: #{vars.$apsis_blue};
-  --link_color_dark: #{vars.$apsis_dark};
+    --#{$name}_border: #{rgba($color, 0.15)};
+    --#{$name}_outline: #{rgba($color, 0.25)};
+    --#{$name}_surface: #{rgba($color, 0.05)};
+  }
 
-  --border_gray: #{vars.$border_gray};
-  --outline_gray: #{vars.$outline_gray};
-  --surface_gray: #{vars.$surface_gray};
+  --border: var(--apsis_gray_border);
+  --section_background: var(--white);
+  --text_color: var(--apsis_dark);
+  --text_muted: var(--apsis_gray_dark);
+  --link_color: var(--apsis_blue);
+  --link_color_dark: var(--apsis_gray_dark);
 
-  --border_blue: #{vars.$border_blue};
-  --outline_blue: #{vars.$outline_blue};
-  --surface_blue: #{vars.$surface_blue};
-
-  --border_orange: #{vars.$border_orange};
-  --outline_orange: #{vars.$outline_orange};
-  --surface_orange: #{vars.$surface_orange};
-
-  --guide_color: #{vars.$border_gray};
-  --shadow: #{vars.$shadow};
+  --guide_color: var(--border);
+  --shadow: #{rgba(vars.$apsis_dark, 0.45)};
 
   //= FONTS
-  --sans: #{vars.$sans};
-  --mono: #{vars.$mono};
+  --sans: var(--font-inter), sans-serif;
+  --mono: var(--font-mono), monospace;
 
-  --font_size: #{vars.$font_size};
-  --line_height: #{vars.$line_height};
-  --heading_line_height: #{vars.$heading_line_height};
-  --font_size_xxs: #{vars.$font_size_xxs};
-  --font_size_xs: #{vars.$font_size_xs};
-  --font_size_sm: #{vars.$font_size_sm};
-  --font_size_lg: #{vars.$font_size_lg};
+  // Steps from Utopia
+  --step--3: clamp(0.651rem, 0.6259rem + 0.1258vw, 0.7234rem);
+  --step--2: clamp(0.7813rem, 0.7511rem + 0.151vw, 0.8681rem);
+  --step--1: clamp(0.9375rem, 0.9013rem + 0.1812vw, 1.0417rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2978rem + 0.2609vw, 1.5rem);
+  --step-2: clamp(1.62rem, 1.5574rem + 0.313vw, 1.8rem);
+  --step-3: clamp(1.944rem, 1.8689rem + 0.3757vw, 2.16rem);
+  --step-4: clamp(2.3328rem, 2.2426rem + 0.4508vw, 2.592rem);
+  --step-5: clamp(2.7994rem, 2.6912rem + 0.5409vw, 3.1104rem);
+  --step-6: clamp(3.3592rem, 3.2294rem + 0.6491vw, 3.7325rem);
+  --step-7: clamp(4.0311rem, 3.8753rem + 0.779vw, 4.479rem);
 
-  --font_size_d1: #{vars.$font_size_d1};
-  --font_size_d2: #{vars.$font_size_d2};
-  --font_size_d3: #{vars.$font_size_d3};
+  --font_size: var(--font_size_0);
+  --line_height: 1.6125;
+  --heading_line_height: 1.125;
 
-  --font_size_h1: #{vars.$font_size_h1};
-  --font_size_h2: #{vars.$font_size_h2};
-  --font_size_h3: #{vars.$font_size_h3};
-  --font_size_h4: #{vars.$font_size_h4};
-  --font_size_h5: #{vars.$font_size_h5};
+  --font_size_xxs: var(--step--3);
+  --font_size_xs: var(--step--2);
+  --font_size_sm: var(--step--1);
+  --font_size_md: var(--step-0);
+  --font_size_lg: var(--step-1);
+
+  --font_size_h1: var(--step-4);
+  --font_size_h2: var(--step-3);
+  --font_size_h3: var(--step-2);
+  --font_size_h4: var(--step-1);
+  --font_size_h5: var(--step-0);
+
+  --font_size_d1: var(--step-7);
+  --font_size_d2: var(--step-6);
+  --font_size_d3: var(--step-5);
 
   //= SPACING
-  --spacing: #{vars.$spacing};
-  --spacing_xs: #{vars.$spacing_xs};
-  --spacing_sm: #{vars.$spacing_sm};
-  --spacing_md: #{vars.$spacing_md};
-  --spacing_lg: #{vars.$spacing_lg};
-  --spacing_xl: #{vars.$spacing_xl};
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+  --space: var(--space-s);
 
   //= SIZES
-  --site_width: #{vars.$site_width};
-
-  //= MEDIA QUERIES
-  --mobile: #{vars.$mobile};
-  --tablet: #{vars.$tablet};
-  --desktop: #{vars.$desktop};
-  --lgdesktop: #{vars.$lgdesktop};
-  --xldesktop: #{vars.$xldesktop};
+  --site_width: 1240px;
+  --narrow_width: calc(var(--site_width) * 0.65);
 
   //= ANIMATION
-  --easing: #{vars.$easing};
-  --timing_sm: #{vars.$timing_sm};
-  --timing_md: #{vars.$timing_md};
-  --timing_lg: #{vars.$timing_lg};
+  --easing: ease-in-out;
+  --timing_sm: 0.125s;
+  --timing_md: 0.25s;
+  --timing_lg: 0.65s;
 }
 
 @media screen and (prefers-color-scheme: dark) {
   :root {
-    --section_background: #{vars.$gray_darker};
-    --text_color: #{vars.$gray_lightest};
-    --text_muted: #{vars.$gray_lighter};
-    --link_color_dark: #{vars.$gray_lighter};
+    --section_background: var(--apsis_gray_darkest);
+    --text_color: var(--apsis_gray_lightest);
+    --text_muted: var(--apsis_gray_lighter);
+    --link_color_dark: var(--apsis_gray_lighter);
 
-    --gray_darker: #{vars.$gray_darker};
-    --gray_dark: #{vars.$gray_dark};
-    --gray: #{vars.$gray};
-    --gray_lighter: #{vars.$gray_lighter};
-    --gray_lightest: #{vars.$gray_darker};
+    --border: var(--apsis_gray_darker);
+    --apsis_gray_border: var(--border);
+    --guide_color: var(--border);
 
-    --border_gray: #{rgba(vars.$white, 0.25)};
-    --outline_gray: #{vars.$outline_gray};
-    --surface_gray: #{vars.$gray_darker};
-
-    --border_blue: #{vars.$border_blue};
-    --outline_blue: #{vars.$outline_blue};
-    --surface_blue: #{vars.$apsis_dark};
-
-    --border_orange: #{vars.$border_orange};
-    --outline_orange: #{vars.$outline_orange};
-    --surface_orange: #{vars.$surface_orange};
-
-    --guide_color: #{vars.$border_gray};
-    --shadow: #{vars.$shadow};
+    --apsis_blue_border: var(--apsis_blue_darker);
+    --apsis_orange_border: var(--apsis_orange_darker);
   }
 }

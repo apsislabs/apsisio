@@ -61,9 +61,9 @@ export const BlogIndexPage: NextPage<{
         <div className="stack gap-lg">
           {activePageIdx === 0 && (
             <PageHeader
-              title=<>
-                The <span className="text-primary">Apsis</span> Blog
-              </>
+              title={<>
+                The <span className="text-primary">apsis</span> blog
+              </>}
               subtitle={<>From our desks to your browser history.</>}
             />
           )}

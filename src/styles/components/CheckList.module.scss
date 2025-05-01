@@ -10,7 +10,7 @@
 
   > li {
     break-inside: avoid;
-    margin-bottom: var(--spacing_sm);
+    margin-bottom: var(--space-xs);
 
     display: flex;
     flex-direction: row;
@@ -23,7 +23,7 @@
   }
 
   &__marker {
-    margin-right: var(--spacing_sm);
+    margin-right: var(--space-xs);
     vertical-align: text-top;
     display: inline-block;
     transform: translateY(4px);
@@ -36,7 +36,7 @@
 
   @media (min-width: vars.$mobile) {
     display: grid;
-    column-gap: var(--spacing_lg);
+    column-gap: var(--space-m);
     grid-template-columns: repeat(2, 1fr);
   }
 }

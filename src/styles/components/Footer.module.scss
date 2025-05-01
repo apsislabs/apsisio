@@ -1,13 +1,13 @@
 @use 'styles/vars';
 
 .footer {
-  color: var(--gray);
-  padding: var(--spacing_xl) var(--spacing_lg);
+  color: var(--apsis_gray_light);
+  padding: var(--space-m) var(--space);
   font-size: var(--font_size_sm);
 
   &__logo {
     text-decoration: none;
-    color: var(--gray);
+    color: var(--apsis_gray_light);
   }
 
   &__logotype {
@@ -17,7 +17,7 @@
   &__tagline_container {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing_sm);
+    gap: var(--space-2xs);
 
     @media (min-width: vars.$tablet) {
       align-items: flex-end;
@@ -36,14 +36,14 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing_xs);
+    gap: var(--space-2xs);
     padding: 0;
     margin: 0;
 
     @media (min-width: vars.$mobile) {
       align-items: center;
       flex-direction: row;
-      gap: var(--spacing);
+      gap: var(--space-s);
     }
   }
 }

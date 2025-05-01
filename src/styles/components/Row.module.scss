@@ -1,13 +1,13 @@
 @use "styles/vars";
 
 .row {
-  padding: 0 var(--spacing_lg);
-  margin: 0 calc(-1 * var(--spacing_lg));
+  padding: 0 var(--space-m);
+  margin: 0 calc(-1 * var(--space-m));
   display: flex;
   flex-direction: column;
 
   & > * {
-    margin-bottom: var(--spacing_lg);
+    margin-bottom: var(--space-m);
 
     &:last-child {
       margin-bottom: 0;
@@ -20,15 +20,15 @@
     flex-wrap: wrap;
 
     & > * {
-      flex: 0 calc(50% - var(--spacing));
-      margin-right: var(--spacing);
+      flex: 0 calc(50% - var(--space-s));
+      margin-right: var(--space-s);
 
       &:nth-child(2n) {
         margin-right: 0;
       }
 
       &:last-child {
-        margin-bottom: var(--spacing_lg);
+        margin-bottom: var(--space-m);
       }
     }
 
@@ -51,7 +51,7 @@
         margin-right: 0;
 
         &:nth-child(2n) {
-          margin-right: var(--spacing);
+          margin-right: var(--space-s);
         }
       }
     }
@@ -67,10 +67,10 @@
     & > * {
       flex: 1;
       margin-bottom: 0;
-      margin-right: var(--spacing_xl);
+      margin-right: var(--space-l);
 
       &:nth-child(2n) {
-        margin-right: var(--spacing_xl);
+        margin-right: var(--space-l);
       }
 
       &:last-child {
@@ -84,7 +84,7 @@
         margin-right: 0;
 
         &:nth-child(2n) {
-          margin-right: var(--spacing_xl);
+          margin-right: var(--space-l);
         }
       }
     }

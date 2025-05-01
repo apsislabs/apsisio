@@ -1,52 +1,15 @@
-@use 'styles/vars';
-@use "sass:math";
-
-@mixin directional($x, $y) {
-  transform: translateX(math.div($x, 2)) translateY(math.div($y, 2));
-
-  &::before {
-    transform: translateX(math.div(-$x, 2)) translateY(math.div(-$y, 2));
-  }
-
-  &::after {
-    transform: translateX(math.div($x, 2)) translateY(math.div($y, 2));
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    transform: translateX(math.div($x, 2)) translateY(math.div($y, 2) - 0.5);
-
-    &::before,
-    &::after {
-      transform: none;
-    }
-  }
-}
-
-$v: (
-  "n": -1,
-  "s": 1,
-);
-
-$h: (
-  "w": -1,
-  "e": 1,
-);
-
 .repo_card {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-family: monospace;
-  padding: var(--spacing_md);
+  padding: var(--space);
   border: 1px solid transparent;
   position: relative;
   color: var(--text_color);
   text-decoration: none;
   transition: border-color var(--timing_md) var(--easing) var(--timing_md),
-    transform 0.125s var(--easing);
-
+              transform 0.125s var(--easing);
   height: 120px;
 
   &:hover {
@@ -55,28 +18,33 @@ $h: (
 
   &::before,
   &::after {
-    display: block;
     content: "";
+    display: block;
     position: absolute;
     opacity: 0.75;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
+    left: 0;
     z-index: -1;
-    background-color: var(--surface_blue);
+    background-color: var(--apsis_blue_surface);
     transition: transform var(--easing) var(--timing_md),
-      background-color var(--easing) var(--timing_md);
+                background-color var(--easing) var(--timing_md);
   }
 
-  &:hover::after,
-  &:hover::before {
-    background-color: var(--surface_orange);
+  &:hover::before,
+  &:hover::after {
+    background-color: var(--apsis_orange_surface);
   }
 
   &__media {
-    margin-right: var(--spacing_lg);
-    color: var(--gray);
+    margin-right: var(--space-xs);
+    color: var(--apsis_gray_light);
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
   &__title {
@@ -88,18 +56,51 @@ $h: (
     font-size: var(--font_size_sm);
   }
 
-  @each $hdir, $hcoef in $h {
-    @each $vdir, $vcoef in $v {
-      &--#{$vdir}#{$hdir} {
-        @include directional(vars.$spacing_sm, vars.$spacing_sm);
-        
-        @media (min-width: vars.$desktop) {
-          @include directional(
-            vars.$spacing_sm * $hcoef,
-            vars.$spacing_sm * $vcoef
-          );
-        }
+  &--nw,
+  &--ne,
+  &--sw,
+  &--se {
+    --x_translate: calc(var(--space-xs) * 1);
+    --y_translate: calc(var(--space-xs) * 1);
+    transform: translateX(calc(var(--x_translate) / 2)) translateY(calc(var(--y_translate) / 2));
+
+    &::before {
+      transform: translateX(calc(var(--x_translate) / -2)) translateY(calc(var(--y_translate) / -2));
+    }
+
+    &::after {
+      transform: translateX(calc(var(--x_translate) / 2)) translateY(calc(var(--y_translate) / 2));
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: translateX(calc(var(--x_translate) / 2)) translateY(calc(var(--y_translate) / 2 - 0.5rem));
+
+      &::before,
+      &::after {
+        transform: none;
       }
     }
+  }
+
+  &--nw {
+    --x_translate: calc(var(--space-xs) * -1);
+    --y_translate: calc(var(--space-xs) * -1);
+  }
+
+  &--ne {
+    --x_translate: calc(var(--space-xs) * 1);
+    --y_translate: calc(var(--space-xs) * -1);
+  }
+
+  &--sw {
+    --x_translate: calc(var(--space-xs) * -1);
+    --y_translate: calc(var(--space-xs) * 1);
+  }
+
+  &--se {
+    --x_translate: calc(var(--space-xs) * 1);
+    --y_translate: calc(var(--space-xs) * 1);
   }
 }

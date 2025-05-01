@@ -1,25 +1,25 @@
 @use "styles/vars";
 
 .clients {
-  margin-top: var(--spacing);
-  margin-bottom: var(--spacing);
+  margin-top: var(--space-s);
+  margin-bottom: var(--space-s);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 
   @media (min-width: vars.$tablet) {
-    padding: var(--spacing) var(--spacing_lg);
+    padding: var(--space-s) var(--space-m);
     grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   }
 
   &__logo_frame {
-    padding: var(--spacing_sm);
+    padding: var(--space-xs);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     @media (min-width: vars.$desktop) {
-      padding: var(--spacing);
+      padding: var(--space-s);
     }
   }
 

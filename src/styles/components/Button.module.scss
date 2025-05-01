@@ -7,7 +7,7 @@
   flex-direction: row;
   align-items: center;
   font-size: var(--font_size_sm);
-  padding: var(--spacing_sm) var(--spacing);
+  padding: var(--space-xs) var(--space-s);
   text-decoration: none;
   transition:
     box-shadow var(--easing) var(--timing_sm),
@@ -35,11 +35,11 @@
   }
 
   &__start_icon {
-    margin-right: var(--spacing_sm);
+    margin-right: var(--space-xs);
   }
 
   &__end_icon {
-    margin-left: var(--spacing_sm);
+    margin-left: var(--space-xs);
   }
 
   &:hover,
@@ -52,11 +52,11 @@
     cursor: pointer;
 
     .button__end_icon {
-      margin-left: var(--spacing_md);
+      margin-left: var(--space);
     }
 
     .button__start_icon {
-      margin-right: var(--spacing_md);
+      margin-right: var(--space);
     }
   }
 
@@ -65,12 +65,12 @@
   }
 
   &--lg {
-    padding: var(--spacing) var(--spacing_lg);
+    padding: var(--space-s) var(--space-m);
     font-size: var(--font_size);
   }
 
   &--sm {
-    padding: var(--spacing_xs) var(--spacing_sm);
+    padding: var(--space-2xs) var(--space-xs);
     font-size: var(--font_size_xs);
   }
 

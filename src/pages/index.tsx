@@ -112,18 +112,19 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
               </p>
 
               <p>
-                Born and raised in the Pacific North West, we have worked with
-                everyone from startups to enterprise, and we’re looking forward
+                Born and raised in the Pacific Northwest, we have worked with
+                everyone from startups to enterprise, and we're looking forward
                 to discovering what we can do working with you.
               </p>
             </div>
 
-            <footer>
-              <Button
-                href="/hire"
-                EndIcon={ChevronRight}
-              >
-                Drop us a line
+            <footer className="stack stack-h gap-md">
+              <Button href="/mission" EndIcon={ChevronRight}>
+                Our Mission
+              </Button>
+
+              <Button href="/hire" variant="tertiary">
+                Work with us
               </Button>
             </footer>
           </section>

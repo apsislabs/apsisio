@@ -1,0 +1,20 @@
+.callout {
+  border: 1px solid var(--apsis_blue_border);
+  background-color: var(--apsis_blue_border);
+  color: var(--text_color);
+  padding: var(--space-3xs);
+  padding-left: var(--space-xs);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xs);
+  align-items: center;
+  line-height: 1;
+  border-radius: 99rem;
+  font-size: var(--font_size_xs);
+
+  &__action {
+    border-radius: 99rem;
+    padding: var(--space-3xs) var(--space-2xs);
+    border: 1px solid var(--border);
+  }
+}

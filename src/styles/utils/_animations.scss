@@ -191,6 +191,23 @@ Animation System by Neale Van Fleet from Rogue Amoeba
   }
 }
 
+/* Spin around */
+.animate.spin-around {
+  animation-name: animate-spin-around;
+  animation-duration: 1.5s;
+  perspective: 1000px;
+}
+
+@keyframes animate-spin-around {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
 /* Slide In */
 .animate.slide { animation-name: animate-slide; }
 

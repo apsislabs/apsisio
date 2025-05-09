@@ -48,8 +48,7 @@ const MissionPage: NextPage<{ cta: CtaProps; content: Post }> = ({
             title="Our Mission"
             subtitle={
               <>
-                Work <s>hard</s>{" "}
-                <span className="text-primary">sustainably</span>.
+                <span className="text-primary">Sustainable work</span>. Exceptional software.
               </>
             }
           />

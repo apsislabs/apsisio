@@ -187,7 +187,7 @@ chris:
 
 matt:
   name: Matt Erhart
-  current: true
+  current: false
   title: Senior Engineer & Farmhand
   image: /img/people/matt.jpg
   bio: |

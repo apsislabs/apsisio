@@ -45,12 +45,11 @@ export const Navbar: React.FC<{
 
         {showTagline && (
           <a
-            href="/mission"
+            href="/team"
             className={styles.navbar__tagline}
           >
             <span className={styles.navbar__attention}>
-              A <del>code</del>{" "}
-              <span className={styles.navbar__highlight}>people</span> company
+              small but <span className={styles.navbar__highlight}>mighty</span>
             </span>
           </a>
         )}

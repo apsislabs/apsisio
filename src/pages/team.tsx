@@ -38,9 +38,8 @@ const TeamPage: NextPage<{ team: Person[] }> = ({ team }) => {
               title="Our Team"
               subtitle={
                 <>
-                  Little <span className="text-accent">company</span>, powerful{" "}
-                  <s className="text-muted">code</s>{" "}
-                  <span className="text-primary">people</span>.
+                  Small but{" "}
+                  <span className="text-primary">mighty</span>.
                 </>
               }
             />

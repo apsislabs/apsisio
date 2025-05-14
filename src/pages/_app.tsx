@@ -1,11 +1,12 @@
 import Router from "next/router";
 import Script from "next/script";
 import NProgress from "nprogress";
-import smartquotes from 'smartquotes';
+import smartquotes from "smartquotes";
 
-import { IBM_Plex_Mono, Inter } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Noto_Serif } from "next/font/google";
 
 export const inter = Inter({ subsets: ["latin"], display: "swap" });
+export const noto = Noto_Serif({ subsets: ["latin"], display: "swap" });
 export const mono = IBM_Plex_Mono({
   weight: ["400", "700"],
   style: ["normal", "italic"],
@@ -31,6 +32,7 @@ export default function MyApp({ Component, pageProps }) {
         :root {
           --font-inter: ${inter.style.fontFamily};
           --font-mono: ${mono.style.fontFamily};
+          --font-noto: ${noto.style.fontFamily};
         }
       `}</style>
 
@@ -40,8 +42,16 @@ export default function MyApp({ Component, pageProps }) {
         src="https://plausible.io/js/script.js"
       />
 
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2173aa" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2c3e50" />
+      <meta
+        name="theme-color"
+        media="(prefers-color-scheme: light)"
+        content="#2173aa"
+      />
+      <meta
+        name="theme-color"
+        media="(prefers-color-scheme: dark)"
+        content="#2c3e50"
+      />
 
       <div id="wrapper">
         <Component {...pageProps} />

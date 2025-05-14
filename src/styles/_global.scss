@@ -40,6 +40,10 @@
   opacity: 0.75;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -80,17 +84,22 @@
 }
 
 .link {
-  color: var(--apsis_blue);
-  text-decoration: none;
+  color: var(--link_color);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--apsis_blue_light);
+  text-shadow: 0 0 2px rgba(0,0,0,0.05);
+  transition: all var(--easing) var(--timing_sm);
 
   &:visited {
-    color: var(--apsis_blue);
+    color: var(--link_color);
   }
 
   &:hover,
   &:visited:hover {
     text-decoration: underline;
-    color: var(--apsis_blue);
+    color: var(--link_color_hover);
+    text-decoration-color: var(--apsis_blue_dark);
   }
 }
 
@@ -128,140 +137,7 @@
   }
 }
 
-.typography {
-  a {
-    @extend .link;
-  }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    line-height: var(--heading_line_height);
-    margin-bottom: var(--space);
-    margin-top: var(--space-m);
-    font-weight: 700;
-  }
-
-  h1 {
-    font-size: var(--font_size_h1);
-  }
-
-  h2 {
-    font-size: var(--font_size_h2);
-  }
-
-  h3 {
-    font-size: var(--font_size_h3);
-  }
-
-  h4 {
-    font-size: var(--font_size_h4);
-  }
-
-  h5 {
-    font-size: var(--font_size_h5);
-  }
-
-  //= BLOCK ELEMENTS
-
-  p,
-  ul,
-  ol,
-  pre {
-    margin-bottom: var(--space);
-  }
-
-  ul,
-  ol {
-    ul,
-    ol {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    li {
-      margin-bottom: var(--space-xs);
-    }
-  }
-
-  hr {
-    width: 20%;
-    margin: var(--space) 0;
-    border: 0;
-    border-top: 1px solid var(--border);
-  }
-
-  sup {
-    font-weight: normal;
-  }
-
-  strong {
-    font-weight: 600;
-  }
-
-  iframe {
-    border: 0;
-  }
-
-  blockquote {
-    border-left: 2px solid var(--border);
-    padding-left: var(--space);
-    padding-top: var(--space-xs);
-    padding-bottom: var(--space-xs);
-    margin-bottom: var(--space);
-
-    *:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  > *:last-child {
-    margin-bottom: 0;
-  }
-
-  //= PARAGRAPH ELEMENTS
-
-  .lead {
-    font-size: var(--font_size_lg);
-  }
-
-  p > pre,
-  p > code {
-    font-family: var(--mono);
-    background-color: var(--gray_lightest);
-    padding: 0 var(--space-2xs);
-  }
-
-  div > pre {
-    width: 100%;
-    overflow-x: scroll;
-  }
-
-  p > a {
-    @media (min-width: var(--tablet)) {
-      white-space: nowrap;
-    }
-  }
-
-  p > img,
-  figure > img {
-    max-width: 100%;
-  }
-
-  figure > figcaption {
-    font-size: var(--font_size_xs);
-    color: var(--apsis_gray);
-    text-align: center;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  #footnote-label {
-    font-size: var(--font_size_lg);
-  }
-}
 
 
 .markdown-alert,

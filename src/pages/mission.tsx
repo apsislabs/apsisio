@@ -57,14 +57,14 @@ const MissionPage: NextPage<{ cta: CtaProps; content: Post }> = ({
                 </Link>{" "}
                 — they were one and the same. And for over a decade, that's
                 worked for us: we strive to build a company where people want to
-                work: one that prioritizes{" "}
+                work. one that prioritizes{" "}
                 <strong>
-                  quality, sustainability, and respect that life happens away
-                  from the computer.
+                  quality, sustainability, and the understanding that life
+                  happens away from the computer.
                 </strong>
               </p>
               <p>
-                When faced with a decision to make, we always come back to one
+                When faced with a decision, we always come back to one
                 simple idea:
               </p>
 
@@ -73,13 +73,13 @@ const MissionPage: NextPage<{ cta: CtaProps; content: Post }> = ({
               </h1>
 
               <p>
-                This is harder than it sounds, and the{" "}
+                This is harder than it sounds. {" "}
                 <Link href="/blog/2025/04/02/burnout-and-recovery/">
-                  burnout rate in software is no joke
+                  Burnout in software is no joke
                 </Link>
                 . Software is creative work, and creativity is hard to come by
                 when you're exhausted and constantly behind. When thinking about
-                what kind of company we wanted to be, we started from a very
+                what kind of company we wanted to be, we begin with a very
                 basic premise:{" "}
                 <strong>
                   you can only expect 20 hours of creative output in a week.

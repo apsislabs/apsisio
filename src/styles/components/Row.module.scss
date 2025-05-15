@@ -20,6 +20,7 @@
   @media (min-width: vars.$tablet) {
     flex-direction: row;
     margin-bottom: var(--space-2xl);
+    gap: var(--space-l);
 
     & > * {
       margin-bottom: 0;

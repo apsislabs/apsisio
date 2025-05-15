@@ -10,10 +10,14 @@
 
   > li {
     break-inside: avoid;
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-3xs) !important;
 
     display: flex;
     flex-direction: row;
+
+    @media (min-width: vars.$mobile) {
+      margin-bottom: var(--space-2xs) !important;
+    }
 
     &:hover {
       .check_list__marker {

@@ -1,4 +1,4 @@
-@use 'styles/vars';
+@use "styles/vars";
 
 .page_header {
   display: flex;
@@ -18,5 +18,12 @@
 
   &--center {
     align-items: center;
+
+    .page_header__title {
+      text-align: center;
+    }
+    .page_header__subtitle {
+      text-align: center;
+    }
   }
 }

@@ -29,7 +29,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    // z-index: -1;
     background-color: var(--apsis_blue_surface);
     transition:
       transform var(--easing) var(--timing_md),
@@ -66,9 +66,9 @@
   &--se {
     --x_translate: calc(var(--space-2xs) * 1);
     --y_translate: calc(var(--space-2xs) * 1);
-    @media (min-width: vars.$tablet) {
-      transform: translateX(calc(var(--x_translate) / 2))
-        translateY(calc(var(--y_translate) / 2));
+    // @media (min-width: vars.$tablet) {
+      // transform: translateX(calc(var(--x_translate) / 2))
+      //   translateY(calc(var(--y_translate) / 2));
 
       &::before {
         transform: translateX(calc(var(--x_translate) / -2))
@@ -91,7 +91,7 @@
           transform: none;
         }
       }
-    }
+    // }
   }
 
   &--nw {

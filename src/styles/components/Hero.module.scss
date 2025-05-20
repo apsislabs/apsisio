@@ -1,41 +1,51 @@
 @use "styles/vars";
 
 .hero {
-  --hero_height: 78vh;
+  --hero_height: 75vh;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: var(--space-l);
   position: relative;
+  color: var(--apsis_blue_lightest);
+  min-height: var(--hero_height);
 
   @media (min-width: vars.$tablet) {
     padding: var(--space-xl) var(--space-l);
   }
 
   @media (min-width: vars.$desktop) {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     padding: var(--space-xl);
-    min-height: var(--hero_height);
+  }
+
+  &__callout {
+    position: absolute;
+    top: var(--space-l);
   }
 
   &__headline {
-    flex-grow: 3;
-
-    @media (min-width: vars.$tablet) {
-      margin-right: var(--space-l);
-    }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    align-items: center;
+    width: 100%;
   }
 
   &__title {
-    font-family: var(--sans);
+    width: 100%;
+    font-family: var(--serif);
     font-size: var(--font_size_d2);
     text-transform: lowercase;
     font-weight: 700;
-    line-height: 1.125;
-    margin-bottom: var(--space-l);
+    color: var(--apsis_blue_darker);
+    line-height: var(--heading_line_height);
 
-    @media (min-width: vars.$desktop) {
+    @media (min-width: vars.$tablet) {
       font-size: var(--font_size_d1);
     }
   }
@@ -57,7 +67,6 @@
 
   &__copy {
     font-size: var(--font_size_lg);
-    margin-bottom: var(--space-l);
     text-shadow: none;
     color: var(--text_muted);
   }
@@ -86,7 +95,7 @@
 
   &__pattern {
     position: absolute;
-    opacity: 0.15;
+    opacity: 0.25;
     transition: transform var(--easing) var(--timing_sm);
   }
 

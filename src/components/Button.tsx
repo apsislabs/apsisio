@@ -10,7 +10,7 @@ type BaseButtonProps = {
   EndIcon?: React.ComponentType<any>;
   StartIcon?: React.ComponentType<any>;
   className?: string;
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary" | "ghost";
   size?: "lg" | "sm";
   loading?: boolean;
   disabled?: boolean;
@@ -41,6 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const Component = href ? Link : tag;
+  const iconSize = size === "lg" ? 32 : size === "sm" ? 18 : 24;
 
   return (
     // @ts-ignore: this is fine
@@ -52,6 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
         variant == "primary" && styles["button--primary"],
         variant == "secondary" && styles["button--secondary"],
         variant == "tertiary" && styles["button--tertiary"],
+        variant == "ghost" && styles["button--ghost"],
         size == "lg" && styles["button--lg"],
         size == "sm" && styles["button--sm"],
         className
@@ -60,15 +62,17 @@ export const Button: React.FC<ButtonProps> = ({
     >
       {loading ? (
         <>
-          <Loader2Icon size={18}  className="spin" />
+          <Loader2Icon size={iconSize} className="animate spin-around loop" />
         </>
       ) : (
         <>
           {StartIcon && (
-            <StartIcon size={18} className={styles.button__start_icon} />
+            <StartIcon size={iconSize} className={styles.button__start_icon} />
           )}
           {children}
-          {EndIcon && <EndIcon size={18} className={styles.button__end_icon} />}
+          {EndIcon && (
+            <EndIcon size={iconSize} className={styles.button__end_icon} />
+          )}
         </>
       )}
     </Component>

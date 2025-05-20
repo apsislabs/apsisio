@@ -21,6 +21,7 @@
   --border: var(--apsis_gray_border);
   --section_background: var(--white);
   --text_color: var(--apsis_dark);
+  --text_inverse: var(--apsis_gray_lightest);
   --text_muted: var(--apsis_gray_dark);
   --link_color: var(--apsis_dark_darker);
   --link_color_hover: var(--apsis_dark_darkest);
@@ -96,6 +97,7 @@
   :root {
     --section_background: var(--apsis_gray_darkest);
     --text_color: var(--apsis_gray_lightest);
+    --apsis_inverse: var(--apsis_dark);
     --text_muted: var(--apsis_gray_lighter);
     --link_color_dark: var(--apsis_gray_lighter);
     --link_color: var(--apsis_gray_lightest);

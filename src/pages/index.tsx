@@ -26,6 +26,7 @@ import {
 import { NextPage } from "next";
 import path from "path";
 import { RepoCard } from "../components/RepoCard";
+import { VideoBackground } from "components/VideoBackground";
 
 export async function getStaticProps() {
   const projectsData = readFileSync(path.join(dataDirectory, "projects.yml"));
@@ -47,7 +48,10 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
       <PageMeta title={siteConf.meta.title} />
 
       <SiteLayout showTagline navTheme="blue" navGuides cta={cta}>
-        <Section theme="blue" className="overflow-hidden">
+        <Section
+          theme="blue"
+          className="overflow-hidden"
+        >
           <Hero />
         </Section>
 

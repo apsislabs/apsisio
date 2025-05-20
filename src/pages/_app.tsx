@@ -3,9 +3,11 @@ import Script from "next/script";
 import NProgress from "nprogress";
 import smartquotes from "smartquotes";
 
-import { IBM_Plex_Mono, Inter, Noto_Serif } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Noto_Serif, Caveat, Grape_Nuts } from "next/font/google";
 
 export const inter = Inter({ subsets: ["latin"], display: "swap" });
+export const caveat = Caveat({ subsets: ["latin"], display: "swap" });
+// export const grape = Grape_Nuts({ subsets: ["latin"], display: "swap", weight: ["400"] });
 export const noto = Noto_Serif({ subsets: ["latin"], display: "swap" });
 export const mono = IBM_Plex_Mono({
   weight: ["400", "700"],
@@ -32,6 +34,7 @@ export default function MyApp({ Component, pageProps }) {
         :root {
           --font-inter: ${inter.style.fontFamily};
           --font-mono: ${mono.style.fontFamily};
+          --font-hand: ${caveat.style.fontFamily};
           --font-noto: ${noto.style.fontFamily};
         }
       `}</style>

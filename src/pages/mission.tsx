@@ -1,6 +1,4 @@
-import { PostImage } from "components/blog/PostImage";
 import { CtaProps } from "components/Cta";
-import { MarkdownContent } from "components/MarkdownContent";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";

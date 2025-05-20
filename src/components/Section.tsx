@@ -14,6 +14,7 @@ type SectionProps = {
   theme?: "default" | "blue" | "gray";
   Icon?: React.ComponentType<any>;
   children: React.ReactNode;
+  before?: React.ReactNode;
 };
 
 export const Section: React.FC<SectionProps> = ({
@@ -28,6 +29,7 @@ export const Section: React.FC<SectionProps> = ({
   centerLabel = false,
   theme = "default",
   Icon,
+  before,
   ...props
 }) => {
   const sectionClasses = useMemo(
@@ -46,6 +48,8 @@ export const Section: React.FC<SectionProps> = ({
 
   return (
     <section className={sectionClasses} {...props}>
+      {before}
+
       <div className={styles.section__mask}>
         {guides && <div className={styles.section__guides}></div>}
       </div>

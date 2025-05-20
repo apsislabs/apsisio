@@ -22,6 +22,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@icons-pack/react-simple-icons": "^12.3.0",
+    "@types/lodash-es": "^4.17.12",
     "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "embla-carousel": "^8.5.2",
@@ -31,7 +32,7 @@
     "highlight.js": "^11.11.1",
     "husky": "^9.1.7",
     "js-yaml": "^4.1.0",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "lottie-react": "^2.4.1",
     "lucide": "^0.486.0",
     "lucide-react": "^0.486.0",
@@ -57,7 +58,6 @@
   "devDependencies": {
     "@divriots/jampack": "^0.33.0",
     "@types/axios": "^0.14.4",
-    "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.14",
     "@types/nprogress": "^0.2.3",
     "@types/react": "^19.0.12",

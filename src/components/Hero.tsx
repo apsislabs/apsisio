@@ -51,18 +51,16 @@ export const Hero = () => {
   const [person, setPerson] = useState(PEOPLE[0]);
   const [pain, setPain] = useState(PAINS[0]);
   const [rendered, setRendered] = useState(false);
-  const { width: windowWidth = 0 } = useWindowSize();
+  const { width: windowWidth = 0 } = useWindowSize({ debounceDelay: 500 });
 
   // Use effect only runs in the browser,
   // which is necessary to make this dynamic
   // at render time, rather than at page generation
   useEffect(() => {
     setPerson(() => sample(PEOPLE));
-    setPain(() =>
-      windowWidth < 600 ? sample(MOBILE_PAINS) : sample(PAINS)
-    );
+    setPain(() => (windowWidth < 600 ? sample(MOBILE_PAINS) : sample(PAINS)));
     setRendered(true);
-  }, [windowWidth]);
+  }, []);
 
   return (
     <>

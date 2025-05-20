@@ -1,7 +1,7 @@
 @use "styles/vars";
 
 .hero {
-  --hero_height: 78vh;
+  --hero_height: 75vh;
 
   display: flex;
   flex-direction: column;
@@ -9,7 +9,8 @@
   justify-content: center;
   padding: var(--space-l);
   position: relative;
-  color: var(--apsis_gray_lightest);
+  color: var(--apsis_blue_lightest);
+  min-height: var(--hero_height);
 
   @media (min-width: vars.$tablet) {
     padding: var(--space-xl) var(--space-l);
@@ -19,7 +20,6 @@
     flex-direction: column;
     align-items: center;
     padding: var(--space-xl);
-    min-height: var(--hero_height);
   }
 
   &__callout {
@@ -38,12 +38,16 @@
 
   &__title {
     width: 100%;
-    font-family: var(--sans);
-    font-size: var(--font_size_d1);
+    font-family: var(--serif);
+    font-size: var(--font_size_d2);
     text-transform: lowercase;
     font-weight: 700;
-    color: var(--text_color);
+    color: var(--apsis_blue_darker);
     line-height: var(--heading_line_height);
+
+    @media (min-width: vars.$tablet) {
+      font-size: var(--font_size_d1);
+    }
   }
 
   &__actions {

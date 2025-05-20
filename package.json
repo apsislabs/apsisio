@@ -51,7 +51,8 @@
     "react-hook-form": "^7.56.0",
     "sass": "^1.86.0",
     "simple-icons": "^14.12.0",
-    "smartquotes": "^2.3.2"
+    "smartquotes": "^2.3.2",
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
     "@divriots/jampack": "^0.33.0",

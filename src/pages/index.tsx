@@ -50,9 +50,7 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
       <SiteLayout showTagline navTheme="blue" navGuides cta={cta}>
         <Section
           theme="blue"
-          guides={false}
           className="overflow-hidden"
-          before={<img src="https://cdn.prod.website-files.com/66bcadc4ba1b074994b24977/66ec827fb1325ccc13da73bb_Grid.svg" className="grid" />}
         >
           <Hero />
         </Section>

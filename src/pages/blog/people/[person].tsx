@@ -9,7 +9,7 @@ import { TeamMember } from "components/TeamMember";
 import { getPeople, getSortedPostsData } from "lib/posts";
 import { Person, Post as TPost } from "lib/types";
 import { getFirstName } from "lib/utils";
-import _ from "lodash";
+import _ from "lodash-es";
 import { useRouter } from "next/router";
 
 const makePersonalizedCta = (person: Person): CtaProps => {

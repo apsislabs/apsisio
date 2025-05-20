@@ -5,7 +5,7 @@ import { FieldWrapper } from "components/FieldWrapper";
 import { SelectField } from "components/SelectField";
 import { TextField } from "components/TextField";
 import { EMAIL_REGEX } from "lib/utils";
-import { capitalize } from "lodash";
+import { capitalize } from "lodash-es";
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";

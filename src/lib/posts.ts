@@ -10,7 +10,7 @@ import { processMarkdown } from "./markdown";
 import yaml from "js-yaml";
 
 import { PostFrontmatter, Post, PostParams, Person, Job } from "lib/types";
-import _ from "lodash";
+import _ from "lodash-es";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 export const dataDirectory = path.join(process.cwd(), "data");

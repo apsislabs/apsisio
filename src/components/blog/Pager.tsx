@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from "lodash-es";
 
 import { Button } from "components/Button";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";

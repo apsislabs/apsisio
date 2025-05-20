@@ -6,7 +6,7 @@ import {
 } from "@icons-pack/react-simple-icons";
 import clsx from "clsx";
 import { SocialLink } from "lib/types";
-import _ from "lodash";
+import _ from "lodash-es";
 import { LinkedinIcon as SiLinkedin } from "lucide-react";
 import Link from "next/link";
 import styles from "styles/components/TeamMember.module.scss";

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Button } from "components/Button";
-import _ from "lodash";
+import { sample } from "lodash-es";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import styles from "styles/components/Hero.module.scss";
@@ -57,9 +57,9 @@ export const Hero = () => {
   // which is necessary to make this dynamic
   // at render time, rather than at page generation
   useEffect(() => {
-    setPerson(() => _.sample(PEOPLE));
+    setPerson(() => sample(PEOPLE));
     setPain(() =>
-      windowWidth < 600 ? _.sample(MOBILE_PAINS) : _.sample(PAINS)
+      windowWidth < 600 ? sample(MOBILE_PAINS) : sample(PAINS)
     );
     setRendered(true);
   }, [windowWidth]);

@@ -6,7 +6,7 @@ import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import { getRandomCta, getSortedPostsData } from "lib/posts";
 import { Post } from "lib/types";
-import _ from "lodash";
+import _ from "lodash-es";
 import { NextPage } from "next";
 
 const paginatedPosts = async (perPage: number = 5) => {

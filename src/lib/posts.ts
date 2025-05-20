@@ -27,7 +27,7 @@ export const getRandomCta = () => {
 export const getPeople = async (): Promise<Record<string, Person>> => {
   const peopleFile = readFileSync(
     path.join(dataDirectory, "people.yml"),
-    "utf8"
+    "utf8",
   );
   return yaml.load(peopleFile);
 };
@@ -36,7 +36,7 @@ export const getCurrentPeople = async (): Promise<Record<string, Person>> => {
   const people = await getPeople();
 
   return Object.fromEntries(
-    Object.entries(people).filter(([_, p]) => p.current)
+    Object.entries(people).filter(([_, p]) => p.current),
   );
 };
 
@@ -135,7 +135,7 @@ async function getAllPosts(): Promise<Post[]> {
         person: people[matterResult.data.author] ?? null,
         ...matterResult.data,
       };
-    })
+    }),
   );
 }
 
@@ -168,7 +168,7 @@ export async function getPostData({
   const people = await getPeople();
   const fullPath = path.join(
     postsDirectory,
-    `${year}-${month}-${day}-${slug}.md`
+    `${year}-${month}-${day}-${slug}.md`,
   );
   const fileContents = readFileSync(fullPath, "utf8");
   const { content, data } = await parseMatter(fileContents);

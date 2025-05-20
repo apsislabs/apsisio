@@ -7,6 +7,7 @@
 
 @include meta.load-css("utils/animations");
 @include meta.load-css("global");
+@include meta.load-css("typography");
 
 html,
 body {

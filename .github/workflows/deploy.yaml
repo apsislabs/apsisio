@@ -11,13 +11,13 @@ jobs:
         uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - uses: jongwooo/next-cache@v1
-      - name: Install and Build
+      - name: Setup AWS CLI
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Build & Deploy
         run: |
           bun install --frozen-lockfile
-          bun run build
-          touch out/.nojekyll
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: out
+          bun run deploy

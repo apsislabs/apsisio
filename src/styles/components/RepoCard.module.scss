@@ -1,3 +1,5 @@
+@use "styles/vars";
+
 .repo_card {
   display: flex;
   flex-direction: row;
@@ -8,8 +10,9 @@
   position: relative;
   color: var(--text_color);
   text-decoration: none;
-  transition: border-color var(--timing_md) var(--easing) var(--timing_md),
-              transform 0.125s var(--easing);
+  transition:
+    border-color var(--timing_md) var(--easing) var(--timing_md),
+    transform 0.125s var(--easing);
   height: 120px;
 
   &:hover {
@@ -26,10 +29,11 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    // z-index: -1;
     background-color: var(--apsis_blue_surface);
-    transition: transform var(--easing) var(--timing_md),
-                background-color var(--easing) var(--timing_md);
+    transition:
+      transform var(--easing) var(--timing_md),
+      background-color var(--easing) var(--timing_md);
   }
 
   &:hover::before,
@@ -38,7 +42,7 @@
   }
 
   &__media {
-    margin-right: var(--space-xs);
+    margin-right: var(--space-2xs);
     color: var(--apsis_gray_light);
     width: 20%;
     display: flex;
@@ -49,58 +53,64 @@
 
   &__title {
     font-weight: bold;
-    font-size: var(--font_size);
+    font-size: var(--font_size_sm);
   }
 
   &__content {
-    font-size: var(--font_size_sm);
+    font-size: var(--font_size_xs);
   }
 
   &--nw,
   &--ne,
   &--sw,
   &--se {
-    --x_translate: calc(var(--space-xs) * 1);
-    --y_translate: calc(var(--space-xs) * 1);
-    transform: translateX(calc(var(--x_translate) / 2)) translateY(calc(var(--y_translate) / 2));
+    --x_translate: calc(var(--space-2xs) * 1);
+    --y_translate: calc(var(--space-2xs) * 1);
+    // @media (min-width: vars.$tablet) {
+      // transform: translateX(calc(var(--x_translate) / 2))
+      //   translateY(calc(var(--y_translate) / 2));
 
-    &::before {
-      transform: translateX(calc(var(--x_translate) / -2)) translateY(calc(var(--y_translate) / -2));
-    }
-
-    &::after {
-      transform: translateX(calc(var(--x_translate) / 2)) translateY(calc(var(--y_translate) / 2));
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      transform: translateX(calc(var(--x_translate) / 2)) translateY(calc(var(--y_translate) / 2 - 0.5rem));
-
-      &::before,
-      &::after {
-        transform: none;
+      &::before {
+        transform: translateX(calc(var(--x_translate) / -2))
+          translateY(calc(var(--y_translate) / -2));
       }
-    }
+
+      &::after {
+        transform: translateX(calc(var(--x_translate) / 2))
+          translateY(calc(var(--y_translate) / 2));
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        transform: translateX(calc(var(--x_translate) / 2))
+          translateY(calc(var(--y_translate) / 2 - 0.5rem));
+
+        &::before,
+        &::after {
+          transform: none;
+        }
+      }
+    // }
   }
 
   &--nw {
-    --x_translate: calc(var(--space-xs) * -1);
-    --y_translate: calc(var(--space-xs) * -1);
+    --x_translate: calc(var(--space-2xs) * -1);
+    --y_translate: calc(var(--space-2xs) * -1);
   }
 
   &--ne {
-    --x_translate: calc(var(--space-xs) * 1);
-    --y_translate: calc(var(--space-xs) * -1);
+    --x_translate: calc(var(--space-2xs) * 1);
+    --y_translate: calc(var(--space-2xs) * -1);
   }
 
   &--sw {
-    --x_translate: calc(var(--space-xs) * -1);
-    --y_translate: calc(var(--space-xs) * 1);
+    --x_translate: calc(var(--space-2xs) * -1);
+    --y_translate: calc(var(--space-2xs) * 1);
   }
 
   &--se {
-    --x_translate: calc(var(--space-xs) * 1);
-    --y_translate: calc(var(--space-xs) * 1);
+    --x_translate: calc(var(--space-2xs) * 1);
+    --y_translate: calc(var(--space-2xs) * 1);
   }
 }

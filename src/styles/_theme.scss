@@ -23,7 +23,8 @@
   --text_color: var(--apsis_dark);
   --text_inverse: var(--apsis_gray_lightest);
   --text_muted: var(--apsis_gray_dark);
-  --link_color: var(--apsis_blue);
+  --link_color: var(--apsis_dark_darker);
+  --link_color_hover: var(--apsis_dark_darkest);
   --link_color_dark: var(--apsis_gray_dark);
 
   --guide_color: var(--border);
@@ -32,19 +33,22 @@
   //= FONTS
   --sans: var(--font-inter), sans-serif;
   --mono: var(--font-mono), monospace;
+  --serif: Var(--font-noto), serif;
 
   // Steps from Utopia
-  --step--3: clamp(0.651rem, 0.6259rem + 0.1258vw, 0.7234rem);
-  --step--2: clamp(0.7813rem, 0.7511rem + 0.151vw, 0.8681rem);
-  --step--1: clamp(0.9375rem, 0.9013rem + 0.1812vw, 1.0417rem);
-  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2978rem + 0.2609vw, 1.5rem);
-  --step-2: clamp(1.62rem, 1.5574rem + 0.313vw, 1.8rem);
-  --step-3: clamp(1.944rem, 1.8689rem + 0.3757vw, 2.16rem);
-  --step-4: clamp(2.3328rem, 2.2426rem + 0.4508vw, 2.592rem);
-  --step-5: clamp(2.7994rem, 2.6912rem + 0.5409vw, 3.1104rem);
-  --step-6: clamp(3.3592rem, 3.2294rem + 0.6491vw, 3.7325rem);
-  --step-7: clamp(4.0311rem, 3.8753rem + 0.779vw, 4.479rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1440,20,1.2,8,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --step--3: clamp(0.651rem, 0.6304rem + 0.1033vw, 0.7234rem);
+  --step--2: clamp(0.7813rem, 0.7564rem + 0.124vw, 0.8681rem);
+  --step--1: clamp(0.9375rem, 0.9077rem + 0.1488vw, 1.0417rem);
+  --step-0: clamp(1.125rem, 1.0893rem + 0.1786vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.3071rem + 0.2143vw, 1.5rem);
+  --step-2: clamp(1.62rem, 1.5686rem + 0.2571vw, 1.8rem);
+  --step-3: clamp(1.944rem, 1.8823rem + 0.3086vw, 2.16rem);
+  --step-4: clamp(2.3328rem, 2.2587rem + 0.3703vw, 2.592rem);
+  --step-5: clamp(2.7994rem, 2.7105rem + 0.4443vw, 3.1104rem);
+  --step-6: clamp(3.3592rem, 3.2526rem + 0.5332vw, 3.7325rem);
+  --step-7: clamp(4.0311rem, 3.9031rem + 0.6399vw, 4.479rem);
+  --step-8: clamp(4.8373rem, 4.6837rem + 0.7678vw, 5.3748rem);
 
   --font_size: var(--font_size_0);
   --line_height: 1.6125;
@@ -96,6 +100,8 @@
     --apsis_inverse: var(--apsis_dark);
     --text_muted: var(--apsis_gray_lighter);
     --link_color_dark: var(--apsis_gray_lighter);
+    --link_color: var(--apsis_gray_lightest);
+    --link_color_hover: var(--white);
 
     --border: var(--apsis_gray_darker);
     --apsis_gray_border: var(--border);

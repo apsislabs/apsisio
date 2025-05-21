@@ -2,17 +2,19 @@ import { Row } from "./Row";
 import styles from "styles/components/ServiceRow.module.scss";
 import { CheckList } from "./CheckList";
 import clsx from "clsx";
+import { ColorVariant } from "lib/types";
 
 export const ServiceRow: React.FC<{
-  imgSrc: string;
+  imgSrc?: string;
+  img?: React.ReactNode;
   title: React.ReactNode;
   alt?: string;
   content: React.ReactNode;
   listItems: string[];
-  variant: "pink" | "gold" | "blue" | "green";
+  variant: ColorVariant;
   className?: string;
   reverse?: boolean;
-}> = ({ imgSrc, alt, title, content, listItems, variant, className, ...props }) => {
+}> = ({ img, imgSrc, alt, title, content, listItems, variant, className, ...props }) => {
   return (
     <Row
       className={clsx(
@@ -25,7 +27,12 @@ export const ServiceRow: React.FC<{
       {...props}
     >
       <div className={styles.service_row__image_container}>
-        <img src={imgSrc} alt={alt} className={styles.service_row__image} />
+        {img ?
+          <div className={clsx('animate slide', styles.service_row__image)}>
+            {img}
+          </div>
+          : <img src={imgSrc} alt={alt} className={styles.service_row__image} />
+        }
       </div>
 
       <div className="typography">
@@ -38,7 +45,7 @@ export const ServiceRow: React.FC<{
           </>
         )}
 
-        <CheckList listItems={listItems} />
+        <CheckList listItems={listItems} variant={variant} />
       </div>
     </Row>
   );

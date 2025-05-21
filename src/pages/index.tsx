@@ -26,7 +26,6 @@ import {
 import { NextPage } from "next";
 import path from "path";
 import { RepoCard } from "../components/RepoCard";
-import { VideoBackground } from "components/VideoBackground";
 
 export async function getStaticProps() {
   const projectsData = readFileSync(path.join(dataDirectory, "projects.yml"));

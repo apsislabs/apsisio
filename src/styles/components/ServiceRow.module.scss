@@ -40,7 +40,7 @@ $variant_colors: (
 
   &__image {
     width: 80%;
-    max-width: 220px;
+    max-width: 320px;
   }
 
   @each $variant, $color in $variant_colors {

@@ -48,6 +48,10 @@
     @media (min-width: vars.$tablet) {
       font-size: var(--font_size_d1);
     }
+
+    @media screen and (prefers-color-scheme: dark) {
+      color: var(--apsis_blue_lightest);
+    }
   }
 
   &__actions {

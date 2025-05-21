@@ -58,3 +58,5 @@ export type Job = {
   salary: string;
   active: boolean;
 };
+
+export type ColorVariant = "pink" | "gold" | "blue" | "green";

@@ -47,10 +47,7 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
       <PageMeta title={siteConf.meta.title} />
 
       <SiteLayout showTagline navTheme="blue" navGuides cta={cta}>
-        <Section
-          theme="blue"
-          className="overflow-hidden"
-        >
+        <Section theme="blue" className="overflow-hidden">
           <Hero />
         </Section>
 
@@ -110,7 +107,7 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
                 We believe that arriving at the right solution is an iterative
                 process, built with hard work, strong communication, and a
                 dedication to craft. At Apsis, our team of experienced engineers
-                works provide software that will work today without sacrificing
+                works to provide software that will work today without sacrificing
                 tomorrow.
               </p>
 

@@ -50,70 +50,78 @@ const MissionPage: NextPage<{ cta: CtaProps; content: Post }> = ({
               <p>
                 When we started Apsis Labs,{" "}
                 <Link href="/blog/2015/04/23/work-sustainably/">
-                  we didn't draw a line between our personal values and the
+                  we didn't draw a line between our personal values and our
                   company's values
                 </Link>{" "}
-                — they were one and the same. And for over a decade, that's
-                worked for us: we strive to build a company where people want to
-                work. one that prioritizes{" "}
-                <strong>
-                  quality, sustainability, and the understanding that life
-                  happens away from the computer.
-                </strong>
+                — they were one and the same. Over a decade later, that still
+                holds true.
               </p>
               <p>
-                When faced with a decision, we always come back to one
-                simple idea:
+                We're building a company where people want to work. Where they
+                can take pride in what they build. Where{" "}
+                <strong>quality and sustainability</strong> aren't competing
+                priorities — they go hand in hand. And where we never forget
+                that life happens away from the keyboard.
               </p>
-
+              <p>
+                When we face a decision, we always come back to one core idea:
+              </p>
               <h1 className="text-primary pullquote text-center">
                 <em>Work sustainably</em>.
               </h1>
-
               <p>
-                This is harder than it sounds. {" "}
+                That's harder than it sounds.{" "}
                 <Link href="/blog/2025/04/02/burnout-and-recovery/">
-                  Burnout in software is no joke
+                  Burnout in tech is no joke.
                 </Link>
-                . Software is creative work, and creativity is hard to come by
-                when you're exhausted and constantly behind. When thinking about
-                what kind of company we wanted to be, we begin with a very
-                basic premise:{" "}
+                Software is creative work, and creativity doesn't thrive when
+                you're exhausted or constantly behind.
+              </p>
+              <p>
+                At Apsis, we operate from a simple truth:{" "}
                 <strong>
-                  you can only expect 20 hours of creative output in a week.
+                  most people only have about 20 hours of peak creative output
+                  per week.
                 </strong>
               </p>
               <p>
-                At your typical 40-hours a week gig, once your 20 hours are up,
-                you've got another 10 of okay work, and then another 10 of bad
-                work. Then, when you come back on Monday, you spend your 20 good
-                hours fixing last week's mistakes. At Apsis, we asked ourselves:{" "}
+                In a typical 40+ hour job, once those 20 hours are used up,
+                you're left with 10 hours of decent work — and 10+ of
+                low-quality, error-prone work. By Monday, you're using next
+                week's best hours to clean up last week's mess.
+              </p>
+              <p>
+                So we asked:{" "}
                 <strong>
-                  what if we just stopped when the good work stops?
+                  what if we just stopped when the best work stops?
                 </strong>
               </p>
               <p>
-                So that's what we do: we ask our team for 20 hours. That's it.
-                Beyond that, your time is your own. After a decade, we're more
-                confident than ever that this approach works. Our metrics show
-                that{" "}
+                That's what we do. We ask our team for 20 hours a week &mdash;
+                no more. The rest of their time is theirs.
+              </p>
+              <p>
+                After a decade of observing how developers actually work, we're
+                more confident than ever that this is the right approach. And
+                the data backs it up:{" "}
                 <strong>
-                  our 20-hour approach retains approximately 85% of the
-                  productivity of our 40-hour peers
+                  our 20-hour weeks deliver about 85% of the productivity of a
+                  traditional 40-hour schedule &mdash; whether you're measuring
+                  story points, KPIs, or features shipped.
                 </strong>
-                , whether you measure by story points closed, KPIs met, or
-                features delivered.
               </p>
-
               <p>
-                And as it turns out, what's good for our developers is good for
-                our clients. Capping development time keeps our team performing
-                at their peak—and our customers see exceptional results while
-                saving money by avoiding diminishing returns.
+                What's better for our team ends up better for our clients.
+                Working at peak performance leads to cleaner code, fewer
+                mistakes, and more focused problem-solving. It also saves our
+                clients money &mdash; because they're not paying for diminishing
+                returns.
               </p>
-
               <p>
-                Curious? <Link href="/hire">Come see for yourself.</Link>
+                Curious?{" "}
+                <Link href="/hire">
+                  Come see what sustainable, high-output development looks like.
+                </Link>
               </p>
             </section>
           </div>

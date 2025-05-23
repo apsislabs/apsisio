@@ -292,3 +292,50 @@
     }
   }
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+
+.word-swap-item {
+  transition: opacity 0.5s ease;
+
+  &.highlight {
+    &::before {
+      transition: width 0.5s ease;
+    }
+  }
+}
+
+/* Animation states */
+.word-swap-item.pre-enter,
+.word-swap-item.exiting {
+  opacity: 0;
+
+  &.highlight {
+    &::before {
+      width: 0;
+    }
+  }
+}
+
+.word-swap-item.entering,
+.word-swap-item.entered {
+  opacity: 1;
+
+  &.highlight {
+    &::before {
+      width: 100%;
+    }
+  }
+}

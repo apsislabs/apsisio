@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import styles from "styles/components/Hero.module.scss";
 import { useWindowSize } from "usehooks-ts";
+import { TextRotate } from "./TextRotate";
 
 const PEOPLE = ["wyatt", "eric", "henry", "chris", "noah", "joey"];
 
@@ -14,7 +15,7 @@ const PAINS = [
   "deadlines",
   "compliance problems",
   "bandwidth issues",
-  "investor demands",
+  "investor pressure",
 ];
 
 const MOBILE_PAINS = ["tech debt", "big ideas", "deadlines"];
@@ -48,8 +49,6 @@ const SvgPattern = ({ className }) => (
 );
 
 export const Hero = () => {
-  const [person, setPerson] = useState(PEOPLE[0]);
-  const [pain, setPain] = useState(PAINS[0]);
   const [rendered, setRendered] = useState(false);
   const { width: windowWidth = 0 } = useWindowSize({ debounceDelay: 500 });
 
@@ -57,8 +56,6 @@ export const Hero = () => {
   // which is necessary to make this dynamic
   // at render time, rather than at page generation
   useEffect(() => {
-    setPerson(() => sample(PEOPLE));
-    setPain(() => (windowWidth < 600 ? sample(MOBILE_PAINS) : sample(PAINS)));
     setRendered(true);
   }, []);
 
@@ -84,10 +81,19 @@ export const Hero = () => {
           <div className={styles.hero__headline}>
             <h3 className={clsx(styles.hero__title, "animate slide")}>
               You've got{" "}
-              <span className="highlight highlight--primary">{pain}</span>
+              <TextRotate
+                interval={5000}
+                className="highlight highlight--primary"
+                words={windowWidth < 600 ? MOBILE_PAINS : PAINS}
+              />
               <br />
               We've got{" "}
-              <span className="highlight highlight--accent">{person}</span>
+              <TextRotate
+                className="highlight highlight--accent"
+                interval={5000}
+                words={PEOPLE}
+                delay={1600}
+              />
             </h3>
 
             <div

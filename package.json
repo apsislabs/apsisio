@@ -50,6 +50,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.4",
+    "react-transition-state": "^2.3.1",
     "sass": "^1.89.0",
     "simple-icons": "^14.14.0",
     "smartquotes": "^2.3.2",

@@ -47,6 +47,7 @@
 
     @media (min-width: vars.$tablet) {
       font-size: var(--font_size_d1);
+      white-space: nowrap;
     }
 
     @media screen and (prefers-color-scheme: dark) {

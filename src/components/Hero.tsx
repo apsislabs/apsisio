@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Button } from "components/Button";
-import { sample } from "lodash-es";
+import { shuffle } from "lodash-es";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import styles from "styles/components/Hero.module.scss";
@@ -49,6 +49,8 @@ const SvgPattern = ({ className }) => (
 );
 
 export const Hero = () => {
+  const [person, setPerson] = useState(PEOPLE);
+  const [pain, setPain] = useState(PAINS);
   const [rendered, setRendered] = useState(false);
   const { width: windowWidth = 0 } = useWindowSize({ debounceDelay: 500 });
 
@@ -56,6 +58,8 @@ export const Hero = () => {
   // which is necessary to make this dynamic
   // at render time, rather than at page generation
   useEffect(() => {
+    setPerson(() => shuffle(PEOPLE));
+    setPain(() => (windowWidth < 600 ? shuffle(MOBILE_PAINS) : shuffle(PAINS)));
     setRendered(true);
   }, []);
 
@@ -84,15 +88,15 @@ export const Hero = () => {
               <TextRotate
                 interval={5000}
                 className="highlight highlight--primary"
-                words={windowWidth < 600 ? MOBILE_PAINS : PAINS}
+                words={pain}
               />
               <br />
               We've got{" "}
               <TextRotate
                 className="highlight highlight--accent"
                 interval={5000}
-                words={PEOPLE}
-                delay={1600}
+                words={person}
+                delay={1500}
               />
             </h3>
 

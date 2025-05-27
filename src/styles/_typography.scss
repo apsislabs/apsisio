@@ -147,6 +147,10 @@
     float: right;
     margin: var(--space-m) calc(var(--space-m) * -2) var(--space-m) var(--space-m);
 
+    @media (max-width: vars.$desktop) {
+      margin-right: 0;
+    }
+
     &:first-child {
       margin-top: var(--space-xs);
     }
@@ -156,6 +160,10 @@
   a .alignleft {
     float: left;
     margin: var(--space-m) var(--space-m) var(--space-m) calc(var(--space-m) * -2);
+
+    @media (max-width: vars.$desktop) {
+      margin-left: 0;
+    }
 
     &:first-child {
       margin-top: var(--space-xs);
@@ -172,6 +180,7 @@
   }
 
   .img-s {
+    width: 40%;
     @media (min-width: vars.$mobile) {
       width: 20%;
       max-width: 360px;
@@ -179,6 +188,7 @@
   }
 
   .img-m {
+    width: 75%;
     @media (min-width: vars.$mobile) {
       width: 40%;
       max-width: 480px;

@@ -16,6 +16,7 @@ body {
   color: var(--text_color);
   font-family: var(--sans);
   line-height: var(--line_height);
+  scroll-behavior: smooth;
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

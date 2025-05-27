@@ -60,3 +60,12 @@ export type Job = {
 };
 
 export type ColorVariant = "pink" | "gold" | "blue" | "green";
+
+
+export type CaseStudy = {
+  client: string;
+  logo: string;
+  title: string;
+  content: string;
+  contentHtml?: string;
+}

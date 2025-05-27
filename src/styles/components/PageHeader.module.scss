@@ -8,12 +8,14 @@
   &__title {
     margin: 0;
     font-size: var(--font_size_d3);
+    text-wrap: balance;
   }
 
   &__subtitle {
     margin: 0;
     color: var(--gray);
     font-weight: 600;
+    text-wrap: balance;
   }
 
   &--center {

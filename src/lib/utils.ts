@@ -6,8 +6,9 @@ export const splitFirstName = (fullName: string) => fullName.split(" ").at(0);
 export const EMAIL_REGEX =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-
-export const variantToColorVar = (variant: ColorVariant): string | undefined => {
+export const variantToColorVar = (
+  variant: ColorVariant
+): string | undefined => {
   switch (variant) {
     case "pink":
       return "var(--apsis_fuschia)";
@@ -18,4 +19,4 @@ export const variantToColorVar = (variant: ColorVariant): string | undefined => 
     case "green":
       return "var(--apsis_green)";
   }
-}
+};

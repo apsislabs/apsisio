@@ -36,14 +36,10 @@ export const PostPage = ({
 }) => {
   const { asPath } = useRouter();
 
-  const title = formattedTitle(
-    postData.title ? `Blog: ${postData.title}` : "Apsis Blog",
-  );
-
   return (
     <>
       <PageMeta
-        title={title}
+        title={postData.title ? `Blog: ${postData.title}` : "Apsis Blog"}
         image={postData.image}
         path={asPath}
         description={

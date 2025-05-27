@@ -9,8 +9,15 @@ import fg from "fast-glob";
 import { processMarkdown } from "./markdown";
 import yaml from "js-yaml";
 
-import { PostFrontmatter, Post, PostParams, Person, Job } from "lib/types";
-import _ from "lodash-es";
+import {
+  PostFrontmatter,
+  Post,
+  PostParams,
+  Person,
+  Job,
+  CaseStudy,
+} from "lib/types";
+import { sample, truncate } from "lodash-es";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 export const dataDirectory = path.join(process.cwd(), "data");
@@ -21,13 +28,13 @@ export const getCtas = () => {
 };
 
 export const getRandomCta = () => {
-  return _.sample(getCtas());
+  return sample(getCtas());
 };
 
 export const getPeople = async (): Promise<Record<string, Person>> => {
   const peopleFile = readFileSync(
     path.join(dataDirectory, "people.yml"),
-    "utf8",
+    "utf8"
   );
   return yaml.load(peopleFile);
 };
@@ -36,7 +43,7 @@ export const getCurrentPeople = async (): Promise<Record<string, Person>> => {
   const people = await getPeople();
 
   return Object.fromEntries(
-    Object.entries(people).filter(([_, p]) => p.current),
+    Object.entries(people).filter(([_, p]) => p.current)
   );
 };
 
@@ -55,30 +62,11 @@ const getPostPaths = () => {
   return fg.sync(path.join(postsDirectory, "**"), { objectMode: true });
 };
 
-function truncate(str, n, useWordBoundary) {
-  if (str.length <= n) {
-    return str;
-  }
-
-  const subString = str.slice(0, n - 1);
-
-  let truncated = (
-    useWordBoundary ? subString.slice(0, subString.lastIndexOf(" ")) : subString
-  ).trim();
-
-  // Remove the last character if it's punctuation
-  if (/[^\w\s]+/g.test(truncated.slice(-1))) {
-    truncated = truncated.substr(0, truncated.length - 1);
-  }
-
-  return `${truncated}&hellip;`;
-}
-
 const parseMatter = async (fileContents: string): Promise<PostFrontmatter> => {
   const { content, data, excerpt } = matter(fileContents, {
     // @ts-expect-error: type is wrong from source
     excerpt: (file: GrayMatterFile) => {
-      file.excerpt = file.data.excerpt ?? truncate(file.content, 300, true);
+      file.excerpt = file.data.excerpt ?? truncate(file.content, { length: 300 });
     },
     engines: {
       yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
@@ -135,7 +123,7 @@ async function getAllPosts(): Promise<Post[]> {
         person: people[matterResult.data.author] ?? null,
         ...matterResult.data,
       };
-    }),
+    })
   );
 }
 
@@ -168,7 +156,7 @@ export async function getPostData({
   const people = await getPeople();
   const fullPath = path.join(
     postsDirectory,
-    `${year}-${month}-${day}-${slug}.md`,
+    `${year}-${month}-${day}-${slug}.md`
   );
   const fileContents = readFileSync(fullPath, "utf8");
   const { content, data } = await parseMatter(fileContents);
@@ -185,4 +173,37 @@ export async function getPostData({
     contentHtml,
     ...data,
   };
+}
+
+const getCaseStudyPaths = () => {
+  return fg.sync(path.join(dataDirectory, "cases", "**.md"), {
+    objectMode: true,
+  });
+};
+
+export async function getAllCaseStudyIds() {
+  return getCaseStudyPaths()
+    .map(({ name }) => name.replaceAll(".md", ""))
+    .map((client) => ({
+      params: {
+        client,
+      },
+    }));
+}
+
+export async function getCaseStudy({
+  client,
+}: {
+  client: String;
+}): Promise<CaseStudy> {
+  const fullPath = path.join(dataDirectory, "cases", `${client}.md`);
+  const fileContents = readFileSync(fullPath, "utf8");
+  const { content, data } = await parseMatter(fileContents) as any;
+  const contentHtml = processMarkdown(content);
+
+  return {
+    ...data,
+    content: data.content ?? "",
+    contentHtml,
+  } as CaseStudy;
 }

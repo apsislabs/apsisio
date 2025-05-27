@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-sitemap",
+    "postbuild": "bun run bin/optimizeSvgs.ts ./out/img",
     "start": "next start",
     "deploy": "bun run build && bun run deploy:prod:push && bun run deploy:prod:invalidate",
     "deploy:prod:push": "aws s3 sync --delete ./out/ s3://apsis.io",

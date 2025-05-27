@@ -16,6 +16,14 @@
     margin-bottom: var(--space);
     margin-top: var(--space-m);
     font-weight: 700;
+    font-family: var(--serif);
+    color: var(--apsis_blue_darker);
+    text-wrap: balance;
+    scroll-margin-top: var(--space-m);
+
+    @media screen and (prefers-color-scheme: dark) {
+      color: var(--apsis_blue_lightest);
+    }
   }
 
   h1 {
@@ -44,7 +52,9 @@
   ul,
   ol,
   pre {
+    hyphens: auto;
     margin-bottom: var(--space);
+    text-wrap: pretty;
   }
 
   ul,
@@ -114,17 +124,9 @@
   }
 
   p > a {
-    @media (min-width: var(--tablet)) {
+    @media (min-width: vars.$tablet) {
       white-space: nowrap;
     }
-  }
-
-  .img-right {
-    float: right;
-    width: 60%;
-    margin-right: calc(var(--space-m) * -1);
-    margin-left: var(--space-m);
-    margin-bottom: var(--space);
   }
 
   .pullquote {
@@ -138,6 +140,60 @@
   p > img,
   figure > img {
     max-width: 100%;
+  }
+
+  .alignright,
+  a .alignright {
+    float: right;
+    margin: var(--space-m) calc(var(--space-m) * -2) var(--space-m) var(--space-m);
+
+    &:first-child {
+      margin-top: var(--space-xs);
+    }
+  }
+
+  .alignleft,
+  a .alignleft {
+    float: left;
+    margin: var(--space-m) var(--space-m) var(--space-m) calc(var(--space-m) * -2);
+
+    &:first-child {
+      margin-top: var(--space-xs);
+    }
+  }
+  .aligncenter,
+  a .aligncenter {
+    display: block;
+    margin: var(--space-m) auto;
+
+    &:first-child {
+      margin-top: var(--space-xs);
+    }
+  }
+
+  .img-s {
+    @media (min-width: vars.$mobile) {
+      width: 20%;
+      max-width: 360px;
+    }
+  }
+
+  .img-m {
+    @media (min-width: vars.$mobile) {
+      width: 40%;
+      max-width: 480px;
+    }
+  }
+
+  .img-l {
+    @media (min-width: vars.$mobile) {
+      width: 60%;
+      max-width: 640px;
+    }
+  }
+
+  .img-full {
+    width: 100%;
   }
 
   figure > figcaption {

@@ -1,10 +1,11 @@
+import hljs from "highlight.js";
 import { Marked } from "marked";
-import { markedHighlight } from "marked-highlight";
+import markedAlert from "marked-alert";
 import markedFootnote from "marked-footnote";
 import { gfmHeadingId } from "marked-gfm-heading-id";
-import hljs from "highlight.js";
-import markedAlert from "marked-alert";
+import { markedHighlight } from "marked-highlight";
 import { markedSmartypants } from "marked-smartypants";
+import { inlineSvgPlugin } from "./svgTokenizer";
 
 const marked = new Marked(
   {
@@ -21,7 +22,11 @@ const marked = new Marked(
   markedAlert(),
   gfmHeadingId(),
   markedFootnote(),
-  markedSmartypants(),
+  markedSmartypants()
+);
+
+marked.use(
+  inlineSvgPlugin({ imgPaths: ["public", "public/img"], classNames: "svg" })
 );
 
 export const processMarkdown = (markdownString: string): string => {

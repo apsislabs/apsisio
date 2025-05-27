@@ -1,29 +1,11 @@
 import { ServiceRow } from "./ServiceRow";
-import { variantToColorVar } from "lib/utils";
-import DevSvg from "/public/img/rocket.svg";
+import { StylizedSvg } from "./StylizedSvg";
 import DesignSvg from "/public/img/discovery.svg";
-import ToolsSvg from "/public/img/tools.svg";
+import DevSvg from "/public/img/rocket.svg";
 import TeamSvg from "/public/img/team.svg";
-import { ColorVariant } from "lib/types";
-import { useDarkMode } from "usehooks-ts";
+import ToolsSvg from "/public/img/tools.svg";
 
-const FeaturedSvg: React.FC<{
-  SvgComponent: React.ComponentType<{ style?: any }>;
-  variant: ColorVariant;
-}> = ({ SvgComponent, variant }) => {
-  const {isDarkMode} = useDarkMode();
-  return (
-    <SvgComponent
-      style={isDarkMode ? {
-        fill: variantToColorVar(variant),
-        color: "var(--apsis_dark_dark)",
-      } : {
-        color: variantToColorVar(variant),
-        fill: "var(--apsis_dark_dark)",
-      }}
-    />
-  );
-}
+
 
 export const ServicesSection = () => {
   return (
@@ -31,7 +13,7 @@ export const ServicesSection = () => {
       <ServiceRow
         variant="blue"
         title="Software &amp; Devops"
-        img={<FeaturedSvg variant="blue" SvgComponent={DevSvg} />}
+        img={<StylizedSvg variant="blue" SvgComponent={DevSvg} />}
         alt="Image of a Laptop for Software & Devops"
         content={
           <p>
@@ -56,7 +38,7 @@ export const ServicesSection = () => {
         reverse
         variant="pink"
         title="Design &amp; Discovery"
-        img={<FeaturedSvg variant="pink" SvgComponent={DesignSvg} />}
+        img={<StylizedSvg variant="pink" SvgComponent={DesignSvg} />}
         alt="Image of a lightbulb for Design & Discovery"
         content={
           <p>
@@ -76,7 +58,7 @@ export const ServicesSection = () => {
       <ServiceRow
         variant="green"
         title="Our favorite tools"
-        img={<FeaturedSvg variant="green" SvgComponent={ToolsSvg} />}
+        img={<StylizedSvg variant="green" SvgComponent={ToolsSvg} />}
         alt="Image of a Phone for our favorite tools"
         content={
           <p>
@@ -105,7 +87,7 @@ export const ServicesSection = () => {
         variant="gold"
         reverse
         title="How we work"
-        img={<FeaturedSvg variant="gold" SvgComponent={TeamSvg} />}
+        img={<StylizedSvg variant="gold" SvgComponent={TeamSvg} />}
         alt="Image of a piece of paper for how we work"
         content={
           <p>

@@ -1,15 +1,15 @@
-- title: What do you want to build?
-  subtitle: We'd love to help. Let's find out how.
-  button: Work with us
+- title: Building something big?
+  subtitle: Ready when you are
+  button: Start your build
 
 - title: You're busy
-  subtitle: Give us a shout &mdash; we can help
-  button: Let's talk
+  subtitle: Let's lighten your load
+  button: Get expert help
 
-- title: "Your project, our expertise."
-  subtitle: "We listen, we care, and we'll deliver exactly what you need."
-  button: "Work with us"
+- title: Your goals. Our focus
+  subtitle: Fast starts, smooth handoffs, no surprises
+  button: Let's collaborate
 
-- title: "Think big &mdash; we've got your back."
-  subtitle: "Let's find out what we can build together."
-  button: "Let's do this"
+- title: Think big - we'll make it real
+  subtitle: From concept to code without the chaos
+  button: Let's go

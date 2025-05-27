@@ -64,6 +64,8 @@
     "@types/nprogress": "^0.2.3",
     "@types/react": "^19.1.4",
     "next-sitemap": "^4.2.3",
-    "typescript": "^5.8.3"
+    "svgo": "^3.3.2",
+    "typescript": "^5.8.3",
+    "xmldom": "^0.6.0"
   }
 }

@@ -110,11 +110,16 @@ export const Hero = () => {
             </div>
 
             <div className={clsx(styles.hero__actions, "animate fade delay-1")}>
-              <Button href="/hire" variant="primary" EndIcon={ChevronRight}>
+              <Button
+                href="/hire"
+                variant="primary"
+                size="lg"
+                EndIcon={ChevronRight}
+              >
                 Let's get to work
               </Button>
 
-              <Button variant="tertiary" href="/team">
+              <Button size="lg" variant="tertiary" href="/team">
                 Meet our team
               </Button>
             </div>

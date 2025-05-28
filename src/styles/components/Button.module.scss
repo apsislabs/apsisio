@@ -7,7 +7,7 @@
   flex-direction: row;
   align-items: center;
   font-size: var(--font_size_sm);
-  padding: var(--space-xs) var(--space-s);
+  padding: var(--space-2xs) var(--space-xs);
   text-decoration: none;
   transition:
     box-shadow var(--easing) var(--timing_sm),
@@ -65,7 +65,7 @@
   }
 
   &--lg {
-    padding: var(--space-s) var(--space-m);
+    padding: var(--space-xs) var(--space-s);
     font-size: var(--font_size);
 
     &__start_icon {
@@ -88,7 +88,7 @@
   }
 
   &--sm {
-    padding: var(--space-2xs) var(--space-xs);
+    padding: var(--space-3xs) var(--space-2xs);
     font-size: var(--font_size_xs);
 
     .button__start_icon {

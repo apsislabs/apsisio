@@ -65,7 +65,9 @@ export type ColorVariant = "pink" | "gold" | "blue" | "green";
 export type CaseStudy = {
   client: string;
   logo: string;
+  logoSize?: number;
   title: string;
+  subtitle?: string;
   content: string;
   contentHtml?: string;
 }

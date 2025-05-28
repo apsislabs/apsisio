@@ -33,7 +33,7 @@ export function inlineSvgPlugin(options: InlineSvgPluginOptions = {}) {
 
       if (!isSvg || isRemote) {
         const titleAttr = title ? ` title="${title}"` : "";
-        return `<img src="${href}" alt="${altText}"${titleAttr} loading="lazy">`;
+        return `<img src="${href}" class="${classFromAlt}" alt="${altText}"${titleAttr} loading="lazy">`;
       }
 
       let resolvedPath: string | null = null;

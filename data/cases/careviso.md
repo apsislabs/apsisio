@@ -7,9 +7,9 @@ title: Building an Industry-Leading HeathTech Platform
 
 ![test|aligncenter img-l svg--blue](cases/careviso/solution.svg)
 
-### The Challenges
+### The Challenge
 
-In the world of healthcare, managing prior authorizations and benefits investigations is complex and highly regulated. Our client [careviso](https://www.careviso.com) — a health tech startup focused on improving access to diagnostic testing—needed a robust, secure platform to support their growing prior-authorization team as they processed thousands of insurance requests. They needed a platform that could not only automate routine tasks and scale with their growth, but also meet the strict requirements of HIPAA and SOC 2 compliance.
+In the world of healthcare, managing prior authorizations and benefits investigations is complex and highly regulated. Our client [careviso](https://www.careviso.com) — a health tech startup focused on improving access to diagnostic testing — needed a robust, secure platform to support their growing prior-authorization team as they processed thousands of insurance requests. They needed a platform that could not only automate routine tasks and scale with their growth, but also meet the strict requirements of HIPAA and SOC 2 compliance.
 
 With these priorities in mind, they partnered with Apsis Labs to build an efficient, reliable, and secure platform from the ground up.
 

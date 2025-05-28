@@ -14,6 +14,7 @@ export const ServiceRow: React.FC<{
   content: React.ReactNode;
   listItems: string[];
   listIcon?: LucideIcon;
+  listColumns?: boolean;
   variant: ColorVariant;
   className?: string;
   reverse?: boolean;
@@ -26,6 +27,7 @@ export const ServiceRow: React.FC<{
   content,
   listItems,
   listIcon,
+  listColumns = false,
   variant,
   className,
   ...props
@@ -61,7 +63,12 @@ export const ServiceRow: React.FC<{
 
         {content && <div className="typography">{content}</div>}
 
-        <CheckList listItems={listItems} icon={listIcon} variant={variant} />
+        <CheckList
+          columns={listColumns}
+          listItems={listItems}
+          icon={listIcon}
+          variant={variant}
+        />
       </div>
     </Row>
   );

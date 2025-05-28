@@ -19,7 +19,7 @@ export const PageHeader: React.FC<{
       {prefix}
       <h1 className={styles.page_header__title}>{title}</h1>
       {subtitle && <h2 className={styles.page_header__subtitle}>{subtitle}</h2>}
-      <hr className="divider" />
+      <hr className={clsx("divider", styles.page_header__divider)} />
     </header>
   );
 };

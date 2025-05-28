@@ -12,6 +12,7 @@ export const SiteLayout: React.FC<
     contained?: boolean;
     navTheme?: "blue" | "default" | "gray";
     navGuides?: boolean;
+    wide?: boolean;
     cta?: CtaProps;
   }
 > = ({
@@ -19,6 +20,7 @@ export const SiteLayout: React.FC<
   showTagline = false,
   contained = false,
   navTheme,
+  wide = false,
   navGuides = false,
   cta,
 }) => {
@@ -43,7 +45,7 @@ export const SiteLayout: React.FC<
 
       <main id="main">
         {contained ? (
-          <Section narrow spaced guides={false}>
+          <Section narrow={!wide} spaced guides={false}>
             {children}
           </Section>
         ) : (

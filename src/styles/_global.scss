@@ -132,6 +132,12 @@
   &.gap-lg {
     gap: var(--space-m);
   }
+  &.gap-xl {
+    gap: var(--space-l);
+  }
+  &.gap-2xl {
+    gap: var(--space-xl);
+  }
   &.gap-sm {
     gap: var(--space-xs);
   }

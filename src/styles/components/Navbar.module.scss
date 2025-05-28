@@ -24,14 +24,30 @@
 
 .navbar {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: var(--space-s);
   padding: var(--space-s);
+
+  @media (min-width: vars.$tablet) {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__toggle {
+    @media (min-width: vars.$tablet) {
+      display: none;
+    }
+  }
 
   &__logo {
     text-decoration: none;
-    color: inherit;
-    padding-left: var(--space-xs);
-    padding-right: var(--space-xs);
     color: var(--apsis_blue);
     transition: background-color var(--easing) var(--timing_sm);
 
@@ -51,17 +67,49 @@
     @media screen and (prefers-color-scheme: dark) {
       color: var(--white);
     }
+
+    @media (min-width: vars.$tablet) {
+      padding-left: var(--space-xs);
+      padding-right: var(--space-xs);
+    }
   }
 
   &__nav {
-    margin-left: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: var(--space-3xs);
 
-    @media (min-width: vars.$mobile) {
+    @media (min-width: vars.$tablet) {
+      margin-left: auto;
+      flex-direction: row;
       gap: var(--space-s);
       margin-left: var(--space-m);
+    }
+  }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+
+    overflow: hidden;
+    visibility: hidden;
+    display: none;
+    max-height: 0;
+    transition: max-height ease-in-out 0.5s;
+
+    &--expanded {
+      max-height: 500px;
+      visibility: visible;
+      display: flex;
+    }
+
+    @media (min-width: vars.$tablet) {
+      flex-direction: row;
+      visibility: visible;
+      display: flex;
+      max-height: none;
     }
   }
 
@@ -102,8 +150,7 @@
   }
 
   &__right {
-    display: none;
-    @media (min-width: vars.$mobile) {
+    @media (min-width: vars.$tablet) {
       margin-left: auto;
       display: flex;
       align-items: center;
@@ -144,7 +191,7 @@
       pointer-events: none;
     }
 
-    @media (min-width: vars.$mobile) {
+    @media (min-width: vars.$tablet) {
       display: block;
       transform: none;
     }

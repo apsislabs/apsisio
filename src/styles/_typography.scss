@@ -3,6 +3,8 @@
 @use "./global";
 
 .typography {
+  font-size: var(--font_size_sm);
+
   a {
     @extend .link;
   }
@@ -108,7 +110,7 @@
   //= PARAGRAPH ELEMENTS
 
   .lead {
-    font-size: var(--font_size_lg);
+    font-size: var(--font_size_md);
   }
 
   p > pre,

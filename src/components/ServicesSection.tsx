@@ -1,9 +1,9 @@
 import { ServiceRow } from "./ServiceRow";
 import { StylizedSvg } from "./StylizedSvg";
-import DesignSvg from "/public/img/discovery.svg";
-import DevSvg from "/public/img/rocket.svg";
-import TeamSvg from "/public/img/team.svg";
-import ToolsSvg from "/public/img/tools.svg";
+import DesignSvg from "/public/img/services/discovery.svg";
+import DevSvg from "/public/img/services/rocket.svg";
+import TeamSvg from "/public/img/services/team.svg";
+import ToolsSvg from "/public/img/services/tools.svg";
 
 
 
@@ -11,6 +11,7 @@ export const ServicesSection = () => {
   return (
     <>
       <ServiceRow
+        listColumns
         variant="blue"
         title="Software &amp; Devops"
         img={<StylizedSvg variant="blue" SvgComponent={DevSvg} />}
@@ -35,6 +36,7 @@ export const ServicesSection = () => {
       />
 
       <ServiceRow
+        listColumns
         reverse
         variant="pink"
         title="Design &amp; Discovery"
@@ -56,6 +58,7 @@ export const ServicesSection = () => {
       />
 
       <ServiceRow
+        listColumns
         variant="green"
         title="Our favorite tools"
         img={<StylizedSvg variant="green" SvgComponent={ToolsSvg} />}
@@ -84,6 +87,7 @@ export const ServicesSection = () => {
       />
 
       <ServiceRow
+        listColumns
         variant="gold"
         reverse
         title="How we work"

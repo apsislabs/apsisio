@@ -3,14 +3,14 @@
 .check_list {
   --padding_left: 1.5rem;
 
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
   list-style: none;
   padding: 0;
 
   > li {
     break-inside: avoid;
     margin-bottom: var(--space-3xs) !important;
+    text-wrap: balance;
 
     display: flex;
     flex-direction: row;

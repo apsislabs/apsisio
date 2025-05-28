@@ -10,9 +10,24 @@ export const CheckList: React.FC<{
   className?: string;
   variant?: ColorVariant;
   icon?: LucideIcon;
-}> = ({ listItems = [], className, variant, icon: Icon = Check, ...props }) => {
+  columns?: boolean;
+}> = ({
+  listItems = [],
+  className,
+  variant,
+  columns = false,
+  icon: Icon = Check,
+  ...props
+}) => {
   return (
-    <ul className={clsx(styles.check_list, className)} {...props}>
+    <ul
+      className={clsx(
+        styles.check_list,
+        columns && styles["check_list--columns"],
+        className
+      )}
+      {...props}
+    >
       {listItems.map((item, i) => (
         <li key={i}>
           <Icon

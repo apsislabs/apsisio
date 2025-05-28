@@ -48,10 +48,9 @@ const MissionPage: NextPage<{ cta: CtaProps; content: Post }> = ({
           <div className="stack gap-lg">
             <section className="typography">
               <p>
-                When we started Apsis Labs,{" "}
+                When we started Apsis Labs, we didn't draw a line between{" "}
                 <Link href="/blog/2015/04/23/work-sustainably/">
-                  we didn't draw a line between our personal values and our
-                  company's values
+                  our personal values and our company's values
                 </Link>{" "}
                 — they were one and the same. Over a decade later, that still
                 holds true.

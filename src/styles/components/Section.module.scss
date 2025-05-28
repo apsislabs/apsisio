@@ -24,12 +24,18 @@
     .section__content {
       padding: var(--space-l) var(--space-m);
 
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-l);
+
       @media (min-width: vars.$tablet) {
         padding: var(--space-xl) var(--space-l);
+        gap: var(--space-xl);
       }
 
       @media (min-width: vars.$desktop) {
         padding: var(--space-2xl) var(--space-xl);
+        gap: var(--space-2xl);
       }
     }
   }
@@ -81,8 +87,11 @@
     margin: 0 auto;
     max-width: var(--site_width);
     width: 100%;
-    border-left: 1px solid var(--guide_color);
-    border-right: 1px solid var(--guide_color);
+
+    @media (min-width: vars.$mobile) {
+      border-left: 1px solid var(--guide_color);
+      border-right: 1px solid var(--guide_color);
+    }
   }
 
   &__container {

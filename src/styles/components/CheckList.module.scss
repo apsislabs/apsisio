@@ -37,10 +37,11 @@
     flex-grow: 0;
   }
 
-
-  @media (min-width: vars.$mobile) {
-    display: grid;
-    column-gap: var(--space-m);
-    grid-template-columns: repeat(2, 1fr);
+  &--columns {
+    @media (min-width: vars.$mobile) {
+      display: grid;
+      column-gap: var(--space-m);
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

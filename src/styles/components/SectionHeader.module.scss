@@ -1,31 +1,25 @@
 @use "styles/vars";
 
-.page_header {
+.section_header {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: var(--space-s);
 
   &__title {
     margin: 0;
-    font-size: var(--font_size_d3);
+    font-size: var(--font_size_h2);
     text-wrap: balance;
+    text-align: center;
   }
 
   &__subtitle {
     margin: 0;
+    font-size: var(--font_size_h3);
     color: var(--apsis_gray);
     font-weight: 500;
     text-wrap: balance;
+    text-align: center;
   }
 
-  &--center {
-    align-items: center;
-
-    .page_header__title {
-      text-align: center;
-    }
-    .page_header__subtitle {
-      text-align: center;
-    }
-  }
 }

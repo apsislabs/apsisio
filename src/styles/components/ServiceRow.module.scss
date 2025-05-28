@@ -9,21 +9,27 @@ $variant_colors: (
 
 .service_row {
   &__row {
-    margin-bottom: var(--space-xl);
+  }
 
-    @media (min-width: vars.$desktop) {
-      margin-bottom: var(--space-2xl);
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-    }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
   }
 
   &__title {
-    margin-bottom: var(--space);
-    font-size: var(--font_size_h4);
+    font-size: var(--font_size_h3);
+    text-wrap: balance;
     font-weight: 700;
+    font-family: var(--serif);
+  }
+
+  &__subtitle {
+    font-size: var(--font_size_h5);
+    text-wrap: balance;
+    font-weight: 500;
+    font-style: italic;
+    font-family: var(--serif);
   }
 
   &__image_container {
@@ -33,6 +39,10 @@ $variant_colors: (
     justify-content: center;
     margin-bottom: var(--space-m);
 
+    @media(min-width: vars.$tablet) {
+      max-width: 35%;
+    }
+
     @media (min-width: vars.$desktop) {
       margin-bottom: 0;
     }
@@ -40,7 +50,13 @@ $variant_colors: (
 
   &__image {
     width: 80%;
-    max-width: 320px;
+    max-width: 280px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
   }
 
   @each $variant, $color in $variant_colors {

@@ -6,7 +6,6 @@
 
   padding: 0 var(--space-m);
   margin: 0 calc(-1 * var(--space-m));
-  margin-bottom: var(--space-xl);
 
   & > * {
     flex: 1;
@@ -19,7 +18,6 @@
 
   @media (min-width: vars.$tablet) {
     flex-direction: row;
-    margin-bottom: var(--space-2xl);
     gap: var(--space-l);
 
     & > * {

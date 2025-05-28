@@ -8,8 +8,8 @@ import { PageMeta } from "components/PageMeta";
 import { ProjectSlide } from "components/ProjectSlide";
 import { Row } from "components/Row";
 import { Section } from "components/Section";
-import { ServicesSection } from "components/ServicesSection";
 import { SiteLayout } from "components/SiteLayout";
+import { ValueSection } from "components/ValueSection";
 import { siteConf } from "conf";
 import { readFileSync } from "fs";
 import yaml from "js-yaml";
@@ -19,7 +19,6 @@ import {
   FileJson,
   FormInput,
   Gem,
-  List,
   PresentationIcon,
   SquareTerminalIcon,
 } from "lucide-react";
@@ -55,8 +54,8 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
           <Clients />
         </Section>
 
-        <Section label="Services" spaced Icon={List}>
-          <ServicesSection />
+        <Section spaced>
+          <ValueSection />
         </Section>
 
         <Section
@@ -107,8 +106,8 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
                 We believe that arriving at the right solution is an iterative
                 process, built with hard work, strong communication, and a
                 dedication to craft. At Apsis, our team of experienced engineers
-                works to provide software that will work today without sacrificing
-                tomorrow.
+                works to provide software that will work today without
+                sacrificing tomorrow.
               </p>
 
               <p>

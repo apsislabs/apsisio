@@ -3,7 +3,7 @@ logo: "/img/logos/thinkingbaseball.png"
 client: Thinking Baseball
 logoSize: 100
 title: Launching the World's Most Popular Baseball Training App
-subtitle: Teaching 50k+ kids the mental side of baseball
+subtitle: Teaching 100k+ users the mental side of baseball
 ---
 
 ![thinking baseball app|aligncenter img-l](/img/cases/tb/app.png)

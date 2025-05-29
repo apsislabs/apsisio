@@ -50,11 +50,12 @@ export const CaseStudyPage = ({
       <SiteLayout contained cta={cta}>
         <PageHeader
           title={caseStudy.title}
+          subtitle={caseStudy.subtitle}
           prefix={
             <span className="stack stack-h gap-sm">
               <LogoType as="span" className="text-primary" />
               <XIcon className="text-muted" />
-              <img src={caseStudy.logo} height={40} />
+              <img src={caseStudy.logo} height={caseStudy.logoSize ?? 40} />
             </span>
           }
           center

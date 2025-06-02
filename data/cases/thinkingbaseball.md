@@ -1,12 +1,12 @@
 ---
-logo: "/img/logos/thinkingbaseball.png"
+logo: "/img/logos/thinkingbaseball.webp"
 client: Thinking Baseball
 logoSize: 100
 title: Launching the World's Most Popular Baseball Training App
 subtitle: Teaching 100k+ users the mental side of baseball
 ---
 
-![thinking baseball app|aligncenter img-l](/img/cases/tb/app.png)
+![thinking baseball app|aligncenter img-l](/img/cases/tb/app.webp)
 
 ### The Challenge
 

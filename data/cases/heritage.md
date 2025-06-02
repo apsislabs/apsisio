@@ -1,5 +1,5 @@
 ---
-logo: "/img/logos/heritage.png"
+logo: "/img/logos/heritage.webp"
 client: Heritage Appraisers
 logoSize: 60
 title: Recovering and Modernizing the Heritage Appraisers Platform

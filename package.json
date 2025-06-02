@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "@divriots/jampack": "^0.33.0",
+    "@next/bundle-analyzer": "^15.3.3",
     "@svgr/webpack": "^8.1.0",
     "@types/axios": "^0.14.4",
     "@types/node": "^22.15.19",

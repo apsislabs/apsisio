@@ -6,7 +6,7 @@
     easy-to-use platform.
   link: https://reamdocs.com
   button: Learn more
-  image: '/img/projects/ream.png'
+  image: '/img/projects/ream.webp'
 - title: Daily Doublet
   content: |
     **The Daily Doublet** is a modern twist on a classic word puzzle invented
@@ -15,7 +15,7 @@
     just one letter at a time. New puzzle every day!
   link: https://dailydoublet.com
   button: Play now
-  image: '/img/projects/dailydoublet.png'
+  image: '/img/projects/dailydoublet.webp'
 - title: 🌹 beautyshot
   content: |
     **beautyshot** is a simple screenshot beautifier. Quickly style and
@@ -23,5 +23,5 @@
     youtube, instagram, and more.
   link: https://shot.beauty/
   button: Try it out
-  image: '/img/projects/beautyshot.png'
+  image: '/img/projects/beautyshot.webp'
 

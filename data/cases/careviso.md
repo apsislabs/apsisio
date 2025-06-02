@@ -1,5 +1,5 @@
 ---
-logo: "/img/logos/careviso.png"
+logo: "/img/logos/careviso.webp"
 client: careviso
 title: Building an Industry-Leading HeathTech Platform
 ---

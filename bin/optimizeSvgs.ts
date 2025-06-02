@@ -5,6 +5,28 @@ import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { optimize } from "svgo";
 
+function sanitizeSvgForSvgo(svg: string): string {
+  return (
+    svg
+      // Remove empty or broken inline styles like style=";" or style=":;"
+      .replace(/style="[^a-zA-Z0-9]*"/g, "")
+      // Remove empty <style> tags entirely
+      .replace(/<style[^>]*>\s*<\/style>/g, "")
+      // Remove broken CSS inside <style> tags (like just `;`)
+      .replace(/<style[^>]*>[^a-zA-Z0-9]*<\/style>/g, "")
+  );
+}
+
+function sanitizeSvgStyles(svg: string): string {
+  return (
+    svg
+      // Remove empty or invalid style attributes like style=";"
+      .replace(/style=";?"/g, "")
+      // Remove empty <style> tags
+      .replace(/<style[^>]*>\s*<\/style>/g, "")
+  );
+}
+
 async function optimizeAllSVGs(dir: string) {
   console.log(`🔍 Optimizing SVGs in: ${dir}`);
 
@@ -15,10 +37,21 @@ async function optimizeAllSVGs(dir: string) {
   for (const svgPath of svgPaths) {
     try {
       const raw = readFileSync(svgPath, "utf-8");
-      const result = optimize(raw, {
+      const cleaned = sanitizeSvgStyles(sanitizeSvgForSvgo(raw));
+
+      const result = optimize(cleaned, {
         path: svgPath,
         multipass: true,
-        plugins: ["preset-default"],
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                minifyStyles: false,
+              },
+            },
+          },
+        ],
       });
 
       if ("data" in result) {
@@ -27,8 +60,9 @@ async function optimizeAllSVGs(dir: string) {
       } else {
         console.warn(`⚠️ Could not optimize: ${svgPath}`);
       }
-    } catch (e) {
-      console.error(`❌ Failed to optimize ${svgPath}`, e);
+    } catch (err) {
+      console.error(`❌ Failed to optimize ${svgPath}`);
+      throw err;
     }
   }
 }

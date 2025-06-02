@@ -1,13 +1,12 @@
 import clsx from "clsx";
-import styles from "styles/components/Carousel.module.scss";
 import { EmblaCarouselType } from "embla-carousel";
+import styles from "styles/components/Carousel.module.scss";
 
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { Button } from "./Button";
-import { MarkdownContent } from "./MarkdownContent";
-import { ChevronLeft, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type PropType = {
   slides: ReactNode[];
@@ -22,7 +21,7 @@ type UsePrevNextButtonsType = {
 };
 
 export const usePrevNextButtons = (
-  emblaApi: EmblaCarouselType | undefined,
+  emblaApi: EmblaCarouselType | undefined
 ): UsePrevNextButtonsType => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);

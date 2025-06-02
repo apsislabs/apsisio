@@ -22,7 +22,7 @@ export const ProjectSlide: React.FC<ProjectSlideProps> = ({
 }) => {
   return (
     <div className={clsx(styles.project_slide, className)}>
-      <img src={image} alt={title} className={styles.project_slide__image} />
+      <img loading="lazy" src={image} alt={title} className={styles.project_slide__image} />
 
       <div className={clsx(styles.project_slide__content)}>
         <header className={styles.project_slide__header}>

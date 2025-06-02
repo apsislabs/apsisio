@@ -1,12 +1,14 @@
-import React from "react";
 import { SectionHeader } from "components/SectionHeader";
 import { ServiceRow } from "components/ServiceRow";
 import { StylizedSvg } from "components/StylizedSvg";
 import { ArrowRightIcon } from "lucide-react";
+import dynamic from 'next/dynamic';
+import React from "react";
 
-import ScaleUpSvg from "/public/img/home/scaleup.svg";
-import StartUpSvg from "/public/img/home/startup.svg";
-import StepUpSvg from "/public/img/home/stepup.svg";
+const ScaleUpSvg = dynamic(() => import("/public/img/home/scaleup.svg"), { ssr: false });
+const StartUpSvg = dynamic(() => import("/public/img/home/startup.svg"), { ssr: false });
+const StepUpSvg = dynamic(() => import("/public/img/home/stepup.svg"), { ssr: false });
+
 
 export const ValueSection: React.FC = () => {
   return (

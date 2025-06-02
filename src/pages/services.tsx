@@ -1,20 +1,17 @@
 import { CtaProps } from "components/Cta";
-import { MarkdownContent } from "components/MarkdownContent";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { ServicesSection } from "components/ServicesSection";
 import { SiteLayout } from "components/SiteLayout";
 import { StylizedSvg } from "components/StylizedSvg";
-import { TeamMember } from "components/TeamMember";
-import { getCurrentPeople, getRandomCta } from "lib/posts";
-import { Person } from "lib/types";
+import { getRandomCta } from "lib/posts";
 import { NextPage } from "next";
 
-import ServicesHero from "/public/img/services/hero.svg";
-import { Section } from "components/Section";
 import clsx from "clsx";
 import { Button } from "components/Button";
+import { Section } from "components/Section";
 import { ChevronRight } from "lucide-react";
+import ServicesHero from "/public/img/services/hero.svg";
 
 export async function getStaticProps() {
   const cta = getRandomCta();

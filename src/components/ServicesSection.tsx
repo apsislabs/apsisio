@@ -1,11 +1,11 @@
+import dynamic from 'next/dynamic';
 import { ServiceRow } from "./ServiceRow";
 import { StylizedSvg } from "./StylizedSvg";
-import DesignSvg from "/public/img/services/discovery.svg";
-import DevSvg from "/public/img/services/rocket.svg";
-import TeamSvg from "/public/img/services/team.svg";
-import ToolsSvg from "/public/img/services/tools.svg";
 
-
+const DesignSvg = dynamic(() => import("/public/img/services/discovery.svg"), { ssr: false });
+const DevSvg = dynamic(() => import("/public/img/services/rocket.svg"), { ssr: false });
+const TeamSvg = dynamic(() => import("/public/img/services/team.svg"), { ssr: false });
+const ToolsSvg = dynamic(() => import("/public/img/services/tools.svg"), { ssr: false });
 
 export const ServicesSection = () => {
   return (

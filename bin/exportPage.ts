@@ -109,6 +109,26 @@ const success = await page.evaluate((selector) => {
       padding: 0 !important;
       border: 0 !important;
     }
+
+    @media print {
+      h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+
+      p, li, blockquote {
+        orphans: 3;
+        widows: 3;
+      }
+
+      table, pre, blockquote {
+        page-break-inside: avoid;
+      }
+
+      .no-break {
+        page-break-inside: avoid;
+      }
+    }
   </style>`;
 
   document.body.innerHTML = "";

@@ -185,6 +185,32 @@ chris:
     - network: github
       link: https://github.com/Crisfole
 
+pandu:
+  name: Pandu Rendradjaja
+  current: true
+  title: Senior Engineer
+  image: /img/people/pandu.jpg
+  bio: |
+    Pandu is an engineer who loves to tinker and build. He's worked in large
+    codebases across frontend and backend, tiny startups that need someone
+    who can hit the ground running, mobile apps, CLIs, and occasionally infrastructure.
+
+    He loves details, clean abstractions (whether finding them through
+    dirty work or the right piece of theory), and puzzles — his favorite
+    wintertime activity is Advent of Code.
+
+    Away from the keyboard, you might find Pandu hiking, running, overanalyzing
+    song lyrics, watching movies, or playing very old board games.
+  bio_short: |
+    Pandu is a versatile engineer who enjoys building across the stack—from frontend
+    and backend systems to mobile apps and infrastructure. Outside of work, Pandu pursues
+    diverse interests including hiking, running, film, and classic board games.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/pandurendradjaja/
+    - network: blog
+      link: /blog/people/pandu
+
 matt:
   name: Matt Erhart
   current: false

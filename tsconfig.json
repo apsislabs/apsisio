@@ -27,6 +27,7 @@
     "pages/_app.jsx"
   ],
   "exclude": [
+    "bin",
     "node_modules"
   ]
 }

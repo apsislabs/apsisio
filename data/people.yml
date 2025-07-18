@@ -285,3 +285,32 @@ niall:
     and pint-sized daughter in Toronto, and is by default the head
     of the Canadian branch of Apsis. When he grows up he wants to
     be a farmer, or maybe a ballet dancer, or no, wait, a sailor!
+
+smith:
+  name: Mike Smith
+  title: Senior Engineer
+  current: true
+  image: /img/people/smith.jpg
+  bio: |
+    Smith's introduction to computers began with the venerable Tandy 1000/TL2, 
+    where he was awed by the 16 colour EGA graphics of early Sierra adventure 
+    games. As a full stack developer, he has been involved in building and 
+    contributing to frontend and backend systems across a variety of industries 
+    ranging from email security and webhosting to electronics manufacturing 
+    and subsea robotics. He is very much a generalist that enjoys the challenges,
+    creativity, learning opportunities, and rich variety of solutions that 
+    software development offers.
+
+
+    Outside of the professional sphere, you'd probably find him reading sci-fi 
+    or history, petting cats, pretending to be a guitar virtuoso, at the keyboard 
+    noodling with C, or slowly melting in the Texas heat.
+  bio_short: |
+    A grizzled full stack software developer, Smith has experience building frontend
+    and backend systems across a variety of industries. When he's not working, 
+    you mind find him honing his sewing skills.
+  social:
+    - network: linkedin
+      link: https://www.linkedin.com/in/oneironautics/
+    - network: blog
+      link: /blog/people/smith

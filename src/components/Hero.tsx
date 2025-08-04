@@ -10,12 +10,17 @@ import { TextRotate } from "./TextRotate";
 const PEOPLE = ["wyatt", "eric", "henry", "chris", "noah", "joey"];
 
 const PAINS = [
-  "tech debt",
-  "big ideas",
-  "deadlines",
-  "compliance problems",
-  "bandwidth issues",
-  "investor pressure",
+
+  "compliance by default",
+  "a dependable partner",
+  "quick time to value",
+  "to harness AI",
+  "measurable ROI",
+  "a clean dev pipeline",
+  "to eliminate tech debt",
+  "a world-class app",
+  "to secure funding",
+  "scalable devops"
 ];
 
 const MOBILE_PAINS = ["tech debt", "big ideas", "deadlines"];
@@ -84,7 +89,7 @@ export const Hero = () => {
         {rendered && (
           <div className={styles.hero__headline}>
             <h3 className={clsx(styles.hero__title, "animate slide")}>
-              You've got{" "}
+              You need{" "}
               <TextRotate
                 interval={5000}
                 className="highlight highlight--primary"

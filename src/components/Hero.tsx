@@ -17,7 +17,7 @@ const PAINS = [
   "measurable ROI",
   "a clean dev pipeline",
   "to eliminate tech debt",
-  "a world-class app",
+  "an exceptional app",
   "to secure funding",
   "scalable devops"
 ];

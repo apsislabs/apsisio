@@ -10,7 +10,6 @@ import { TextRotate } from "./TextRotate";
 const PEOPLE = ["wyatt", "eric", "henry", "chris", "noah", "joey"];
 
 const PAINS = [
-
   "compliance by default",
   "a dependable partner",
   "quick time to value",

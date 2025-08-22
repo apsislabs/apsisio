@@ -11,9 +11,7 @@ import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
 import { ValueSection } from "components/ValueSection";
 import { siteConf } from "conf";
-import { readFileSync } from "fs";
-import yaml from "js-yaml";
-import { dataDirectory, getRandomCta } from "lib/posts";
+import { getRandomCta } from "lib/posts";
 import {
   ChevronRight,
   FileJson,
@@ -23,22 +21,17 @@ import {
   SquareTerminalIcon,
 } from "lucide-react";
 import { NextPage } from "next";
-import path from "path";
 import { RepoCard } from "../components/RepoCard";
 
 export async function getStaticProps() {
-  const projectsData = readFileSync(path.join(dataDirectory, "projects.yml"));
-
   return {
     props: {
-      projects: yaml.load(projectsData),
       cta: getRandomCta(),
     },
   };
 }
 
-export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
-  projects,
+export const IndexPage: NextPage<{ cta: CtaProps }> = ({
   cta,
 }) => {
   return (
@@ -127,21 +120,6 @@ export const IndexPage: NextPage<{ projects: any[]; cta: CtaProps }> = ({
               </Button>
             </footer>
           </section>
-        </Section>
-
-        <Section label="Projects" Icon={PresentationIcon} spaced>
-          <Carousel
-            slides={projects.map((p, i) => (
-              <ProjectSlide
-                key={i}
-                title={p.title}
-                content={<MarkdownContent content={p.content} />}
-                image={p.image}
-                button={p.button}
-                link={p.link}
-              />
-            ))}
-          />
         </Section>
       </SiteLayout>
     </>

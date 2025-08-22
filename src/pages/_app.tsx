@@ -24,10 +24,6 @@ Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
-declare global {
-    interface Window { plausible: any; }
-}
-
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
     smartquotes().listen();
@@ -50,8 +46,6 @@ export default function MyApp({ Component, pageProps }) {
       />
 
       <Script defer data-domain="apsis.io" src="https://plausible.skylab.apsis.io/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js" />
-      <Script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</Script>
-
 
       <meta
         name="theme-color"

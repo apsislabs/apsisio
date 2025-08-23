@@ -1,0 +1,73 @@
+@use 'styles/vars';
+
+$variant_colors: (
+  "blue": var(--apsis_blue),
+  "pink": var(--apsis_fuschia),
+  "green": var(--apsis_green),
+  "gold": var(--apsis_orange),
+);
+
+.stage_row {
+  &__title {
+    font-size: var(--font_size_h3);
+    text-wrap: balance;
+    font-weight: 700;
+    font-family: var(--serif);
+    margin-bottom: var(--space-2xs);
+
+    @media(min-width: vars.$tablet) {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--font_size_h5);
+    text-wrap: balance;
+    font-weight: 500;
+    font-style: italic;
+    font-family: var(--serif);
+    margin-bottom: var(--space-l);
+    line-height: 1.5;
+
+    @media(min-width: vars.$tablet) {
+      text-align: center;
+    }
+  }
+
+  &__image_container {
+    width: 200px;
+    margin: var(--space-s) auto;
+  }
+
+  @each $variant, $color in $variant_colors {
+    &--#{$variant} {
+      .stage_row__title {
+        color: $color;
+      }
+    }
+  }
+
+  &__lists {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    margin-top: var(--space-l);
+
+    > * {
+      width: 100%;
+    }
+
+    @media(min-width: vars.$tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__list_heading {
+    margin-bottom: var(--space-2xs);
+  }
+
+  &__footer {
+    font-style: italic;
+    margin-top: var(--space-l);
+  }
+}

@@ -79,9 +79,8 @@ const ServicesPage: NextPage<{ cta: CtaProps }> = ({ cta }) => {
           </div>
         </Section>
 
-        <Section spaced guides={false}>
-          <ServicesSection />
-        </Section>
+        <ServicesSection />
+
       </SiteLayout>
     </>
   );

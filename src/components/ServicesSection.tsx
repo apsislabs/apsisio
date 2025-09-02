@@ -51,7 +51,7 @@ export const ServicesSection = () => {
           <>
             Apsis helped careviso launch a HIPAA-compliant MVP that contributed
             to securing <strong>$17M in Series B funding.</strong> See the{" "}
-            <Link href="#">story</Link>.
+            <Link href="/clients/careviso/">story</Link>.
           </>
         }
         variant="blue"

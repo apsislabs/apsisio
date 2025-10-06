@@ -39,12 +39,6 @@ export default function MyApp({ Component, pageProps }) {
         }
       `}</style>
 
-      <Script
-        defer
-        data-domain="apsis.io"
-        src="https://plausible.io/js/script.js"
-      />
-
       <Script defer data-domain="apsis.io" src="https://plausible.skylab.apsis.io/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js" />
 
       <meta

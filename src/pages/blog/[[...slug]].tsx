@@ -1,8 +1,10 @@
 import { Pager } from "components/blog/Pager";
 import { PostExcerpt } from "components/blog/PostExcerpt";
 import { CtaProps } from "components/Cta";
+import { NewsletterCTA } from "components/NewsletterCTA";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
+import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
 import { getRandomCta, getSortedPostsData } from "lib/posts";
 import { Post } from "lib/types";
@@ -57,13 +59,23 @@ export const BlogIndexPage: NextPage<{
         description="Apsis Labs blog. Written by our devs to help you understand our process in developing scalable, secure web and mobile applications."
       />
 
-      <SiteLayout contained cta={cta}>
+      <SiteLayout
+        contained
+        cta={cta}
+        footer={
+          <Section bordered>
+            <NewsletterCTA />
+          </Section>
+        }
+      >
         <div className="stack gap-lg">
           {activePageIdx === 0 && (
             <PageHeader
-              title={<>
-                The <span className="text-primary">apsis</span> blog
-              </>}
+              title={
+                <>
+                  The <span className="text-primary">apsis</span> blog
+                </>
+              }
               subtitle={<>From our desks to your browser history.</>}
             />
           )}

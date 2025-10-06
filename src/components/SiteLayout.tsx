@@ -14,6 +14,7 @@ export const SiteLayout: React.FC<
     navGuides?: boolean;
     wide?: boolean;
     cta?: CtaProps;
+    footer?: React.ReactNode
   }
 > = ({
   children,
@@ -23,6 +24,7 @@ export const SiteLayout: React.FC<
   wide = false,
   navGuides = false,
   cta,
+  footer,
 }) => {
   return (
     <>
@@ -52,6 +54,8 @@ export const SiteLayout: React.FC<
           children
         )}
       </main>
+
+      {footer}
 
       {cta && (
         <Section theme="blue" bordered>

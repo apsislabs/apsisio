@@ -1,11 +1,9 @@
 import { Button } from "components/Button";
-import { Carousel } from "components/Carousel";
 import { Clients } from "components/Clients";
 import { CtaProps } from "components/Cta";
 import { Hero } from "components/Hero";
-import { MarkdownContent } from "components/MarkdownContent";
+import { NewsletterCTA } from "components/NewsletterCTA";
 import { PageMeta } from "components/PageMeta";
-import { ProjectSlide } from "components/ProjectSlide";
 import { Row } from "components/Row";
 import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
@@ -17,7 +15,6 @@ import {
   FileJson,
   FormInput,
   Gem,
-  PresentationIcon,
   SquareTerminalIcon,
 } from "lucide-react";
 import { NextPage } from "next";
@@ -31,9 +28,7 @@ export async function getStaticProps() {
   };
 }
 
-export const IndexPage: NextPage<{ cta: CtaProps }> = ({
-  cta,
-}) => {
+export const IndexPage: NextPage<{ cta: CtaProps }> = ({ cta }) => {
   return (
     <>
       <PageMeta title={siteConf.meta.title} />
@@ -49,6 +44,10 @@ export const IndexPage: NextPage<{ cta: CtaProps }> = ({
 
         <Section spaced>
           <ValueSection />
+        </Section>
+
+        <Section bordered theme="blue">
+          <NewsletterCTA />
         </Section>
 
         <Section

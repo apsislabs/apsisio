@@ -2,6 +2,9 @@ import { Row } from "components/Row";
 import Link from "next/link";
 import styles from "styles/components/Footer.module.scss";
 import { LogoType } from "./LogoType";
+import { Button } from "./Button";
+import { ChevronRight } from "lucide-react";
+import { NewsletterForm } from "./forms/NewsletterForm";
 
 const now = new Date();
 
@@ -69,6 +72,8 @@ export const Footer = () => (
           </ul>
         </small>
       </div>
+
+
 
       <div className={styles.footer__tagline_container}>
         <h4 className={styles.footer__tagline}>

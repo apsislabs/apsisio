@@ -72,7 +72,7 @@
 .input {
   border-radius: 0;
   padding: var(--space-2xs) var(--space-xs);
-  background-color: var(--section_background);
+  background-color: var(--white);
   color: var(--text_color);
   display: block;
   border: 1px solid var(--border);
@@ -80,6 +80,10 @@
 
   &.error {
     border: 1px solid var(--apsis_orange);
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: var(--gray_dark)
   }
 }
 
@@ -167,7 +171,11 @@
   &.markdown-alert-note,
   &.alert-note {
     border-left-color: var(--apsis_blue);
-    background-color: color-mix(in srgb, var(--apsis_blue) 5%, white);
+    background-color: color-mix(in srgb, var(--apsis_blue) 5%, var(--white));
+
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: color-mix(in srgb, var(--apsis_blue) 5%, var(--apsis_gray_surface));
+    }
 
     .markdown-alert-title,
     .alert-title {
@@ -184,7 +192,11 @@
   &.markdown-alert-success,
   &.alert-success {
     border-left-color: var(--apsis_green);
-    background-color: color-mix(in srgb, var(--apsis_green) 5%, white);
+    background-color: color-mix(in srgb, var(--apsis_green) 5%, var(--white));
+
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: color-mix(in srgb, var(--apsis_green) 5%, var(--apsis_gray_surface));
+    }
 
     .markdown-alert-title,
     .alert-title {
@@ -199,7 +211,11 @@
   &.markdown-alert-important,
   &.alert-important {
     border-left-color: var(--apsis_purple);
-    background-color: color-mix(in srgb, var(--apsis_purple) 5%, white);
+    background-color: color-mix(in srgb, var(--apsis_purple) 5%, var(--white));
+
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: color-mix(in srgb, var(--apsis_purple) 5%, var(--apsis_gray_surface));
+    }
 
     .markdown-alert-title,
     .alert-title {
@@ -214,7 +230,11 @@
   &.markdown-alert-warning,
   &.alert-warning {
     border-left-color: var(--apsis_orange);
-    background-color: color-mix(in srgb, var(--apsis_orange) 5%, white);
+    background-color: color-mix(in srgb, var(--apsis_orange) 5%, var(--white));
+
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: color-mix(in srgb, var(--apsis_orange) 5%, var(--apsis_gray_surface));
+    }
 
     .markdown-alert-title,
     .alert-title {
@@ -229,7 +249,11 @@
   &.markdown-alert-caution,
   &.alert-caution {
     border-left-color: var(--apsis_red);
-    background-color: color-mix(in srgb, var(--apsis_red) 5%, white);
+    background-color: color-mix(in srgb, var(--apsis_red) 5%, var(--white));
+
+    @media screen and (prefers-color-scheme: dark) {
+      background-color: color-mix(in srgb, var(--apsis_red) 5%, var(--apsis_gray_surface));
+    }
 
     .markdown-alert-title,
     .alert-title {

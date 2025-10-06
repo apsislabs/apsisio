@@ -12,6 +12,7 @@ import { Button } from "components/Button";
 import { Section } from "components/Section";
 import { ChevronRight } from "lucide-react";
 import ServicesHero from "/public/img/services/hero.svg";
+import { NewsletterCTA } from "components/NewsletterCTA";
 
 export async function getStaticProps() {
   const cta = getRandomCta();
@@ -77,6 +78,10 @@ const ServicesPage: NextPage<{ cta: CtaProps }> = ({ cta }) => {
               </Button>
             </div>
           </div>
+        </Section>
+
+        <Section bordered theme="blue">
+          <NewsletterCTA />
         </Section>
 
         <ServicesSection />

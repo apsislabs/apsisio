@@ -1,0 +1,36 @@
+@use "styles/vars";
+
+.newsletter_signup {
+  &__root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-m);
+    padding: var(--space-l);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--apsis_blue);
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: var(--apsis_gray);
+    font-weight: normal;
+  }
+
+  &__disclaimer {
+    margin: 0;
+    opacity: 75%;
+  }
+}

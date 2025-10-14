@@ -10,7 +10,7 @@ const HirePage: NextPage = () => {
   return (
     <>
       <PageMeta
-        title="Hire Us"
+        title="Book a Call"
         description="Apsis Labs is ready to get started making your project a reality."
       />
 

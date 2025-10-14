@@ -159,6 +159,9 @@
   }
 
   &__actions {
+    align-items: center;
+    display: flex;
+    gap: var(--space-2xs);
   }
 
   &__tagline {

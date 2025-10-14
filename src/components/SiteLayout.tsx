@@ -1,7 +1,7 @@
 import { Footer } from "components/Footer";
 import { Navbar } from "components/Navbar";
 import { Section } from "components/Section";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, PhoneIcon } from "lucide-react";
 import { PropsWithChildren } from "react";
 import { Button } from "./Button";
 import { Cta, CtaProps } from "./Cta";
@@ -33,13 +33,24 @@ export const SiteLayout: React.FC<
           showTagline={showTagline}
           actions={
             !showTagline && (
-              <Button
-                href="/hire"
-                EndIcon={ChevronRight}
-                size="sm"
-              >
-                Work with us
-              </Button>
+              <>
+                <Button
+                  href="/book"
+                  StartIcon={PhoneIcon}
+                  size="sm"
+                  variant="tertiary"
+                >
+                  Book a call
+                </Button>
+
+                <Button
+                  href="/hire"
+                  EndIcon={ChevronRight}
+                  size="sm"
+                >
+                  Work with us
+                </Button>
+              </>
             )
           }
         />

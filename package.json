@@ -50,6 +50,7 @@
     "prettier": "^3.5.3",
     "pretty-quick": "^4.1.1",
     "react": "^19.1.0",
+    "react-calendly": "^4.4.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.4",
     "react-transition-state": "^2.3.1",

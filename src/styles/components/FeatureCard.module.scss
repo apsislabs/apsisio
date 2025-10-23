@@ -1,0 +1,108 @@
+@use "styles/vars";
+
+.feature_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  padding: var(--space-m);
+  border: 1px solid transparent;
+  position: relative;
+  transition:
+    border-color var(--timing_md) var(--easing) var(--timing_md),
+    transform var(--timing_sm) var(--easing);
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.75;
+    background-color: var(--apsis_gray_surface);
+    transition:
+      transform var(--easing) var(--timing_md),
+      background-color var(--easing) var(--timing_md);
+  }
+
+  &::before {
+    transform: translateX(calc(var(--space-3xs) * -0.25))
+      translateY(calc(var(--space-3xs) * -0.25));
+  }
+
+  &::after {
+    transform: translateX(calc(var(--space-3xs) * 0.25))
+      translateY(calc(var(--space-3xs) * 0.25));
+  }
+
+  &:hover {
+    border-color: var(--border_color);
+    transform: translateY(calc(var(--space-3xs) * -0.25));
+  }
+
+  &::after {
+    transform: translateX(calc(var(--space-3xs) / 2))
+      translateY(calc(var(--space-3xs) / 2));
+  }
+
+  &:hover {
+    border-color: var(--border_color);
+    transform: translateY(calc(var(--space-3xs) / -2));
+  }
+
+  &::after {
+    transform: translateX(var(--space-3xs)) translateY(var(--space-3xs));
+  }
+
+  &:hover {
+    border-color: var(--border_color);
+    transform: translateY(calc(var(--space-3xs) * -1));
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: none;
+    background-color: var(--surface_color);
+  }
+
+  &__media {
+    color: var(--icon_color);
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: var(--font_size_sm);
+    color: var(--title_color);
+    line-height: var(--heading_line_height);
+  }
+
+  &__description {
+    font-size: var(--font_size_xs);
+    flex: 1;
+    line-height: var(--line_height);
+  }
+
+  &--blue {
+    --border_color: var(--apsis_blue);
+    --surface_color: var(--apsis_blue_surface);
+    --icon_color: var(--apsis_blue);
+    --title_color: var(--apsis_blue_darker);
+  }
+
+  &--green {
+    --border_color: var(--apsis_green);
+    --surface_color: var(--apsis_green_surface);
+    --icon_color: var(--apsis_green);
+    --title_color: var(--apsis_green_darker);
+  }
+
+  &--pink {
+    --border_color: var(--apsis_fuschia);
+    --surface_color: var(--apsis_fuschia_surface);
+    --icon_color: var(--apsis_fuschia);
+    --title_color: var(--apsis_fuschia_darker);
+  }
+}

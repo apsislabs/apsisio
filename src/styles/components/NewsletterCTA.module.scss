@@ -34,3 +34,39 @@
     opacity: 75%;
   }
 }
+
+.newsletter_form {
+  display: flex;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color var(--easing) var(--timing_sm);
+
+  &:focus-within {
+    border-color: var(--apsis_blue);
+    box-shadow: 0 0 0 var(--space-3xs) var(--apsis_blue_outline);
+  }
+
+  &__input {
+    flex: 1;
+
+    :global(.input) {
+      border: none;
+      box-shadow: none;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__button {
+    border-left: 1px solid var(--border);
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}

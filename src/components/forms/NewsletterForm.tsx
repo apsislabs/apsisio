@@ -3,6 +3,7 @@ import { TextField } from "components/TextField";
 import { EMAIL_REGEX } from "lib/utils";
 import { ChevronRight } from "lucide-react";
 import { useForm } from "react-hook-form";
+import styles from "styles/components/NewsletterCTA.module.scss";
 
 type Inputs = {
   email: string;
@@ -20,7 +21,7 @@ export const NewsletterForm = () => {
     <form
       method="post"
       action="https://listmonk.skylab.apsis.io/subscription/form"
-      className="stack stack-h"
+      className={styles.newsletter_form}
     >
       <input type="hidden" name="nonce" />
       <input
@@ -32,13 +33,14 @@ export const NewsletterForm = () => {
 
       <TextField
         id="email"
-        placeholder="sholmes@baker.example.com"
+        placeholder="sherlock@example.com"
         error={errors.email}
         required
         type="email"
         autoComplete="email"
         data-lpignore="true"
         data-1p-ignore
+        className={styles.newsletter_form__input}
         {...register("email", {
           required: "Please provide an email address",
           pattern: {
@@ -48,7 +50,11 @@ export const NewsletterForm = () => {
         })}
       />
 
-      <Button type="submit" EndIcon={ChevronRight}>
+      <Button
+        type="submit"
+        EndIcon={ChevronRight}
+        className={styles.newsletter_form__button}
+      >
         Subscribe
       </Button>
     </form>

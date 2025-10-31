@@ -7,8 +7,8 @@ export const NewsletterCTA = () => {
   return (
     <div className={styles.newsletter_signup__root}>
       <header className={styles.newsletter_signup__header}>
-        <h2 className={styles.newsletter_signup__title}>Want to stay up to date with apsis?</h2>
-        <h3 className={styles.newsletter_signup__subtitle}>You're in luck, we have a newsletter.</h3>
+        <h2 className={styles.newsletter_signup__title}>Let's stay in touch</h2>
+        <h3 className={styles.newsletter_signup__subtitle}>Sign up for occasional updates from the apsis team.</h3>
       </header>
 
       <NewsletterForm />

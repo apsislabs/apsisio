@@ -11,7 +11,7 @@ date: 2024-12-11
 ---
 
 >[!NOTE] 
-> **Update:** as of **2024-02-13** we have been paid in full, and our interminable wait through enterprise beaurocracy has ended. We've left this post up as a lesson to our future selves.
+> **Update:** as of **2024-02-13** we have been paid in full, and our interminable wait through enterprise bureaucracy has ended. We've left this post up as a lesson to our future selves.
 
 One of our clients hasn't paid us. That happens sometimes. Sometimes they never pay you, sometimes they pay you late. Most of the time it doesn't matter that much: after some early mistakes, we've learned not to put too many gross-revenue eggs  in one client basket.
 

@@ -69,7 +69,7 @@ wyatt:
 murph:
   name: Chris Murphy
   title: Director of Sales & Partnerships
-  current: true
+  current: false
   image: /img/people/chrism.jpg
   social:
     - network: linkedin

@@ -7,21 +7,8 @@ import styles from "styles/components/Hero.module.scss";
 import { useWindowSize } from "usehooks-ts";
 import { TextRotate } from "./TextRotate";
 
-const PEOPLE = ["wyatt", "eric", "henry", "chris", "noah", "joey"];
-
-const PAINS = [
-  "compliance by default",
-  "a dependable partner",
-  "quick time to value",
-  "to harness AI",
-  "measurable ROI",
-  "a clean dev pipeline",
-  "to eliminate tech debt",
-  "an exceptional app",
-  "to secure funding",
-  "scalable devops"
-];
-
+const PEOPLE = ["wyatt", "eric", "henry", "chris", "noah", "joey", "smith", "pandu"];
+const PAINS = ["tech debt", "big ideas", "deadlines"];
 const MOBILE_PAINS = ["tech debt", "big ideas", "deadlines"];
 
 const SvgPattern = ({ className }) => (
@@ -88,7 +75,7 @@ export const Hero = () => {
         {rendered && (
           <div className={styles.hero__headline}>
             <h3 className={clsx(styles.hero__title, "animate slide")}>
-              You need{" "}
+              You've got{" "}
               <TextRotate
                 interval={5000}
                 className="highlight highlight--primary"

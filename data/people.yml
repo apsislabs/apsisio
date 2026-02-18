@@ -158,7 +158,7 @@ henry:
 
 chris:
   name: Chris Pfohl
-  current: true
+  current: false
   title: Senior Data Engineer
   image: /img/people/chris.jpg
   bio: |

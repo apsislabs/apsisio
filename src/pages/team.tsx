@@ -53,7 +53,7 @@ const TeamPage: NextPage<{ team: Person[] }> = ({ team }) => {
                 probably not very good developers."
               </p>
               <p className="lead">
-                11 years, 5 babies, & 4 weddings later things <em>still</em>{" "}
+                12 years, 5 babies, & 4 weddings later things <em>still</em>{" "}
                 haven't managed to fall apart. The rest, they say, is history.
               </p>
             </section>

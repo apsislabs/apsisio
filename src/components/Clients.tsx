@@ -19,7 +19,7 @@ export const Clients = () => {
           height="auto"
           className={clsx(styles.clients__logo, "animate slide delay-3")}
           alt="Community Boss"
-          src="/img/logos/communityboss.webp"
+          src="/img/logos/communityboss.png"
         />
       </figure>
       <figure className={styles.clients__logo_frame}>

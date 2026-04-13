@@ -7,7 +7,7 @@ import styles from "styles/components/Hero.module.scss";
 import { useWindowSize } from "usehooks-ts";
 import { TextRotate } from "./TextRotate";
 
-const PEOPLE = ["wyatt", "eric", "henry", "chris", "noah", "joey", "smith", "pandu"];
+const PEOPLE = ["wyatt", "eric", "henry", "chris", "noah", "joey", "smith"];
 const PAINS = ["tech debt", "big ideas", "deadlines"];
 const MOBILE_PAINS = ["tech debt", "big ideas", "deadlines"];
 

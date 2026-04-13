@@ -187,7 +187,7 @@ chris:
 
 pandu:
   name: Pandu Rendradjaja
-  current: true
+  current: false
   title: Senior Engineer
   image: /img/people/pandu.jpg
   bio: |

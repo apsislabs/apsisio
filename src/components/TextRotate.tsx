@@ -4,6 +4,7 @@ import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 import { useTransitionState } from "react-transition-state";
 import { useInterval } from "usehooks-ts";
+import { usePrefersReducedMotion } from "hooks/usePrefersReducedMotion";
 
 type TextRotateProps = {
   words: React.ReactNode[];
@@ -18,10 +19,12 @@ export const TextRotate: React.FC<TextRotateProps> = ({
   interval = 3000,
   delay = 0,
 }) => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   const [index, setIndex] = useState(0);
   const [visibleWord, setVisibleWord] = useState(words[0]);
   const [state, toggle] = useTransitionState({
-    timeout: 500,
+    timeout: prefersReducedMotion ? 1 : 500,
     preEnter: true,
     preExit: true,
   });

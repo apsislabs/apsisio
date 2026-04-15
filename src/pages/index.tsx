@@ -9,7 +9,7 @@ import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
 import { ValueSection } from "components/ValueSection";
 import { siteConf } from "conf";
-import { getRandomCta } from "lib/posts";
+import { getRandomCta } from "lib/ctas";
 import {
   ChevronRight,
   FileJson,

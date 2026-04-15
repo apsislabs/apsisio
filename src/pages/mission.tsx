@@ -2,13 +2,14 @@ import { CtaProps } from "components/Cta";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { getPostData, getRandomCta } from "lib/posts";
+import { loadPostByParams } from "lib/content/service/contentService";
+import { getRandomCta } from "lib/ctas";
 import { Post } from "lib/types";
 import { NextPage } from "next";
 import Link from "next/link";
 
 export async function getStaticProps() {
-  const content = await getPostData({
+  const content = await loadPostByParams({
     year: "2015",
     month: "04",
     day: "23",

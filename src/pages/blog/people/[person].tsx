@@ -6,8 +6,11 @@ import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import { TeamMember } from "components/TeamMember";
-import { getPeople, getSortedPostsData } from "lib/posts";
-import { Person, Post as TPost } from "lib/types";
+import {
+  listCurrentPersonIds,
+  loadPersonPageModel,
+} from "lib/content/service/contentService";
+import { Person, PostListItem } from "lib/types";
 import { getFirstName } from "lib/utils";
 import _ from "lodash-es";
 import { useRouter } from "next/router";
@@ -37,39 +40,27 @@ const makePersonalizedCta = (person: Person): CtaProps => {
 };
 
 export async function getStaticProps({ params }) {
-  const people = await getPeople();
-  const person = people[params.person];
+  const pageModel = await loadPersonPageModel(params.person);
 
-  if (!person || !person.current) {
+  if (!pageModel) {
     return {
       notFound: true,
     };
   }
 
-  const posts = (await getSortedPostsData()).filter(
-    (p) => p.author == params.person,
-  );
-
-  const cta = makePersonalizedCta(person);
+  const cta = makePersonalizedCta(pageModel.person);
 
   return {
     props: {
-      posts,
+      posts: pageModel.posts,
       cta,
-      person,
+      person: pageModel.person,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const people = await getPeople();
-  const paths = Object.entries(people)
-    .filter(([_key, person]) => person.current)
-    .map(([key, _person]) => ({
-      params: {
-        person: key,
-      },
-    }));
+  const paths = await listCurrentPersonIds();
 
   return {
     paths,
@@ -82,7 +73,7 @@ export const PersonPage = ({
   cta,
   person,
 }: {
-  posts: TPost[];
+  posts: PostListItem[];
   cta: CtaProps;
   person: Person;
 }) => {

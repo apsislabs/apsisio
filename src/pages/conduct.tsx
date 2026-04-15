@@ -2,7 +2,7 @@ import { CtaProps } from "components/Cta";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { getRandomCta } from "lib/posts";
+import { getRandomCta } from "lib/ctas";
 import { NextPage } from "next";
 
 export async function getStaticProps() {

@@ -18,7 +18,9 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
-    "incremental": true
+    "incremental": true,
+    "ignoreDeprecations": "6.0",
+    "types": ["bun-types"]
   },
   "include": [
     "next-env.d.ts",

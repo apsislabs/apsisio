@@ -32,6 +32,19 @@ const comparePostsByDateDesc = (a: PostListItem, b: PostListItem) => {
   }
 };
 
+const toPostListItem = (
+  post: Awaited<ReturnType<typeof getPostRecordByParams>>
+): PostListItem => ({
+  ...post.data,
+  id: post.id,
+  params: post.params,
+  href: {
+    pathname: "/blog/[year]/[month]/[day]/[slug]",
+    query: post.params,
+  },
+  excerpt: renderMarkdown(post.excerpt),
+});
+
 const toPostModel = (
   post: Awaited<ReturnType<typeof getPostRecordByParams>>,
   people: Record<string, Person>
@@ -61,12 +74,9 @@ export const loadPostByParams = async (
 };
 
 export const listSortedPosts = async (): Promise<PostListItem[]> => {
-  const [posts, people] = await Promise.all([
-    getAllPostRecords(),
-    getPeopleMap(),
-  ]);
+  const posts = await getAllPostRecords();
 
-  return posts.map((post) => toPostModel(post, people)).sort(comparePostsByDateDesc);
+  return posts.map(toPostListItem).sort(comparePostsByDateDesc);
 };
 
 export const listAllPostIds = async () => {
@@ -80,16 +90,23 @@ export const listAllPostIds = async () => {
 export const loadPersonPageModel = async (
   personSlug: string
 ): Promise<PersonPageModel | null> => {
-  const [people, posts] = await Promise.all([getPeopleMap(), listSortedPosts()]);
+  const [people, postRecords] = await Promise.all([
+    getPeopleMap(),
+    getAllPostRecords(),
+  ]);
   const person = people[personSlug];
 
   if (!person || !person.current) {
     return null;
   }
 
+  const fullPosts = postRecords
+    .filter((post) => post.data.author === personSlug)
+    .map((post) => toPostModel(post, people));
+
   return {
     person,
-    posts: posts.filter((post) => post.author == personSlug),
+    posts: fullPosts,
   };
 };
 

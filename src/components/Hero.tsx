@@ -2,12 +2,11 @@ import clsx from "clsx";
 import { Button } from "components/Button";
 import { shuffle } from "lodash-es";
 import { ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import styles from "styles/components/Hero.module.scss";
 import { useWindowSize } from "usehooks-ts";
 import { TextRotate } from "./TextRotate";
 
-const PEOPLE = ["wyatt", "eric", "henry", "chris", "noah", "joey", "smith"];
 const PAINS = ["tech debt", "big ideas", "deadlines"];
 const MOBILE_PAINS = ["tech debt", "big ideas", "deadlines"];
 
@@ -39,18 +38,12 @@ const SvgPattern = ({ className }) => (
   </svg>
 );
 
-export const Hero = () => {
-  const [person, setPerson] = useState(PEOPLE);
-  const [pain, setPain] = useState(PAINS);
+export const Hero = ({ people, pain }: { people: string[]; pain?: string[] }) => {
   const [rendered, setRendered] = useState(false);
   const { width: windowWidth = 0 } = useWindowSize({ debounceDelay: 500 });
+  const shuffledPeople = useMemo(() => shuffle(people), [people]);
 
-  // Use effect only runs in the browser,
-  // which is necessary to make this dynamic
-  // at render time, rather than at page generation
   useEffect(() => {
-    setPerson(() => shuffle(PEOPLE));
-    setPain(() => (windowWidth < 600 ? shuffle(MOBILE_PAINS) : shuffle(PAINS)));
     setRendered(true);
   }, []);
 
@@ -79,14 +72,14 @@ export const Hero = () => {
               <TextRotate
                 interval={5000}
                 className="highlight highlight--primary"
-                words={pain}
+                words={pain || (windowWidth < 600 ? MOBILE_PAINS : PAINS)}
               />
               <br />
               We've got{" "}
               <TextRotate
                 className="highlight highlight--accent"
                 interval={5000}
-                words={person}
+                words={shuffledPeople || []}
                 delay={1500}
               />
             </h3>

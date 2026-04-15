@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Post } from "lib/types";
+import { Post, PostListItem } from "lib/types";
 import styles from "styles/components/blog/Post.module.scss";
 import { PostMeta } from "./PostMeta";
 import { PostImage } from "./PostImage";
 
 export const PostHeader: React.FC<{
-  post: Post;
+  post: Post | PostListItem;
   as?: React.ElementType;
   hideImage?: boolean;
 }> = ({ post, as: HeaderComponent = "h2", hideImage = false }) => {

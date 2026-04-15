@@ -9,6 +9,7 @@ import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
 import { ValueSection } from "components/ValueSection";
 import { siteConf } from "conf";
+import { getCurrentPeopleMap } from "lib/content/repository/peopleRepository";
 import { getRandomCta } from "lib/ctas";
 import {
   ChevronRight,
@@ -21,21 +22,26 @@ import { NextPage } from "next";
 import { RepoCard } from "../components/RepoCard";
 
 export async function getStaticProps() {
+  const currentPeopleMap = await getCurrentPeopleMap();
   return {
     props: {
       cta: getRandomCta(),
+      people: Object.keys(currentPeopleMap),
     },
   };
 }
 
-export const IndexPage: NextPage<{ cta: CtaProps }> = ({ cta }) => {
+export const IndexPage: NextPage<{ cta: CtaProps; people: string[] }> = ({
+  cta,
+  people,
+}) => {
   return (
     <>
       <PageMeta title={siteConf.meta.title} />
 
       <SiteLayout showTagline navTheme="blue" navGuides cta={cta}>
         <Section theme="blue" className="overflow-hidden">
-          <Hero />
+          <Hero people={people} />
         </Section>
 
         <Section guides={false} theme="gray" bordered>

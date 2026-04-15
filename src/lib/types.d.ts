@@ -40,12 +40,22 @@ export type PostParams = {
   slug: string;
 };
 
-export type Post = Modify<
+export type PostListItem = Modify<
   {
     id: string;
     params?: PostParams | null;
     href: string | UrlObject;
-    contentHtml?: string;
+    excerpt: string;
+  },
+  FrontmatterData
+>;
+
+export type PostPageModel = Modify<
+  {
+    id: string;
+    params?: PostParams | null;
+    href: string | UrlObject;
+    contentHtml: string;
     person?: Person | null;
     desc?: string;
   },
@@ -70,10 +80,16 @@ export type CaseStudy = {
   subtitle?: string;
   content: string;
   contentHtml?: string;
-}
+};
 
-export type PostPageModel = Post;
-export type PostListItem = Post;
+export type Client = {
+  name: string;
+  logo: string;
+  url: string;
+};
+
+export type Post = PostPageModel;
+
 export type PersonPageModel = {
   person: Person;
   posts: PostListItem[];

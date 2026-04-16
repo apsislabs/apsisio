@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
-import path from 'node:path';
-
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
-  webpack: (config, { isServer }) => {
+  images: {
+    unoptimized: true,
+  },
+  webpack: (config) => {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")

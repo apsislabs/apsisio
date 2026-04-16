@@ -6,13 +6,16 @@ import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
-import { getRandomCta, getSortedPostsData } from "lib/posts";
-import { Post } from "lib/types";
+import {
+  listSortedPosts,
+} from "lib/content/service/contentService";
+import { getRandomCta } from "lib/ctas";
+import { PostListItem } from "lib/types";
 import _ from "lodash-es";
 import { NextPage } from "next";
 
 const paginatedPosts = async (perPage: number = 5) => {
-  const posts = await getSortedPostsData();
+  const posts = await listSortedPosts();
   return _.chunk(posts, perPage);
 };
 
@@ -44,7 +47,7 @@ export async function getStaticPaths() {
 }
 
 export const BlogIndexPage: NextPage<{
-  posts: Post[];
+  posts: PostListItem[];
   numPages: number;
   activePageIdx: number;
   cta: CtaProps;

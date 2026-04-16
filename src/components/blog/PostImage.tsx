@@ -1,7 +1,7 @@
-import { Post } from "lib/types";
+import { Post, PostListItem } from "lib/types";
 import styles from "styles/components/blog/Post.module.scss";
 
-export const PostImage: React.FC<{ post: Post }> = ({ post }) => {
+export const PostImage: React.FC<{ post: Post | PostListItem }> = ({ post }) => {
   return (
     <div className={styles["post__image-wrapper"]}>
       <img

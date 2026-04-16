@@ -4,7 +4,7 @@ import { PageMeta } from "components/PageMeta";
 import { ServicesSection } from "components/ServicesSection";
 import { SiteLayout } from "components/SiteLayout";
 import { StylizedSvg } from "components/StylizedSvg";
-import { getRandomCta } from "lib/posts";
+import { getRandomCta } from "lib/ctas";
 import { NextPage } from "next";
 
 import clsx from "clsx";

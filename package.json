@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build && next-sitemap",
+    "test": "bun test",
     "postbuild": "bun run bin/optimizeSvgs.ts ./out/img",
     "start": "next start",
     "deploy": "bun run build && bun run deploy:prod:push && bun run deploy:prod:invalidate",

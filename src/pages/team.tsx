@@ -3,19 +3,19 @@ import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
 import { TeamMember } from "components/TeamMember";
-import { getCurrentPeople } from "lib/posts";
-import { Person } from "lib/types";
+import { listCurrentPeople } from "lib/content/service/contentService";
+import { TeamPageModel } from "lib/types";
 import { NextPage } from "next";
 
 export async function getStaticProps() {
   return {
     props: {
-      team: await getCurrentPeople(),
+      team: await listCurrentPeople(),
     },
   };
 }
 
-const TeamPage: NextPage<{ team: Person[] }> = ({ team }) => {
+const TeamPage: NextPage<{ team: TeamPageModel }> = ({ team }) => {
   return (
     <>
       <PageMeta

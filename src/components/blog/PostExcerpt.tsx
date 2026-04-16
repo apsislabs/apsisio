@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import { MarkdownContent } from "components/MarkdownContent";
-import { Post } from "lib/types";
+import { Post, PostListItem } from "lib/types";
 import styles from "styles/components/blog/Post.module.scss";
 import { PostHeader } from "./PostHeader";
 
-export const PostExcerpt: React.FC<{ post: Post; small?: boolean }> = ({
+export const PostExcerpt: React.FC<{ post: Post | PostListItem; small?: boolean }> = ({
   post,
   small = false,
 }) => {

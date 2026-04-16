@@ -3,7 +3,7 @@ import { MarkdownContent } from "components/MarkdownContent";
 import { PageHeader } from "components/PageHeader";
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { getActiveJobs } from "lib/posts";
+import { getActiveJobs } from "lib/jobs";
 import { Job } from "lib/types";
 import { NextPage } from "next";
 

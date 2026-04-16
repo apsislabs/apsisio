@@ -3,7 +3,7 @@ import { UrlObject } from "url";
 export type Modify<T, R> = Omit<T, keyof R> & R;
 export type Modify3<T, R, Q> = Modify<Modify<T, R>, Q>;
 
-type Person = {
+export type Person = {
   name: string;
   title: string;
   current: boolean;
@@ -13,7 +13,7 @@ type Person = {
   social?: SocialLink[];
 };
 
-type SocialLink = {
+export type SocialLink = {
   network: "twitter" | "bluesky" | "linkedin" | "github" | "blog";
   link: string;
 };
@@ -40,12 +40,22 @@ export type PostParams = {
   slug: string;
 };
 
-export type Post = Modify<
+export type PostListItem = Modify<
   {
     id: string;
     params?: PostParams | null;
     href: string | UrlObject;
-    contentHtml?: string;
+    excerpt: string;
+  },
+  FrontmatterData
+>;
+
+export type PostPageModel = Modify<
+  {
+    id: string;
+    params?: PostParams | null;
+    href: string | UrlObject;
+    contentHtml: string;
     person?: Person | null;
     desc?: string;
   },
@@ -70,4 +80,23 @@ export type CaseStudy = {
   subtitle?: string;
   content: string;
   contentHtml?: string;
-}
+};
+
+export type Client = {
+  name: string;
+  logo: string;
+  url: string;
+  scale?: number;
+};
+
+export type Post = PostPageModel;
+
+export type PersonPageModel = {
+  person: Person;
+  posts: PostListItem[];
+};
+export type TeamPageModel = Record<string, Person>;
+export type CaseStudyPageModel = Omit<CaseStudy, "content"> & {
+  description: string;
+  contentHtml: string;
+};

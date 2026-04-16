@@ -3,13 +3,16 @@ import { CtaProps } from "components/Cta";
 
 import { PageMeta } from "components/PageMeta";
 import { SiteLayout } from "components/SiteLayout";
-import { formattedTitle } from "lib/metadata";
-import { getAllPostIds, getPostData, getRandomCta } from "lib/posts";
-import { Post as TPost } from "lib/types";
+import {
+  listAllPostIds,
+  loadPostByParams,
+} from "lib/content/service/contentService";
+import { getRandomCta } from "lib/ctas";
+import { PostPageModel } from "lib/types";
 import { useRouter } from "next/router";
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params);
+  const postData = await loadPostByParams(params);
 
   return {
     props: {
@@ -20,7 +23,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getAllPostIds();
+  const paths = await listAllPostIds();
   return {
     paths,
     fallback: false,
@@ -31,7 +34,7 @@ export const PostPage = ({
   postData,
   cta,
 }: {
-  postData: TPost;
+  postData: PostPageModel;
   cta: CtaProps;
 }) => {
   const { asPath } = useRouter();

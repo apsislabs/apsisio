@@ -1,34 +1,71 @@
 @use "styles/vars";
 
 .clients {
-  margin-top: var(--space-s);
-  margin-bottom: var(--space-s);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  --logo-slot-height: 4rem;
+  --logo-max-width: 10rem;
+
+  margin: var(--space-s) 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
 
   @media (min-width: vars.$tablet) {
-    padding: var(--space-s) var(--space-m);
-    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    --logo-slot-height: 4.5rem;
+    --logo-max-width: 12rem;
+
+    padding: 0 var(--space-m);
+    gap: var(--space-s);
+  }
+}
+
+.clients__item {
+  min-width: 0;
+  flex: 0 0 calc(50% - (var(--space-xs) / 2));
+
+  @media (min-width: vars.$tablet) {
+    flex-basis: calc((100% - (2 * var(--space-s))) / 3);
   }
 
-  &__logo_frame {
-    padding: var(--space-xs);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    @media (min-width: vars.$desktop) {
-      padding: var(--space-s);
-    }
+  @media (min-width: vars.$desktop) {
+    flex: 1 1 0;
   }
+}
 
-  &__logo {
-    max-width: 60%;
-    object-fit: contain;
+.clients__link {
+  min-height: var(--logo-slot-height);
+  padding: var(--space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 
-    @media screen and (prefers-color-scheme: dark) {
-      filter: invert(50%);
-    }
+  transition:
+    transform 160ms ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
   }
+}
+
+.clients__logo_wrap {
+  --logo-scale: 1;
+
+  width: 100%;
+  max-width: var(--logo-max-width);
+  height: var(--logo-slot-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients__logo {
+  width: auto;
+  height: auto;
+  max-width: calc(100% * var(--logo-scale));
+  max-height: calc(100% * var(--logo-scale));
+  object-fit: contain;
 }

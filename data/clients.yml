@@ -1,19 +1,35 @@
-careviso:
-  name: careviso
-  logo: /img/logos/careviso.webp
-  url: https://careviso.com
-
 communityboss:
   name: Community Boss
   logo: /img/logos/communityboss.png
   url: https://communityboss.com
+  scale: 0.9
 
-isoflex:
-  name: 2nd Chair
-  logo: /img/logos/chair.webp
-  url: https://2ndchair.co
+careviso:
+  name: careviso
+  logo: /img/logos/careviso.png
+  url: https://careviso.com
+  scale: 1
+
+thinkingbaseball:
+  name: ThinkingBaseball
+  logo: /img/logos/thinkingbaseball.png
+  url: https://thinkingbaseball.com
+  scale: 1
 
 welliq:
   name: WelliQ
-  logo: /img/logos/welliq.webp
-  url: https://welliq.com
+  logo: /img/logos/welliq.png
+  url: https://welliq.org/
+  scale: 1
+
+isoflex:
+  name: ISOFLEX
+  logo: /img/logos/isoflex.png
+  url: https://www.isoflex.com/
+  scale: 1
+
+humidity:
+  name: Humidity
+  logo: /img/logos/humidity.png
+  url: https://humidity.studio
+  scale: 1

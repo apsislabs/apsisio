@@ -1,45 +1,48 @@
 import clsx from "clsx";
+import type { CSSProperties } from "react";
+import Image, { StaticImageData } from "next/image";
+import { Client } from "lib/types";
 import styles from "styles/components/Clients.module.scss";
 
-export const Clients = () => {
+export type HomeClient = Omit<Client, "logo"> & {
+  logo: StaticImageData;
+};
+
+type ClientsProps = {
+  clients: HomeClient[];
+};
+
+const delays = ["delay-0", "delay-1", "delay-2", "delay-3"];
+
+export const Clients = ({ clients }: ClientsProps) => {
   return (
-    <div className={styles.clients}>
-      <figure className={styles.clients__logo_frame}>
-        <img
-          width="auto"
-          height="auto"
-          className={clsx(styles.clients__logo, "animate slide delay-1")}
-          alt="careviso"
-          src="/img/logos/careviso.webp"
-        />
-      </figure>
-      <figure className={styles.clients__logo_frame}>
-        <img
-          width="auto"
-          height="auto"
-          className={clsx(styles.clients__logo, "animate slide delay-3")}
-          alt="Community Boss"
-          src="/img/logos/communityboss.png"
-        />
-      </figure>
-      <figure className={styles.clients__logo_frame}>
-        <img
-          width="auto"
-          height="auto"
-          className={clsx(styles.clients__logo, "animate slide delay-0")}
-          alt="2nd Chair"
-          src="/img/logos/chair.webp"
-        />
-      </figure>
-      <figure className={styles.clients__logo_frame}>
-        <img
-          width="auto"
-          height="auto"
-          className={clsx(styles.clients__logo, "animate slide delay-2")}
-          alt="WelliQ"
-          src="/img/logos/welliq.webp"
-        />
-      </figure>
-    </div>
+    <ul className={styles.clients}>
+      {clients.map((client, index) => (
+        <li key={client.name} className={styles.clients__item}>
+          <a
+            href={client.url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={client.name}
+            className={styles.clients__link}
+          >
+            <span
+              className={styles.clients__logo_wrap}
+              style={{ "--logo-scale": client.scale ?? 1 } as CSSProperties}
+            >
+              <Image
+                className={clsx(
+                  styles.clients__logo,
+                  "animate slide",
+                  delays[index % delays.length]
+                )}
+                alt={client.name}
+                src={client.logo}
+              />
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 };

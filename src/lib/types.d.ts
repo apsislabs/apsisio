@@ -86,6 +86,7 @@ export type Client = {
   name: string;
   logo: string;
   url: string;
+  scale?: number;
 };
 
 export type Post = PostPageModel;

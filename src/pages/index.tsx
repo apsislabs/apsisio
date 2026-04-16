@@ -1,5 +1,5 @@
 import { Button } from "components/Button";
-import { Clients } from "components/Clients";
+import { Clients, HomeClient } from "components/Clients";
 import { CtaProps } from "components/Cta";
 import { Hero } from "components/Hero";
 import { NewsletterCTA } from "components/NewsletterCTA";
@@ -9,6 +9,8 @@ import { Section } from "components/Section";
 import { SiteLayout } from "components/SiteLayout";
 import { ValueSection } from "components/ValueSection";
 import { siteConf } from "conf";
+import { clientLogos } from "lib/content/clientLogos";
+import { getClientsMap } from "lib/content/repository/clientsRepository";
 import { getCurrentPeopleMap } from "lib/content/repository/peopleRepository";
 import { getRandomCta } from "lib/ctas";
 import {
@@ -21,19 +23,42 @@ import {
 import { NextPage } from "next";
 import { RepoCard } from "../components/RepoCard";
 
+type IndexPageProps = {
+  cta: CtaProps;
+  people: string[];
+  clients: HomeClient[];
+};
+
 export async function getStaticProps() {
   const currentPeopleMap = await getCurrentPeopleMap();
+  const clientsMap = await getClientsMap();
+
+  const clients: HomeClient[] = Object.values(clientsMap).map((client) => {
+    const logo = clientLogos[client.logo as keyof typeof clientLogos];
+
+    if (!logo) {
+      throw new Error(`Missing client logo import for: ${client.logo}`);
+    }
+
+    return {
+      ...client,
+      logo,
+    };
+  });
+
   return {
     props: {
       cta: getRandomCta(),
       people: Object.keys(currentPeopleMap),
+      clients,
     },
   };
 }
 
-export const IndexPage: NextPage<{ cta: CtaProps; people: string[] }> = ({
+export const IndexPage: NextPage<IndexPageProps> = ({
   cta,
   people,
+  clients,
 }) => {
   return (
     <>
@@ -45,7 +70,7 @@ export const IndexPage: NextPage<{ cta: CtaProps; people: string[] }> = ({
         </Section>
 
         <Section guides={false} theme="gray" bordered>
-          <Clients />
+          <Clients clients={clients} />
         </Section>
 
         <Section spaced>

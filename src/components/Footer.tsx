@@ -89,12 +89,12 @@ export const Footer = () => (
               Boulder <span className="text-muted">→</span>
             </li>
             <li>
-              Boston <span className="text-muted">→</span>
+              Houston <span className="text-muted">→</span>
             </li>
+            <li>Hartford <span className="text-muted">→</span></li>
             <li>
-              Portland <span className="text-muted">→</span>
+              Portland
             </li>
-            <li>Hartford</li>
           </ul>
         </small>
       </div>

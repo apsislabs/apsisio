@@ -213,7 +213,7 @@ pandu:
 
 matt:
   name: Matt Erhart
-  current: false
+  current: true
   title: Senior Engineer & Farmhand
   image: /img/people/matt.jpg
   bio: |
@@ -289,7 +289,7 @@ niall:
 smith:
   name: Mike Smith
   title: Senior Engineer
-  current: true
+  current: false
   image: /img/people/smith.jpg
   bio: |
     Smith's introduction to computers began with the venerable Tandy 1000/TL2, 
